@@ -1,12 +1,12 @@
-// lib/screens/recipe_builder_page.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/recipe_component_model.dart';
 import '../models/recipe_model.dart';
 import '../models/compost_component_model.dart';
 import '../widgets/component_table.dart';
 import '../widgets/add_component_dialog.dart';
 import '../widgets/nutrient_totals_table.dart';
-import '../data/compost_components_data.dart';
+import '../compost_state.dart';
 import '../services/persistence_manager.dart';
 
 class RecipeBuilderPage extends StatefulWidget {
@@ -66,11 +66,13 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
   }
 
   void _showAddComponentDialog(BuildContext context) {
-    final availableComponents =
-        CompostComponentsData.getAvailableComponents(DateTime.now())
-            .where((component) => !selectedComponents
-                .any((selected) => selected.component.name == component.name))
-            .toList();
+    // Get the latest component data from CompostState
+    final compostState = context.read<CompostState>();
+    final availableComponents = compostState
+        .getAvailableComponents(DateTime.now())
+        .where((component) => !selectedComponents
+            .any((selected) => selected.component.name == component.name))
+        .toList();
 
     if (availableComponents.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -103,11 +105,15 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
 
   void _editComponent(int index) {
     final component = selectedComponents[index];
+    // Get the latest component data from CompostState
+    final compostState = context.read<CompostState>();
+    final updatedComponent = compostState.components
+        .firstWhere((c) => c.name == component.component.name);
 
     showDialog(
       context: context,
       builder: (context) => AddComponentDialog(
-        availableComponents: [component.component],
+        availableComponents: [updatedComponent],
         initialWeight: component.amount,
         onAdd: (comp, weight) {
           setState(() {
@@ -174,64 +180,84 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    _buildSectionTitle('Components', Icons.compost),
-                    if (selectedComponents.isEmpty)
-                      const Card(
-                        child: Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Text(
-                            'No components added yet. Click the button below to add components to your compost recipe.',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 16),
+      body: Consumer<CompostState>(
+        builder: (context, compostState, child) {
+          // Update selected components with latest prices and availability
+          final updatedComponents = selectedComponents.map((component) {
+            final latestComponent = compostState.components.firstWhere(
+              (c) => c.name == component.component.name,
+              orElse: () => component.component,
+            );
+            return RecipeComponent(
+              component: latestComponent,
+              amount: component.amount,
+            );
+          }).toList();
+
+          if (updatedComponents.length == selectedComponents.length) {
+            selectedComponents = updatedComponents;
+          }
+
+          return Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _buildSectionTitle('Components', Icons.compost),
+                        if (selectedComponents.isEmpty)
+                          const Card(
+                            child: Padding(
+                              padding: EdgeInsets.all(16),
+                              child: Text(
+                                'No components added yet. Click the button below to add components to your compost recipe.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ),
+                          )
+                        else
+                          ComponentTable(
+                            items: selectedComponents,
+                            onEdit: _editComponent,
+                            onDelete: _deleteComponent,
+                          ),
+                        const SizedBox(height: 8),
+                        ElevatedButton.icon(
+                          onPressed: () => _showAddComponentDialog(context),
+                          icon: const Icon(Icons.add),
+                          label: const Text('Add Component'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.brown.shade300,
+                            foregroundColor: Colors.white,
+                            padding: const EdgeInsets.symmetric(vertical: 12),
                           ),
                         ),
-                      )
-                    else
-                      ComponentTable(
-                        items: selectedComponents,
-                        onEdit: _editComponent,
-                        onDelete: _deleteComponent,
-                      ),
-                    const SizedBox(height: 8),
-                    ElevatedButton.icon(
-                      onPressed: () => _showAddComponentDialog(context),
-                      icon: const Icon(Icons.add),
-                      label: const Text('Add Component'),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown.shade300,
-                        foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                if (selectedComponents.isNotEmpty) ...[
-                  const SizedBox(height: 24),
-                  _buildSectionTitle('Nutrient Analysis', Icons.analytics),
-                  NutrientTotalsTable(
-                    components: selectedComponents,
-                  ),
-                ]
-              ],
-            ),
-          )
-        ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    if (selectedComponents.isNotEmpty) ...[
+                      const SizedBox(height: 24),
+                      _buildSectionTitle('Nutrient Analysis', Icons.analytics),
+                      NutrientTotalsTable(
+                        components: selectedComponents,
+                      ),
+                    ]
+                  ],
+                ),
+              )
+            ],
+          );
+        },
       ),
     );
   }
