@@ -6,6 +6,7 @@ import '../models/price_model.dart';
 class CompostComponentsData {
   static final List<CompostComponent> components = [
     const CompostComponent(
+      id: 'MangoWaste',
       name: 'Mango waste with seeds',
       availability: AvailabilityPeriod.marToAug,
       nutrients: NutrientContent(
@@ -18,9 +19,9 @@ class CompostComponentsData {
         magnesiumPercent: 0.37,
         carbonNitrogenRatio: 26.92,
       ),
-      unit: 'tons',
     ),
     const CompostComponent(
+      id: 'CashewShells',
       name: 'Cashew shells',
       availability: AvailabilityPeriod.janToDec,
       nutrients: NutrientContent(
@@ -33,12 +34,12 @@ class CompostComponentsData {
         magnesiumPercent: 0.19,
         carbonNitrogenRatio: 68.92,
       ),
-      unit: 'tons',
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'RiceHulls',
       name: 'Rice hulls/Rice bran',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 92.80,
         organicCarbonPercent: 34.90,
         nitrogenPercent: 0.27,
@@ -48,7 +49,6 @@ class CompostComponentsData {
         magnesiumPercent: 0.19,
         carbonNitrogenRatio: 129.26,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 70000,
         unit: 'tons',
@@ -57,6 +57,7 @@ class CompostComponentsData {
       ),
     ),
     const CompostComponent(
+      id: 'RiceStraw',
       name: 'Rice straw - wet season',
       availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
@@ -69,9 +70,9 @@ class CompostComponentsData {
         magnesiumPercent: 0.15,
         carbonNitrogenRatio: 79.63,
       ),
-      unit: 'tons',
     ),
     const CompostComponent(
+      id: 'SugarcaneBagasse',
       name: 'Sugarcane bagasse',
       availability: AvailabilityPeriod.octToJan,
       nutrients: NutrientContent(
@@ -84,12 +85,12 @@ class CompostComponentsData {
         magnesiumPercent: 0.15,
         carbonNitrogenRatio: 9.83,
       ),
-      unit: 'tons',
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'ChickenManure',
       name: 'Dried chicken manure',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 87.60,
         organicCarbonPercent: 51.64,
         nitrogenPercent: 5.35,
@@ -99,15 +100,15 @@ class CompostComponentsData {
         magnesiumPercent: 0.63,
         carbonNitrogenRatio: 9.65,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 20000,
-        unit: 'Kgs',
+        unit: 'kgs',
         unitAmount: 100,
         pricePerUnit: 2000,
       ),
     ),
     const CompostComponent(
+      id: 'CowDung',
       name: 'Cow dung',
       availability: AvailabilityPeriod.janToDec,
       nutrients: NutrientContent(
@@ -120,9 +121,9 @@ class CompostComponentsData {
         magnesiumPercent: 0.63,
         carbonNitrogenRatio: 12.64,
       ),
-      unit: 'tons',
     ),
     const CompostComponent(
+      id: 'CottonStraw',
       name: 'Cotton straw',
       availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
@@ -135,12 +136,12 @@ class CompostComponentsData {
         magnesiumPercent: 0.12,
         carbonNitrogenRatio: 25.00,
       ),
-      unit: 'tons',
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'RiceHuskAsh',
       name: 'Rice Husk Ash',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 100.00,
         organicCarbonPercent: 0.22,
         nitrogenPercent: 0.09,
@@ -150,18 +151,18 @@ class CompostComponentsData {
         magnesiumPercent: 0.00,
         carbonNitrogenRatio: 2.44,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 100000,
-        unit: 'Kgs',
+        unit: 'kgs',
         unitAmount: 50,
         pricePerUnit: 5000,
       ),
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'Lime',
       name: 'Lime',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 100.00,
         organicCarbonPercent: 0.00,
         nitrogenPercent: 0.00,
@@ -171,7 +172,6 @@ class CompostComponentsData {
         magnesiumPercent: 0.00,
         carbonNitrogenRatio: 0.00,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 20000,
         unit: 'kgs',
@@ -179,10 +179,11 @@ class CompostComponentsData {
         pricePerUnit: 5000,
       ),
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'CompostPlus',
       name: 'Compost +',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 100.00,
         organicCarbonPercent: 0.00,
         nitrogenPercent: 0.00,
@@ -192,7 +193,6 @@ class CompostComponentsData {
         magnesiumPercent: 0.00,
         carbonNitrogenRatio: 0.00,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 10000,
         unit: 'kgs',
@@ -200,10 +200,11 @@ class CompostComponentsData {
         pricePerUnit: 2500,
       ),
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'Dolomites',
       name: 'Dolomites',
       availability: AvailabilityPeriod.janToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 100.00,
         organicCarbonPercent: 0.00,
         nitrogenPercent: 0.00,
@@ -213,7 +214,6 @@ class CompostComponentsData {
         magnesiumPercent: 5.00,
         carbonNitrogenRatio: 0.00,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 35000,
         unit: 'kgs',
@@ -222,6 +222,7 @@ class CompostComponentsData {
       ),
     ),
     const CompostComponent(
+      id: 'CornStraw',
       name: 'Corn straw',
       availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
@@ -234,9 +235,9 @@ class CompostComponentsData {
         magnesiumPercent: 0.02,
         carbonNitrogenRatio: 25.90,
       ),
-      unit: 'tons',
     ),
     const CompostComponent(
+      id: 'CassavaPeels',
       name: 'Cassava peels',
       availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
@@ -249,12 +250,12 @@ class CompostComponentsData {
         magnesiumPercent: 0.06,
         carbonNitrogenRatio: 48.40,
       ),
-      unit: 'tons',
     ),
-    const CompostComponent(
+    CompostComponent(
+      id: 'RiceChickenLitter',
       name: 'Litter (rice bran + chicken manure)',
       availability: AvailabilityPeriod.sepToDec,
-      nutrients: NutrientContent(
+      nutrients: const NutrientContent(
         dryMatterPercent: 90.20,
         organicCarbonPercent: 43.27,
         nitrogenPercent: 2.81,
@@ -264,15 +265,15 @@ class CompostComponentsData {
         magnesiumPercent: 0.41,
         carbonNitrogenRatio: 15.40,
       ),
-      unit: 'tons',
       price: Price(
         priceInFCFA: 10000,
-        unit: 'Kgs',
+        unit: 'kgs',
         unitAmount: 100,
         pricePerUnit: 1000,
       ),
     ),
     const CompostComponent(
+      id: 'RiceStrawCounter',
       name: 'Rice straw - counter-season',
       availability: AvailabilityPeriod.mayToJul,
       nutrients: NutrientContent(
@@ -285,7 +286,6 @@ class CompostComponentsData {
         magnesiumPercent: 0.15,
         carbonNitrogenRatio: 79.63,
       ),
-      unit: 'tons',
     ),
   ];
 

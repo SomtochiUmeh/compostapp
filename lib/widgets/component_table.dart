@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/recipe_component_model.dart';
 import '../constants/nutrient_constants.dart';
+import '../generated/l10n.dart';
 
 class ColumnDefinition {
   final String label;
@@ -28,17 +29,19 @@ class ComponentTable extends StatelessWidget {
 
   List<ColumnDefinition> get columns {
     return [
-      const ColumnDefinition(label: 'Component', key: 'name', decimalPlaces: 0),
-      const ColumnDefinition(
-          label: 'Weight (kg)', key: 'weight', decimalPlaces: 2),
+      ColumnDefinition(
+          label: S.current.component, key: 'name', decimalPlaces: 0),
+      ColumnDefinition(
+          label: S.current.weight, key: 'weight', decimalPlaces: 2),
       ...NutrientConstants.trackedNutrients.map((nutrient) => ColumnDefinition(
-            label: '${nutrient.toUpperCase()} (%)',
+            label: S.current
+                .percentage(NutrientConstants.getNutrientLabel(nutrient)),
             key: nutrient,
             decimalPlaces: 2,
           )),
       if (items.any((item) => item.component.price != null))
-        const ColumnDefinition(
-            label: 'Cost (FCFA)', key: 'cost', decimalPlaces: 2),
+        ColumnDefinition(
+            label: S.current.costFCFA, key: 'cost', decimalPlaces: 2),
     ];
   }
 
@@ -106,7 +109,7 @@ class ComponentTable extends StatelessWidget {
   String _formatValue(RecipeComponent item, ColumnDefinition col) {
     switch (col.key) {
       case 'name':
-        return item.component.name;
+        return item.component.getName();
       case 'weight':
         return item.amount.toStringAsFixed(col.decimalPlaces);
       case 'cost':

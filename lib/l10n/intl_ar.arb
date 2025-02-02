@@ -1,0 +1,273 @@
+{
+    "@@locale": "ar",
+    "recipeBuilder": "صانع الوصفات",
+    "@recipeBuilder": {
+        "description": "Recipe Builder Navbar label"
+    },
+    "prices": "الأسعار",
+    "@prices": {
+        "description": "Prices Navbar label"
+    },
+    "allAvailableComponentsHaveBeenAdded": "تمت إضافة جميع المكونات المتاحة",
+    "@allAvailableComponentsHaveBeenAdded": {
+        "description": "Message shown when no more components can be added to the recipe"
+    },
+    "compostRecipeBuilder": "صانع وصفات السماد",
+    "@compostRecipeBuilder": {
+        "description": "Main title of the compost recipe builder page"
+    },
+    "recipeQualityGuide": "دليل جودة الوصفة",
+    "@recipeQualityGuide": {
+        "description": "Title for the recipe quality information dialog"
+    },
+    "recipeQualityInfo": "علامة صح خضراء: مستوى المغذيات ضمن النطاق الموصى به\nسهم أحمر للأعلى: مستوى المغذيات أقل من النطاق الموصى به\nسهم برتقالي للأسفل: مستوى المغذيات أعلى من النطاق الموصى به\n\nالنطاقات الموصى بها تستند إلى معايير السماد البلدية.",
+    "@recipeQualityInfo": {
+        "description": "Detailed explanation of the nutrient level indicators in the recipe quality guide"
+    },
+    "close": "إغلاق",
+    "@close": {
+        "description": "Button label for closing dialogs or screens"
+    },
+    "components": "المكونات",
+    "@components": {
+        "description": "Section header for the list of compost components"
+    },
+    "noComponentsAddedYetClickTheButtonBelowToAdd": "لم تتم إضافة أي مكونات بعد. انقر على الزر أدناه لإضافة مكونات إلى وصفة السماد الخاصة بك.",
+    "@noComponentsAddedYetClickTheButtonBelowToAdd": {
+        "description": "Message shown when the recipe has no components"
+    },
+    "addComponent": "إضافة مكون",
+    "@addComponent": {
+        "description": "Button label for adding a new component to the recipe"
+    },
+    "nutrientAnalysis": "تحليل المغذيات",
+    "@nutrientAnalysis": {
+        "description": "Section header for the nutrient analysis table"
+    },
+    "editComponent": "تعديل المكون",
+    "@editComponent": {
+        "description": "Title for the dialog when editing an existing component"
+    },
+    "chooseComponent": "اختر المكون",
+    "@chooseComponent": {
+        "description": "Label for the component selection dropdown"
+    },
+    "weight": "الوزن (كجم)",
+    "@weight": {
+        "description": "Label for the weight input field"
+    },
+    "unitKgs": "كجم",
+    "@unitKgs": {
+        "description": "Unit kgs"
+    },
+    "unitTons": "طن",
+    "@unitTons": {
+        "description": "Unit tons"
+    },
+    "price": "السعر: {price} فرنك إفريقي لكل {amount} {unit}",
+    "@price": {
+        "description": "Price information display format",
+        "placeholders": {
+            "price": {
+                "type": "int",
+                "example": "20000"
+            },
+            "amount": {
+                "type": "double",
+                "example": "100"
+            },
+            "unit": {
+                "type": "String",
+                "example": "كجم"
+            }
+        }
+    },
+    "cancel": "إلغاء",
+    "@cancel": {
+        "description": "Label for cancel button"
+    },
+    "update": "تحديث",
+    "@update": {
+        "description": "Label for update button when editing a component"
+    },
+    "add": "إضافة",
+    "@add": {
+        "description": "Label for add button when adding a new component"
+    },
+    "pleaseEnterValidWeight": "الرجاء إدخال وزن صحيح",
+    "@pleaseEnterValidWeight": {
+        "description": "Error message when weight input is invalid"
+    },
+    "pleaseFillAllFields": "الرجاء ملء جميع الحقول",
+    "@pleaseFillAllFields": {
+        "description": "Error message when required fields are empty"
+    },
+    "component": "المكون",
+    "@component": {
+        "description": "Single component label for table header"
+    },
+    "costFCFA": "التكلفة (فرنك)",
+    "@costFCFA": {
+        "description": "Column header for cost in FCFA currency"
+    },
+    "percentage": "{value} (٪)",
+    "@percentage": {
+        "description": "Format for percentage values",
+        "placeholders": {
+            "value": {
+                "type": "String",
+                "example": "42.5"
+            }
+        }
+    },
+    "organicCarbon": "الكربون العضوي",
+    "@organicCarbon": {
+        "description": "Nutrient name for organic carbon (lowercase)"
+    },
+    "nitrogen": "النيتروجين",
+    "@nitrogen": {
+        "description": "Nutrient name for nitrogen (lowercase)"
+    },
+    "phosphorus": "الفوسفور",
+    "@phosphorus": {
+        "description": "Nutrient name for phosphorus (lowercase)"
+    },
+    "potassium": "البوتاسيوم",
+    "@potassium": {
+        "description": "Nutrient name for potassium (lowercase)"
+    },
+    "calcium": "الكالسيوم",
+    "@calcium": {
+        "description": "Nutrient name for calcium (lowercase)"
+    },
+    "magnesium": "المغنيسيوم",
+    "@magnesium": {
+        "description": "Nutrient name for magnesium (lowercase)"
+    },
+    "dryMatter": "المادة الجافة",
+    "@dryMatter": {
+        "description": "Nutrient name for dry matter content"
+    },
+    "totalWeightKg": "الوزن الإجمالي (كجم)",
+    "@totalWeightKg": {
+        "description": "Column header for total weight in kilograms"
+    },
+    "totalCostFCFA": "التكلفة الإجمالية (فرنك)",
+    "@totalCostFCFA": {
+        "description": "Column header for total cost in FCFA currency"
+    },
+    "componentMangoWaste": "نفايات المانجو مع البذور",
+    "@componentMangoWaste": {
+        "description": "Name of mango waste component"
+    },
+    "componentCashewShells": "قشور الكاجو",
+    "@componentCashewShells": {
+        "description": "Name of cashew shells component"
+    },
+    "componentRiceHulls": "قشور الأرز/نخالة الأرز",
+    "@componentRiceHulls": {
+        "description": "Name of rice hulls/bran component"
+    },
+    "componentRiceStraw": "قش الأرز - الموسم الرطب",
+    "@componentRiceStraw": {
+        "description": "Name of rice straw component"
+    },
+    "componentSugarcaneBagasse": "تفل قصب السكر",
+    "@componentSugarcaneBagasse": {
+        "description": "Name of sugarcane bagasse component"
+    },
+    "componentChickenManure": "روث الدجاج المجفف",
+    "@componentChickenManure": {
+        "description": "Name of dried chicken manure component"
+    },
+    "componentCowDung": "روث البقر",
+    "@componentCowDung": {
+        "description": "Name of cow dung component"
+    },
+    "componentCottonStraw": "قش القطن",
+    "@componentCottonStraw": {
+        "description": "Name of cotton straw component"
+    },
+    "componentRiceHuskAsh": "رماد قشور الأرز",
+    "@componentRiceHuskAsh": {
+        "description": "Name of rice husk ash component"
+    },
+    "componentLime": "الجير",
+    "@componentLime": {
+        "description": "Name of lime component"
+    },
+    "componentCompostPlus": "كومبوست +",
+    "@componentCompostPlus": {
+        "description": "Name of compost plus component"
+    },
+    "componentDolomites": "دولوميت",
+    "@componentDolomites": {
+        "description": "Name of dolomites component"
+    },
+    "componentCornStraw": "قش الذرة",
+    "@componentCornStraw": {
+        "description": "Name of corn straw component"
+    },
+    "componentCassavaPeels": "قشور الكسافا",
+    "@componentCassavaPeels": {
+        "description": "Name of cassava peels component"
+    },
+    "componentRiceChickenLitter": "فرشة (نخالة الأرز + روث الدجاج)",
+    "@componentRiceChickenLitter": {
+        "description": "Name of rice bran and chicken manure litter component"
+    },
+    "componentRiceStrawCounter": "قش الأرز - الموسم المعاكس",
+    "@componentRiceStrawCounter": {
+        "description": "Name of counter-season rice straw component"
+    },
+    "getTranslation": "{selector, select, componentMangoWaste {نفايات المانجو مع البذور} componentCashewShells {قشور الكاجو} componentRiceHulls {قشور الأرز/نخالة الأرز} componentRiceStraw {قش الأرز - الموسم الرطب} componentSugarcaneBagasse {تفل قصب السكر} componentChickenManure {روث الدجاج المجفف} componentCowDung {روث البقر} componentCottonStraw {قش القطن} componentRiceHuskAsh {رماد قشور الأرز} componentLime {الجير} componentCompostPlus {كومبوست +} componentDolomites {دولوميت} componentCornStraw {قش الذرة} componentCassavaPeels {قشور الكسافا} componentRiceChickenLitter {فرشة (نخالة الأرز + روث الدجاج)} componentRiceStrawCounter {قش الأرز - الموسم المعاكس} other {مكون غير معروف}}",
+    "@getTranslation": {
+        "description": "Translation selector for component names",
+        "placeholders": {
+            "selector": {
+                "type": "String",
+                "example": "componentMangoWaste"
+            }
+        }
+    },
+    "pricePageTitle": "أسعار المكونات",
+    "@pricePageTitle": {
+        "description": "Title of the prices page"
+    },
+    "allComponents": "جميع المكونات",
+    "@allComponents": {
+        "description": "Section title for all components list"
+    },
+    "costPerUnit": "التكلفة/الوحدة",
+    "@costPerUnit": {
+        "description": "Label for cost per unit input field"
+    },
+    "currencyFCFA": "فرنك",
+    "@currencyFCFA": {
+        "description": "Currency label for FCFA"
+    },
+    "availabilityJanToDec": "متوفر: من يناير إلى ديسمبر",
+    "@availabilityJanToDec": {
+        "description": "Availability period January to December"
+    },
+    "availabilityMarToAug": "متوفر: من مارس إلى أغسطس",
+    "@availabilityMarToAug": {
+        "description": "Availability period March to August"
+    },
+    "availabilityOctToDec": "متوفر: من أكتوبر إلى ديسمبر",
+    "@availabilityOctToDec": {
+        "description": "Availability period October to December"
+    },
+    "availabilityOctToJan": "متوفر: من أكتوبر إلى يناير",
+    "@availabilityOctToJan": {
+        "description": "Availability period October to January"
+    },
+    "availabilityMayToJul": "متوفر: من مايو إلى يوليو",
+    "@availabilityMayToJul": {
+        "description": "Availability period May to July"
+    },
+    "availabilitySepToDec": "متوفر: من سبتمبر إلى ديسمبر",
+    "@availabilitySepToDec": {
+        "description": "Availability period September to December"
+    }
+}

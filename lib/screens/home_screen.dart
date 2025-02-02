@@ -4,6 +4,7 @@ import '../services/persistence_manager.dart';
 import '../models/destination_model.dart';
 import './recipe_builder_page.dart';
 import './price_page.dart';
+import "../generated/l10n.dart";
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     _destinations = [
       Destination(
-        label: 'Recipe Builder',
+        label: S.of(context).recipeBuilder,
         icon: Icons.compost,
         builder: (context) => RecipeBuilderPage(
           persistenceManager:
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
       ),
       Destination(
-        label: 'Prices',
+        label: S.of(context).prices,
         icon: Icons.attach_money,
         builder: (context) => const PricesPage(),
       ),

@@ -119,6 +119,7 @@ class PersistenceManager {
 
   Map<String, dynamic> _componentToJson(CompostComponent component) {
     return {
+      'id': component.id,
       'name': component.name,
       'availability': component.availability.toString(),
       'nutrients': {
@@ -131,11 +132,10 @@ class PersistenceManager {
         'magnesiumPercent': component.nutrients.magnesiumPercent,
         'carbonNitrogenRatio': component.nutrients.carbonNitrogenRatio,
       },
-      'unit': component.unit,
       'price': component.price != null
           ? {
               'priceInFCFA': component.price!.priceInFCFA,
-              'unit': component.price!.unit,
+              'unit': component.price!.unit.toString(),
               'unitAmount': component.price!.unitAmount,
               'pricePerUnit': component.price!.pricePerUnit,
             }
@@ -146,6 +146,7 @@ class PersistenceManager {
 
   CompostComponent _componentFromJson(Map<String, dynamic> json) {
     return CompostComponent(
+      id: json['id'],
       name: json['name'],
       availability: AvailabilityPeriod.values.firstWhere(
         (e) => e.toString() == json['availability'],
@@ -160,7 +161,6 @@ class PersistenceManager {
         magnesiumPercent: json['nutrients']['magnesiumPercent'],
         carbonNitrogenRatio: json['nutrients']['carbonNitrogenRatio'],
       ),
-      unit: json['unit'],
       price: json['price'] != null
           ? Price(
               priceInFCFA: json['price']['priceInFCFA'],

@@ -8,6 +8,7 @@ import '../widgets/add_component_dialog.dart';
 import '../widgets/nutrient_totals_table.dart';
 import '../compost_state.dart';
 import '../services/persistence_manager.dart';
+import '../generated/l10n.dart';
 
 class RecipeBuilderPage extends StatefulWidget {
   final PersistenceManager persistenceManager;
@@ -70,15 +71,14 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     final compostState = context.read<CompostState>();
     final availableComponents = compostState
         .getAvailableComponents(DateTime.now())
-        .where((component) => !selectedComponents
-            .any((selected) => selected.component.name == component.name))
+        .where((component) => !selectedComponents.any(
+            (selected) => selected.component.getName() == component.getName()))
         .toList();
 
     if (availableComponents.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('All available components have been added'),
-          duration: Duration(seconds: 2),
+        SnackBar(
+          content: Text(S.of(context).allAvailableComponentsHaveBeenAdded),
         ),
       );
       return;
@@ -94,6 +94,10 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
   }
 
   void _addComponent(CompostComponent component, double weight) {
+    // // Convert weight to kg if the component is measured in tons
+    // final adjustedWeight =
+    //     component.unit.toLowerCase() == 'tons' ? weight * 1000 : weight;
+
     setState(() {
       selectedComponents.add(RecipeComponent(
         component: component,
@@ -108,7 +112,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     // Get the latest component data from CompostState
     final compostState = context.read<CompostState>();
     final updatedComponent = compostState.components
-        .firstWhere((c) => c.name == component.component.name);
+        .firstWhere((c) => c.getName() == component.component.getName());
 
     showDialog(
       context: context,
@@ -145,7 +149,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
         backgroundColor: Colors.brown.shade200,
         elevation: 0,
         title: Text(
-          'Compost Recipe Builder',
+          S.of(context).compostRecipeBuilder,
           style: TextStyle(
             color: Colors.white,
             fontSize: isLandscape ? 16 : 20,
@@ -159,19 +163,16 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: const Text('Recipe Quality Guide'),
-                  content: const SingleChildScrollView(
+                  title: Text(S.of(context).recipeQualityGuide),
+                  content: SingleChildScrollView(
                     child: Text(
-                      'Green checkmark: Nutrient level is within recommended range\n'
-                      'Red up arrow: Nutrient level is below recommended range\n'
-                      'Orange down arrow: Nutrient level is above recommended range\n\n'
-                      'Recommended ranges are based on municipal compost standards.',
+                      S.of(context).recipeQualityInfo,
                     ),
                   ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text('Close'),
+                      child: Text(S.of(context).close),
                     ),
                   ],
                 ),
@@ -185,7 +186,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
           // Update selected components with latest prices and availability
           final updatedComponents = selectedComponents.map((component) {
             final latestComponent = compostState.components.firstWhere(
-              (c) => c.name == component.component.name,
+              (c) => c.getName() == component.component.getName(),
               orElse: () => component.component,
             );
             return RecipeComponent(
@@ -207,15 +208,18 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        _buildSectionTitle('Components', Icons.compost),
+                        _buildSectionTitle(
+                            S.of(context).components, Icons.compost),
                         if (selectedComponents.isEmpty)
-                          const Card(
+                          Card(
                             child: Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: const EdgeInsets.all(16),
                               child: Text(
-                                'No components added yet. Click the button below to add components to your compost recipe.',
+                                S
+                                    .of(context)
+                                    .noComponentsAddedYetClickTheButtonBelowToAdd,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 16),
+                                style: const TextStyle(fontSize: 16),
                               ),
                             ),
                           )
@@ -229,7 +233,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                         ElevatedButton.icon(
                           onPressed: () => _showAddComponentDialog(context),
                           icon: const Icon(Icons.add),
-                          label: const Text('Add Component'),
+                          label: Text(S.of(context).addComponent),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.brown.shade300,
                             foregroundColor: Colors.white,
@@ -246,8 +250,8 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                 child: Column(
                   children: [
                     if (selectedComponents.isNotEmpty) ...[
-                      const SizedBox(height: 24),
-                      _buildSectionTitle('Nutrient Analysis', Icons.analytics),
+                      _buildSectionTitle(
+                          S.of(context).nutrientAnalysis, Icons.analytics),
                       NutrientTotalsTable(
                         components: selectedComponents,
                       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/recipe_component_model.dart';
 import '../constants/compost_quality_standards.dart';
 import '../constants/nutrient_constants.dart';
+import '../generated/l10n.dart';
 
 class NutrientTotalsTable extends StatelessWidget {
   final List<RecipeComponent> components;
@@ -73,14 +74,16 @@ class NutrientTotalsTable extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: DataTable(
         columns: [
-          const DataColumn(label: Text('Total Weight (kg)')),
+          DataColumn(label: Text(S.of(context).totalWeightKg)),
           ...nutrients.map(
             (nutrient) => DataColumn(
-              label: Text('${nutrient.toUpperCase()} (%)'),
+              label: Text(S
+                  .of(context)
+                  .percentage(NutrientConstants.getNutrientLabel(nutrient))),
             ),
           ),
           if (components.any((comp) => comp.component.price != null))
-            const DataColumn(label: Text('Total Cost (FCFA)')),
+            DataColumn(label: Text(S.of(context).totalCostFCFA)),
         ],
         rows: [
           DataRow(
