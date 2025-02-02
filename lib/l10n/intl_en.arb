@@ -1,0 +1,273 @@
+{
+    "@@locale": "en",
+    "recipeBuilder": "Recipe Builder",
+    "@recipeBuilder": {
+        "description": "Recipe Builder Navbar label"
+    },
+    "prices": "Prices",
+    "@prices": {
+        "description": "Prices Navbar label"
+    },
+    "allAvailableComponentsHaveBeenAdded": "All available components have been added",
+    "@allAvailableComponentsHaveBeenAdded": {
+        "description": "Message shown when no more components can be added to the recipe"
+    },
+    "compostRecipeBuilder": "Compost Recipe Builder",
+    "@compostRecipeBuilder": {
+        "description": "Main title of the compost recipe builder page"
+    },
+    "recipeQualityGuide": "Recipe Quality Guide",
+    "@recipeQualityGuide": {
+        "description": "Title for the recipe quality information dialog"
+    },
+    "recipeQualityInfo": "Green checkmark: Nutrient level within recommended range\nRed up arrow: Nutrient level below recommended range\nOrange down arrow: Nutrient level above recommended range\n\nRecommended ranges are based on municipal compost standards.",
+    "@recipeQualityInfo": {
+        "description": "Detailed explanation of the nutrient level indicators in the recipe quality guide"
+    },
+    "close": "Close",
+    "@close": {
+        "description": "Button label for closing dialogs or screens"
+    },
+    "components": "Components",
+    "@components": {
+        "description": "Section header for the list of compost components"
+    },
+    "noComponentsAddedYetClickTheButtonBelowToAdd": "No components added yet. Click the button below to add components to your compost recipe.",
+    "@noComponentsAddedYetClickTheButtonBelowToAdd": {
+        "description": "Message shown when the recipe has no components"
+    },
+    "addComponent": "Add Component",
+    "@addComponent": {
+        "description": "Button label for adding a new component to the recipe"
+    },
+    "nutrientAnalysis": "Nutrient Analysis",
+    "@nutrientAnalysis": {
+        "description": "Section header for the nutrient analysis table"
+    },
+    "editComponent": "Edit Component",
+    "@editComponent": {
+        "description": "Title for the dialog when editing an existing component"
+    },
+    "chooseComponent": "Choose Component",
+    "@chooseComponent": {
+        "description": "Label for the component selection dropdown"
+    },
+    "weight": "Weight (kg)",
+    "@weight": {
+        "description": "Label for the weight input field"
+    },
+    "unitKgs": "kgs",
+    "@unitKgs": {
+        "description": "Unit kgs"
+    },
+    "unitTons": "tons",
+    "@unitTons": {
+        "description": "Unit tons"
+    },
+    "price": "Price: {price} FCFA per {amount} {unit}",
+    "@price": {
+        "description": "Price information display format",
+        "placeholders": {
+            "price": {
+                "type": "int",
+                "example": "20000"
+            },
+            "amount": {
+                "type": "double",
+                "example": "100"
+            },
+            "unit": {
+                "type": "String",
+                "example": "kg"
+            }
+        }
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Label for cancel button"
+    },
+    "update": "Update",
+    "@update": {
+        "description": "Label for update button when editing a component"
+    },
+    "add": "Add",
+    "@add": {
+        "description": "Label for add button when adding a new component"
+    },
+    "pleaseEnterValidWeight": "Please enter a valid weight",
+    "@pleaseEnterValidWeight": {
+        "description": "Error message when weight input is invalid"
+    },
+    "pleaseFillAllFields": "Please fill all fields",
+    "@pleaseFillAllFields": {
+        "description": "Error message when required fields are empty"
+    },
+    "component": "Component",
+    "@component": {
+        "description": "Single component label for table header"
+    },
+    "costFCFA": "Cost (FCFA)",
+    "@costFCFA": {
+        "description": "Column header for cost in FCFA currency"
+    },
+    "percentage": "{value} (%)",
+    "@percentage": {
+        "description": "Format for percentage values",
+        "placeholders": {
+            "value": {
+                "type": "String",
+                "example": "42.5"
+            }
+        }
+    },
+    "organicCarbon": "organic carbon",
+    "@organicCarbon": {
+        "description": "Nutrient name for organic carbon (lowercase)"
+    },
+    "nitrogen": "nitrogen",
+    "@nitrogen": {
+        "description": "Nutrient name for nitrogen (lowercase)"
+    },
+    "phosphorus": "phosphorus",
+    "@phosphorus": {
+        "description": "Nutrient name for phosphorus (lowercase)"
+    },
+    "potassium": "potassium",
+    "@potassium": {
+        "description": "Nutrient name for potassium (lowercase)"
+    },
+    "calcium": "calcium",
+    "@calcium": {
+        "description": "Nutrient name for calcium (lowercase)"
+    },
+    "magnesium": "magnesium",
+    "@magnesium": {
+        "description": "Nutrient name for magnesium (lowercase)"
+    },
+    "dryMatter": "dry matter",
+    "@dryMatter": {
+        "description": "Nutrient name for dry matter content"
+    },
+    "totalWeightKg": "Total Weight (kg)",
+    "@totalWeightKg": {
+        "description": "Column header for total weight in kilograms"
+    },
+    "totalCostFCFA": "Total Cost (FCFA)",
+    "@totalCostFCFA": {
+        "description": "Column header for total cost in FCFA currency"
+    },
+    "componentMangoWaste": "Mango waste with seeds",
+    "@componentMangoWaste": {
+        "description": "Name of mango waste component"
+    },
+    "componentCashewShells": "Cashew shells",
+    "@componentCashewShells": {
+        "description": "Name of cashew shells component"
+    },
+    "componentRiceHulls": "Rice hulls/Rice bran",
+    "@componentRiceHulls": {
+        "description": "Name of rice hulls/bran component"
+    },
+    "componentRiceStraw": "Rice straw - wet season",
+    "@componentRiceStraw": {
+        "description": "Name of rice straw component"
+    },
+    "componentSugarcaneBagasse": "Sugarcane bagasse",
+    "@componentSugarcaneBagasse": {
+        "description": "Name of sugarcane bagasse component"
+    },
+    "componentChickenManure": "Dried chicken manure",
+    "@componentChickenManure": {
+        "description": "Name of dried chicken manure component"
+    },
+    "componentCowDung": "Cow dung",
+    "@componentCowDung": {
+        "description": "Name of cow dung component"
+    },
+    "componentCottonStraw": "Cotton straw",
+    "@componentCottonStraw": {
+        "description": "Name of cotton straw component"
+    },
+    "componentRiceHuskAsh": "Rice Husk Ash",
+    "@componentRiceHuskAsh": {
+        "description": "Name of rice husk ash component"
+    },
+    "componentLime": "Lime",
+    "@componentLime": {
+        "description": "Name of lime component"
+    },
+    "componentCompostPlus": "Compost +",
+    "@componentCompostPlus": {
+        "description": "Name of compost plus component"
+    },
+    "componentDolomites": "Dolomites",
+    "@componentDolomites": {
+        "description": "Name of dolomites component"
+    },
+    "componentCornStraw": "Corn straw",
+    "@componentCornStraw": {
+        "description": "Name of corn straw component"
+    },
+    "componentCassavaPeels": "Cassava peels",
+    "@componentCassavaPeels": {
+        "description": "Name of cassava peels component"
+    },
+    "componentRiceChickenLitter": "Litter (rice bran + chicken manure)",
+    "@componentRiceChickenLitter": {
+        "description": "Name of rice bran and chicken manure litter component"
+    },
+    "componentRiceStrawCounter": "Rice straw - counter-season",
+    "@componentRiceStrawCounter": {
+        "description": "Name of counter-season rice straw component"
+    },
+    "getTranslation": "{selector, select, componentMangoWaste {Mango waste with seeds} componentCashewShells {Cashew shells} componentRiceHulls {Rice hulls/Rice bran} componentRiceStraw {Rice straw - wet season} componentSugarcaneBagasse {Sugarcane bagasse} componentChickenManure {Dried chicken manure} componentCowDung {Cow dung} componentCottonStraw {Cotton straw} componentRiceHuskAsh {Rice Husk Ash} componentLime {Lime} componentCompostPlus {Compost +} componentDolomites {Dolomites} componentCornStraw {Corn straw} componentCassavaPeels {Cassava peels} componentRiceChickenLitter {Litter (rice bran + chicken manure)} componentRiceStrawCounter {Rice straw - counter-season} other {Unknown component}}",
+    "@getTranslation": {
+        "description": "Translation selector for component names",
+        "placeholders": {
+            "selector": {
+                "type": "String",
+                "example": "componentMangoWaste"
+            }
+        }
+    },
+    "pricePageTitle": "Component Prices",
+    "@pricePageTitle": {
+        "description": "Title of the prices page"
+    },
+    "allComponents": "All Components",
+    "@allComponents": {
+        "description": "Section title for all components list"
+    },
+    "costPerUnit": "Cost/Unit",
+    "@costPerUnit": {
+        "description": "Label for cost per unit input field"
+    },
+    "currencyFCFA": "FCFA",
+    "@currencyFCFA": {
+        "description": "Currency label for FCFA"
+    },
+    "availabilityJanToDec": "Available: January to December",
+    "@availabilityJanToDec": {
+        "description": "Availability period January to December"
+    },
+    "availabilityMarToAug": "Available: March to August",
+    "@availabilityMarToAug": {
+        "description": "Availability period March to August"
+    },
+    "availabilityOctToDec": "Available: October to December",
+    "@availabilityOctToDec": {
+        "description": "Availability period October to December"
+    },
+    "availabilityOctToJan": "Available: October to January",
+    "@availabilityOctToJan": {
+        "description": "Availability period October to January"
+    },
+    "availabilityMayToJul": "Available: May to July",
+    "@availabilityMayToJul": {
+        "description": "Availability period May to July"
+    },
+    "availabilitySepToDec": "Available: September to December",
+    "@availabilitySepToDec": {
+        "description": "Availability period September to December"
+    }
+}

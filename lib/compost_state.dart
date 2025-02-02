@@ -23,8 +23,8 @@ class CompostState extends ChangeNotifier {
   }
 
   void updateComponent(CompostComponent updatedComponent) {
-    final index =
-        components.indexWhere((comp) => comp.name == updatedComponent.name);
+    final index = components
+        .indexWhere((comp) => comp.getName() == updatedComponent.getName());
     if (index != -1) {
       components[index] = updatedComponent;
       persistenceManager.updateComponentPrices(components);
@@ -40,7 +40,8 @@ class CompostState extends ChangeNotifier {
 
   // Helper method to update price
   void updateComponentPrice(String componentName, double newPrice) {
-    final index = components.indexWhere((comp) => comp.name == componentName);
+    final index =
+        components.indexWhere((comp) => comp.getName() == componentName);
     if (index != -1) {
       final component = components[index];
       final currentPrice = component.price;
@@ -48,22 +49,22 @@ class CompostState extends ChangeNotifier {
       final updatedPrice = currentPrice != null
           ? Price(
               priceInFCFA: (newPrice * currentPrice.unitAmount).round(),
-              unit: currentPrice.unit,
+              unit: currentPrice.unit.toString(),
               unitAmount: currentPrice.unitAmount,
               pricePerUnit: newPrice.round(),
             )
           : Price(
               priceInFCFA: (newPrice * 100).round(),
-              unit: 'Kgs',
+              unit: 'kgs',
               unitAmount: 100,
               pricePerUnit: newPrice.round(),
             );
 
       final updatedComponent = CompostComponent(
+        id: component.id,
         name: component.name,
         availability: component.availability,
         nutrients: component.nutrients,
-        unit: component.unit,
         price: updatedPrice,
         sources: component.sources,
       );

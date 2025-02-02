@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../compost_state.dart';
 import '../models/compost_component_model.dart';
+import '../generated/l10n.dart';
+import '../models/availability_model.dart';
 
 class PricesPage extends StatelessWidget {
   const PricesPage({super.key});
@@ -22,10 +24,8 @@ class PricesPage extends StatelessWidget {
     BuildContext context,
   ) {
     return ListTile(
-      title: Text(component.name),
-      subtitle: Text(
-        'Available: ${component.availability.toString().split('.').last}',
-      ),
+      title: Text(component.getName()),
+      subtitle: Text(component.availability.getLocalizedPeriod()),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -33,9 +33,9 @@ class PricesPage extends StatelessWidget {
             width: 120,
             child: TextFormField(
               initialValue: (component.price?.pricePerUnit ?? 0).toString(),
-              decoration: const InputDecoration(
-                labelText: 'Cost/Unit',
-                suffixText: 'FCFA',
+              decoration: InputDecoration(
+                labelText: S.of(context).costPerUnit,
+                suffixText: S.of(context).currencyFCFA,
                 isDense: true,
               ),
               keyboardType:
@@ -43,7 +43,8 @@ class PricesPage extends StatelessWidget {
               onChanged: (value) {
                 final newPrice = double.tryParse(value);
                 if (newPrice != null) {
-                  compostState.updateComponentPrice(component.name, newPrice);
+                  compostState.updateComponentPrice(
+                      component.getName(), newPrice);
                 }
               },
             ),
@@ -59,9 +60,9 @@ class PricesPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.brown.shade200,
         elevation: 0,
-        title: const Text(
-          'Component Prices',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        title: Text(
+          S.of(context).pricePageTitle,
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -71,7 +72,7 @@ class PricesPage extends StatelessWidget {
 
           return ListView(
             children: [
-              _buildSectionTitle('All Components'),
+              _buildSectionTitle(S.of(context).allComponents),
               ...components.map((component) =>
                   _buildComponentTile(component, compostState, context)),
             ],

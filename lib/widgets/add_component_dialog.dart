@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/compost_component_model.dart';
 import 'custom_dropdown_field.dart';
 import 'custom_text_field.dart';
+import '../generated/l10n.dart';
 
 class AddComponentDialog extends StatefulWidget {
   final List<CompostComponent> availableComponents;
@@ -36,26 +37,28 @@ class _AddComponentDialogState extends State<AddComponentDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
-          widget.initialWeight != null ? 'Edit Component' : 'Add Component'),
+      title: Text(widget.initialWeight != null
+          ? S.of(context).editComponent
+          : S.of(context).addComponent),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomDropdownField(
-              options: widget.availableComponents.map((c) => c.name).toList(),
-              value: selectedComponent?.name ?? '',
+              options:
+                  widget.availableComponents.map((c) => c.getName()).toList(),
+              value: selectedComponent?.getName() ?? '',
               onChanged: (value) {
                 setState(() {
                   selectedComponent = widget.availableComponents
-                      .firstWhere((c) => c.name == value);
+                      .firstWhere((c) => c.getName() == value);
                 });
               },
-              labelText: 'Choose Component',
+              labelText: S.of(context).chooseComponent,
             ),
             const SizedBox(height: 16),
             CustomTextField(
-              labelText: 'Weight (kg)',
+              labelText: S.of(context).weight,
               controller: weightController,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
@@ -63,7 +66,10 @@ class _AddComponentDialogState extends State<AddComponentDialog> {
             if (selectedComponent?.price != null) ...[
               const SizedBox(height: 16),
               Text(
-                'Price: ${selectedComponent!.price!.priceInFCFA} FCFA per ${selectedComponent!.price!.unitAmount} ${selectedComponent!.price!.unit}',
+                S.of(context).price(
+                    selectedComponent!.price!.priceInFCFA,
+                    selectedComponent!.price!.unitAmount,
+                    selectedComponent!.price!.getLocalizedUnit()),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
@@ -73,7 +79,7 @@ class _AddComponentDialogState extends State<AddComponentDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(S.of(context).cancel),
         ),
         TextButton(
           onPressed: () {
@@ -84,16 +90,18 @@ class _AddComponentDialogState extends State<AddComponentDialog> {
                 Navigator.pop(context);
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Please enter a valid weight')),
+                  SnackBar(content: Text(S.of(context).pleaseEnterValidWeight)),
                 );
               }
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Please fill all fields')),
+                SnackBar(content: Text(S.of(context).pleaseFillAllFields)),
               );
             }
           },
-          child: Text(widget.initialWeight != null ? 'Update' : 'Add'),
+          child: Text(widget.initialWeight != null
+              ? S.of(context).update
+              : S.of(context).add),
         ),
       ],
     );
