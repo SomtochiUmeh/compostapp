@@ -1,11 +1,9 @@
 # compostapp
 
-A new Flutter project.
+Compost App flutter project.
 
 ## Quick Demo
 
 
-
-https://github.com/user-attachments/assets/a16d50b4-46d7-4e24-9a84-db4673c8c867
-
+https://github.com/user-attachments/assets/89fcab71-690e-4b3d-b399-004837f92338
 
