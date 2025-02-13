@@ -15,7 +15,7 @@ class Price {
 
   double calculatePrice(double amount) {
     double amountInPriceUnit = unit == MassUnit.tons ? amount * 1000 : amount;
-    return (amountInPriceUnit / unitAmount) * pricePerUnit;
+    return (amountInPriceUnit / unitAmount) * priceInFCFA;
   }
 
   String getLocalizedUnit() => unit.getLocalizedUnit();

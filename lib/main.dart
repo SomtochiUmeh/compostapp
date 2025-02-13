@@ -36,7 +36,7 @@ class CompostCalculatorApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate
       ],
       supportedLocales: S.delegate.supportedLocales,
-      locale: const Locale('ar'),
+      // locale: const Locale('ar'),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
