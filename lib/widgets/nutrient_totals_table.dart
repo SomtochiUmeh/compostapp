@@ -17,18 +17,18 @@ class NutrientTotalsTable extends StatelessWidget {
       return {};
     }
 
-    double totalWeight = 0;
     Map<String, double> totals = {
       'weight': 0,
       ...Map.fromIterable(
         NutrientConstants.trackedNutrients,
         value: (_) => 0.0,
       ),
+      'cnRatio': 0,
     };
 
     // Calculate raw totals
     for (var component in components) {
-      totalWeight += component.amount;
+      totals['weight'] = (totals['weight'] ?? 0) + component.amount;
       final nutrients = component.component.nutrients.toMap();
 
       for (var nutrient in NutrientConstants.trackedNutrients) {
@@ -38,18 +38,24 @@ class NutrientTotalsTable extends StatelessWidget {
     }
 
     // Convert to percentages
-    if (totalWeight > 0) {
+    if ((totals['weight'] ?? 0) > 0) {
       for (var nutrient in NutrientConstants.trackedNutrients) {
-        totals[nutrient] = (totals[nutrient] ?? 0) / totalWeight;
+        totals[nutrient] =
+            (totals[nutrient] ?? 0) / (totals['weight'] ?? 0) * 100;
       }
     }
 
-    totals['weight'] = totalWeight;
+    // Calculate C/N ratio
+    if ((totals['nitrogen'] ?? 0) > 0) {
+      totals['cnRatio'] =
+          (totals['organicCarbon'] ?? 0) / (totals['nitrogen'] ?? 0);
+    }
+
     return totals;
   }
 
   Widget _buildComparisonIcon(String nutrient, double value) {
-    const standards = CompostQualityStandards.municipalStandards;
+    const standards = CompostQualityStandards.gftStandards;
     if (!standards.containsKey(nutrient)) return const SizedBox.shrink();
 
     final target = standards[nutrient]!;
@@ -57,11 +63,11 @@ class NutrientTotalsTable extends StatelessWidget {
     final max = target * 1.1;
 
     if (value < min) {
-      return const Icon(Icons.arrow_upward, color: Colors.red);
+      return const Icon(Icons.arrow_upward, color: Colors.red, size: 20);
     } else if (value > max) {
-      return const Icon(Icons.arrow_downward, color: Colors.orange);
+      return const Icon(Icons.arrow_downward, color: Colors.orange, size: 20);
     } else {
-      return const Icon(Icons.check_circle, color: Colors.green);
+      return const Icon(Icons.check_circle, color: Colors.green, size: 20);
     }
   }
 
@@ -73,15 +79,16 @@ class NutrientTotalsTable extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: DataTable(
+        columnSpacing: 20,
+        horizontalMargin: 15,
         columns: [
           DataColumn(label: Text(S.of(context).totalWeightKg)),
           ...nutrients.map(
             (nutrient) => DataColumn(
-              label: Text(S
-                  .of(context)
-                  .percentage(NutrientConstants.getNutrientLabel(nutrient))),
+              label: Text(NutrientConstants.getNutrientLabel(nutrient)),
             ),
           ),
+          const DataColumn(label: Text('C/N')),
           if (components.any((comp) => comp.component.price != null))
             DataColumn(label: Text(S.of(context).totalCostFCFA)),
         ],
@@ -99,6 +106,16 @@ class NutrientTotalsTable extends StatelessWidget {
                       _buildComparisonIcon(nutrient, totals[nutrient] ?? 0),
                     ],
                   ),
+                ),
+              ),
+              DataCell(
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(totals['cnRatio']?.toStringAsFixed(2) ?? '0.00'),
+                    const SizedBox(width: 4),
+                    _buildComparisonIcon('cnRatio', totals['cnRatio'] ?? 0),
+                  ],
                 ),
               ),
               if (components.any((comp) => comp.component.price != null))

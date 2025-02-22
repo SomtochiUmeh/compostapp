@@ -10,7 +10,7 @@ import 'intl/messages_all.dart';
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
 // ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
-// ignore_for_file: avoid_redundant_argument_values
+// ignore_for_file: avoid_redundant_argument_values, avoid_escaping_inner_quotes
 
 class S {
   S();
@@ -18,28 +18,36 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       final instance = S();
       S._current = instance;
- 
+
       return instance;
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null, 'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -102,7 +110,8 @@ class S {
     return Intl.message(
       'Green checkmark: Nutrient level within recommended range\nRed up arrow: Nutrient level below recommended range\nOrange down arrow: Nutrient level above recommended range\n\nRecommended ranges are based on municipal compost standards.',
       name: 'recipeQualityInfo',
-      desc: 'Detailed explanation of the nutrient level indicators in the recipe quality guide',
+      desc:
+          'Detailed explanation of the nutrient level indicators in the recipe quality guide',
       args: [],
     );
   }
@@ -189,26 +198,16 @@ class S {
 
   /// `kgs`
   String get unitKgs {
-    return Intl.message(
-      'kgs',
-      name: 'unitKgs',
-      desc: 'Unit kgs',
-      args: [],
-    );
+    return Intl.message('kgs', name: 'unitKgs', desc: 'Unit kgs', args: []);
   }
 
   /// `tons`
   String get unitTons {
-    return Intl.message(
-      'tons',
-      name: 'unitTons',
-      desc: 'Unit tons',
-      args: [],
-    );
+    return Intl.message('tons', name: 'unitTons', desc: 'Unit tons', args: []);
   }
 
   /// `Price: {price} FCFA per {amount} {unit}`
-  String price(Object price, Object amount, Object unit) {
+  String price(int price, double amount, String unit) {
     return Intl.message(
       'Price: $price FCFA per $amount $unit',
       name: 'price',
@@ -288,7 +287,7 @@ class S {
   }
 
   /// `{value} (%)`
-  String percentage(Object value) {
+  String percentage(String value) {
     return Intl.message(
       '$value (%)',
       name: 'percentage',
@@ -297,70 +296,70 @@ class S {
     );
   }
 
-  /// `organic carbon`
+  /// `C Org`
   String get organicCarbon {
     return Intl.message(
-      'organic carbon',
+      'C Org',
       name: 'organicCarbon',
       desc: 'Nutrient name for organic carbon (lowercase)',
       args: [],
     );
   }
 
-  /// `nitrogen`
+  /// `N`
   String get nitrogen {
     return Intl.message(
-      'nitrogen',
+      'N',
       name: 'nitrogen',
       desc: 'Nutrient name for nitrogen (lowercase)',
       args: [],
     );
   }
 
-  /// `phosphorus`
+  /// `P₂O₅`
   String get phosphorus {
     return Intl.message(
-      'phosphorus',
+      'P₂O₅',
       name: 'phosphorus',
       desc: 'Nutrient name for phosphorus (lowercase)',
       args: [],
     );
   }
 
-  /// `potassium`
+  /// `K₂O`
   String get potassium {
     return Intl.message(
-      'potassium',
+      'K₂O',
       name: 'potassium',
       desc: 'Nutrient name for potassium (lowercase)',
       args: [],
     );
   }
 
-  /// `calcium`
+  /// `CaO`
   String get calcium {
     return Intl.message(
-      'calcium',
+      'CaO',
       name: 'calcium',
       desc: 'Nutrient name for calcium (lowercase)',
       args: [],
     );
   }
 
-  /// `magnesium`
+  /// `MgO`
   String get magnesium {
     return Intl.message(
-      'magnesium',
+      'MgO',
       name: 'magnesium',
       desc: 'Nutrient name for magnesium (lowercase)',
       args: [],
     );
   }
 
-  /// `dry matter`
+  /// `Dry Matter`
   String get dryMatter {
     return Intl.message(
-      'dry matter',
+      'Dry Matter',
       name: 'dryMatter',
       desc: 'Nutrient name for dry matter content',
       args: [],
@@ -548,7 +547,7 @@ class S {
   }
 
   /// `{selector, select, componentMangoWaste {Mango waste with seeds} componentCashewShells {Cashew shells} componentRiceHulls {Rice hulls/Rice bran} componentRiceStraw {Rice straw - wet season} componentSugarcaneBagasse {Sugarcane bagasse} componentChickenManure {Dried chicken manure} componentCowDung {Cow dung} componentCottonStraw {Cotton straw} componentRiceHuskAsh {Rice Husk Ash} componentLime {Lime} componentCompostPlus {Compost +} componentDolomites {Dolomites} componentCornStraw {Corn straw} componentCassavaPeels {Cassava peels} componentRiceChickenLitter {Litter (rice bran + chicken manure)} componentRiceStrawCounter {Rice straw - counter-season} other {Unknown component}}`
-  String getTranslation(Object selector) {
+  String getTranslation(String selector) {
     return Intl.select(
       selector,
       {
@@ -672,6 +671,16 @@ class S {
       'Available: September to December',
       name: 'availabilitySepToDec',
       desc: 'Availability period September to December',
+      args: [],
+    );
+  }
+
+  /// `Water`
+  String get water {
+    return Intl.message(
+      'Water',
+      name: 'water',
+      desc: 'Nutrient name for water',
       args: [],
     );
   }

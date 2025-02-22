@@ -49,7 +49,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     final isLandscape =
         MediaQuery.of(context).orientation == Orientation.landscape;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: isLandscape ? 5.0 : 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 0.5),
       child: Row(
         children: [
           Icon(icon, size: isLandscape ? 20 : 30),
@@ -246,7 +246,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(2.0),
                 child: Column(
                   children: [
                     if (selectedComponents.isNotEmpty) ...[
