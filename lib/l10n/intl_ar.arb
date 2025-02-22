@@ -303,5 +303,9 @@
     "addIngredient": "إضافة مكون",
     "@addIngredient": {
         "description": "Button label for adding a new compost ingredient to the recipe"
+    },
+    "allIngredients": "جميع المكونات",
+    "@allIngredients": {
+        "description": "Section title for all ingredients list"
     }
 }

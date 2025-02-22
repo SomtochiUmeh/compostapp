@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "All available components have been added",
     ),
     "allComponents": MessageLookupByLibrary.simpleMessage("All Components"),
+    "allIngredients": MessageLookupByLibrary.simpleMessage("All Ingredients"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Available: January to December",
     ),
@@ -134,7 +135,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
     "price": m3,
-    "pricePageTitle": MessageLookupByLibrary.simpleMessage("Component Prices"),
+    "pricePageTitle": MessageLookupByLibrary.simpleMessage("Ingredient Prices"),
     "prices": MessageLookupByLibrary.simpleMessage("Prices"),
     "recipeBuilder": MessageLookupByLibrary.simpleMessage("Recipe Builder"),
     "recipeQualityGuide": MessageLookupByLibrary.simpleMessage(

@@ -54,6 +54,9 @@ class NutrientTotalsTable extends StatelessWidget {
     return totals;
   }
 
+  // track which notifications have been shown
+  static final Set<String> shownNotifications = {};
+
   Widget _buildComparisonIcon(
       String nutrient, double value, BuildContext context) {
     const standards = CompostQualityStandards.gftStandards;
@@ -64,34 +67,37 @@ class NutrientTotalsTable extends StatelessWidget {
     final max = target * 1.1;
 
     if (value < min) {
+      shownNotifications.remove(nutrient);
       return const Icon(Icons.arrow_upward, color: Colors.red, size: 20);
     } else if (value > max) {
+      shownNotifications.remove(nutrient);
       return const Icon(Icons.arrow_downward, color: Colors.orange, size: 20);
     } else {
       // pop up saying congrats, the nutrient is within the range
-
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        debugPrint('Showing snackbar for $nutrient'); // Debug print
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              S.of(context).nutrientInOptimalRange(
-                    NutrientConstants.getNutrientLabel(nutrient),
-                    min.toStringAsFixed(2),
-                    max.toStringAsFixed(2),
-                  ),
+      // Only show notification if we haven't shown it before
+      if (!shownNotifications.contains(nutrient)) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          shownNotifications.add(nutrient);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                S.of(context).nutrientInOptimalRange(
+                      NutrientConstants.getNutrientLabel(nutrient),
+                      min.toStringAsFixed(2),
+                      max.toStringAsFixed(2),
+                    ),
+              ),
+              duration: const Duration(seconds: 2),
+              behavior: SnackBarBehavior.floating,
+              margin: const EdgeInsets.all(8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+              backgroundColor: const Color.fromARGB(255, 47, 128, 50),
             ),
-            duration: const Duration(seconds: 2),
-            behavior: SnackBarBehavior.floating,
-            margin: const EdgeInsets.all(8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
-            ),
-            backgroundColor: const Color.fromARGB(255, 47, 128, 50),
-          ),
-        );
-      });
-
+          );
+        });
+      }
       return const Icon(Icons.check_circle, color: Colors.green, size: 20);
     }
   }

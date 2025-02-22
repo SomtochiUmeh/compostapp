@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تمت إضافة جميع المكونات المتاحة",
     ),
     "allComponents": MessageLookupByLibrary.simpleMessage("جميع المكونات"),
+    "allIngredients": MessageLookupByLibrary.simpleMessage("جميع المكونات"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "متوفر: من يناير إلى ديسمبر",
     ),

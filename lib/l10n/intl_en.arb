@@ -230,7 +230,7 @@
             }
         }
     },
-    "pricePageTitle": "Component Prices",
+    "pricePageTitle": "Ingredient Prices",
     "@pricePageTitle": {
         "description": "Title of the prices page"
     },
@@ -303,5 +303,9 @@
     "addIngredient": "Add Ingredient",
     "@addIngredient": {
         "description": "Button label for adding a new compost ingredient to the recipe"
+    },
+    "allIngredients": "All Ingredients",
+    "@allIngredients": {
+        "description": "Section title for all ingredients list"
     }
 }

@@ -575,10 +575,10 @@ class S {
     );
   }
 
-  /// `Component Prices`
+  /// `Ingredient Prices`
   String get pricePageTitle {
     return Intl.message(
-      'Component Prices',
+      'Ingredient Prices',
       name: 'pricePageTitle',
       desc: 'Title of the prices page',
       args: [],
@@ -721,6 +721,16 @@ class S {
       'Add Ingredient',
       name: 'addIngredient',
       desc: 'Button label for adding a new compost ingredient to the recipe',
+      args: [],
+    );
+  }
+
+  /// `All Ingredients`
+  String get allIngredients {
+    return Intl.message(
+      'All Ingredients',
+      name: 'allIngredients',
+      desc: 'Section title for all ingredients list',
       args: [],
     );
   }

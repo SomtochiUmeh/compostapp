@@ -72,7 +72,7 @@ class PricesPage extends StatelessWidget {
 
           return ListView(
             children: [
-              _buildSectionTitle(S.of(context).allComponents),
+              _buildSectionTitle(S.of(context).allIngredients),
               ...components.map((component) =>
                   _buildComponentTile(component, compostState, context)),
             ],
