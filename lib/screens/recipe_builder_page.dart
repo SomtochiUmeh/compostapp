@@ -209,7 +209,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         _buildSectionTitle(
-                            S.of(context).components, Icons.compost),
+                            S.of(context).ingredients, Icons.compost),
                         if (selectedComponents.isEmpty)
                           Card(
                             child: Padding(
@@ -233,7 +233,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                         ElevatedButton.icon(
                           onPressed: () => _showAddComponentDialog(context),
                           icon: const Icon(Icons.add),
-                          label: Text(S.of(context).addComponent),
+                          label: Text(S.of(context).addIngredient),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.brown.shade300,
                             foregroundColor: Colors.white,

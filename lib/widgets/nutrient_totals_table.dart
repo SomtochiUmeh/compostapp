@@ -54,7 +54,8 @@ class NutrientTotalsTable extends StatelessWidget {
     return totals;
   }
 
-  Widget _buildComparisonIcon(String nutrient, double value) {
+  Widget _buildComparisonIcon(
+      String nutrient, double value, BuildContext context) {
     const standards = CompostQualityStandards.gftStandards;
     if (!standards.containsKey(nutrient)) return const SizedBox.shrink();
 
@@ -67,6 +68,30 @@ class NutrientTotalsTable extends StatelessWidget {
     } else if (value > max) {
       return const Icon(Icons.arrow_downward, color: Colors.orange, size: 20);
     } else {
+      // pop up saying congrats, the nutrient is within the range
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        debugPrint('Showing snackbar for $nutrient'); // Debug print
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              S.of(context).nutrientInOptimalRange(
+                    NutrientConstants.getNutrientLabel(nutrient),
+                    min.toStringAsFixed(2),
+                    max.toStringAsFixed(2),
+                  ),
+            ),
+            duration: const Duration(seconds: 2),
+            behavior: SnackBarBehavior.floating,
+            margin: const EdgeInsets.all(8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            backgroundColor: const Color.fromARGB(255, 47, 128, 50),
+          ),
+        );
+      });
+
       return const Icon(Icons.check_circle, color: Colors.green, size: 20);
     }
   }
@@ -103,7 +128,8 @@ class NutrientTotalsTable extends StatelessWidget {
                     children: [
                       Text(totals[nutrient]?.toStringAsFixed(2) ?? '0.00'),
                       const SizedBox(width: 4),
-                      _buildComparisonIcon(nutrient, totals[nutrient] ?? 0),
+                      _buildComparisonIcon(
+                          nutrient, totals[nutrient] ?? 0, context),
                     ],
                   ),
                 ),
@@ -114,7 +140,8 @@ class NutrientTotalsTable extends StatelessWidget {
                   children: [
                     Text(totals['cnRatio']?.toStringAsFixed(2) ?? '0.00'),
                     const SizedBox(width: 4),
-                    _buildComparisonIcon('cnRatio', totals['cnRatio'] ?? 0),
+                    _buildComparisonIcon(
+                        'cnRatio', totals['cnRatio'] ?? 0, context),
                   ],
                 ),
               ),

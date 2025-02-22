@@ -23,15 +23,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'نفايات المانجو مع البذور', 'componentCashewShells': 'قشور الكاجو', 'componentRiceHulls': 'قشور الأرز/نخالة الأرز', 'componentRiceStraw': 'قش الأرز - الموسم الرطب', 'componentSugarcaneBagasse': 'تفل قصب السكر', 'componentChickenManure': 'روث الدجاج المجفف', 'componentCowDung': 'روث البقر', 'componentCottonStraw': 'قش القطن', 'componentRiceHuskAsh': 'رماد قشور الأرز', 'componentLime': 'الجير', 'componentCompostPlus': 'كومبوست +', 'componentDolomites': 'دولوميت', 'componentCornStraw': 'قش الذرة', 'componentCassavaPeels': 'قشور الكسافا', 'componentRiceChickenLitter': 'فرشة (نخالة الأرز + روث الدجاج)', 'componentRiceStrawCounter': 'قش الأرز - الموسم المعاكس', 'other': 'مكون غير معروف'})}";
 
-  static String m1(value) => "${value} (٪)";
+  static String m1(nutrientName, min, max) =>
+      "ممتاز! ${nutrientName} ضمن النطاق الأمثل (${min} - ${max})";
 
-  static String m2(price, amount, unit) =>
+  static String m2(value) => "${value} (٪)";
+
+  static String m3(price, amount, unit) =>
       "السعر: ${price} فرنك إفريقي لكل ${amount} ${unit}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "add": MessageLookupByLibrary.simpleMessage("إضافة"),
     "addComponent": MessageLookupByLibrary.simpleMessage("إضافة مكون"),
+    "addIngredient": MessageLookupByLibrary.simpleMessage("إضافة مكون"),
     "allAvailableComponentsHaveBeenAdded": MessageLookupByLibrary.simpleMessage(
       "تمت إضافة جميع المكونات المتاحة",
     ),
@@ -105,6 +109,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "dryMatter": MessageLookupByLibrary.simpleMessage("المادة الجافة"),
     "editComponent": MessageLookupByLibrary.simpleMessage("تعديل المكون"),
     "getTranslation": m0,
+    "ingredient": MessageLookupByLibrary.simpleMessage("المكون"),
+    "ingredients": MessageLookupByLibrary.simpleMessage("المكونات"),
     "magnesium": MessageLookupByLibrary.simpleMessage("MgO"),
     "nitrogen": MessageLookupByLibrary.simpleMessage("النيتروجين"),
     "noComponentsAddedYetClickTheButtonBelowToAdd":
@@ -112,8 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
           "لم تتم إضافة أي مكونات بعد. انقر على الزر أدناه لإضافة مكونات إلى وصفة السماد الخاصة بك.",
         ),
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage("تحليل المغذيات"),
+    "nutrientInOptimalRange": m1,
     "organicCarbon": MessageLookupByLibrary.simpleMessage("الكربون العضوي"),
-    "percentage": m1,
+    "percentage": m2,
     "phosphorus": MessageLookupByLibrary.simpleMessage("P₂O₅"),
     "pleaseEnterValidWeight": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال وزن صحيح",
@@ -122,7 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء ملء جميع الحقول",
     ),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
-    "price": m2,
+    "price": m3,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("أسعار المكونات"),
     "prices": MessageLookupByLibrary.simpleMessage("الأسعار"),
     "recipeBuilder": MessageLookupByLibrary.simpleMessage("صانع الوصفات"),

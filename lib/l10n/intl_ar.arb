@@ -273,5 +273,35 @@
     "water": "الماء",
     "@water": {
         "description": "Nutrient name for water"
+    },
+    "nutrientInOptimalRange": "ممتاز! {nutrientName} ضمن النطاق الأمثل ({min} - {max})",
+    "@nutrientInOptimalRange": {
+        "description": "Message shown when a nutrient value is within the optimal range",
+        "placeholders": {
+            "nutrientName": {
+                "type": "String",
+                "example": "N"
+            },
+            "min": {
+                "type": "String",
+                "example": "1.20"
+            },
+            "max": {
+                "type": "String",
+                "example": "1.50"
+            }
+        }
+    },
+    "ingredients": "المكونات",
+    "@ingredients": {
+        "description": "Section header for the list of compost ingredients"
+    },
+    "ingredient": "المكون",
+    "@ingredient": {
+        "description": "Single ingredient label for table header"
+    },
+    "addIngredient": "إضافة مكون",
+    "@addIngredient": {
+        "description": "Button label for adding a new compost ingredient to the recipe"
     }
 }
