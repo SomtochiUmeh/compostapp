@@ -120,31 +120,31 @@
             }
         }
     },
-    "organicCarbon": "organic carbon",
+    "organicCarbon": "C Org",
     "@organicCarbon": {
         "description": "Nutrient name for organic carbon (lowercase)"
     },
-    "nitrogen": "nitrogen",
+    "nitrogen": "N",
     "@nitrogen": {
         "description": "Nutrient name for nitrogen (lowercase)"
     },
-    "phosphorus": "phosphorus",
+    "phosphorus": "P₂O₅",
     "@phosphorus": {
         "description": "Nutrient name for phosphorus (lowercase)"
     },
-    "potassium": "potassium",
+    "potassium": "K₂O",
     "@potassium": {
         "description": "Nutrient name for potassium (lowercase)"
     },
-    "calcium": "calcium",
+    "calcium": "CaO",
     "@calcium": {
         "description": "Nutrient name for calcium (lowercase)"
     },
-    "magnesium": "magnesium",
+    "magnesium": "MgO",
     "@magnesium": {
         "description": "Nutrient name for magnesium (lowercase)"
     },
-    "dryMatter": "dry matter",
+    "dryMatter": "Dry Matter",
     "@dryMatter": {
         "description": "Nutrient name for dry matter content"
     },
@@ -269,5 +269,9 @@
     "availabilitySepToDec": "Available: September to December",
     "@availabilitySepToDec": {
         "description": "Availability period September to December"
+    },
+    "water": "Water",
+    "@water": {
+        "description": "Nutrient name for water"
     }
 }

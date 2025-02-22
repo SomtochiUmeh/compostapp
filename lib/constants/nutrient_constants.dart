@@ -2,6 +2,7 @@ import '../generated/l10n.dart';
 
 class NutrientConstants {
   static const List<String> trackedNutrients = [
+    'dryMatter',
     'organicCarbon',
     'nitrogen',
     'phosphorus',

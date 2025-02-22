@@ -34,11 +34,11 @@ class ComponentTable extends StatelessWidget {
       ColumnDefinition(
           label: S.current.weight, key: 'weight', decimalPlaces: 2),
       ...NutrientConstants.trackedNutrients.map((nutrient) => ColumnDefinition(
-            label: S.current
-                .percentage(NutrientConstants.getNutrientLabel(nutrient)),
+            label: NutrientConstants.getNutrientLabel(nutrient),
             key: nutrient,
             decimalPlaces: 2,
           )),
+      ColumnDefinition(label: S.current.water, key: 'water'),
       if (items.any((item) => item.component.price != null))
         ColumnDefinition(
             label: S.current.costFCFA, key: 'cost', decimalPlaces: 2),
@@ -54,6 +54,8 @@ class ComponentTable extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
+              columnSpacing: 20,
+              horizontalMargin: 15,
               columns: columns
                   .map((col) => DataColumn(label: Text(col.label)))
                   .toList(),
@@ -117,8 +119,13 @@ class ComponentTable extends StatelessWidget {
                 ?.calculatePrice(item.amount)
                 .toStringAsFixed(col.decimalPlaces) ??
             '0.00';
+      case 'water':
+        double dryMatter = item.component.nutrients.toMap()['dryMatter'] ?? 0.0;
+        dryMatter *= item.amount;
+        return (item.amount - dryMatter).toStringAsFixed(col.decimalPlaces);
       default:
-        final nutrientValue = item.component.nutrients.toMap()[col.key] ?? 0.0;
+        double nutrientValue = item.component.nutrients.toMap()[col.key] ?? 0.0;
+        nutrientValue *= item.amount;
         return nutrientValue.toStringAsFixed(col.decimalPlaces);
     }
   }

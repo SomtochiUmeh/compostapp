@@ -1,6 +1,6 @@
 class CompostQualityStandards {
   static const Map<String, double> gftStandards = {
-    'organicCarbon': 70.0,
+    'dryMatter': 70.0,
     'nitrogen': 30.0,
     'phosphorus': 1.35,
     'potassium': 0.55,
@@ -10,7 +10,7 @@ class CompostQualityStandards {
   };
 
   static const Map<String, double> municipalStandards = {
-    'organicCarbon': 60.0,
+    'dryMatter': 60.0,
     'nitrogen': 30.0,
     'phosphorus': 0.63,
     'potassium': 0.35,

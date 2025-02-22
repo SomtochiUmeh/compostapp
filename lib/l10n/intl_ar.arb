@@ -128,19 +128,19 @@
     "@nitrogen": {
         "description": "Nutrient name for nitrogen (lowercase)"
     },
-    "phosphorus": "الفوسفور",
+    "phosphorus": "P₂O₅",
     "@phosphorus": {
         "description": "Nutrient name for phosphorus (lowercase)"
     },
-    "potassium": "البوتاسيوم",
+    "potassium": "K₂O",
     "@potassium": {
         "description": "Nutrient name for potassium (lowercase)"
     },
-    "calcium": "الكالسيوم",
+    "calcium": "CaO",
     "@calcium": {
         "description": "Nutrient name for calcium (lowercase)"
     },
-    "magnesium": "المغنيسيوم",
+    "magnesium": "MgO",
     "@magnesium": {
         "description": "Nutrient name for magnesium (lowercase)"
     },
@@ -269,5 +269,9 @@
     "availabilitySepToDec": "متوفر: من سبتمبر إلى ديسمبر",
     "@availabilitySepToDec": {
         "description": "Availability period September to December"
+    },
+    "water": "الماء",
+    "@water": {
+        "description": "Nutrient name for water"
     }
 }
