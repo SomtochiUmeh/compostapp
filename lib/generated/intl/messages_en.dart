@@ -23,19 +23,24 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'Mango waste with seeds', 'componentCashewShells': 'Cashew shells', 'componentRiceHulls': 'Rice hulls/Rice bran', 'componentRiceStraw': 'Rice straw - wet season', 'componentSugarcaneBagasse': 'Sugarcane bagasse', 'componentChickenManure': 'Dried chicken manure', 'componentCowDung': 'Cow dung', 'componentCottonStraw': 'Cotton straw', 'componentRiceHuskAsh': 'Rice Husk Ash', 'componentLime': 'Lime', 'componentCompostPlus': 'Compost +', 'componentDolomites': 'Dolomites', 'componentCornStraw': 'Corn straw', 'componentCassavaPeels': 'Cassava peels', 'componentRiceChickenLitter': 'Litter (rice bran + chicken manure)', 'componentRiceStrawCounter': 'Rice straw - counter-season', 'other': 'Unknown component'})}";
 
-  static String m1(value) => "${value} (%)";
+  static String m1(nutrientName, min, max) =>
+      "Great! ${nutrientName} is within the optimal range (${min} - ${max})";
 
-  static String m2(price, amount, unit) =>
+  static String m2(value) => "${value} (%)";
+
+  static String m3(price, amount, unit) =>
       "Price: ${price} FCFA per ${amount} ${unit}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "add": MessageLookupByLibrary.simpleMessage("Add"),
     "addComponent": MessageLookupByLibrary.simpleMessage("Add Component"),
+    "addIngredient": MessageLookupByLibrary.simpleMessage("Add Ingredient"),
     "allAvailableComponentsHaveBeenAdded": MessageLookupByLibrary.simpleMessage(
       "All available components have been added",
     ),
     "allComponents": MessageLookupByLibrary.simpleMessage("All Components"),
+    "allIngredients": MessageLookupByLibrary.simpleMessage("All Ingredients"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Available: January to December",
     ),
@@ -107,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "dryMatter": MessageLookupByLibrary.simpleMessage("Dry Matter"),
     "editComponent": MessageLookupByLibrary.simpleMessage("Edit Component"),
     "getTranslation": m0,
+    "ingredient": MessageLookupByLibrary.simpleMessage("Ingredient"),
+    "ingredients": MessageLookupByLibrary.simpleMessage("Ingredients"),
     "magnesium": MessageLookupByLibrary.simpleMessage("MgO"),
     "nitrogen": MessageLookupByLibrary.simpleMessage("N"),
     "noComponentsAddedYetClickTheButtonBelowToAdd":
@@ -116,8 +123,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage(
       "Nutrient Analysis",
     ),
+    "nutrientInOptimalRange": m1,
     "organicCarbon": MessageLookupByLibrary.simpleMessage("C Org"),
-    "percentage": m1,
+    "percentage": m2,
     "phosphorus": MessageLookupByLibrary.simpleMessage("P₂O₅"),
     "pleaseEnterValidWeight": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid weight",
@@ -126,8 +134,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please fill all fields",
     ),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
-    "price": m2,
-    "pricePageTitle": MessageLookupByLibrary.simpleMessage("Component Prices"),
+    "price": m3,
+    "pricePageTitle": MessageLookupByLibrary.simpleMessage("Ingredient Prices"),
     "prices": MessageLookupByLibrary.simpleMessage("Prices"),
     "recipeBuilder": MessageLookupByLibrary.simpleMessage("Recipe Builder"),
     "recipeQualityGuide": MessageLookupByLibrary.simpleMessage(

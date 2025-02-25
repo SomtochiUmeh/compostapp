@@ -30,7 +30,7 @@ class ComponentTable extends StatelessWidget {
   List<ColumnDefinition> get columns {
     return [
       ColumnDefinition(
-          label: S.current.component, key: 'name', decimalPlaces: 0),
+          label: S.current.ingredient, key: 'name', decimalPlaces: 0),
       ColumnDefinition(
           label: S.current.weight, key: 'weight', decimalPlaces: 2),
       ...NutrientConstants.trackedNutrients.map((nutrient) => ColumnDefinition(

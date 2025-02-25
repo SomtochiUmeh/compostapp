@@ -575,10 +575,10 @@ class S {
     );
   }
 
-  /// `Component Prices`
+  /// `Ingredient Prices`
   String get pricePageTitle {
     return Intl.message(
-      'Component Prices',
+      'Ingredient Prices',
       name: 'pricePageTitle',
       desc: 'Title of the prices page',
       args: [],
@@ -681,6 +681,56 @@ class S {
       'Water',
       name: 'water',
       desc: 'Nutrient name for water',
+      args: [],
+    );
+  }
+
+  /// `Great! {nutrientName} is within the optimal range ({min} - {max})`
+  String nutrientInOptimalRange(String nutrientName, String min, String max) {
+    return Intl.message(
+      'Great! $nutrientName is within the optimal range ($min - $max)',
+      name: 'nutrientInOptimalRange',
+      desc: 'Message shown when a nutrient value is within the optimal range',
+      args: [nutrientName, min, max],
+    );
+  }
+
+  /// `Ingredients`
+  String get ingredients {
+    return Intl.message(
+      'Ingredients',
+      name: 'ingredients',
+      desc: 'Section header for the list of compost ingredients',
+      args: [],
+    );
+  }
+
+  /// `Ingredient`
+  String get ingredient {
+    return Intl.message(
+      'Ingredient',
+      name: 'ingredient',
+      desc: 'Single ingredient label for table header',
+      args: [],
+    );
+  }
+
+  /// `Add Ingredient`
+  String get addIngredient {
+    return Intl.message(
+      'Add Ingredient',
+      name: 'addIngredient',
+      desc: 'Button label for adding a new compost ingredient to the recipe',
+      args: [],
+    );
+  }
+
+  /// `All Ingredients`
+  String get allIngredients {
+    return Intl.message(
+      'All Ingredients',
+      name: 'allIngredients',
+      desc: 'Section title for all ingredients list',
       args: [],
     );
   }
