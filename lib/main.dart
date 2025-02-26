@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import './screens/home_screen.dart';
+import './screens/app_home_page.dart';
 import './compost_state.dart';
 import './services/persistence_manager.dart';
-import '../generated/l10n.dart';
+import './generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +29,7 @@ class CompostCalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Compost Calculator',
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -36,12 +37,11 @@ class CompostCalculatorApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate
       ],
       supportedLocales: S.delegate.supportedLocales,
-      // locale: const Locale('ar'),
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
-      home: const HomeScreen(),
+      home: const AppHomePage(),
     );
   }
 }

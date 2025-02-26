@@ -57,15 +57,6 @@ class PricesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.brown.shade200,
-        elevation: 0,
-        title: Text(
-          S.of(context).pricePageTitle,
-          style: const TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        centerTitle: true,
-      ),
       body: Consumer<CompostState>(
         builder: (context, compostState, child) {
           final components = compostState.components;

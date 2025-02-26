@@ -141,46 +141,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isLandscape =
-        MediaQuery.of(context).orientation == Orientation.landscape;
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.brown.shade200,
-        elevation: 0,
-        title: Text(
-          S.of(context).compostRecipeBuilder,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: isLandscape ? 16 : 20,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(S.of(context).recipeQualityGuide),
-                  content: SingleChildScrollView(
-                    child: Text(
-                      S.of(context).recipeQualityInfo,
-                    ),
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text(S.of(context).close),
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
-      ),
       body: Consumer<CompostState>(
         builder: (context, compostState, child) {
           // Update selected components with latest prices and availability
@@ -250,8 +211,35 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                 child: Column(
                   children: [
                     if (selectedComponents.isNotEmpty) ...[
-                      _buildSectionTitle(
-                          S.of(context).nutrientAnalysis, Icons.analytics),
+                      Row(
+                        children: [
+                          _buildSectionTitle(
+                              S.of(context).nutrientAnalysis, Icons.analytics),
+                          const Spacer(),
+                          IconButton(
+                            icon: const Icon(Icons.info_outline),
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: Text(S.of(context).recipeQualityGuide),
+                                  content: SingleChildScrollView(
+                                    child: Text(
+                                      S.of(context).recipeQualityInfo,
+                                    ),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: Text(S.of(context).close),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                       NutrientTotalsTable(
                         components: selectedComponents,
                       ),
