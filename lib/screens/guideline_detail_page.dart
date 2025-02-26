@@ -245,6 +245,34 @@ class GuidelineDetailPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.brown.shade50,
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: Colors.brown.shade200),
+          ),
+          child: const Column(
+            children: [
+              Text(
+                "Visual Tip",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8),
+              Text(
+                "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
+                style: TextStyle(fontSize: 16),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 16),
+        const Divider(),
+        const SizedBox(height: 16),
         _buildCompostStep(
           "1",
           "Choose a site",
@@ -279,34 +307,6 @@ class GuidelineDetailPage extends StatelessWidget {
           "When dark, crumbly, and smells earthy, it's done!",
           Icons.check_circle,
           Colors.teal,
-        ),
-        const SizedBox(height: 24),
-        const Divider(),
-        const SizedBox(height: 16),
-        Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.brown.shade50,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.brown.shade200),
-          ),
-          child: const Column(
-            children: [
-              Text(
-                "Visual Tip",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8),
-              Text(
-                "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
         ),
       ],
     );
