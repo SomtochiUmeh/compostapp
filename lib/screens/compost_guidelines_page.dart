@@ -28,10 +28,9 @@ class CompostGuidelinesPage extends StatelessWidget {
             ),
             _buildGuidelineItem(
               context,
-              'How to Make Compost (5 Easy Steps)',
+              'How to Make Compost',
               Icons.format_list_numbered,
-              () => _navigateToGuidelineDetail(
-                  context, 'How to Make Compost (5 Easy Steps)'),
+              () => _navigateToGuidelineDetail(context, 'How to Make Compost'),
             ),
             _buildGuidelineItem(
               context,

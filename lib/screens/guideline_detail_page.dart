@@ -29,7 +29,7 @@ class GuidelineDetailPage extends StatelessWidget {
     switch (title) {
       case 'Aerobic Composting Process':
         return _buildAerobicCompostingContent();
-      case 'How to Make Compost (5 Easy Steps)':
+      case 'How to Make Compost':
         return _buildHowToMakeCompostContent();
       case 'C:N Ratio & Optimum Compost Conditions':
         return _buildCnRatioContent();
