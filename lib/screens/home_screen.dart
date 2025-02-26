@@ -5,6 +5,7 @@ import '../models/destination_model.dart';
 import './recipe_builder_page.dart';
 import './price_page.dart';
 import "../generated/l10n.dart";
+import './app_home_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -71,10 +72,30 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         } else if (_selectedIndex != 0) {
           setState(() => _selectedIndex = 0);
         } else {
-          Navigator.pop(context);
+          // Return to the main home page instead of exiting
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const AppHomePage(),
+            ),
+          );
         }
       },
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.brown.shade200,
+          elevation: 0,
+          title: Text(
+            _destinations[_selectedIndex].label,
+            style: const TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            icon: const Icon(Icons.home, color: Colors.white),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ),
         body: Stack(
           children: List.generate(
               _destinations.length, (index) => _buildOffstageNavigator(index)),
