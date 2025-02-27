@@ -253,6 +253,7 @@ class GuidelineDetailPage extends StatelessWidget {
             border: Border.all(color: Colors.brown.shade200),
           ),
           child: const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "Visual Tip",
