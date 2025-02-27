@@ -63,8 +63,8 @@ class NutrientTotalsTable extends StatelessWidget {
     if (!standards.containsKey(nutrient)) return const SizedBox.shrink();
 
     final target = standards[nutrient]!;
-    final min = target * 0.9;
-    final max = target * 1.1;
+    final min = target - 2.5; // 5 percentage points leeway for C/N ratio
+    final max = target + 2.5;
 
     if (value < min) {
       shownNotifications.remove(nutrient);
@@ -114,12 +114,12 @@ class NutrientTotalsTable extends StatelessWidget {
         horizontalMargin: 15,
         columns: [
           DataColumn(label: Text(S.of(context).totalWeightKg)),
+          const DataColumn(label: Text('C/N')),
           ...nutrients.map(
             (nutrient) => DataColumn(
               label: Text(NutrientConstants.getNutrientLabel(nutrient)),
             ),
           ),
-          const DataColumn(label: Text('C/N')),
           if (components.any((comp) => comp.component.price != null))
             DataColumn(label: Text(S.of(context).totalCostFCFA)),
         ],
@@ -127,19 +127,6 @@ class NutrientTotalsTable extends StatelessWidget {
           DataRow(
             cells: [
               DataCell(Text(totals['weight']?.toStringAsFixed(2) ?? '0.00')),
-              ...nutrients.map(
-                (nutrient) => DataCell(
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(totals[nutrient]?.toStringAsFixed(2) ?? '0.00'),
-                      const SizedBox(width: 4),
-                      _buildComparisonIcon(
-                          nutrient, totals[nutrient] ?? 0, context),
-                    ],
-                  ),
-                ),
-              ),
               DataCell(
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -149,6 +136,19 @@ class NutrientTotalsTable extends StatelessWidget {
                     _buildComparisonIcon(
                         'cnRatio', totals['cnRatio'] ?? 0, context),
                   ],
+                ),
+              ),
+              ...nutrients.map(
+                (nutrient) => DataCell(
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(totals[nutrient]?.toStringAsFixed(2) ?? '0.00'),
+                      const SizedBox(width: 4),
+                      // _buildComparisonIcon(
+                      //     nutrient, totals[nutrient] ?? 0, context),
+                    ],
+                  ),
                 ),
               ),
               if (components.any((comp) => comp.component.price != null))

@@ -1,22 +1,11 @@
-import 'unit_model.dart';
-
 class Price {
-  final int priceInFCFA;
-  final MassUnit unit;
-  final double unitAmount;
-  final int pricePerUnit;
+  final int pricePerTon;
 
   Price({
-    required this.priceInFCFA,
-    required String unit,
-    required this.unitAmount,
-    required this.pricePerUnit,
-  }) : unit = MassUnit.fromString(unit);
+    required this.pricePerTon,
+  });
 
   double calculatePrice(double amount) {
-    double amountInPriceUnit = unit == MassUnit.tons ? amount * 1000 : amount;
-    return (amountInPriceUnit / unitAmount) * priceInFCFA;
+    return (pricePerTon / 1000) * amount;
   }
-
-  String getLocalizedUnit() => unit.getLocalizedUnit();
 }

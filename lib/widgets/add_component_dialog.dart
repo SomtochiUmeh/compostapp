@@ -63,16 +63,16 @@ class _AddComponentDialogState extends State<AddComponentDialog> {
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
             ),
-            if (selectedComponent?.price != null) ...[
-              const SizedBox(height: 16),
-              Text(
-                S.of(context).price(
-                    selectedComponent!.price!.priceInFCFA,
-                    selectedComponent!.price!.unitAmount,
-                    selectedComponent!.price!.getLocalizedUnit()),
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
+            // if (selectedComponent?.price != null) ...[
+            //   const SizedBox(height: 16),
+            //   Text(
+            //     // S.of(context).price(
+            //     //     selectedComponent!.price!.priceInFCFA,
+            //     //     selectedComponent!.price!.unitAmount,
+            //     //     selectedComponent!.price!.getLocalizedUnit()),
+            //     style: Theme.of(context).textTheme.bodyMedium,
+            //   ),
+            // ],
           ],
         ),
       ),
