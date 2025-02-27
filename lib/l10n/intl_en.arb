@@ -307,5 +307,517 @@
     "allIngredients": "All Ingredients",
     "@allIngredients": {
         "description": "Section title for all ingredients list"
+    },
+    "compostCalculator": "Compost Calculator",
+    "@compostCalculator": {
+        "description": "Main title of the compost calculator page"
+    },
+    "welcomeToCompostCalculator": "Welcome to Compost Calculator",
+    "@welcomeToCompostCalculator": {
+        "description": "Welcome message for the compost calculator page"
+    },
+    "thisAppIsDesignedToHelpYouCreateAndManage": "This app is designed to help you create and manage open-pile aerobic composting. Use the tools below to learn about composting, explore recipes, or create your own!",
+    "@thisAppIsDesignedToHelpYouCreateAndManage": {
+        "description": "Description of the app's purpose and features"
+    },
+    "compostGuidelines": "Compost Guidelines",
+    "@compostGuidelines": {
+        "description": "Title for the compost guidelines section"
+    },
+    "sampleCompostRecipes": "Sample Compost Recipes",
+    "@sampleCompostRecipes": {
+        "description": "Title for the sample compost recipes section"
+    },
+    "aerobicCompostingProcess": "Aerobic Composting Process",
+    "@aerobicCompostingProcess": {
+        "description": "Title for the aerobic composting process section"
+    },
+    "howToMakeCompost": "How to Make Compost",
+    "@howToMakeCompost": {
+        "description": "Title for the how-to guide on making compost"
+    },
+    "cnRatioOptimumCompostConditions": "C:N Ratio & Optimum Compost Conditions",
+    "@cnRatioOptimumCompostConditions": {
+        "description": "Title for the C:N ratio and optimum compost conditions section"
+    },
+    "troubleshootingCompostProblems": "Troubleshooting Compost Problems",
+    "@troubleshootingCompostProblems": {
+        "description": "Title for the troubleshooting compost problems section"
+    },
+    "contentNotAvailable": "Content not available",
+    "@contentNotAvailable": {
+        "description": "Message shown when content is not available"
+    },
+    "compostingHappensInFourStages": "Composting happens in four stages:",
+    "@compostingHappensInFourStages": {
+        "description": "Description of the four stages of composting"
+    },
+    "day1": "Day 1",
+    "@day1": {
+        "description": "Label for Day 1 in the composting timeline"
+    },
+    "day5": "Day 5",
+    "@day5": {
+        "description": "Label for Day 5 in the composting timeline"
+    },
+    "day25": "Day 25",
+    "@day25": {
+        "description": "Label for Day 25 in the composting timeline"
+    },
+    "day35": "Day 35",
+    "@day35": {
+        "description": "Label for Day 35 in the composting timeline"
+    },
+    "day60": "Day 60+",
+    "@day60": {
+        "description": "Label for Day 60 and beyond in the composting timeline"
+    },
+    "startup": "Start-up",
+    "@startup": {
+        "description": "Label for the start-up phase in the composting timeline"
+    },
+    "days2to5": "Days 2-5",
+    "@days2to5": {
+        "description": "Label for Days 2 to 5 in the composting timeline"
+    },
+    "heating": "Heating",
+    "@heating": {
+        "description": "Label for the heating phase in the composting timeline"
+    },
+    "days5to25": "Days 5-25",
+    "@days5to25": {
+        "description": "Label for Days 5 to 25 in the composting timeline"
+    },
+    "cooling": "Cooling",
+    "@cooling": {
+        "description": "Label for the cooling phase in the composting timeline"
+    },
+    "days25to35": "Days 25-35",
+    "@days25to35": {
+        "description": "Label for Days 25 to 35 in the composting timeline"
+    },
+    "maturing": "Maturing",
+    "@maturing": {
+        "description": "Label for the maturing phase in the composting timeline"
+    },
+    "days35to60": "Days 35-60+",
+    "@days35to60": {
+        "description": "Label for Days 35 and beyond in the composting timeline"
+    },
+    "compostingTimelineProcess": "Composting Timeline Process",
+    "@compostingTimelineProcess": {
+        "description": "Title for the composting timeline process section"
+    },
+    "startupDays2to5": "1. Start-up (Days 2-5)",
+    "@startupDays2to5": {
+        "description": "Label for the start-up phase in the composting timeline"
+    },
+    "microorganismsBeginBreakingDownWaste": "Microorganisms begin breaking down waste.",
+    "@microorganismsBeginBreakingDownWaste": {
+        "description": "Description of the start-up phase in the composting timeline"
+    },
+    "temperature20to45c": "Temperature: 20–45°C",
+    "@temperature20to45c": {
+        "description": "Temperature range for the start-up phase in the composting timeline"
+    },
+    "keyNeedsWaterOxygenSmallsizedOrganicMatter": "Key Needs: Water, oxygen, small-sized organic matter.",
+    "@keyNeedsWaterOxygenSmallsizedOrganicMatter": {
+        "description": "Key needs for the start-up phase in the composting timeline"
+    },
+    "heatingPhaseDays5to25": "2. Heating Phase (Days 5-25)",
+    "@heatingPhaseDays5to25": {
+        "description": "Label for the heating phase in the composting timeline"
+    },
+    "temperature45to65c": "Temperature: 45–65°C",
+    "@temperature45to65c": {
+        "description": "Temperature range for the heating phase in the composting timeline"
+    },
+    "breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": "Breaks down fast-decomposing materials, kills pathogens & weed seeds.",
+    "@breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": {
+        "description": "Description of the heating phase in the composting timeline"
+    },
+    "organismsChangeAsConditionsShift": "Organisms change as conditions shift.",
+    "@organismsChangeAsConditionsShift": {
+        "description": "Description of the organism changes during the heating phase in the composting timeline"
+    },
+    "coolingPhaseDays25to35": "3. Cooling Phase (Days 25-35)",
+    "@coolingPhaseDays25to35": {
+        "description": "Label for the cooling phase in the composting timeline"
+    },
+    "temperature25to45c": "Temperature: 25–45°C",
+    "@temperature25to45c": {
+        "description": "Temperature range for the cooling phase in the composting timeline"
+    },
+    "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": "Slower decomposition, fungi break down tougher materials (straw, wood).",
+    "@slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": {
+        "description": "Description of the cooling phase in the composting timeline"
+    },
+    "thePileShrinksAsMaterialDecomposes": "The pile shrinks as material decomposes.",
+    "@thePileShrinksAsMaterialDecomposes": {
+        "description": "Description of the pile shrinkage during the cooling phase in the composting timeline"
+    },
+    "maturationPhaseDays35to60": "4. Maturation Phase (Days 35-60+)",
+    "@maturationPhaseDays35to60": {
+        "description": "Label for the maturation phase in the composting timeline"
+    },
+    "temperature20to40c": "Temperature: 20–40°C",
+    "@temperature20to40c": {
+        "description": "Temperature range for the maturation phase in the composting timeline"
+    },
+    "soilOrganismsReturnNutrientsStabilizeHumusForms": "Soil organisms return, nutrients stabilize, humus forms.",
+    "@soilOrganismsReturnNutrientsStabilizeHumusForms": {
+        "description": "Description of the maturation phase in the composting timeline"
+    },
+    "readyWhenDarkEarthySmellNoHeatInTheCenter": "Ready when: Dark, earthy smell, no heat in the center.",
+    "@readyWhenDarkEarthySmellNoHeatInTheCenter": {
+        "description": "Description of the readiness indicators during the maturation phase in the composting timeline"
+    },
+    "canBeStoredFor6to12MonthsKeepDryToAvoid": "Can be stored for 6–12 months (keep dry to avoid nutrient loss).",
+    "@canBeStoredFor6to12MonthsKeepDryToAvoid": {
+        "description": "Description of the storage conditions for mature compost"
+    },
+    "visualTip": "Visual Tip",
+    "@visualTip": {
+        "description": "Title for the visual tip section"
+    },
+    "yourCompostPileShouldBeLargeEnoughToMaintainHeat": "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
+    "@yourCompostPileShouldBeLargeEnoughToMaintainHeat": {
+        "description": "Description of the ideal size for a compost pile"
+    },
+    "chooseASite": "Choose a site",
+    "@chooseASite": {
+        "description": "Title for the choose a site section"
+    },
+    "welldrainedShadyNearAWaterSource": "Well-drained, shady, near a water source.",
+    "@welldrainedShadyNearAWaterSource": {
+        "description": "Description of the ideal site conditions for composting"
+    },
+    "layerMaterials": "Layer materials",
+    "@layerMaterials": {
+        "description": "Title for the layer materials section"
+    },
+    "balanceCarbonDryBrownsAndNitrogenGreens": "Balance carbon (dry browns) and nitrogen (greens).",
+    "@balanceCarbonDryBrownsAndNitrogenGreens": {
+        "description": "Description of the material layering process in composting"
+    },
+    "maintainMoisture": "Maintain moisture",
+    "@maintainMoisture": {
+        "description": "Title for the maintain moisture section"
+    },
+    "keepItLikeADampSpongeNotTooDry": "Keep it like a damp sponge (not too dry or soggy).",
+    "@keepItLikeADampSpongeNotTooDry": {
+        "description": "Description of the ideal moisture level for composting"
+    },
+    "turnThePileRegularly": "Turn the pile regularly",
+    "@turnThePileRegularly": {
+        "description": "Title for the turn the pile regularly section"
+    },
+    "mixEvery714DaysForAeration": "Mix every 7–14 days for aeration.",
+    "@mixEvery714DaysForAeration": {
+        "description": "Description of the turning process in composting"
+    },
+    "checkReadiness": "Check readiness",
+    "@checkReadiness": {
+        "description": "Title for the check readiness section"
+    },
+    "whenDarkCrumblyAndSmellsEarthyItsDone": "When dark, crumbly, and smells earthy, it's done!",
+    "@whenDarkCrumblyAndSmellsEarthyItsDone": {
+        "description": "Description of the indicators for compost readiness"
+    },
+    "cnRatioExplained": "C:N Ratio Explained:",
+    "@cnRatioExplained": {
+        "description": "Title for the C:N ratio explanation section"
+    },
+    "idealCarbonnitrogenRatio30to1": "Ideal Carbon:Nitrogen ratio = 30:1",
+    "@idealCarbonnitrogenRatio30to1": {
+        "description": "Description of the ideal C:N ratio for composting"
+    },
+    "tooMuchCarbonDecompositionSlowsDown": "Too much carbon? Decomposition slows down.",
+    "@tooMuchCarbonDecompositionSlowsDown": {
+        "description": "Description of the effect of too much carbon in composting"
+    },
+    "tooMuchNitrogenSmellySoggyPile": "Too much nitrogen? Smelly, soggy pile.",
+    "@tooMuchNitrogenSmellySoggyPile": {
+        "description": "Description of the effect of too much nitrogen in composting"
+    },
+    "simpleRule": "Simple rule:",
+    "@simpleRule": {
+        "description": "Title for the simple rule section"
+    },
+    "bucketNitrogenrichMaterialsGreens": "1 bucket nitrogen-rich materials (greens)",
+    "@bucketNitrogenrichMaterialsGreens": {
+        "description": "Description of the nitrogen-rich materials (greens) in composting"
+    },
+    "bucketsDryCarbonMaterialsBrowns": "2 buckets dry carbon materials (browns)",
+    "@bucketsDryCarbonMaterialsBrowns": {
+        "description": "Description of the dry carbon materials (browns) in composting"
+    },
+    "highCarbon": "High Carbon",
+    "@highCarbon": {
+        "description": "Label for high carbon materials"
+    },
+    "browns": "Browns",
+    "@browns": {
+        "description": "Label for brown materials"
+    },
+    "cashewShells": "Cashew shells",
+    "@cashewShells": {
+        "description": "Name of cashew shells component"
+    },
+    "riceHusks": "Rice husks",
+    "@riceHusks": {
+        "description": "Name of rice husks component"
+    },
+    "dryLeaves": "Dry leaves",
+    "@dryLeaves": {
+        "description": "Name of dry leaves component"
+    },
+    "highNitrogen": "High Nitrogen",
+    "@highNitrogen": {
+        "description": "Label for high nitrogen materials"
+    },
+    "greens": "Greens",
+    "@greens": {
+        "description": "Label for green materials"
+    },
+    "chickenManure": "Chicken manure",
+    "@chickenManure": {
+        "description": "Name of chicken manure component"
+    },
+    "cowDung": "Cow dung",
+    "@cowDung": {
+        "description": "Name of cow dung component"
+    },
+    "freshPlant": "Fresh plant",
+    "@freshPlant": {
+        "description": "Name of fresh plant component"
+    },
+    "optimumMoisture": "Optimum Moisture",
+    "@optimumMoisture": {
+        "description": "Title for the optimum moisture section"
+    },
+    "yourCompostShouldHaveTheMoistureLevelOfAWrungout": "Your compost should have the moisture level of a wrung-out sponge - damp but not soggy.",
+    "@yourCompostShouldHaveTheMoistureLevelOfAWrungout": {
+        "description": "Description of the ideal moisture level for composting"
+    },
+    "oxygenRequirements": "Oxygen Requirements",
+    "@oxygenRequirements": {
+        "description": "Title for the oxygen requirements section"
+    },
+    "regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": "Regular turning (every 1-2 weeks) ensures proper oxygen flow for aerobic decomposition.",
+    "@regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": {
+        "description": "Description of the importance of regular turning for oxygen flow in composting"
+    },
+    "commonCompostProblemsSolutions": "Common Compost Problems & Solutions",
+    "@commonCompostProblemsSolutions": {
+        "description": "Title for the common compost problems and solutions section"
+    },
+    "quickCheck": "Quick Check",
+    "@quickCheck": {
+        "description": "Title for the quick check section"
+    },
+    "aHealthyCompostPileShouldBeWarmSlightlyDampAnd": "A healthy compost pile should be warm, slightly damp, and have an earthy smell. If yours doesn't match this description, check the troubleshooting tips above!",
+    "@aHealthyCompostPileShouldBeWarmSlightlyDampAnd": {
+        "description": "Description of the characteristics of a healthy compost pile"
+    },
+    "pileIsntHeatingUp": "Pile Isn't Heating Up",
+    "@pileIsntHeatingUp": {
+        "description": "Title for the pile isn't heating up section"
+    },
+    "pileTooSmallShouldBeAtLeast3x3x3Feet": "Pile too small (should be at least 3×3×3 feet)",
+    "@pileTooSmallShouldBeAtLeast3x3x3Feet": {
+        "description": "Description of the issue when the compost pile is too small"
+    },
+    "tooDryAddWater": "Too dry (add water)",
+    "@tooDryAddWater": {
+        "description": "Description of the issue when the compost pile is too dry"
+    },
+    "notEnoughNitrogenAddGreens": "Not enough nitrogen (add 'greens')",
+    "@notEnoughNitrogenAddGreens": {
+        "description": "Description of the issue when there is not enough nitrogen in the compost pile"
+    },
+    "coldWeatherInsulateOrWaitForWarmerConditions": "Cold weather (insulate or wait for warmer conditions)",
+    "@coldWeatherInsulateOrWaitForWarmerConditions": {
+        "description": "Description of the issue when the compost pile is affected by cold weather"
+    },
+    "pileIsFinishedComposting": "Pile is finished composting",
+    "@pileIsFinishedComposting": {
+        "description": "Description of the issue when the compost pile is finished composting"
+    },
+    "addMoreNitrogenrichMaterials": "Add more nitrogen-rich materials",
+    "@addMoreNitrogenrichMaterials": {
+        "description": "Description of the solution when the compost pile needs more nitrogen-rich materials"
+    },
+    "checkMoistureAndAddWaterIfNeeded": "Check moisture and add water if needed",
+    "@checkMoistureAndAddWaterIfNeeded": {
+        "description": "Description of the solution when the compost pile needs moisture adjustment"
+    },
+    "turnThePileToIncreaseOxygen": "Turn the pile to increase oxygen",
+    "@turnThePileToIncreaseOxygen": {
+        "description": "Description of the solution when the compost pile needs more oxygen"
+    },
+    "increasePileSize": "Increase pile size",
+    "@increasePileSize": {
+        "description": "Description of the solution when the compost pile needs to be larger"
+    },
+    "badOdors": "Bad Odors",
+    "@badOdors": {
+        "description": "Title for the bad odors section"
+    },
+    "ammoniaSmellTooMuchNitrogen": "Ammonia smell: Too much nitrogen",
+    "@ammoniaSmellTooMuchNitrogen": {
+        "description": "Description of the issue when there is too much nitrogen in the compost pile"
+    },
+    "rottenEggSmellAnaerobicConditionsNotEnoughOxygen": "Rotten egg smell: Anaerobic conditions (not enough oxygen)",
+    "@rottenEggSmellAnaerobicConditionsNotEnoughOxygen": {
+        "description": "Description of the issue when there are anaerobic conditions in the compost pile"
+    },
+    "otherMaterialsMeatDairyEtc": "'Other' materials (meat, dairy, etc.)",
+    "@otherMaterialsMeatDairyEtc": {
+        "description": "Description of the issue when there are 'other' materials like meat or dairy in the compost pile"
+    },
+    "addCarbonrichMaterialsDryLeavesStraw": "Add carbon-rich materials (dry leaves, straw)",
+    "@addCarbonrichMaterialsDryLeavesStraw": {
+        "description": "Description of the solution when the compost pile needs more carbon-rich materials"
+    },
+    "turnThePileToAddOxygen": "Turn the pile to add oxygen",
+    "@turnThePileToAddOxygen": {
+        "description": "Description of the solution when the compost pile needs more oxygen"
+    },
+    "coverFoodScrapsWithBrowns": "Cover food scraps with browns",
+    "@coverFoodScrapsWithBrowns": {
+        "description": "Description of the solution when the compost pile needs to cover food scraps with browns"
+    },
+    "avoidAddingMeatDairyOrOils": "Avoid adding meat, dairy, or oils",
+    "@avoidAddingMeatDairyOrOils": {
+        "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, or oils"
+    },
+    "pestsInTheCompost": "Pests in the Compost",
+    "@pestsInTheCompost": {
+        "description": "Title for the pests in the compost section"
+    },
+    "exposedFoodScraps": "Exposed food scraps",
+    "@exposedFoodScraps": {
+        "description": "Description of the issue when there are exposed food scraps in the compost pile"
+    },
+    "meatDairyOrFattyFoodsInCompost": "Meat, dairy or fatty foods in compost",
+    "@meatDairyOrFattyFoodsInCompost": {
+        "description": "Description of the issue when there are meat, dairy, or fatty foods in the compost pile"
+    },
+    "pileNotHotEnough": "Pile not hot enough",
+    "@pileNotHotEnough": {
+        "description": "Description of the issue when the compost pile is not hot enough"
+    },
+    "buryFoodScrapsInTheCenterOfThePile": "Bury food scraps in the center of the pile",
+    "@buryFoodScrapsInTheCenterOfThePile": {
+        "description": "Description of the solution when the compost pile needs to bury food scraps in the center"
+    },
+    "avoidAddingMeatDairyOilsOrPetWaste": "Avoid adding meat, dairy, oils, or pet waste",
+    "@avoidAddingMeatDairyOilsOrPetWaste": {
+        "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, oils, or pet waste"
+    },
+    "turnPileRegularlyToMaintainHeat": "Turn pile regularly to maintain heat",
+    "@turnPileRegularlyToMaintainHeat": {
+        "description": "Description of the solution when the compost pile needs to turn regularly to maintain heat"
+    },
+    "useARodentresistantBinIfNecessary": "Use a rodent-resistant bin if necessary",
+    "@useARodentresistantBinIfNecessary": {
+        "description": "Description of the solution when the compost pile needs to use a rodent-resistant bin if necessary"
+    },
+    "pileIsTooWetdry": "Pile Is Too Wet/Dry",
+    "@pileIsTooWetdry": {
+        "description": "Title for the pile is too wet/dry section"
+    },
+    "tooWetSoggyMaterialsPoorDrainage": "Too wet: Soggy materials, poor drainage",
+    "@tooWetSoggyMaterialsPoorDrainage": {
+        "description": "Description of the issue when the compost pile is too wet due to soggy materials or poor drainage"
+    },
+    "tooDryNotEnoughWaterTooMuchSunExposure": "Too dry: Not enough water, too much sun exposure",
+    "@tooDryNotEnoughWaterTooMuchSunExposure": {
+        "description": "Description of the issue when the compost pile is too dry due to not enough water or too much sun exposure"
+    },
+    "tooWetAddDryCarbonrichMaterials": "Too wet: Add dry, carbon-rich materials",
+    "@tooWetAddDryCarbonrichMaterials": {
+        "description": "Description of the solution when the compost pile is too wet and needs to add dry, carbon-rich materials"
+    },
+    "tooWetTurnThePileToHelpItDryOut": "Too wet: Turn the pile to help it dry out",
+    "@tooWetTurnThePileToHelpItDryOut": {
+        "description": "Description of the solution when the compost pile is too wet and needs to turn the pile to help it dry out"
+    },
+    "tooWetCoverDuringHeavyRains": "Too wet: Cover during heavy rains",
+    "@tooWetCoverDuringHeavyRains": {
+        "description": "Description of the solution when the compost pile is too wet and needs to cover during heavy rains"
+    },
+    "tooDryAddWaterWhileTurningThePile": "Too dry: Add water while turning the pile",
+    "@tooDryAddWaterWhileTurningThePile": {
+        "description": "Description of the solution when the compost pile is too dry and needs to add water while turning the pile"
+    },
+    "tooDryAddFreshGreenMaterials": "Too dry: Add fresh 'green' materials",
+    "@tooDryAddFreshGreenMaterials": {
+        "description": "Description of the solution when the compost pile is too dry and needs to add fresh 'green' materials"
+    },
+    "solutions": "Solutions:",
+    "@solutions": {
+        "description": "Label for the solutions section"
+    },
+    "basicGardenCompost": "Basic Garden Compost",
+    "@basicGardenCompost": {
+        "description": "Title for the basic garden compost recipe"
+    },
+    "aSimpleBalancedRecipeForGeneralGardenUse": "A simple, balanced recipe for general garden use.",
+    "@aSimpleBalancedRecipeForGeneralGardenUse": {
+        "description": "Description of the basic garden compost recipe"
+    },
+    "partsDryLeaves": "3 parts dry leaves",
+    "@partsDryLeaves": {
+        "description": "Description of the dry leaves component in the basic garden compost recipe"
+    },
+    "partFreshGrassClippings": "1 part fresh grass clippings",
+    "@partFreshGrassClippings": {
+        "description": "Description of the fresh grass clippings component in the basic garden compost recipe"
+    },
+    "partVegetableScraps": "1 part vegetable scraps",
+    "@partVegetableScraps": {
+        "description": "Description of the vegetable scraps component in the basic garden compost recipe"
+    },
+    "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": "Layer ingredients, moisten, and turn every 1-2 weeks. Ready in 3-6 months.",
+    "@layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": {
+        "description": "Description of the preparation and readiness time for the basic garden compost recipe"
+    },
+    "fastHotCompost": "Fast Hot Compost",
+    "@fastHotCompost": {
+        "description": "Title for the fast hot compost recipe"
+    },
+    "forWhenYouNeedCompostQuickly": "For when you need compost quickly.",
+    "@forWhenYouNeedCompostQuickly": {
+        "description": "Description of the fast hot compost recipe"
+    },
+    "partsChoppedStrawOrWoodChips": "2 parts chopped straw or wood chips",
+    "@partsChoppedStrawOrWoodChips": {
+        "description": "Description of the chopped straw or wood chips component in the fast hot compost recipe"
+    },
+    "partChickenManure": "1 part chicken manure",
+    "@partChickenManure": {
+        "description": "Description of the chicken manure component in the fast hot compost recipe"
+    },
+    "partGreenGardenWasteChoppedSmall": "1 part green garden waste (chopped small)",
+    "@partGreenGardenWasteChoppedSmall": {
+        "description": "Description of the green garden waste component in the fast hot compost recipe"
+    },
+    "mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": "Mix thoroughly, ensure adequate moisture, and turn every 3 days. Can be ready in 3-4 weeks if conditions are ideal.",
+    "@mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": {
+        "description": "Description of the preparation and readiness time for the fast hot compost recipe"
+    },
+    "instructions": "Instructions",
+    "@instructions": {
+        "description": "Label for the instructions section"
+    },
+    "possibleCauses": "Possible Causes:",
+    "@possibleCauses": {
+        "description": "Label for the possible causes section"
+    },
+    "cn": "C/N",
+    "@cn": {
+        "description": "Label for the carbon to nitrogen ratio"
     }
 }

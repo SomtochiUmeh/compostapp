@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class GuidelineDetailPage extends StatelessWidget {
   final String title;
@@ -25,18 +26,16 @@ class GuidelineDetailPage extends StatelessWidget {
   }
 
   Widget _getGuidelineContent(String title) {
-    // Return different content based on the title
-    switch (title) {
-      case 'Aerobic Composting Process':
-        return _buildAerobicCompostingContent();
-      case 'How to Make Compost':
-        return _buildHowToMakeCompostContent();
-      case 'C:N Ratio & Optimum Compost Conditions':
-        return _buildCnRatioContent();
-      case 'Troubleshooting Compost Problems':
-        return _buildTroubleshootingContent();
-      default:
-        return const Text('Content not available');
+    if (title == S.current.aerobicCompostingProcess) {
+      return _buildAerobicCompostingContent();
+    } else if (title == S.current.howToMakeCompost) {
+      return _buildHowToMakeCompostContent();
+    } else if (title == S.current.cnRatioOptimumCompostConditions) {
+      return _buildCnRatioContent();
+    } else if (title == S.current.troubleshootingCompostProblems) {
+      return _buildTroubleshootingContent();
+    } else {
+      return Text(S.current.contentNotAvailable);
     }
   }
 
@@ -44,9 +43,9 @@ class GuidelineDetailPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Composting happens in four stages:',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        Text(
+          S.current.compostingHappensInFourStages,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 24),
         Stack(
@@ -68,11 +67,11 @@ class GuidelineDetailPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildDayLabel("Day 1"),
-                  _buildDayLabel("Day 5"),
-                  _buildDayLabel("Day 25"),
-                  _buildDayLabel("Day 35"),
-                  _buildDayLabel("Day 60+"),
+                  _buildDayLabel(S.current.day1),
+                  _buildDayLabel(S.current.day5),
+                  _buildDayLabel(S.current.day25),
+                  _buildDayLabel(S.current.day35),
+                  _buildDayLabel(S.current.day60),
                 ],
               ),
             ),
@@ -80,65 +79,66 @@ class GuidelineDetailPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildTimelineMarker("Start-up", Icons.play_arrow,
-                    Colors.green.shade300, "Days 2-5"),
-                _buildTimelineMarker("Heating", Icons.whatshot,
-                    Colors.orange.shade300, "Days 5-25"),
-                _buildTimelineMarker("Cooling", Icons.ac_unit,
-                    Colors.blue.shade300, "Days 25-35"),
-                _buildTimelineMarker("Maturing", Icons.eco,
-                    Colors.brown.shade300, "Days 35-60+"),
+                _buildTimelineMarker(S.current.startup, Icons.play_arrow,
+                    Colors.green.shade300, S.current.days2to5),
+                _buildTimelineMarker(S.current.heating, Icons.whatshot,
+                    Colors.orange.shade300, S.current.days5to25),
+                _buildTimelineMarker(S.current.cooling, Icons.ac_unit,
+                    Colors.blue.shade300, S.current.days25to35),
+                _buildTimelineMarker(S.current.maturing, Icons.eco,
+                    Colors.brown.shade300, S.current.days35to60),
               ],
             ),
           ],
         ),
         const SizedBox(height: 16),
-        const Center(
+        Center(
           child: Text(
-            "Composting Timeline Process",
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            S.current.compostingTimelineProcess,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
         const Divider(),
         const SizedBox(height: 16),
         _buildCompostStage(
-          "1. Start-up (Days 2-5)",
+          S.current.startupDays2to5,
           Icons.play_arrow,
           [
-            "Microorganisms begin breaking down waste.",
-            "Temperature: 20–45°C",
-            "Key Needs: Water, oxygen, small-sized organic matter.",
+            S.current.microorganismsBeginBreakingDownWaste,
+            S.current.temperature20to45c,
+            S.current.keyNeedsWaterOxygenSmallsizedOrganicMatter,
           ],
           Colors.green.shade300,
         ),
         _buildCompostStage(
-          "2. Heating Phase (Days 5-25)",
+          S.current.heatingPhaseDays5to25,
           Icons.whatshot,
           [
-            "Temperature: 45–65°C",
-            "Breaks down fast-decomposing materials, kills pathogens & weed seeds.",
-            "Organisms change as conditions shift.",
+            S.current.temperature45to65c,
+            S.current.breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds,
+            S.current.organismsChangeAsConditionsShift,
           ],
           Colors.orange.shade300,
         ),
         _buildCompostStage(
-          "3. Cooling Phase (Days 25-35)",
+          S.current.coolingPhaseDays25to35,
           Icons.ac_unit,
           [
-            "Temperature: 25–45°C",
-            "Slower decomposition, fungi break down tougher materials (straw, wood).",
-            "The pile shrinks as material decomposes.",
+            S.current.temperature25to45c,
+            S.current
+                .slowerDecompositionFungiBreakDownTougherMaterialsStrawWood,
+            S.current.thePileShrinksAsMaterialDecomposes,
           ],
           Colors.blue.shade300,
         ),
         _buildCompostStage(
-          "4. Maturation Phase (Days 35-60+)",
+          S.current.maturationPhaseDays35to60,
           Icons.eco,
           [
-            "Temperature: 20–40°C",
-            "Soil organisms return, nutrients stabilize, humus forms.",
-            "Ready when: Dark, earthy smell, no heat in the center.",
-            "Can be stored for 6–12 months (keep dry to avoid nutrient loss).",
+            S.current.temperature20to40c,
+            S.current.soilOrganismsReturnNutrientsStabilizeHumusForms,
+            S.current.readyWhenDarkEarthySmellNoHeatInTheCenter,
+            S.current.canBeStoredFor6to12MonthsKeepDryToAvoid,
           ],
           Colors.brown.shade300,
         ),
@@ -212,10 +212,12 @@ class GuidelineDetailPage extends StatelessWidget {
                   child: Icon(icon, color: Colors.white),
                 ),
                 const SizedBox(width: 12),
-                Text(
-                  title,
-                  style: const TextStyle(
-                      fontSize: 18, fontWeight: FontWeight.bold),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -252,23 +254,24 @@ class GuidelineDetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.brown.shade200),
           ),
-          child: const Row(
+          child: Row(
             children: [
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Visual Tip",
-                      style: TextStyle(
+                      S.current.visualTip,
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
-                      "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
-                      style: TextStyle(fontSize: 16),
+                      S.current
+                          .yourCompostPileShouldBeLargeEnoughToMaintainHeat,
+                      style: const TextStyle(fontSize: 16),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -282,36 +285,36 @@ class GuidelineDetailPage extends StatelessWidget {
         const SizedBox(height: 16),
         _buildCompostStep(
           "1",
-          "Choose a site",
-          "Well-drained, shady, near a water source.",
+          S.current.chooseASite,
+          S.current.welldrainedShadyNearAWaterSource,
           Icons.place,
           Colors.green,
         ),
         _buildCompostStep(
           "2",
-          "Layer materials",
-          "Balance carbon (dry browns) and nitrogen (greens).",
+          S.current.layerMaterials,
+          S.current.balanceCarbonDryBrownsAndNitrogenGreens,
           Icons.layers,
           Colors.brown,
         ),
         _buildCompostStep(
           "3",
-          "Maintain moisture",
-          "Keep it like a damp sponge (not too dry or soggy).",
+          S.current.maintainMoisture,
+          S.current.keepItLikeADampSpongeNotTooDry,
           Icons.water_drop,
           Colors.blue,
         ),
         _buildCompostStep(
           "4",
-          "Turn the pile regularly",
-          "Mix every 7–14 days for aeration.",
+          S.current.turnThePileRegularly,
+          S.current.mixEvery714DaysForAeration,
           Icons.rotate_left,
           Colors.orange,
         ),
         _buildCompostStep(
           "5",
-          "Check readiness",
-          "When dark, crumbly, and smells earthy, it's done!",
+          S.current.checkReadiness,
+          S.current.whenDarkCrumblyAndSmellsEarthyItsDone,
           Icons.check_circle,
           Colors.teal,
         ),
@@ -396,26 +399,28 @@ class GuidelineDetailPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "C:N Ratio Explained:",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Text(
+                  S.current.cnRatioExplained,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 12),
-                _buildCNItem("Ideal Carbon:Nitrogen ratio = 30:1"),
-                _buildCNItem("Too much carbon? Decomposition slows down."),
-                _buildCNItem("Too much nitrogen? Smelly, soggy pile."),
+                _buildCNItem(S.current.idealCarbonnitrogenRatio30to1),
+                _buildCNItem(S.current.tooMuchCarbonDecompositionSlowsDown),
+                _buildCNItem(S.current.tooMuchNitrogenSmellySoggyPile),
                 const SizedBox(height: 8),
-                const Text(
-                  "Simple rule:",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Text(
+                  S.current.simpleRule,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildCNItem("1 bucket nitrogen-rich materials (greens)"),
-                      _buildCNItem("2 buckets dry carbon materials (browns)"),
+                      _buildCNItem(S.current.bucketNitrogenrichMaterialsGreens),
+                      _buildCNItem(S.current.bucketsDryCarbonMaterialsBrowns),
                     ],
                   ),
                 ),
@@ -428,9 +433,13 @@ class GuidelineDetailPage extends StatelessWidget {
           children: [
             Expanded(
               child: _buildMaterialCard(
-                "High Carbon",
-                "Browns",
-                ["Cashew shells", "Rice husks", "Dry leaves"],
+                S.current.highCarbon,
+                S.current.browns,
+                [
+                  S.current.cashewShells,
+                  S.current.riceHusks,
+                  S.current.dryLeaves
+                ],
                 Colors.brown.shade700,
                 Colors.brown.shade100,
               ),
@@ -438,9 +447,13 @@ class GuidelineDetailPage extends StatelessWidget {
             const SizedBox(width: 16),
             Expanded(
               child: _buildMaterialCard(
-                "High Nitrogen",
-                "Greens",
-                ["Chicken manure", "Cow dung", "Fresh plant"],
+                S.current.highNitrogen,
+                S.current.greens,
+                [
+                  S.current.chickenManure,
+                  S.current.cowDung,
+                  S.current.freshPlant
+                ],
                 Colors.green.shade700,
                 Colors.green.shade100,
               ),
@@ -455,41 +468,42 @@ class GuidelineDetailPage extends StatelessWidget {
           ),
           child: Container(
             padding: const EdgeInsets.all(16),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Icon(Icons.water_drop, color: Colors.blue),
-                    SizedBox(width: 8),
+                    const Icon(Icons.water_drop, color: Colors.blue),
+                    const SizedBox(width: 8),
                     Text(
-                      "Optimum Moisture",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      S.current.optimumMoisture,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Text(
-                  "Your compost should have the moisture level of a wrung-out sponge - damp but not soggy.",
-                  style: TextStyle(fontSize: 16),
+                  S.current.yourCompostShouldHaveTheMoistureLevelOfAWrungout,
+                  style: const TextStyle(fontSize: 16),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Row(
                   children: [
-                    Icon(Icons.air, color: Colors.lightBlue),
-                    SizedBox(width: 8),
+                    const Icon(Icons.air, color: Colors.lightBlue),
+                    const SizedBox(width: 8),
                     Text(
-                      "Oxygen Requirements",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      S.current.oxygenRequirements,
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 Text(
-                  "Regular turning (every 1-2 weeks) ensures proper oxygen flow for aerobic decomposition.",
-                  style: TextStyle(fontSize: 16),
+                  S.current
+                      .regularTurningEvery12WeeksEnsuresProperOxygenFlowFor,
+                  style: const TextStyle(fontSize: 16),
                 ),
               ],
             ),
@@ -594,9 +608,9 @@ class GuidelineDetailPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Common Compost Problems & Solutions",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        Text(
+          S.current.commonCompostProblemsSolutions,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 16),
         Container(
@@ -610,21 +624,21 @@ class GuidelineDetailPage extends StatelessWidget {
             children: [
               Icon(Icons.lightbulb, color: Colors.amber.shade800, size: 40),
               const SizedBox(width: 16),
-              const Expanded(
+              Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Quick Check",
-                      style: TextStyle(
+                      S.current.quickCheck,
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
-                      "A healthy compost pile should be warm, slightly damp, and have an earthy smell. If yours doesn't match this description, check the troubleshooting tips above!",
-                      style: TextStyle(fontSize: 16),
+                      S.current.aHealthyCompostPileShouldBeWarmSlightlyDampAnd,
+                      style: const TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
@@ -634,69 +648,69 @@ class GuidelineDetailPage extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         _buildProblemSolutionCard(
-          "Pile Isn't Heating Up",
+          S.current.pileIsntHeatingUp,
           Icons.whatshot,
           Colors.orange,
           [
-            "Pile too small (should be at least 3×3×3 feet)",
-            "Too dry (add water)",
-            "Not enough nitrogen (add 'greens')",
-            "Cold weather (insulate or wait for warmer conditions)",
-            "Pile is finished composting",
+            S.current.pileTooSmallShouldBeAtLeast3x3x3Feet,
+            S.current.tooDryAddWater,
+            S.current.notEnoughNitrogenAddGreens,
+            S.current.coldWeatherInsulateOrWaitForWarmerConditions,
+            S.current.pileIsFinishedComposting,
           ],
           [
-            "Add more nitrogen-rich materials",
-            "Check moisture and add water if needed",
-            "Turn the pile to increase oxygen",
-            "Increase pile size",
+            S.current.addMoreNitrogenrichMaterials,
+            S.current.checkMoistureAndAddWaterIfNeeded,
+            S.current.turnThePileToIncreaseOxygen,
+            S.current.increasePileSize,
           ],
         ),
         _buildProblemSolutionCard(
-          "Bad Odors",
+          S.current.badOdors,
           Icons.sentiment_very_dissatisfied,
           Colors.red,
           [
-            "Ammonia smell: Too much nitrogen",
-            "Rotten egg smell: Anaerobic conditions (not enough oxygen)",
-            "'Other' materials (meat, dairy, etc.)",
+            S.current.ammoniaSmellTooMuchNitrogen,
+            S.current.rottenEggSmellAnaerobicConditionsNotEnoughOxygen,
+            S.current.otherMaterialsMeatDairyEtc,
           ],
           [
-            "Add carbon-rich materials (dry leaves, straw)",
-            "Turn the pile to add oxygen",
-            "Cover food scraps with browns",
-            "Avoid adding meat, dairy, or oils",
+            S.current.addCarbonrichMaterialsDryLeavesStraw,
+            S.current.turnThePileToAddOxygen,
+            S.current.coverFoodScrapsWithBrowns,
+            S.current.avoidAddingMeatDairyOrOils,
           ],
         ),
         _buildProblemSolutionCard(
-          "Pests in the Compost",
+          S.current.pestsInTheCompost,
           Icons.bug_report,
           Colors.purple,
           [
-            "Exposed food scraps",
-            "Meat, dairy or fatty foods in compost",
-            "Pile not hot enough",
+            S.current.exposedFoodScraps,
+            S.current.meatDairyOrFattyFoodsInCompost,
+            S.current.pileNotHotEnough,
           ],
           [
-            "Bury food scraps in the center of the pile",
-            "Avoid adding meat, dairy, oils, or pet waste",
-            "Turn pile regularly to maintain heat",
-            "Use a rodent-resistant bin if necessary",
+            S.current.buryFoodScrapsInTheCenterOfThePile,
+            S.current.avoidAddingMeatDairyOilsOrPetWaste,
+            S.current.turnPileRegularlyToMaintainHeat,
+            S.current.useARodentresistantBinIfNecessary,
           ],
         ),
         _buildProblemSolutionCard(
-          "Pile Is Too Wet/Dry",
+          S.current.pileIsTooWetdry,
           Icons.water_drop,
           Colors.blue,
           [
-            "Too wet: Soggy materials, poor drainage",
-            "Too dry: Not enough water, too much sun exposure",
+            S.current.tooWetSoggyMaterialsPoorDrainage,
+            S.current.tooDryNotEnoughWaterTooMuchSunExposure,
           ],
           [
-            "Too wet: Add dry, carbon-rich materials",
-            "Too wet: Turn the pile to help it dry out",
-            "Too wet: Cover during heavy rains",
-            "Too dry: Add water while turning the pile",
-            "Too dry: Add fresh 'green' materials",
+            S.current.tooWetAddDryCarbonrichMaterials,
+            S.current.tooWetTurnThePileToHelpItDryOut,
+            S.current.tooWetCoverDuringHeavyRains,
+            S.current.tooDryAddWaterWhileTurningThePile,
+            S.current.tooDryAddFreshGreenMaterials,
           ],
         ),
       ],
@@ -743,9 +757,10 @@ class GuidelineDetailPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Possible Causes:",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Text(
+                  S.current.possibleCauses,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 ...problems.map((problem) => Padding(
@@ -762,9 +777,10 @@ class GuidelineDetailPage extends StatelessWidget {
                       ),
                     )),
                 const SizedBox(height: 16),
-                const Text(
-                  "Solutions:",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                Text(
+                  S.current.solutions,
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 ...solutions.map((solution) => Padding(

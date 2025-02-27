@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './guideline_detail_page.dart';
+import '../generated/l10n.dart';
 
 class CompostGuidelinesPage extends StatelessWidget {
   const CompostGuidelinesPage({super.key});
@@ -10,9 +11,9 @@ class CompostGuidelinesPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.brown.shade200,
           elevation: 0,
-          title: const Text(
-            'Compost Guidelines',
-            style: TextStyle(color: Colors.white, fontSize: 20),
+          title: Text(
+            S.of(context).compostGuidelines,
+            style: const TextStyle(color: Colors.white, fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -21,30 +22,31 @@ class CompostGuidelinesPage extends StatelessWidget {
           children: [
             _buildGuidelineItem(
               context,
-              'Aerobic Composting Process',
+              S.of(context).aerobicCompostingProcess,
               Icons.recycling,
               () => _navigateToGuidelineDetail(
-                  context, 'Aerobic Composting Process'),
+                  context, S.of(context).aerobicCompostingProcess),
             ),
             _buildGuidelineItem(
               context,
-              'How to Make Compost',
+              S.of(context).howToMakeCompost,
               Icons.format_list_numbered,
-              () => _navigateToGuidelineDetail(context, 'How to Make Compost'),
+              () => _navigateToGuidelineDetail(
+                  context, S.of(context).howToMakeCompost),
             ),
             _buildGuidelineItem(
               context,
-              'C:N Ratio & Optimum Compost Conditions',
+              S.of(context).cnRatioOptimumCompostConditions,
               Icons.balance,
               () => _navigateToGuidelineDetail(
-                  context, 'C:N Ratio & Optimum Compost Conditions'),
+                  context, S.of(context).cnRatioOptimumCompostConditions),
             ),
             _buildGuidelineItem(
               context,
-              'Troubleshooting Compost Problems',
+              S.of(context).troubleshootingCompostProblems,
               Icons.build,
               () => _navigateToGuidelineDetail(
-                  context, 'Troubleshooting Compost Problems'),
+                  context, S.of(context).troubleshootingCompostProblems),
             ),
           ],
         ));
