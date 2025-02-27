@@ -252,21 +252,27 @@ class GuidelineDetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.brown.shade200),
           ),
-          child: const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: const Row(
             children: [
-              Text(
-                "Visual Tip",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Visual Tip",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
+                      style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 8),
-              Text(
-                "Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.",
-                style: TextStyle(fontSize: 16),
-                textAlign: TextAlign.center,
               ),
             ],
           ),
