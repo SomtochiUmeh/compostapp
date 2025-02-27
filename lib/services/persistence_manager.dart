@@ -134,10 +134,7 @@ class PersistenceManager {
       },
       'price': component.price != null
           ? {
-              'priceInFCFA': component.price!.priceInFCFA,
-              'unit': component.price!.unit.toString(),
-              'unitAmount': component.price!.unitAmount,
-              'pricePerUnit': component.price!.pricePerUnit,
+              'pricePerTon': component.price!.pricePerTon,
             }
           : null,
       'sources': component.sources,
@@ -163,10 +160,7 @@ class PersistenceManager {
       ),
       price: json['price'] != null
           ? Price(
-              priceInFCFA: json['price']['priceInFCFA'],
-              unit: json['price']['unit'],
-              unitAmount: json['price']['unitAmount'],
-              pricePerUnit: json['price']['pricePerUnit'],
+              pricePerTon: json['price']['pricePerTon'],
             )
           : null,
       sources: List<String>.from(json['sources']),

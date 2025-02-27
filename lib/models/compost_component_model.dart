@@ -1,6 +1,7 @@
+import 'package:compostapp/models/price_model.dart';
+
 import 'availability_model.dart';
 import 'nutrient_content_model.dart';
-import 'price_model.dart';
 import '../generated/l10n.dart';
 
 class CompostComponent {

@@ -44,21 +44,10 @@ class CompostState extends ChangeNotifier {
         components.indexWhere((comp) => comp.getName() == componentName);
     if (index != -1) {
       final component = components[index];
-      final currentPrice = component.price;
 
-      final updatedPrice = currentPrice != null
-          ? Price(
-              priceInFCFA: (newPrice * currentPrice.unitAmount).round(),
-              unit: currentPrice.unit.toString(),
-              unitAmount: currentPrice.unitAmount,
-              pricePerUnit: newPrice.round(),
-            )
-          : Price(
-              priceInFCFA: (newPrice * 100).round(),
-              unit: 'kgs',
-              unitAmount: 100,
-              pricePerUnit: newPrice.round(),
-            );
+      final updatedPrice = Price(
+        pricePerTon: newPrice.round(),
+      );
 
       final updatedComponent = CompostComponent(
         id: component.id,

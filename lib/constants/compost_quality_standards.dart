@@ -6,7 +6,7 @@ class CompostQualityStandards {
     'potassium': 0.55,
     'calcium': 1.00,
     'magnesium': 2.30,
-    'cnRatio': 12.0,
+    'cnRatio': 30,
   };
 
   static const Map<String, double> municipalStandards = {
@@ -14,6 +14,6 @@ class CompostQualityStandards {
     'nitrogen': 30.0,
     'phosphorus': 0.63,
     'potassium': 0.35,
-    'cnRatio': 17.0,
+    'cnRatio': 30,
   };
 }

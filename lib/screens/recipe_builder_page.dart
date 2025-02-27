@@ -69,8 +69,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
   void _showAddComponentDialog(BuildContext context) {
     // Get the latest component data from CompostState
     final compostState = context.read<CompostState>();
-    final availableComponents = compostState
-        .getAvailableComponents(DateTime.now())
+    final availableComponents = compostState.components
         .where((component) => !selectedComponents.any(
             (selected) => selected.component.getName() == component.getName()))
         .toList();

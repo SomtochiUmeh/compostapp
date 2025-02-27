@@ -32,7 +32,7 @@ class PricesPage extends StatelessWidget {
           SizedBox(
             width: 120,
             child: TextFormField(
-              initialValue: (component.price?.pricePerUnit ?? 0).toString(),
+              initialValue: (component.price?.pricePerTon ?? 0).toString(),
               decoration: InputDecoration(
                 labelText: S.of(context).costPerUnit,
                 suffixText: S.of(context).currencyFCFA,
