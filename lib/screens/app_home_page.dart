@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './home_screen.dart';
 import './compost_guidelines_page.dart';
 import './sample_recipes_page.dart';
+import '../generated/l10n.dart';
 
 class AppHomePage extends StatelessWidget {
   const AppHomePage({super.key});
@@ -12,9 +13,9 @@ class AppHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.brown.shade200,
         elevation: 0,
-        title: const Text(
-          'Compost Calculator',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        title: Text(
+          S.of(context).compostCalculator,
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -23,24 +24,24 @@ class AppHomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Card(
+            Card(
               elevation: 3,
               child: Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
                     Text(
-                      'Welcome to Compost Calculator',
-                      style: TextStyle(
+                      S.of(context).welcomeToCompostCalculator,
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
-                      'This app is designed to help you create and manage open-pile aerobic composting. Use the tools below to learn about composting, explore recipes, or create your own!',
+                      S.of(context).thisAppIsDesignedToHelpYouCreateAndManage,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                   ],
                 ),
@@ -59,7 +60,7 @@ class AppHomePage extends StatelessWidget {
                       children: [
                         _buildNavigationButton(
                           context,
-                          'Compost Guidelines',
+                          S.of(context).compostGuidelines,
                           Icons.menu_book,
                           () => Navigator.push(
                             context,
@@ -71,7 +72,7 @@ class AppHomePage extends StatelessWidget {
                         ),
                         _buildNavigationButton(
                           context,
-                          'Sample Compost Recipes',
+                          S.of(context).sampleCompostRecipes,
                           Icons.receipt_long,
                           () => Navigator.push(
                             context,
@@ -82,7 +83,7 @@ class AppHomePage extends StatelessWidget {
                         ),
                         _buildNavigationButton(
                           context,
-                          'Recipe Builder',
+                          S.of(context).recipeBuilder,
                           Icons.compost,
                           () => Navigator.push(
                             context,

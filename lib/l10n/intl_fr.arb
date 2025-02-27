@@ -1,70 +1,70 @@
 {
-    "@@locale": "ar",
-    "recipeBuilder": "منشئ الوصفات",
+    "@@locale": "fr",
+    "recipeBuilder": "Créateur de Recettes",
     "@recipeBuilder": {
         "description": "Recipe Builder Navbar label"
     },
-    "prices": "الأسعار",
+    "prices": "Prix",
     "@prices": {
         "description": "Prices Navbar label"
     },
-    "allAvailableComponentsHaveBeenAdded": "تمت إضافة جميع المكونات المتاحة",
+    "allAvailableComponentsHaveBeenAdded": "Tous les composants disponibles ont été ajoutés",
     "@allAvailableComponentsHaveBeenAdded": {
         "description": "Message shown when no more components can be added to the recipe"
     },
-    "compostRecipeBuilder": "منشئ وصفات السماد العضوي",
+    "compostRecipeBuilder": "Créateur de Recettes de Compost",
     "@compostRecipeBuilder": {
         "description": "Main title of the compost recipe builder page"
     },
-    "recipeQualityGuide": "دليل جودة الوصفة",
+    "recipeQualityGuide": "Guide de Qualité des Recettes",
     "@recipeQualityGuide": {
         "description": "Title for the recipe quality information dialog"
     },
-    "recipeQualityInfo": "علامة صح خضراء: مستوى المغذيات ضمن النطاق الموصى به\nسهم أحمر للأعلى: مستوى المغذيات أقل من النطاق الموصى به\nسهم برتقالي للأسفل: مستوى المغذيات أعلى من النطاق الموصى به\n\nتستند النطاقات الموصى بها على معايير السماد البلدية.",
+    "recipeQualityInfo": "Coche verte: Niveau de nutriment dans la plage recommandée\nFlèche rouge vers le haut: Niveau de nutriment en dessous de la plage recommandée\nFlèche orange vers le bas: Niveau de nutriment au-dessus de la plage recommandée\n\nLes plages recommandées sont basées sur les normes de compost municipal.",
     "@recipeQualityInfo": {
         "description": "Detailed explanation of the nutrient level indicators in the recipe quality guide"
     },
-    "close": "إغلاق",
+    "close": "Fermer",
     "@close": {
         "description": "Button label for closing dialogs or screens"
     },
-    "components": "المكونات",
+    "components": "Composants",
     "@components": {
         "description": "Section header for the list of compost components"
     },
-    "noComponentsAddedYetClickTheButtonBelowToAdd": "لم تتم إضافة مكونات بعد. انقر على الزر أدناه لإضافة مكونات إلى وصفة السماد العضوي الخاصة بك.",
+    "noComponentsAddedYetClickTheButtonBelowToAdd": "Aucun composant ajouté. Cliquez sur le bouton ci-dessous pour ajouter des composants à votre recette de compost.",
     "@noComponentsAddedYetClickTheButtonBelowToAdd": {
         "description": "Message shown when the recipe has no components"
     },
-    "addComponent": "إضافة مكون",
+    "addComponent": "Ajouter un Composant",
     "@addComponent": {
         "description": "Button label for adding a new component to the recipe"
     },
-    "nutrientAnalysis": "تحليل المغذيات",
+    "nutrientAnalysis": "Analyse des Nutriments",
     "@nutrientAnalysis": {
         "description": "Section header for the nutrient analysis table"
     },
-    "editComponent": "تعديل المكون",
+    "editComponent": "Modifier le Composant",
     "@editComponent": {
         "description": "Title for the dialog when editing an existing component"
     },
-    "chooseComponent": "اختر مكوناً",
+    "chooseComponent": "Choisir un Composant",
     "@chooseComponent": {
         "description": "Label for the component selection dropdown"
     },
-    "weight": "الوزن (كجم)",
+    "weight": "Poids (kg)",
     "@weight": {
         "description": "Label for the weight input field"
     },
-    "unitKgs": "كجم",
+    "unitKgs": "kg",
     "@unitKgs": {
         "description": "Unit kgs"
     },
-    "unitTons": "طن",
+    "unitTons": "tonnes",
     "@unitTons": {
         "description": "Unit tons"
     },
-    "price": "السعر: {price} فرنك إفريقي لكل {amount} {unit}",
+    "price": "Prix: {price} FCFA par {amount} {unit}",
     "@price": {
         "description": "Price information display format",
         "placeholders": {
@@ -82,31 +82,31 @@
             }
         }
     },
-    "cancel": "إلغاء",
+    "cancel": "Annuler",
     "@cancel": {
         "description": "Label for cancel button"
     },
-    "update": "تحديث",
+    "update": "Mettre à jour",
     "@update": {
         "description": "Label for update button when editing a component"
     },
-    "add": "إضافة",
+    "add": "Ajouter",
     "@add": {
         "description": "Label for add button when adding a new component"
     },
-    "pleaseEnterValidWeight": "الرجاء إدخال وزن صحيح",
+    "pleaseEnterValidWeight": "Veuillez entrer un poids valide",
     "@pleaseEnterValidWeight": {
         "description": "Error message when weight input is invalid"
     },
-    "pleaseFillAllFields": "الرجاء ملء جميع الحقول",
+    "pleaseFillAllFields": "Veuillez remplir tous les champs",
     "@pleaseFillAllFields": {
         "description": "Error message when required fields are empty"
     },
-    "component": "المكون",
+    "component": "Composant",
     "@component": {
         "description": "Single component label for table header"
     },
-    "costFCFA": "التكلفة (فرنك إفريقي)",
+    "costFCFA": "Coût (FCFA)",
     "@costFCFA": {
         "description": "Column header for cost in FCFA currency"
     },
@@ -120,107 +120,107 @@
             }
         }
     },
-    "organicCarbon": "كربون عضوي",
+    "organicCarbon": "C Org",
     "@organicCarbon": {
         "description": "Nutrient name for organic carbon (lowercase)"
     },
-    "nitrogen": "نيتروجين",
+    "nitrogen": "N",
     "@nitrogen": {
         "description": "Nutrient name for nitrogen (lowercase)"
     },
-    "phosphorus": "فوسفور",
+    "phosphorus": "P₂O₅",
     "@phosphorus": {
         "description": "Nutrient name for phosphorus (lowercase)"
     },
-    "potassium": "بوتاسيوم",
+    "potassium": "K₂O",
     "@potassium": {
         "description": "Nutrient name for potassium (lowercase)"
     },
-    "calcium": "كالسيوم",
+    "calcium": "CaO",
     "@calcium": {
         "description": "Nutrient name for calcium (lowercase)"
     },
-    "magnesium": "مغنيسيوم",
+    "magnesium": "MgO",
     "@magnesium": {
         "description": "Nutrient name for magnesium (lowercase)"
     },
-    "dryMatter": "المادة الجافة",
+    "dryMatter": "Matière Sèche",
     "@dryMatter": {
         "description": "Nutrient name for dry matter content"
     },
-    "totalWeightKg": "الوزن الإجمالي (كجم)",
+    "totalWeightKg": "Poids Total (kg)",
     "@totalWeightKg": {
         "description": "Column header for total weight in kilograms"
     },
-    "totalCostFCFA": "التكلفة الإجمالية (فرنك إفريقي)",
+    "totalCostFCFA": "Coût Total (FCFA)",
     "@totalCostFCFA": {
         "description": "Column header for total cost in FCFA currency"
     },
-    "componentMangoWaste": "مخلفات المانجو مع البذور",
+    "componentMangoWaste": "Déchets de mangue avec graines",
     "@componentMangoWaste": {
         "description": "Name of mango waste component"
     },
-    "componentCashewShells": "قشور الكاجو",
+    "componentCashewShells": "Coques de cajou",
     "@componentCashewShells": {
         "description": "Name of cashew shells component"
     },
-    "componentRiceHulls": "قشور الأرز/نخالة الأرز",
+    "componentRiceHulls": "Balles de riz/Son de riz",
     "@componentRiceHulls": {
         "description": "Name of rice hulls/bran component"
     },
-    "componentRiceStraw": "قش الأرز - موسم الأمطار",
+    "componentRiceStraw": "Paille de riz - saison humide",
     "@componentRiceStraw": {
         "description": "Name of rice straw component"
     },
-    "componentSugarcaneBagasse": "تفل قصب السكر",
+    "componentSugarcaneBagasse": "Bagasse de canne à sucre",
     "@componentSugarcaneBagasse": {
         "description": "Name of sugarcane bagasse component"
     },
-    "componentChickenManure": "روث الدجاج المجفف",
+    "componentChickenManure": "Fumier de poulet séché",
     "@componentChickenManure": {
         "description": "Name of dried chicken manure component"
     },
-    "componentCowDung": "روث البقر",
+    "componentCowDung": "Bouse de vache",
     "@componentCowDung": {
         "description": "Name of cow dung component"
     },
-    "componentCottonStraw": "قش القطن",
+    "componentCottonStraw": "Paille de coton",
     "@componentCottonStraw": {
         "description": "Name of cotton straw component"
     },
-    "componentRiceHuskAsh": "رماد قشور الأرز",
+    "componentRiceHuskAsh": "Cendre de balle de riz",
     "@componentRiceHuskAsh": {
         "description": "Name of rice husk ash component"
     },
-    "componentLime": "الجير",
+    "componentLime": "Chaux",
     "@componentLime": {
         "description": "Name of lime component"
     },
-    "componentCompostPlus": "سماد +",
+    "componentCompostPlus": "Compost +",
     "@componentCompostPlus": {
         "description": "Name of compost plus component"
     },
-    "componentDolomites": "الدولوميت",
+    "componentDolomites": "Dolomites",
     "@componentDolomites": {
         "description": "Name of dolomites component"
     },
-    "componentCornStraw": "قش الذرة",
+    "componentCornStraw": "Paille de maïs",
     "@componentCornStraw": {
         "description": "Name of corn straw component"
     },
-    "componentCassavaPeels": "قشور الكاسافا",
+    "componentCassavaPeels": "Épluchures de manioc",
     "@componentCassavaPeels": {
         "description": "Name of cassava peels component"
     },
-    "componentRiceChickenLitter": "فراش (نخالة الأرز + روث الدجاج)",
+    "componentRiceChickenLitter": "Litière (son de riz + fumier de poulet)",
     "@componentRiceChickenLitter": {
         "description": "Name of rice bran and chicken manure litter component"
     },
-    "componentRiceStrawCounter": "قش الأرز - خارج الموسم",
+    "componentRiceStrawCounter": "Paille de riz - contre-saison",
     "@componentRiceStrawCounter": {
         "description": "Name of counter-season rice straw component"
     },
-    "getTranslation": "{selector, select, componentMangoWaste {مخلفات المانجو مع البذور} componentCashewShells {قشور الكاجو} componentRiceHulls {قشور الأرز/نخالة الأرز} componentRiceStraw {قش الأرز - موسم الأمطار} componentSugarcaneBagasse {تفل قصب السكر} componentChickenManure {روث الدجاج المجفف} componentCowDung {روث البقر} componentCottonStraw {قش القطن} componentRiceHuskAsh {رماد قشور الأرز} componentLime {الجير} componentCompostPlus {سماد +} componentDolomites {الدولوميت} componentCornStraw {قش الذرة} componentCassavaPeels {قشور الكاسافا} componentRiceChickenLitter {فراش (نخالة الأرز + روث الدجاج)} componentRiceStrawCounter {قش الأرز - خارج الموسم} other {مكون غير معروف}}",
+    "getTranslation": "{selector, select, componentMangoWaste {Déchets de mangue avec graines} componentCashewShells {Coques de cajou} componentRiceHulls {Balles de riz/Son de riz} componentRiceStraw {Paille de riz - saison humide} componentSugarcaneBagasse {Bagasse de canne à sucre} componentChickenManure {Fumier de poulet séché} componentCowDung {Bouse de vache} componentCottonStraw {Paille de coton} componentRiceHuskAsh {Cendre de balle de riz} componentLime {Chaux} componentCompostPlus {Compost +} componentDolomites {Dolomites} componentCornStraw {Paille de maïs} componentCassavaPeels {Épluchures de manioc} componentRiceChickenLitter {Litière (son de riz + fumier de poulet)} componentRiceStrawCounter {Paille de riz - contre-saison} other {Composant inconnu}}",
     "@getTranslation": {
         "description": "Translation selector for component names",
         "placeholders": {
@@ -230,51 +230,51 @@
             }
         }
     },
-    "pricePageTitle": "أسعار المكونات",
+    "pricePageTitle": "Prix des Ingrédients",
     "@pricePageTitle": {
         "description": "Title of the prices page"
     },
-    "allComponents": "جميع المكونات",
+    "allComponents": "Tous les Composants",
     "@allComponents": {
         "description": "Section title for all components list"
     },
-    "costPerUnit": "التكلفة/الوحدة",
+    "costPerUnit": "Coût/Unité",
     "@costPerUnit": {
         "description": "Label for cost per unit input field"
     },
-    "currencyFCFA": "فرنك إفريقي",
+    "currencyFCFA": "FCFA",
     "@currencyFCFA": {
         "description": "Currency label for FCFA"
     },
-    "availabilityJanToDec": "متوفر: يناير إلى ديسمبر",
+    "availabilityJanToDec": "Disponible: Janvier à Décembre",
     "@availabilityJanToDec": {
         "description": "Availability period January to December"
     },
-    "availabilityMarToAug": "متوفر: مارس إلى أغسطس",
+    "availabilityMarToAug": "Disponible: Mars à Août",
     "@availabilityMarToAug": {
         "description": "Availability period March to August"
     },
-    "availabilityOctToDec": "متوفر: أكتوبر إلى ديسمبر",
+    "availabilityOctToDec": "Disponible: Octobre à Décembre",
     "@availabilityOctToDec": {
         "description": "Availability period October to December"
     },
-    "availabilityOctToJan": "متوفر: أكتوبر إلى يناير",
+    "availabilityOctToJan": "Disponible: Octobre à Janvier",
     "@availabilityOctToJan": {
         "description": "Availability period October to January"
     },
-    "availabilityMayToJul": "متوفر: مايو إلى يوليو",
+    "availabilityMayToJul": "Disponible: Mai à Juillet",
     "@availabilityMayToJul": {
         "description": "Availability period May to July"
     },
-    "availabilitySepToDec": "متوفر: سبتمبر إلى ديسمبر",
+    "availabilitySepToDec": "Disponible: Septembre à Décembre",
     "@availabilitySepToDec": {
         "description": "Availability period September to December"
     },
-    "water": "الماء",
+    "water": "Eau",
     "@water": {
         "description": "Nutrient name for water"
     },
-    "nutrientInOptimalRange": "رائع! {nutrientName} ضمن النطاق الأمثل ({min} - {max})",
+    "nutrientInOptimalRange": "Excellent! {nutrientName} est dans la plage optimale ({min} - {max})",
     "@nutrientInOptimalRange": {
         "description": "Message shown when a nutrient value is within the optimal range",
         "placeholders": {
@@ -292,523 +292,523 @@
             }
         }
     },
-    "ingredients": "المكونات",
+    "ingredients": "Ingrédients",
     "@ingredients": {
         "description": "Section header for the list of compost ingredients"
     },
-    "ingredient": "المكون",
+    "ingredient": "Ingrédient",
     "@ingredient": {
         "description": "Single ingredient label for table header"
     },
-    "addIngredient": "إضافة مكون",
+    "addIngredient": "Ajouter un Ingrédient",
     "@addIngredient": {
         "description": "Button label for adding a new compost ingredient to the recipe"
     },
-    "allIngredients": "جميع المكونات",
+    "allIngredients": "Tous les Ingrédients",
     "@allIngredients": {
         "description": "Section title for all ingredients list"
     },
-    "compostCalculator": "حاسبة السماد العضوي",
+    "compostCalculator": "Calculateur de Compost",
     "@compostCalculator": {
         "description": "Main title of the compost calculator page"
     },
-    "welcomeToCompostCalculator": "مرحباً بك في حاسبة السماد العضوي",
+    "welcomeToCompostCalculator": "Bienvenue au Calculateur de Compost",
     "@welcomeToCompostCalculator": {
         "description": "Welcome message for the compost calculator page"
     },
-    "thisAppIsDesignedToHelpYouCreateAndManage": "تم تصميم هذا التطبيق لمساعدتك في إنشاء وإدارة السماد الهوائي المفتوح. استخدم الأدوات أدناه للتعرف على السماد العضوي واستكشاف الوصفات أو إنشاء وصفاتك الخاصة!",
+    "thisAppIsDesignedToHelpYouCreateAndManage": "Cette application est conçue pour vous aider à créer et gérer le compostage aérobie en tas. Utilisez les outils ci-dessous pour en apprendre davantage sur le compostage, explorer des recettes ou créer les vôtres!",
     "@thisAppIsDesignedToHelpYouCreateAndManage": {
         "description": "Description of the app's purpose and features"
     },
-    "compostGuidelines": "إرشادات السماد العضوي",
+    "compostGuidelines": "Directives de Compostage",
     "@compostGuidelines": {
         "description": "Title for the compost guidelines section"
     },
-    "sampleCompostRecipes": "نماذج وصفات السماد العضوي",
+    "sampleCompostRecipes": "Exemples de Recettes de Compost",
     "@sampleCompostRecipes": {
         "description": "Title for the sample compost recipes section"
     },
-    "aerobicCompostingProcess": "عملية التسميد الهوائي",
+    "aerobicCompostingProcess": "Processus de Compostage Aérobie",
     "@aerobicCompostingProcess": {
         "description": "Title for the aerobic composting process section"
     },
-    "howToMakeCompost": "كيفية صنع السماد العضوي",
+    "howToMakeCompost": "Comment Faire du Compost",
     "@howToMakeCompost": {
         "description": "Title for the how-to guide on making compost"
     },
-    "cnRatioOptimumCompostConditions": "نسبة الكربون إلى النيتروجين وظروف السماد المثالية",
+    "cnRatioOptimumCompostConditions": "Ratio C:N & Conditions Optimales de Compost",
     "@cnRatioOptimumCompostConditions": {
         "description": "Title for the C:N ratio and optimum compost conditions section"
     },
-    "troubleshootingCompostProblems": "استكشاف مشاكل السماد العضوي وإصلاحها",
+    "troubleshootingCompostProblems": "Résolution des Problèmes de Compost",
     "@troubleshootingCompostProblems": {
         "description": "Title for the troubleshooting compost problems section"
     },
-    "contentNotAvailable": "المحتوى غير متوفر",
+    "contentNotAvailable": "Contenu non disponible",
     "@contentNotAvailable": {
         "description": "Message shown when content is not available"
     },
-    "compostingHappensInFourStages": "يحدث التسميد في أربع مراحل:",
+    "compostingHappensInFourStages": "Le compostage se déroule en quatre étapes:",
     "@compostingHappensInFourStages": {
         "description": "Description of the four stages of composting"
     },
-    "day1": "اليوم 1",
+    "day1": "Jour 1",
     "@day1": {
         "description": "Label for Day 1 in the composting timeline"
     },
-    "day5": "اليوم 5",
+    "day5": "Jour 5",
     "@day5": {
         "description": "Label for Day 5 in the composting timeline"
     },
-    "day25": "اليوم 25",
+    "day25": "Jour 25",
     "@day25": {
         "description": "Label for Day 25 in the composting timeline"
     },
-    "day35": "اليوم 35",
+    "day35": "Jour 35",
     "@day35": {
         "description": "Label for Day 35 in the composting timeline"
     },
-    "day60": "اليوم 60+",
+    "day60": "Jour 60+",
     "@day60": {
         "description": "Label for Day 60 and beyond in the composting timeline"
     },
-    "startup": "البدء",
+    "startup": "Démarrage",
     "@startup": {
         "description": "Label for the start-up phase in the composting timeline"
     },
-    "days2to5": "الأيام 2-5",
+    "days2to5": "Jours 2-5",
     "@days2to5": {
         "description": "Label for Days 2 to 5 in the composting timeline"
     },
-    "heating": "التسخين",
+    "heating": "Chauffage",
     "@heating": {
         "description": "Label for the heating phase in the composting timeline"
     },
-    "days5to25": "الأيام 5-25",
+    "days5to25": "Jours 5-25",
     "@days5to25": {
         "description": "Label for Days 5 to 25 in the composting timeline"
     },
-    "cooling": "التبريد",
+    "cooling": "Refroidissement",
     "@cooling": {
         "description": "Label for the cooling phase in the composting timeline"
     },
-    "days25to35": "الأيام 25-35",
+    "days25to35": "Jours 25-35",
     "@days25to35": {
         "description": "Label for Days 25 to 35 in the composting timeline"
     },
-    "maturing": "النضج",
+    "maturing": "Maturation",
     "@maturing": {
         "description": "Label for the maturing phase in the composting timeline"
     },
-    "days35to60": "الأيام 35-60+",
+    "days35to60": "Jours 35-60+",
     "@days35to60": {
         "description": "Label for Days 35 and beyond in the composting timeline"
     },
-    "compostingTimelineProcess": "مراحل عملية التسميد",
+    "compostingTimelineProcess": "Processus Chronologique du Compostage",
     "@compostingTimelineProcess": {
         "description": "Title for the composting timeline process section"
     },
-    "startupDays2to5": "1. البدء (الأيام 2-5)",
+    "startupDays2to5": "1. Démarrage (Jours 2-5)",
     "@startupDays2to5": {
         "description": "Label for the start-up phase in the composting timeline"
     },
-    "microorganismsBeginBreakingDownWaste": "تبدأ الكائنات الدقيقة في تحلل النفايات.",
+    "microorganismsBeginBreakingDownWaste": "Les micro-organismes commencent à décomposer les déchets.",
     "@microorganismsBeginBreakingDownWaste": {
         "description": "Description of the start-up phase in the composting timeline"
     },
-    "temperature20to45c": "درجة الحرارة: 20–45°م",
+    "temperature20to45c": "Température: 20–45°C",
     "@temperature20to45c": {
         "description": "Temperature range for the start-up phase in the composting timeline"
     },
-    "keyNeedsWaterOxygenSmallsizedOrganicMatter": "الاحتياجات الأساسية: الماء، الأكسجين، المواد العضوية صغيرة الحجم.",
+    "keyNeedsWaterOxygenSmallsizedOrganicMatter": "Besoins essentiels: Eau, oxygène, matière organique de petite taille.",
     "@keyNeedsWaterOxygenSmallsizedOrganicMatter": {
         "description": "Key needs for the start-up phase in the composting timeline"
     },
-    "heatingPhaseDays5to25": "2. مرحلة التسخين (الأيام 5-25)",
+    "heatingPhaseDays5to25": "2. Phase de Chauffage (Jours 5-25)",
     "@heatingPhaseDays5to25": {
         "description": "Label for the heating phase in the composting timeline"
     },
-    "temperature45to65c": "درجة الحرارة: 45–65°م",
+    "temperature45to65c": "Température: 45–65°C",
     "@temperature45to65c": {
         "description": "Temperature range for the heating phase in the composting timeline"
     },
-    "breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": "تحلل المواد سريعة التحلل، وتقتل مسببات الأمراض وبذور الأعشاب الضارة.",
+    "breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": "Décompose les matières à décomposition rapide, tue les agents pathogènes et les graines de mauvaises herbes.",
     "@breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": {
         "description": "Description of the heating phase in the composting timeline"
     },
-    "organismsChangeAsConditionsShift": "تتغير الكائنات الحية مع تغير الظروف.",
+    "organismsChangeAsConditionsShift": "Les organismes changent au fur et à mesure que les conditions évoluent.",
     "@organismsChangeAsConditionsShift": {
         "description": "Description of the organism changes during the heating phase in the composting timeline"
     },
-    "coolingPhaseDays25to35": "3. مرحلة التبريد (الأيام 25-35)",
+    "coolingPhaseDays25to35": "3. Phase de Refroidissement (Jours 25-35)",
     "@coolingPhaseDays25to35": {
         "description": "Label for the cooling phase in the composting timeline"
     },
-    "temperature25to45c": "درجة الحرارة: 25–45°م",
+    "temperature25to45c": "Température: 25–45°C",
     "@temperature25to45c": {
         "description": "Temperature range for the cooling phase in the composting timeline"
     },
-    "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": "تحلل أبطأ، الفطريات تكسر المواد الأكثر صلابة (القش، الخشب).",
+    "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": "Décomposition plus lente, les champignons décomposent les matières plus résistantes (paille, bois).",
     "@slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": {
         "description": "Description of the cooling phase in the composting timeline"
     },
-    "thePileShrinksAsMaterialDecomposes": "ينكمش الكومة مع تحلل المواد.",
+    "thePileShrinksAsMaterialDecomposes": "Le tas rétrécit à mesure que la matière se décompose.",
     "@thePileShrinksAsMaterialDecomposes": {
         "description": "Description of the pile shrinkage during the cooling phase in the composting timeline"
     },
-    "maturationPhaseDays35to60": "4. مرحلة النضج (الأيام 35-60+)",
+    "maturationPhaseDays35to60": "4. Phase de Maturation (Jours 35-60+)",
     "@maturationPhaseDays35to60": {
         "description": "Label for the maturation phase in the composting timeline"
     },
-    "temperature20to40c": "درجة الحرارة: 20–40°م",
+    "temperature20to40c": "Température: 20–40°C",
     "@temperature20to40c": {
         "description": "Temperature range for the maturation phase in the composting timeline"
     },
-    "soilOrganismsReturnNutrientsStabilizeHumusForms": "تعود كائنات التربة، تستقر المغذيات، يتشكل الدبال.",
+    "soilOrganismsReturnNutrientsStabilizeHumusForms": "Les organismes du sol reviennent, les nutriments se stabilisent, l'humus se forme.",
     "@soilOrganismsReturnNutrientsStabilizeHumusForms": {
         "description": "Description of the maturation phase in the composting timeline"
     },
-    "readyWhenDarkEarthySmellNoHeatInTheCenter": "جاهز عندما: داكن، رائحة ترابية، لا حرارة في المركز.",
+    "readyWhenDarkEarthySmellNoHeatInTheCenter": "Prêt quand: Sombre, odeur de terre, pas de chaleur au centre.",
     "@readyWhenDarkEarthySmellNoHeatInTheCenter": {
         "description": "Description of the readiness indicators during the maturation phase in the composting timeline"
     },
-    "canBeStoredFor6to12MonthsKeepDryToAvoid": "يمكن تخزينه لمدة 6-12 شهراً (يحفظ جافاً لتجنب فقدان المغذيات).",
+    "canBeStoredFor6to12MonthsKeepDryToAvoid": "Peut être stocké pendant 6 à 12 mois (garder au sec pour éviter la perte de nutriments).",
     "@canBeStoredFor6to12MonthsKeepDryToAvoid": {
         "description": "Description of the storage conditions for mature compost"
     },
-    "visualTip": "نصيحة بصرية",
+    "visualTip": "Conseil Visuel",
     "@visualTip": {
         "description": "Title for the visual tip section"
     },
-    "yourCompostPileShouldBeLargeEnoughToMaintainHeat": "يجب أن تكون كومة السماد كبيرة بما يكفي للحفاظ على الحرارة (على الأقل 1م×1م×1م)، ولكن صغيرة بما يكفي لتقليبها وإدارتها بسهولة.",
+    "yourCompostPileShouldBeLargeEnoughToMaintainHeat": "Votre tas de compost doit être assez grand pour maintenir la chaleur (au moins 1m×1m×1m), mais assez petit pour être facilement retourné et géré.",
     "@yourCompostPileShouldBeLargeEnoughToMaintainHeat": {
         "description": "Description of the ideal size for a compost pile"
     },
-    "chooseASite": "اختر موقعاً",
+    "chooseASite": "Choisir un site",
     "@chooseASite": {
         "description": "Title for the choose a site section"
     },
-    "welldrainedShadyNearAWaterSource": "جيد التصريف، مظلل، بالقرب من مصدر مياه.",
+    "welldrainedShadyNearAWaterSource": "Bien drainé, ombragé, près d'une source d'eau.",
     "@welldrainedShadyNearAWaterSource": {
         "description": "Description of the ideal site conditions for composting"
     },
-    "layerMaterials": "طبقات المواد",
+    "layerMaterials": "Disposer en couches",
     "@layerMaterials": {
         "description": "Title for the layer materials section"
     },
-    "balanceCarbonDryBrownsAndNitrogenGreens": "وازن بين الكربون (المواد البنية الجافة) والنيتروجين (المواد الخضراء).",
+    "balanceCarbonDryBrownsAndNitrogenGreens": "Équilibrer le carbone (matières brunes sèches) et l'azote (matières vertes).",
     "@balanceCarbonDryBrownsAndNitrogenGreens": {
         "description": "Description of the material layering process in composting"
     },
-    "maintainMoisture": "الحفاظ على الرطوبة",
+    "maintainMoisture": "Maintenir l'humidité",
     "@maintainMoisture": {
         "description": "Title for the maintain moisture section"
     },
-    "keepItLikeADampSpongeNotTooDry": "حافظ عليها مثل الإسفنجة الرطبة (ليست جافة جداً ولا مبللة جداً).",
+    "keepItLikeADampSpongeNotTooDry": "Garder comme une éponge humide (ni trop sec ni détrempé).",
     "@keepItLikeADampSpongeNotTooDry": {
         "description": "Description of the ideal moisture level for composting"
     },
-    "turnThePileRegularly": "قلب الكومة بانتظام",
+    "turnThePileRegularly": "Retourner le tas régulièrement",
     "@turnThePileRegularly": {
         "description": "Title for the turn the pile regularly section"
     },
-    "mixEvery714DaysForAeration": "اخلط كل 7-14 يوماً للتهوية.",
+    "mixEvery714DaysForAeration": "Mélanger tous les 7 à 14 jours pour l'aération.",
     "@mixEvery714DaysForAeration": {
         "description": "Description of the turning process in composting"
     },
-    "checkReadiness": "تحقق من الجاهزية",
+    "checkReadiness": "Vérifier la maturité",
     "@checkReadiness": {
         "description": "Title for the check readiness section"
     },
-    "whenDarkCrumblyAndSmellsEarthyItsDone": "عندما يصبح داكناً ومتفتتاً ورائحته ترابية، يكون جاهزاً!",
+    "whenDarkCrumblyAndSmellsEarthyItsDone": "Quand il est sombre, friable et sent la terre, c'est prêt!",
     "@whenDarkCrumblyAndSmellsEarthyItsDone": {
         "description": "Description of the indicators for compost readiness"
     },
-    "cnRatioExplained": "شرح نسبة الكربون إلى النيتروجين:",
+    "cnRatioExplained": "Explication du Ratio C:N:",
     "@cnRatioExplained": {
         "description": "Title for the C:N ratio explanation section"
     },
-    "idealCarbonnitrogenRatio30to1": "النسبة المثالية للكربون:النيتروجين = 30:1",
+    "idealCarbonnitrogenRatio30to1": "Ratio idéal Carbone:Azote = 30:1",
     "@idealCarbonnitrogenRatio30to1": {
         "description": "Description of the ideal C:N ratio for composting"
     },
-    "tooMuchCarbonDecompositionSlowsDown": "كربون زائد؟ يبطئ التحلل.",
+    "tooMuchCarbonDecompositionSlowsDown": "Trop de carbone? La décomposition ralentit.",
     "@tooMuchCarbonDecompositionSlowsDown": {
         "description": "Description of the effect of too much carbon in composting"
     },
-    "tooMuchNitrogenSmellySoggyPile": "نيتروجين زائد؟ كومة مبللة وكريهة الرائحة.",
+    "tooMuchNitrogenSmellySoggyPile": "Trop d'azote? Tas malodorant et détrempé.",
     "@tooMuchNitrogenSmellySoggyPile": {
         "description": "Description of the effect of too much nitrogen in composting"
     },
-    "simpleRule": "قاعدة بسيطة:",
+    "simpleRule": "Règle simple:",
     "@simpleRule": {
         "description": "Title for the simple rule section"
     },
-    "bucketNitrogenrichMaterialsGreens": "1 دلو من المواد الغنية بالنيتروجين (الخضراء)",
+    "bucketNitrogenrichMaterialsGreens": "1 seau de matières riches en azote (vertes)",
     "@bucketNitrogenrichMaterialsGreens": {
         "description": "Description of the nitrogen-rich materials (greens) in composting"
     },
-    "bucketsDryCarbonMaterialsBrowns": "2 دلو من المواد الكربونية الجافة (البنية)",
+    "bucketsDryCarbonMaterialsBrowns": "2 seaux de matières carbonées sèches (brunes)",
     "@bucketsDryCarbonMaterialsBrowns": {
         "description": "Description of the dry carbon materials (browns) in composting"
     },
-    "highCarbon": "غني بالكربون",
+    "highCarbon": "Riche en Carbone",
     "@highCarbon": {
         "description": "Label for high carbon materials"
     },
-    "browns": "المواد البنية",
+    "browns": "Bruns",
     "@browns": {
         "description": "Label for brown materials"
     },
-    "cashewShells": "قشور الكاجو",
+    "cashewShells": "Coques de cajou",
     "@cashewShells": {
         "description": "Name of cashew shells component"
     },
-    "riceHusks": "قشور الأرز",
+    "riceHusks": "Balles de riz",
     "@riceHusks": {
         "description": "Name of rice husks component"
     },
-    "dryLeaves": "أوراق جافة",
+    "dryLeaves": "Feuilles sèches",
     "@dryLeaves": {
         "description": "Name of dry leaves component"
     },
-    "highNitrogen": "غني بالنيتروجين",
+    "highNitrogen": "Riche en Azote",
     "@highNitrogen": {
         "description": "Label for high nitrogen materials"
     },
-    "greens": "المواد الخضراء",
+    "greens": "Verts",
     "@greens": {
         "description": "Label for green materials"
     },
-    "chickenManure": "روث الدجاج",
+    "chickenManure": "Fumier de poulet",
     "@chickenManure": {
         "description": "Name of chicken manure component"
     },
-    "cowDung": "روث البقر",
+    "cowDung": "Bouse de vache",
     "@cowDung": {
         "description": "Name of cow dung component"
     },
-    "freshPlant": "نباتات طازجة",
+    "freshPlant": "Plantes fraîches",
     "@freshPlant": {
         "description": "Name of fresh plant component"
     },
-    "optimumMoisture": "الرطوبة المثالية",
+    "optimumMoisture": "Humidité Optimale",
     "@optimumMoisture": {
         "description": "Title for the optimum moisture section"
     },
-    "yourCompostShouldHaveTheMoistureLevelOfAWrungout": "يجب أن يكون مستوى الرطوبة في السماد كإسفنجة معصورة - رطب ولكن ليس مبللاً.",
+    "yourCompostShouldHaveTheMoistureLevelOfAWrungout": "Votre compost doit avoir le niveau d'humidité d'une éponge essorée - humide mais pas détrempé.",
     "@yourCompostShouldHaveTheMoistureLevelOfAWrungout": {
         "description": "Description of the ideal moisture level for composting"
     },
-    "oxygenRequirements": "متطلبات الأكسجين",
+    "oxygenRequirements": "Besoins en Oxygène",
     "@oxygenRequirements": {
         "description": "Title for the oxygen requirements section"
     },
-    "regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": "التقليب المنتظم (كل 1-2 أسبوع) يضمن تدفق الأكسجين المناسب للتحلل الهوائي.",
+    "regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": "Le retournement régulier (toutes les 1-2 semaines) assure un bon flux d'oxygène pour la décomposition aérobie.",
     "@regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": {
         "description": "Description of the importance of regular turning for oxygen flow in composting"
     },
-    "commonCompostProblemsSolutions": "مشاكل السماد الشائعة وحلولها",
+    "commonCompostProblemsSolutions": "Problèmes Courants de Compost & Solutions",
     "@commonCompostProblemsSolutions": {
         "description": "Title for the common compost problems and solutions section"
     },
-    "quickCheck": "فحص سريع",
+    "quickCheck": "Vérification Rapide",
     "@quickCheck": {
         "description": "Title for the quick check section"
     },
-    "aHealthyCompostPileShouldBeWarmSlightlyDampAnd": "يجب أن تكون كومة السماد الصحية دافئة، ورطبة قليلاً، ورائحتها ترابية. إذا لم تكن كومتك كذلك، راجع نصائح استكشاف الأخطاء وإصلاحها أعلاه!",
+    "aHealthyCompostPileShouldBeWarmSlightlyDampAnd": "Un tas de compost sain doit être chaud, légèrement humide et avoir une odeur de terre. Si le vôtre ne correspond pas à cette description, consultez les conseils de dépannage ci-dessus!",
     "@aHealthyCompostPileShouldBeWarmSlightlyDampAnd": {
         "description": "Description of the characteristics of a healthy compost pile"
     },
-    "pileIsntHeatingUp": "الكومة لا تسخن",
+    "pileIsntHeatingUp": "Le Tas ne Chauffe Pas",
     "@pileIsntHeatingUp": {
         "description": "Title for the pile isn't heating up section"
     },
-    "pileTooSmallShouldBeAtLeast3x3x3Feet": "الكومة صغيرة جداً (يجب أن تكون على الأقل 1م×1م×1م)",
+    "pileTooSmallShouldBeAtLeast3x3x3Feet": "Tas trop petit (devrait être d'au moins 1m×1m×1m)",
     "@pileTooSmallShouldBeAtLeast3x3x3Feet": {
         "description": "Description of the issue when the compost pile is too small"
     },
-    "tooDryAddWater": "جافة جداً (أضف ماء)",
+    "tooDryAddWater": "Trop sec (ajouter de l'eau)",
     "@tooDryAddWater": {
         "description": "Description of the issue when the compost pile is too dry"
     },
-    "notEnoughNitrogenAddGreens": "نقص النيتروجين (أضف مواد 'خضراء')",
+    "notEnoughNitrogenAddGreens": "Pas assez d'azote (ajouter des 'verts')",
     "@notEnoughNitrogenAddGreens": {
         "description": "Description of the issue when there is not enough nitrogen in the compost pile"
     },
-    "coldWeatherInsulateOrWaitForWarmerConditions": "طقس بارد (عزل أو انتظر ظروفاً أكثر دفئاً)",
+    "coldWeatherInsulateOrWaitForWarmerConditions": "Temps froid (isoler ou attendre des conditions plus chaudes)",
     "@coldWeatherInsulateOrWaitForWarmerConditions": {
         "description": "Description of the issue when the compost pile is affected by cold weather"
     },
-    "pileIsFinishedComposting": "الكومة انتهت من التسميد",
+    "pileIsFinishedComposting": "Le tas a fini de composter",
     "@pileIsFinishedComposting": {
         "description": "Description of the issue when the compost pile is finished composting"
     },
-    "addMoreNitrogenrichMaterials": "أضف المزيد من المواد الغنية بالنيتروجين",
+    "addMoreNitrogenrichMaterials": "Ajouter plus de matières riches en azote",
     "@addMoreNitrogenrichMaterials": {
         "description": "Description of the solution when the compost pile needs more nitrogen-rich materials"
     },
-    "checkMoistureAndAddWaterIfNeeded": "تحقق من الرطوبة وأضف الماء إذا لزم الأمر",
+    "checkMoistureAndAddWaterIfNeeded": "Vérifier l'humidité et ajouter de l'eau si nécessaire",
     "@checkMoistureAndAddWaterIfNeeded": {
         "description": "Description of the solution when the compost pile needs moisture adjustment"
     },
-    "turnThePileToIncreaseOxygen": "قلب الكومة لزيادة الأكسجين",
+    "turnThePileToIncreaseOxygen": "Retourner le tas pour augmenter l'oxygène",
     "@turnThePileToIncreaseOxygen": {
         "description": "Description of the solution when the compost pile needs more oxygen"
     },
-    "increasePileSize": "زيادة حجم الكومة",
+    "increasePileSize": "Augmenter la taille du tas",
     "@increasePileSize": {
         "description": "Description of the solution when the compost pile needs to be larger"
     },
-    "badOdors": "روائح كريهة",
+    "badOdors": "Mauvaises Odeurs",
     "@badOdors": {
         "description": "Title for the bad odors section"
     },
-    "ammoniaSmellTooMuchNitrogen": "رائحة الأمونيا: نيتروجين زائد",
+    "ammoniaSmellTooMuchNitrogen": "Odeur d'ammoniac: Trop d'azote",
     "@ammoniaSmellTooMuchNitrogen": {
         "description": "Description of the issue when there is too much nitrogen in the compost pile"
     },
-    "rottenEggSmellAnaerobicConditionsNotEnoughOxygen": "رائحة البيض الفاسد: ظروف لاهوائية (نقص الأكسجين)",
+    "rottenEggSmellAnaerobicConditionsNotEnoughOxygen": "Odeur d'œuf pourri: Conditions anaérobies (pas assez d'oxygène)",
     "@rottenEggSmellAnaerobicConditionsNotEnoughOxygen": {
         "description": "Description of the issue when there are anaerobic conditions in the compost pile"
     },
-    "otherMaterialsMeatDairyEtc": "مواد 'أخرى' (لحوم، منتجات ألبان، إلخ)",
+    "otherMaterialsMeatDairyEtc": "Matières 'autres' (viande, produits laitiers, etc.)",
     "@otherMaterialsMeatDairyEtc": {
         "description": "Description of the issue when there are 'other' materials like meat or dairy in the compost pile"
     },
-    "addCarbonrichMaterialsDryLeavesStraw": "أضف مواد غنية بالكربون (أوراق جافة، قش)",
+    "addCarbonrichMaterialsDryLeavesStraw": "Ajouter des matières riches en carbone (feuilles sèches, paille)",
     "@addCarbonrichMaterialsDryLeavesStraw": {
         "description": "Description of the solution when the compost pile needs more carbon-rich materials"
     },
-    "turnThePileToAddOxygen": "قلب الكومة لإضافة الأكسجين",
+    "turnThePileToAddOxygen": "Retourner le tas pour ajouter de l'oxygène",
     "@turnThePileToAddOxygen": {
         "description": "Description of the solution when the compost pile needs more oxygen"
     },
-    "coverFoodScrapsWithBrowns": "غطي بقايا الطعام بمواد بنية",
+    "coverFoodScrapsWithBrowns": "Couvrir les restes alimentaires avec des matières brunes",
     "@coverFoodScrapsWithBrowns": {
         "description": "Description of the solution when the compost pile needs to cover food scraps with browns"
     },
-    "avoidAddingMeatDairyOrOils": "تجنب إضافة اللحوم أو منتجات الألبان أو الزيوت",
+    "avoidAddingMeatDairyOrOils": "Éviter d'ajouter de la viande, des produits laitiers ou des huiles",
     "@avoidAddingMeatDairyOrOils": {
         "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, or oils"
     },
-    "pestsInTheCompost": "الآفات في السماد",
+    "pestsInTheCompost": "Nuisibles dans le Compost",
     "@pestsInTheCompost": {
         "description": "Title for the pests in the compost section"
     },
-    "exposedFoodScraps": "بقايا طعام مكشوفة",
+    "exposedFoodScraps": "Restes alimentaires exposés",
     "@exposedFoodScraps": {
         "description": "Description of the issue when there are exposed food scraps in the compost pile"
     },
-    "meatDairyOrFattyFoodsInCompost": "لحوم أو منتجات ألبان أو أطعمة دهنية في السماد",
+    "meatDairyOrFattyFoodsInCompost": "Viande, produits laitiers ou aliments gras dans le compost",
     "@meatDairyOrFattyFoodsInCompost": {
         "description": "Description of the issue when there are meat, dairy, or fatty foods in the compost pile"
     },
-    "pileNotHotEnough": "الكومة ليست ساخنة بما يكفي",
+    "pileNotHotEnough": "Tas pas assez chaud",
     "@pileNotHotEnough": {
         "description": "Description of the issue when the compost pile is not hot enough"
     },
-    "buryFoodScrapsInTheCenterOfThePile": "ادفن بقايا الطعام في وسط الكومة",
+    "buryFoodScrapsInTheCenterOfThePile": "Enterrer les restes alimentaires au centre du tas",
     "@buryFoodScrapsInTheCenterOfThePile": {
         "description": "Description of the solution when the compost pile needs to bury food scraps in the center"
     },
-    "avoidAddingMeatDairyOilsOrPetWaste": "تجنب إضافة اللحوم أو منتجات الألبان أو الزيوت أو فضلات الحيوانات الأليفة",
+    "avoidAddingMeatDairyOilsOrPetWaste": "Éviter d'ajouter de la viande, des produits laitiers, des huiles ou des déchets d'animaux",
     "@avoidAddingMeatDairyOilsOrPetWaste": {
         "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, oils, or pet waste"
     },
-    "turnPileRegularlyToMaintainHeat": "قلب الكومة بانتظام للحفاظ على الحرارة",
+    "turnPileRegularlyToMaintainHeat": "Retourner le tas régulièrement pour maintenir la chaleur",
     "@turnPileRegularlyToMaintainHeat": {
         "description": "Description of the solution when the compost pile needs to turn regularly to maintain heat"
     },
-    "useARodentresistantBinIfNecessary": "استخدم حاوية مقاومة للقوارض إذا لزم الأمر",
+    "useARodentresistantBinIfNecessary": "Utiliser un bac résistant aux rongeurs si nécessaire",
     "@useARodentresistantBinIfNecessary": {
         "description": "Description of the solution when the compost pile needs to use a rodent-resistant bin if necessary"
     },
-    "pileIsTooWetdry": "الكومة رطبة/جافة جداً",
+    "pileIsTooWetdry": "Le Tas est Trop Humide/Sec",
     "@pileIsTooWetdry": {
         "description": "Title for the pile is too wet/dry section"
     },
-    "tooWetSoggyMaterialsPoorDrainage": "رطبة جداً: مواد مبللة، تصريف ضعيف",
+    "tooWetSoggyMaterialsPoorDrainage": "Trop humide: Matières détrempées, mauvais drainage",
     "@tooWetSoggyMaterialsPoorDrainage": {
         "description": "Description of the issue when the compost pile is too wet due to soggy materials or poor drainage"
     },
-    "tooDryNotEnoughWaterTooMuchSunExposure": "جافة جداً: نقص الماء، تعرض زائد للشمس",
+    "tooDryNotEnoughWaterTooMuchSunExposure": "Trop sec: Pas assez d'eau, trop d'exposition au soleil",
     "@tooDryNotEnoughWaterTooMuchSunExposure": {
         "description": "Description of the issue when the compost pile is too dry due to not enough water or too much sun exposure"
     },
-    "tooWetAddDryCarbonrichMaterials": "رطبة جداً: أضف مواد جافة غنية بالكربون",
+    "tooWetAddDryCarbonrichMaterials": "Trop humide: Ajouter des matières sèches riches en carbone",
     "@tooWetAddDryCarbonrichMaterials": {
         "description": "Description of the solution when the compost pile is too wet and needs to add dry, carbon-rich materials"
     },
-    "tooWetTurnThePileToHelpItDryOut": "رطبة جداً: قلب الكومة للمساعدة في تجفيفها",
+    "tooWetTurnThePileToHelpItDryOut": "Trop humide: Retourner le tas pour aider à le sécher",
     "@tooWetTurnThePileToHelpItDryOut": {
         "description": "Description of the solution when the compost pile is too wet and needs to turn the pile to help it dry out"
     },
-    "tooWetCoverDuringHeavyRains": "رطبة جداً: غطها أثناء الأمطار الغزيرة",
+    "tooWetCoverDuringHeavyRains": "Trop humide: Couvrir pendant les fortes pluies",
     "@tooWetCoverDuringHeavyRains": {
         "description": "Description of the solution when the compost pile is too wet and needs to cover during heavy rains"
     },
-    "tooDryAddWaterWhileTurningThePile": "جافة جداً: أضف الماء أثناء تقليب الكومة",
+    "tooDryAddWaterWhileTurningThePile": "Trop sec: Ajouter de l'eau en retournant le tas",
     "@tooDryAddWaterWhileTurningThePile": {
         "description": "Description of the solution when the compost pile is too dry and needs to add water while turning the pile"
     },
-    "tooDryAddFreshGreenMaterials": "جافة جداً: أضف مواد 'خضراء' طازجة",
+    "tooDryAddFreshGreenMaterials": "Trop sec: Ajouter des matières 'vertes' fraîches",
     "@tooDryAddFreshGreenMaterials": {
         "description": "Description of the solution when the compost pile is too dry and needs to add fresh 'green' materials"
     },
-    "solutions": "الحلول:",
+    "solutions": "Solutions:",
     "@solutions": {
         "description": "Label for the solutions section"
     },
-    "basicGardenCompost": "سماد الحديقة الأساسي",
+    "basicGardenCompost": "Compost de Jardin Basique",
     "@basicGardenCompost": {
         "description": "Title for the basic garden compost recipe"
     },
-    "aSimpleBalancedRecipeForGeneralGardenUse": "وصفة بسيطة ومتوازنة للاستخدام العام في الحديقة.",
+    "aSimpleBalancedRecipeForGeneralGardenUse": "Une recette simple et équilibrée pour un usage général au jardin.",
     "@aSimpleBalancedRecipeForGeneralGardenUse": {
         "description": "Description of the basic garden compost recipe"
     },
-    "partsDryLeaves": "3 أجزاء من الأوراق الجافة",
+    "partsDryLeaves": "3 parts de feuilles sèches",
     "@partsDryLeaves": {
         "description": "Description of the dry leaves component in the basic garden compost recipe"
     },
-    "partFreshGrassClippings": "1 جزء من قصاصات العشب الطازجة",
+    "partFreshGrassClippings": "1 part de tontes de gazon fraîches",
     "@partFreshGrassClippings": {
         "description": "Description of the fresh grass clippings component in the basic garden compost recipe"
     },
-    "partVegetableScraps": "1 جزء من بقايا الخضروات",
+    "partVegetableScraps": "1 part de restes de légumes",
     "@partVegetableScraps": {
         "description": "Description of the vegetable scraps component in the basic garden compost recipe"
     },
-    "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": "ضع المكونات في طبقات، رطبها، وقلبها كل 1-2 أسبوع. تكون جاهزة في 3-6 أشهر.",
+    "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": "Disposer les ingrédients en couches, humidifier et retourner toutes les 1-2 semaines. Prêt en 3-6 mois.",
     "@layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": {
         "description": "Description of the preparation and readiness time for the basic garden compost recipe"
     },
-    "fastHotCompost": "السماد الساخن السريع",
+    "fastHotCompost": "Compost Chaud Rapide",
     "@fastHotCompost": {
         "description": "Title for the fast hot compost recipe"
     },
-    "forWhenYouNeedCompostQuickly": "عندما تحتاج إلى السماد بسرعة.",
+    "forWhenYouNeedCompostQuickly": "Pour quand vous avez besoin de compost rapidement.",
     "@forWhenYouNeedCompostQuickly": {
         "description": "Description of the fast hot compost recipe"
     },
-    "partsChoppedStrawOrWoodChips": "2 جزء من القش المفروم أو رقائق الخشب",
+    "partsChoppedStrawOrWoodChips": "2 parts de paille hachée ou de copeaux de bois",
     "@partsChoppedStrawOrWoodChips": {
         "description": "Description of the chopped straw or wood chips component in the fast hot compost recipe"
     },
-    "partChickenManure": "1 جزء من روث الدجاج",
+    "partChickenManure": "1 part de fumier de poulet",
     "@partChickenManure": {
         "description": "Description of the chicken manure component in the fast hot compost recipe"
     },
-    "partGreenGardenWasteChoppedSmall": "1 جزء من نفايات الحديقة الخضراء (مفرومة صغيرة)",
+    "partGreenGardenWasteChoppedSmall": "1 part de déchets verts de jardin (finement hachés)",
     "@partGreenGardenWasteChoppedSmall": {
         "description": "Description of the green garden waste component in the fast hot compost recipe"
     },
-    "mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": "اخلط جيداً، وتأكد من الرطوبة المناسبة، وقلب كل 3 أيام. قد يكون جاهزاً في 3-4 أسابيع إذا كانت الظروف مثالية.",
+    "mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": "Mélanger soigneusement, assurer une humidité adéquate et retourner tous les 3 jours. Peut être prêt en 3-4 semaines si les conditions sont idéales.",
     "@mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": {
         "description": "Description of the preparation and readiness time for the fast hot compost recipe"
     },
-    "instructions": "التعليمات",
+    "instructions": "Instructions",
     "@instructions": {
         "description": "Label for the instructions section"
     }

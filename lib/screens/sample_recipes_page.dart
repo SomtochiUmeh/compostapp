@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class SampleRecipesPage extends StatelessWidget {
   const SampleRecipesPage({super.key});
@@ -9,9 +10,9 @@ class SampleRecipesPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.brown.shade200,
         elevation: 0,
-        title: const Text(
-          'Sample Compost Recipes',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+        title: Text(
+          S.of(context).sampleCompostRecipes,
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -20,47 +21,25 @@ class SampleRecipesPage extends StatelessWidget {
         children: [
           _buildRecipeCard(
             context,
-            'Basic Garden Compost',
-            'A simple, balanced recipe for general garden use.',
+            S.of(context).basicGardenCompost,
+            S.of(context).aSimpleBalancedRecipeForGeneralGardenUse,
             [
-              '3 parts dry leaves',
-              '1 part fresh grass clippings',
-              '1 part vegetable scraps'
+              S.of(context).partsDryLeaves,
+              S.of(context).partFreshGrassClippings,
+              S.of(context).partVegetableScraps
             ],
-            'Layer ingredients, moisten, and turn every 1-2 weeks. Ready in 3-6 months.',
+            S.of(context).layerIngredientsMoistenAndTurnEvery12WeeksReadyIn,
           ),
           _buildRecipeCard(
             context,
-            'Fast Hot Compost',
-            'For when you need compost quickly.',
+            S.of(context).fastHotCompost,
+            S.of(context).forWhenYouNeedCompostQuickly,
             [
-              '2 parts chopped straw or wood chips',
-              '1 part chicken manure',
-              '1 part green garden waste (chopped small)'
+              S.of(context).partsChoppedStrawOrWoodChips,
+              S.of(context).partChickenManure,
+              S.of(context).partGreenGardenWasteChoppedSmall
             ],
-            'Mix thoroughly, ensure adequate moisture, and turn every 3 days. Can be ready in 3-4 weeks if conditions are ideal.',
-          ),
-          _buildRecipeCard(
-            context,
-            'Leaf Mold Compost',
-            'Great way to use fallen leaves.',
-            [
-              '4 parts fallen leaves',
-              '1 part grass clippings or other nitrogen source'
-            ],
-            'Shred leaves if possible, mix with grass, moisten, and pile up. Turn occasionally. Takes 6-12 months but creates excellent soil amendment.',
-          ),
-          _buildRecipeCard(
-            context,
-            'Vegetable Garden Booster',
-            'Nutrient-rich compost for vegetable gardens.',
-            [
-              '2 parts straw or dried leaves',
-              '1 part vegetable scraps',
-              '1 part coffee grounds',
-              '1/2 part crushed eggshells'
-            ],
-            'Layer ingredients, turn weekly. The coffee grounds accelerate heating, while eggshells add calcium. Ready in about 2-4 months.',
+            S.of(context).mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days,
           ),
         ],
       ),
@@ -92,9 +71,9 @@ class SampleRecipesPage extends StatelessWidget {
               style: const TextStyle(fontSize: 14, fontStyle: FontStyle.italic),
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Ingredients:',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              S.of(context).ingredients,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             ...ingredients.map((ingredient) => Padding(
@@ -105,9 +84,9 @@ class SampleRecipesPage extends StatelessWidget {
                   ),
                 )),
             const SizedBox(height: 16),
-            const Text(
-              'Instructions:',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              S.of(context).instructions,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(

@@ -734,6 +734,1309 @@ class S {
       args: [],
     );
   }
+
+  /// `Compost Calculator`
+  String get compostCalculator {
+    return Intl.message(
+      'Compost Calculator',
+      name: 'compostCalculator',
+      desc: 'Main title of the compost calculator page',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Compost Calculator`
+  String get welcomeToCompostCalculator {
+    return Intl.message(
+      'Welcome to Compost Calculator',
+      name: 'welcomeToCompostCalculator',
+      desc: 'Welcome message for the compost calculator page',
+      args: [],
+    );
+  }
+
+  /// `This app is designed to help you create and manage open-pile aerobic composting. Use the tools below to learn about composting, explore recipes, or create your own!`
+  String get thisAppIsDesignedToHelpYouCreateAndManage {
+    return Intl.message(
+      'This app is designed to help you create and manage open-pile aerobic composting. Use the tools below to learn about composting, explore recipes, or create your own!',
+      name: 'thisAppIsDesignedToHelpYouCreateAndManage',
+      desc: 'Description of the app\'s purpose and features',
+      args: [],
+    );
+  }
+
+  /// `Compost Guidelines`
+  String get compostGuidelines {
+    return Intl.message(
+      'Compost Guidelines',
+      name: 'compostGuidelines',
+      desc: 'Title for the compost guidelines section',
+      args: [],
+    );
+  }
+
+  /// `Sample Compost Recipes`
+  String get sampleCompostRecipes {
+    return Intl.message(
+      'Sample Compost Recipes',
+      name: 'sampleCompostRecipes',
+      desc: 'Title for the sample compost recipes section',
+      args: [],
+    );
+  }
+
+  /// `Aerobic Composting Process`
+  String get aerobicCompostingProcess {
+    return Intl.message(
+      'Aerobic Composting Process',
+      name: 'aerobicCompostingProcess',
+      desc: 'Title for the aerobic composting process section',
+      args: [],
+    );
+  }
+
+  /// `How to Make Compost`
+  String get howToMakeCompost {
+    return Intl.message(
+      'How to Make Compost',
+      name: 'howToMakeCompost',
+      desc: 'Title for the how-to guide on making compost',
+      args: [],
+    );
+  }
+
+  /// `C:N Ratio & Optimum Compost Conditions`
+  String get cnRatioOptimumCompostConditions {
+    return Intl.message(
+      'C:N Ratio & Optimum Compost Conditions',
+      name: 'cnRatioOptimumCompostConditions',
+      desc: 'Title for the C:N ratio and optimum compost conditions section',
+      args: [],
+    );
+  }
+
+  /// `Troubleshooting Compost Problems`
+  String get troubleshootingCompostProblems {
+    return Intl.message(
+      'Troubleshooting Compost Problems',
+      name: 'troubleshootingCompostProblems',
+      desc: 'Title for the troubleshooting compost problems section',
+      args: [],
+    );
+  }
+
+  /// `Content not available`
+  String get contentNotAvailable {
+    return Intl.message(
+      'Content not available',
+      name: 'contentNotAvailable',
+      desc: 'Message shown when content is not available',
+      args: [],
+    );
+  }
+
+  /// `Composting happens in four stages:`
+  String get compostingHappensInFourStages {
+    return Intl.message(
+      'Composting happens in four stages:',
+      name: 'compostingHappensInFourStages',
+      desc: 'Description of the four stages of composting',
+      args: [],
+    );
+  }
+
+  /// `Day 1`
+  String get day1 {
+    return Intl.message(
+      'Day 1',
+      name: 'day1',
+      desc: 'Label for Day 1 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Day 5`
+  String get day5 {
+    return Intl.message(
+      'Day 5',
+      name: 'day5',
+      desc: 'Label for Day 5 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Day 25`
+  String get day25 {
+    return Intl.message(
+      'Day 25',
+      name: 'day25',
+      desc: 'Label for Day 25 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Day 35`
+  String get day35 {
+    return Intl.message(
+      'Day 35',
+      name: 'day35',
+      desc: 'Label for Day 35 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Day 60+`
+  String get day60 {
+    return Intl.message(
+      'Day 60+',
+      name: 'day60',
+      desc: 'Label for Day 60 and beyond in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Start-up`
+  String get startup {
+    return Intl.message(
+      'Start-up',
+      name: 'startup',
+      desc: 'Label for the start-up phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Days 2-5`
+  String get days2to5 {
+    return Intl.message(
+      'Days 2-5',
+      name: 'days2to5',
+      desc: 'Label for Days 2 to 5 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Heating`
+  String get heating {
+    return Intl.message(
+      'Heating',
+      name: 'heating',
+      desc: 'Label for the heating phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Days 5-25`
+  String get days5to25 {
+    return Intl.message(
+      'Days 5-25',
+      name: 'days5to25',
+      desc: 'Label for Days 5 to 25 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Cooling`
+  String get cooling {
+    return Intl.message(
+      'Cooling',
+      name: 'cooling',
+      desc: 'Label for the cooling phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Days 25-35`
+  String get days25to35 {
+    return Intl.message(
+      'Days 25-35',
+      name: 'days25to35',
+      desc: 'Label for Days 25 to 35 in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Maturing`
+  String get maturing {
+    return Intl.message(
+      'Maturing',
+      name: 'maturing',
+      desc: 'Label for the maturing phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Days 35-60+`
+  String get days35to60 {
+    return Intl.message(
+      'Days 35-60+',
+      name: 'days35to60',
+      desc: 'Label for Days 35 and beyond in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Composting Timeline Process`
+  String get compostingTimelineProcess {
+    return Intl.message(
+      'Composting Timeline Process',
+      name: 'compostingTimelineProcess',
+      desc: 'Title for the composting timeline process section',
+      args: [],
+    );
+  }
+
+  /// `1. Start-up (Days 2-5)`
+  String get startupDays2to5 {
+    return Intl.message(
+      '1. Start-up (Days 2-5)',
+      name: 'startupDays2to5',
+      desc: 'Label for the start-up phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Microorganisms begin breaking down waste.`
+  String get microorganismsBeginBreakingDownWaste {
+    return Intl.message(
+      'Microorganisms begin breaking down waste.',
+      name: 'microorganismsBeginBreakingDownWaste',
+      desc: 'Description of the start-up phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Temperature: 20–45°C`
+  String get temperature20to45c {
+    return Intl.message(
+      'Temperature: 20–45°C',
+      name: 'temperature20to45c',
+      desc:
+          'Temperature range for the start-up phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Key Needs: Water, oxygen, small-sized organic matter.`
+  String get keyNeedsWaterOxygenSmallsizedOrganicMatter {
+    return Intl.message(
+      'Key Needs: Water, oxygen, small-sized organic matter.',
+      name: 'keyNeedsWaterOxygenSmallsizedOrganicMatter',
+      desc: 'Key needs for the start-up phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `2. Heating Phase (Days 5-25)`
+  String get heatingPhaseDays5to25 {
+    return Intl.message(
+      '2. Heating Phase (Days 5-25)',
+      name: 'heatingPhaseDays5to25',
+      desc: 'Label for the heating phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Temperature: 45–65°C`
+  String get temperature45to65c {
+    return Intl.message(
+      'Temperature: 45–65°C',
+      name: 'temperature45to65c',
+      desc:
+          'Temperature range for the heating phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Breaks down fast-decomposing materials, kills pathogens & weed seeds.`
+  String get breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds {
+    return Intl.message(
+      'Breaks down fast-decomposing materials, kills pathogens & weed seeds.',
+      name: 'breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds',
+      desc: 'Description of the heating phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Organisms change as conditions shift.`
+  String get organismsChangeAsConditionsShift {
+    return Intl.message(
+      'Organisms change as conditions shift.',
+      name: 'organismsChangeAsConditionsShift',
+      desc:
+          'Description of the organism changes during the heating phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `3. Cooling Phase (Days 25-35)`
+  String get coolingPhaseDays25to35 {
+    return Intl.message(
+      '3. Cooling Phase (Days 25-35)',
+      name: 'coolingPhaseDays25to35',
+      desc: 'Label for the cooling phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Temperature: 25–45°C`
+  String get temperature25to45c {
+    return Intl.message(
+      'Temperature: 25–45°C',
+      name: 'temperature25to45c',
+      desc:
+          'Temperature range for the cooling phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Slower decomposition, fungi break down tougher materials (straw, wood).`
+  String get slowerDecompositionFungiBreakDownTougherMaterialsStrawWood {
+    return Intl.message(
+      'Slower decomposition, fungi break down tougher materials (straw, wood).',
+      name: 'slowerDecompositionFungiBreakDownTougherMaterialsStrawWood',
+      desc: 'Description of the cooling phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `The pile shrinks as material decomposes.`
+  String get thePileShrinksAsMaterialDecomposes {
+    return Intl.message(
+      'The pile shrinks as material decomposes.',
+      name: 'thePileShrinksAsMaterialDecomposes',
+      desc:
+          'Description of the pile shrinkage during the cooling phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `4. Maturation Phase (Days 35-60+)`
+  String get maturationPhaseDays35to60 {
+    return Intl.message(
+      '4. Maturation Phase (Days 35-60+)',
+      name: 'maturationPhaseDays35to60',
+      desc: 'Label for the maturation phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Temperature: 20–40°C`
+  String get temperature20to40c {
+    return Intl.message(
+      'Temperature: 20–40°C',
+      name: 'temperature20to40c',
+      desc:
+          'Temperature range for the maturation phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Soil organisms return, nutrients stabilize, humus forms.`
+  String get soilOrganismsReturnNutrientsStabilizeHumusForms {
+    return Intl.message(
+      'Soil organisms return, nutrients stabilize, humus forms.',
+      name: 'soilOrganismsReturnNutrientsStabilizeHumusForms',
+      desc: 'Description of the maturation phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Ready when: Dark, earthy smell, no heat in the center.`
+  String get readyWhenDarkEarthySmellNoHeatInTheCenter {
+    return Intl.message(
+      'Ready when: Dark, earthy smell, no heat in the center.',
+      name: 'readyWhenDarkEarthySmellNoHeatInTheCenter',
+      desc:
+          'Description of the readiness indicators during the maturation phase in the composting timeline',
+      args: [],
+    );
+  }
+
+  /// `Can be stored for 6–12 months (keep dry to avoid nutrient loss).`
+  String get canBeStoredFor6to12MonthsKeepDryToAvoid {
+    return Intl.message(
+      'Can be stored for 6–12 months (keep dry to avoid nutrient loss).',
+      name: 'canBeStoredFor6to12MonthsKeepDryToAvoid',
+      desc: 'Description of the storage conditions for mature compost',
+      args: [],
+    );
+  }
+
+  /// `Visual Tip`
+  String get visualTip {
+    return Intl.message(
+      'Visual Tip',
+      name: 'visualTip',
+      desc: 'Title for the visual tip section',
+      args: [],
+    );
+  }
+
+  /// `Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.`
+  String get yourCompostPileShouldBeLargeEnoughToMaintainHeat {
+    return Intl.message(
+      'Your compost pile should be large enough to maintain heat (at least 3×3×3 feet), but small enough to easily turn and manage.',
+      name: 'yourCompostPileShouldBeLargeEnoughToMaintainHeat',
+      desc: 'Description of the ideal size for a compost pile',
+      args: [],
+    );
+  }
+
+  /// `Choose a site`
+  String get chooseASite {
+    return Intl.message(
+      'Choose a site',
+      name: 'chooseASite',
+      desc: 'Title for the choose a site section',
+      args: [],
+    );
+  }
+
+  /// `Well-drained, shady, near a water source.`
+  String get welldrainedShadyNearAWaterSource {
+    return Intl.message(
+      'Well-drained, shady, near a water source.',
+      name: 'welldrainedShadyNearAWaterSource',
+      desc: 'Description of the ideal site conditions for composting',
+      args: [],
+    );
+  }
+
+  /// `Layer materials`
+  String get layerMaterials {
+    return Intl.message(
+      'Layer materials',
+      name: 'layerMaterials',
+      desc: 'Title for the layer materials section',
+      args: [],
+    );
+  }
+
+  /// `Balance carbon (dry browns) and nitrogen (greens).`
+  String get balanceCarbonDryBrownsAndNitrogenGreens {
+    return Intl.message(
+      'Balance carbon (dry browns) and nitrogen (greens).',
+      name: 'balanceCarbonDryBrownsAndNitrogenGreens',
+      desc: 'Description of the material layering process in composting',
+      args: [],
+    );
+  }
+
+  /// `Maintain moisture`
+  String get maintainMoisture {
+    return Intl.message(
+      'Maintain moisture',
+      name: 'maintainMoisture',
+      desc: 'Title for the maintain moisture section',
+      args: [],
+    );
+  }
+
+  /// `Keep it like a damp sponge (not too dry or soggy).`
+  String get keepItLikeADampSpongeNotTooDry {
+    return Intl.message(
+      'Keep it like a damp sponge (not too dry or soggy).',
+      name: 'keepItLikeADampSpongeNotTooDry',
+      desc: 'Description of the ideal moisture level for composting',
+      args: [],
+    );
+  }
+
+  /// `Turn the pile regularly`
+  String get turnThePileRegularly {
+    return Intl.message(
+      'Turn the pile regularly',
+      name: 'turnThePileRegularly',
+      desc: 'Title for the turn the pile regularly section',
+      args: [],
+    );
+  }
+
+  /// `Mix every 7–14 days for aeration.`
+  String get mixEvery714DaysForAeration {
+    return Intl.message(
+      'Mix every 7–14 days for aeration.',
+      name: 'mixEvery714DaysForAeration',
+      desc: 'Description of the turning process in composting',
+      args: [],
+    );
+  }
+
+  /// `Check readiness`
+  String get checkReadiness {
+    return Intl.message(
+      'Check readiness',
+      name: 'checkReadiness',
+      desc: 'Title for the check readiness section',
+      args: [],
+    );
+  }
+
+  /// `When dark, crumbly, and smells earthy, it's done!`
+  String get whenDarkCrumblyAndSmellsEarthyItsDone {
+    return Intl.message(
+      'When dark, crumbly, and smells earthy, it\'s done!',
+      name: 'whenDarkCrumblyAndSmellsEarthyItsDone',
+      desc: 'Description of the indicators for compost readiness',
+      args: [],
+    );
+  }
+
+  /// `C:N Ratio Explained:`
+  String get cnRatioExplained {
+    return Intl.message(
+      'C:N Ratio Explained:',
+      name: 'cnRatioExplained',
+      desc: 'Title for the C:N ratio explanation section',
+      args: [],
+    );
+  }
+
+  /// `Ideal Carbon:Nitrogen ratio = 30:1`
+  String get idealCarbonnitrogenRatio30to1 {
+    return Intl.message(
+      'Ideal Carbon:Nitrogen ratio = 30:1',
+      name: 'idealCarbonnitrogenRatio30to1',
+      desc: 'Description of the ideal C:N ratio for composting',
+      args: [],
+    );
+  }
+
+  /// `Too much carbon? Decomposition slows down.`
+  String get tooMuchCarbonDecompositionSlowsDown {
+    return Intl.message(
+      'Too much carbon? Decomposition slows down.',
+      name: 'tooMuchCarbonDecompositionSlowsDown',
+      desc: 'Description of the effect of too much carbon in composting',
+      args: [],
+    );
+  }
+
+  /// `Too much nitrogen? Smelly, soggy pile.`
+  String get tooMuchNitrogenSmellySoggyPile {
+    return Intl.message(
+      'Too much nitrogen? Smelly, soggy pile.',
+      name: 'tooMuchNitrogenSmellySoggyPile',
+      desc: 'Description of the effect of too much nitrogen in composting',
+      args: [],
+    );
+  }
+
+  /// `Simple rule:`
+  String get simpleRule {
+    return Intl.message(
+      'Simple rule:',
+      name: 'simpleRule',
+      desc: 'Title for the simple rule section',
+      args: [],
+    );
+  }
+
+  /// `1 bucket nitrogen-rich materials (greens)`
+  String get bucketNitrogenrichMaterialsGreens {
+    return Intl.message(
+      '1 bucket nitrogen-rich materials (greens)',
+      name: 'bucketNitrogenrichMaterialsGreens',
+      desc: 'Description of the nitrogen-rich materials (greens) in composting',
+      args: [],
+    );
+  }
+
+  /// `2 buckets dry carbon materials (browns)`
+  String get bucketsDryCarbonMaterialsBrowns {
+    return Intl.message(
+      '2 buckets dry carbon materials (browns)',
+      name: 'bucketsDryCarbonMaterialsBrowns',
+      desc: 'Description of the dry carbon materials (browns) in composting',
+      args: [],
+    );
+  }
+
+  /// `High Carbon`
+  String get highCarbon {
+    return Intl.message(
+      'High Carbon',
+      name: 'highCarbon',
+      desc: 'Label for high carbon materials',
+      args: [],
+    );
+  }
+
+  /// `Browns`
+  String get browns {
+    return Intl.message(
+      'Browns',
+      name: 'browns',
+      desc: 'Label for brown materials',
+      args: [],
+    );
+  }
+
+  /// `Cashew shells`
+  String get cashewShells {
+    return Intl.message(
+      'Cashew shells',
+      name: 'cashewShells',
+      desc: 'Name of cashew shells component',
+      args: [],
+    );
+  }
+
+  /// `Rice husks`
+  String get riceHusks {
+    return Intl.message(
+      'Rice husks',
+      name: 'riceHusks',
+      desc: 'Name of rice husks component',
+      args: [],
+    );
+  }
+
+  /// `Dry leaves`
+  String get dryLeaves {
+    return Intl.message(
+      'Dry leaves',
+      name: 'dryLeaves',
+      desc: 'Name of dry leaves component',
+      args: [],
+    );
+  }
+
+  /// `High Nitrogen`
+  String get highNitrogen {
+    return Intl.message(
+      'High Nitrogen',
+      name: 'highNitrogen',
+      desc: 'Label for high nitrogen materials',
+      args: [],
+    );
+  }
+
+  /// `Greens`
+  String get greens {
+    return Intl.message(
+      'Greens',
+      name: 'greens',
+      desc: 'Label for green materials',
+      args: [],
+    );
+  }
+
+  /// `Chicken manure`
+  String get chickenManure {
+    return Intl.message(
+      'Chicken manure',
+      name: 'chickenManure',
+      desc: 'Name of chicken manure component',
+      args: [],
+    );
+  }
+
+  /// `Cow dung`
+  String get cowDung {
+    return Intl.message(
+      'Cow dung',
+      name: 'cowDung',
+      desc: 'Name of cow dung component',
+      args: [],
+    );
+  }
+
+  /// `Fresh plant`
+  String get freshPlant {
+    return Intl.message(
+      'Fresh plant',
+      name: 'freshPlant',
+      desc: 'Name of fresh plant component',
+      args: [],
+    );
+  }
+
+  /// `Optimum Moisture`
+  String get optimumMoisture {
+    return Intl.message(
+      'Optimum Moisture',
+      name: 'optimumMoisture',
+      desc: 'Title for the optimum moisture section',
+      args: [],
+    );
+  }
+
+  /// `Your compost should have the moisture level of a wrung-out sponge - damp but not soggy.`
+  String get yourCompostShouldHaveTheMoistureLevelOfAWrungout {
+    return Intl.message(
+      'Your compost should have the moisture level of a wrung-out sponge - damp but not soggy.',
+      name: 'yourCompostShouldHaveTheMoistureLevelOfAWrungout',
+      desc: 'Description of the ideal moisture level for composting',
+      args: [],
+    );
+  }
+
+  /// `Oxygen Requirements`
+  String get oxygenRequirements {
+    return Intl.message(
+      'Oxygen Requirements',
+      name: 'oxygenRequirements',
+      desc: 'Title for the oxygen requirements section',
+      args: [],
+    );
+  }
+
+  /// `Regular turning (every 1-2 weeks) ensures proper oxygen flow for aerobic decomposition.`
+  String get regularTurningEvery12WeeksEnsuresProperOxygenFlowFor {
+    return Intl.message(
+      'Regular turning (every 1-2 weeks) ensures proper oxygen flow for aerobic decomposition.',
+      name: 'regularTurningEvery12WeeksEnsuresProperOxygenFlowFor',
+      desc:
+          'Description of the importance of regular turning for oxygen flow in composting',
+      args: [],
+    );
+  }
+
+  /// `Common Compost Problems & Solutions`
+  String get commonCompostProblemsSolutions {
+    return Intl.message(
+      'Common Compost Problems & Solutions',
+      name: 'commonCompostProblemsSolutions',
+      desc: 'Title for the common compost problems and solutions section',
+      args: [],
+    );
+  }
+
+  /// `Quick Check`
+  String get quickCheck {
+    return Intl.message(
+      'Quick Check',
+      name: 'quickCheck',
+      desc: 'Title for the quick check section',
+      args: [],
+    );
+  }
+
+  /// `A healthy compost pile should be warm, slightly damp, and have an earthy smell. If yours doesn't match this description, check the troubleshooting tips above!`
+  String get aHealthyCompostPileShouldBeWarmSlightlyDampAnd {
+    return Intl.message(
+      'A healthy compost pile should be warm, slightly damp, and have an earthy smell. If yours doesn\'t match this description, check the troubleshooting tips above!',
+      name: 'aHealthyCompostPileShouldBeWarmSlightlyDampAnd',
+      desc: 'Description of the characteristics of a healthy compost pile',
+      args: [],
+    );
+  }
+
+  /// `Pile Isn't Heating Up`
+  String get pileIsntHeatingUp {
+    return Intl.message(
+      'Pile Isn\'t Heating Up',
+      name: 'pileIsntHeatingUp',
+      desc: 'Title for the pile isn\'t heating up section',
+      args: [],
+    );
+  }
+
+  /// `Pile too small (should be at least 3×3×3 feet)`
+  String get pileTooSmallShouldBeAtLeast3x3x3Feet {
+    return Intl.message(
+      'Pile too small (should be at least 3×3×3 feet)',
+      name: 'pileTooSmallShouldBeAtLeast3x3x3Feet',
+      desc: 'Description of the issue when the compost pile is too small',
+      args: [],
+    );
+  }
+
+  /// `Too dry (add water)`
+  String get tooDryAddWater {
+    return Intl.message(
+      'Too dry (add water)',
+      name: 'tooDryAddWater',
+      desc: 'Description of the issue when the compost pile is too dry',
+      args: [],
+    );
+  }
+
+  /// `Not enough nitrogen (add 'greens')`
+  String get notEnoughNitrogenAddGreens {
+    return Intl.message(
+      'Not enough nitrogen (add \'greens\')',
+      name: 'notEnoughNitrogenAddGreens',
+      desc:
+          'Description of the issue when there is not enough nitrogen in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `Cold weather (insulate or wait for warmer conditions)`
+  String get coldWeatherInsulateOrWaitForWarmerConditions {
+    return Intl.message(
+      'Cold weather (insulate or wait for warmer conditions)',
+      name: 'coldWeatherInsulateOrWaitForWarmerConditions',
+      desc:
+          'Description of the issue when the compost pile is affected by cold weather',
+      args: [],
+    );
+  }
+
+  /// `Pile is finished composting`
+  String get pileIsFinishedComposting {
+    return Intl.message(
+      'Pile is finished composting',
+      name: 'pileIsFinishedComposting',
+      desc:
+          'Description of the issue when the compost pile is finished composting',
+      args: [],
+    );
+  }
+
+  /// `Add more nitrogen-rich materials`
+  String get addMoreNitrogenrichMaterials {
+    return Intl.message(
+      'Add more nitrogen-rich materials',
+      name: 'addMoreNitrogenrichMaterials',
+      desc:
+          'Description of the solution when the compost pile needs more nitrogen-rich materials',
+      args: [],
+    );
+  }
+
+  /// `Check moisture and add water if needed`
+  String get checkMoistureAndAddWaterIfNeeded {
+    return Intl.message(
+      'Check moisture and add water if needed',
+      name: 'checkMoistureAndAddWaterIfNeeded',
+      desc:
+          'Description of the solution when the compost pile needs moisture adjustment',
+      args: [],
+    );
+  }
+
+  /// `Turn the pile to increase oxygen`
+  String get turnThePileToIncreaseOxygen {
+    return Intl.message(
+      'Turn the pile to increase oxygen',
+      name: 'turnThePileToIncreaseOxygen',
+      desc:
+          'Description of the solution when the compost pile needs more oxygen',
+      args: [],
+    );
+  }
+
+  /// `Increase pile size`
+  String get increasePileSize {
+    return Intl.message(
+      'Increase pile size',
+      name: 'increasePileSize',
+      desc:
+          'Description of the solution when the compost pile needs to be larger',
+      args: [],
+    );
+  }
+
+  /// `Bad Odors`
+  String get badOdors {
+    return Intl.message(
+      'Bad Odors',
+      name: 'badOdors',
+      desc: 'Title for the bad odors section',
+      args: [],
+    );
+  }
+
+  /// `Ammonia smell: Too much nitrogen`
+  String get ammoniaSmellTooMuchNitrogen {
+    return Intl.message(
+      'Ammonia smell: Too much nitrogen',
+      name: 'ammoniaSmellTooMuchNitrogen',
+      desc:
+          'Description of the issue when there is too much nitrogen in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `Rotten egg smell: Anaerobic conditions (not enough oxygen)`
+  String get rottenEggSmellAnaerobicConditionsNotEnoughOxygen {
+    return Intl.message(
+      'Rotten egg smell: Anaerobic conditions (not enough oxygen)',
+      name: 'rottenEggSmellAnaerobicConditionsNotEnoughOxygen',
+      desc:
+          'Description of the issue when there are anaerobic conditions in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `'Other' materials (meat, dairy, etc.)`
+  String get otherMaterialsMeatDairyEtc {
+    return Intl.message(
+      '\'Other\' materials (meat, dairy, etc.)',
+      name: 'otherMaterialsMeatDairyEtc',
+      desc:
+          'Description of the issue when there are \'other\' materials like meat or dairy in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `Add carbon-rich materials (dry leaves, straw)`
+  String get addCarbonrichMaterialsDryLeavesStraw {
+    return Intl.message(
+      'Add carbon-rich materials (dry leaves, straw)',
+      name: 'addCarbonrichMaterialsDryLeavesStraw',
+      desc:
+          'Description of the solution when the compost pile needs more carbon-rich materials',
+      args: [],
+    );
+  }
+
+  /// `Turn the pile to add oxygen`
+  String get turnThePileToAddOxygen {
+    return Intl.message(
+      'Turn the pile to add oxygen',
+      name: 'turnThePileToAddOxygen',
+      desc:
+          'Description of the solution when the compost pile needs more oxygen',
+      args: [],
+    );
+  }
+
+  /// `Cover food scraps with browns`
+  String get coverFoodScrapsWithBrowns {
+    return Intl.message(
+      'Cover food scraps with browns',
+      name: 'coverFoodScrapsWithBrowns',
+      desc:
+          'Description of the solution when the compost pile needs to cover food scraps with browns',
+      args: [],
+    );
+  }
+
+  /// `Avoid adding meat, dairy, or oils`
+  String get avoidAddingMeatDairyOrOils {
+    return Intl.message(
+      'Avoid adding meat, dairy, or oils',
+      name: 'avoidAddingMeatDairyOrOils',
+      desc:
+          'Description of the solution when the compost pile needs to avoid adding meat, dairy, or oils',
+      args: [],
+    );
+  }
+
+  /// `Pests in the Compost`
+  String get pestsInTheCompost {
+    return Intl.message(
+      'Pests in the Compost',
+      name: 'pestsInTheCompost',
+      desc: 'Title for the pests in the compost section',
+      args: [],
+    );
+  }
+
+  /// `Exposed food scraps`
+  String get exposedFoodScraps {
+    return Intl.message(
+      'Exposed food scraps',
+      name: 'exposedFoodScraps',
+      desc:
+          'Description of the issue when there are exposed food scraps in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `Meat, dairy or fatty foods in compost`
+  String get meatDairyOrFattyFoodsInCompost {
+    return Intl.message(
+      'Meat, dairy or fatty foods in compost',
+      name: 'meatDairyOrFattyFoodsInCompost',
+      desc:
+          'Description of the issue when there are meat, dairy, or fatty foods in the compost pile',
+      args: [],
+    );
+  }
+
+  /// `Pile not hot enough`
+  String get pileNotHotEnough {
+    return Intl.message(
+      'Pile not hot enough',
+      name: 'pileNotHotEnough',
+      desc: 'Description of the issue when the compost pile is not hot enough',
+      args: [],
+    );
+  }
+
+  /// `Bury food scraps in the center of the pile`
+  String get buryFoodScrapsInTheCenterOfThePile {
+    return Intl.message(
+      'Bury food scraps in the center of the pile',
+      name: 'buryFoodScrapsInTheCenterOfThePile',
+      desc:
+          'Description of the solution when the compost pile needs to bury food scraps in the center',
+      args: [],
+    );
+  }
+
+  /// `Avoid adding meat, dairy, oils, or pet waste`
+  String get avoidAddingMeatDairyOilsOrPetWaste {
+    return Intl.message(
+      'Avoid adding meat, dairy, oils, or pet waste',
+      name: 'avoidAddingMeatDairyOilsOrPetWaste',
+      desc:
+          'Description of the solution when the compost pile needs to avoid adding meat, dairy, oils, or pet waste',
+      args: [],
+    );
+  }
+
+  /// `Turn pile regularly to maintain heat`
+  String get turnPileRegularlyToMaintainHeat {
+    return Intl.message(
+      'Turn pile regularly to maintain heat',
+      name: 'turnPileRegularlyToMaintainHeat',
+      desc:
+          'Description of the solution when the compost pile needs to turn regularly to maintain heat',
+      args: [],
+    );
+  }
+
+  /// `Use a rodent-resistant bin if necessary`
+  String get useARodentresistantBinIfNecessary {
+    return Intl.message(
+      'Use a rodent-resistant bin if necessary',
+      name: 'useARodentresistantBinIfNecessary',
+      desc:
+          'Description of the solution when the compost pile needs to use a rodent-resistant bin if necessary',
+      args: [],
+    );
+  }
+
+  /// `Pile Is Too Wet/Dry`
+  String get pileIsTooWetdry {
+    return Intl.message(
+      'Pile Is Too Wet/Dry',
+      name: 'pileIsTooWetdry',
+      desc: 'Title for the pile is too wet/dry section',
+      args: [],
+    );
+  }
+
+  /// `Too wet: Soggy materials, poor drainage`
+  String get tooWetSoggyMaterialsPoorDrainage {
+    return Intl.message(
+      'Too wet: Soggy materials, poor drainage',
+      name: 'tooWetSoggyMaterialsPoorDrainage',
+      desc:
+          'Description of the issue when the compost pile is too wet due to soggy materials or poor drainage',
+      args: [],
+    );
+  }
+
+  /// `Too dry: Not enough water, too much sun exposure`
+  String get tooDryNotEnoughWaterTooMuchSunExposure {
+    return Intl.message(
+      'Too dry: Not enough water, too much sun exposure',
+      name: 'tooDryNotEnoughWaterTooMuchSunExposure',
+      desc:
+          'Description of the issue when the compost pile is too dry due to not enough water or too much sun exposure',
+      args: [],
+    );
+  }
+
+  /// `Too wet: Add dry, carbon-rich materials`
+  String get tooWetAddDryCarbonrichMaterials {
+    return Intl.message(
+      'Too wet: Add dry, carbon-rich materials',
+      name: 'tooWetAddDryCarbonrichMaterials',
+      desc:
+          'Description of the solution when the compost pile is too wet and needs to add dry, carbon-rich materials',
+      args: [],
+    );
+  }
+
+  /// `Too wet: Turn the pile to help it dry out`
+  String get tooWetTurnThePileToHelpItDryOut {
+    return Intl.message(
+      'Too wet: Turn the pile to help it dry out',
+      name: 'tooWetTurnThePileToHelpItDryOut',
+      desc:
+          'Description of the solution when the compost pile is too wet and needs to turn the pile to help it dry out',
+      args: [],
+    );
+  }
+
+  /// `Too wet: Cover during heavy rains`
+  String get tooWetCoverDuringHeavyRains {
+    return Intl.message(
+      'Too wet: Cover during heavy rains',
+      name: 'tooWetCoverDuringHeavyRains',
+      desc:
+          'Description of the solution when the compost pile is too wet and needs to cover during heavy rains',
+      args: [],
+    );
+  }
+
+  /// `Too dry: Add water while turning the pile`
+  String get tooDryAddWaterWhileTurningThePile {
+    return Intl.message(
+      'Too dry: Add water while turning the pile',
+      name: 'tooDryAddWaterWhileTurningThePile',
+      desc:
+          'Description of the solution when the compost pile is too dry and needs to add water while turning the pile',
+      args: [],
+    );
+  }
+
+  /// `Too dry: Add fresh 'green' materials`
+  String get tooDryAddFreshGreenMaterials {
+    return Intl.message(
+      'Too dry: Add fresh \'green\' materials',
+      name: 'tooDryAddFreshGreenMaterials',
+      desc:
+          'Description of the solution when the compost pile is too dry and needs to add fresh \'green\' materials',
+      args: [],
+    );
+  }
+
+  /// `Solutions:`
+  String get solutions {
+    return Intl.message(
+      'Solutions:',
+      name: 'solutions',
+      desc: 'Label for the solutions section',
+      args: [],
+    );
+  }
+
+  /// `Basic Garden Compost`
+  String get basicGardenCompost {
+    return Intl.message(
+      'Basic Garden Compost',
+      name: 'basicGardenCompost',
+      desc: 'Title for the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `A simple, balanced recipe for general garden use.`
+  String get aSimpleBalancedRecipeForGeneralGardenUse {
+    return Intl.message(
+      'A simple, balanced recipe for general garden use.',
+      name: 'aSimpleBalancedRecipeForGeneralGardenUse',
+      desc: 'Description of the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `3 parts dry leaves`
+  String get partsDryLeaves {
+    return Intl.message(
+      '3 parts dry leaves',
+      name: 'partsDryLeaves',
+      desc:
+          'Description of the dry leaves component in the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `1 part fresh grass clippings`
+  String get partFreshGrassClippings {
+    return Intl.message(
+      '1 part fresh grass clippings',
+      name: 'partFreshGrassClippings',
+      desc:
+          'Description of the fresh grass clippings component in the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `1 part vegetable scraps`
+  String get partVegetableScraps {
+    return Intl.message(
+      '1 part vegetable scraps',
+      name: 'partVegetableScraps',
+      desc:
+          'Description of the vegetable scraps component in the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `Layer ingredients, moisten, and turn every 1-2 weeks. Ready in 3-6 months.`
+  String get layerIngredientsMoistenAndTurnEvery12WeeksReadyIn {
+    return Intl.message(
+      'Layer ingredients, moisten, and turn every 1-2 weeks. Ready in 3-6 months.',
+      name: 'layerIngredientsMoistenAndTurnEvery12WeeksReadyIn',
+      desc:
+          'Description of the preparation and readiness time for the basic garden compost recipe',
+      args: [],
+    );
+  }
+
+  /// `Fast Hot Compost`
+  String get fastHotCompost {
+    return Intl.message(
+      'Fast Hot Compost',
+      name: 'fastHotCompost',
+      desc: 'Title for the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `For when you need compost quickly.`
+  String get forWhenYouNeedCompostQuickly {
+    return Intl.message(
+      'For when you need compost quickly.',
+      name: 'forWhenYouNeedCompostQuickly',
+      desc: 'Description of the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `2 parts chopped straw or wood chips`
+  String get partsChoppedStrawOrWoodChips {
+    return Intl.message(
+      '2 parts chopped straw or wood chips',
+      name: 'partsChoppedStrawOrWoodChips',
+      desc:
+          'Description of the chopped straw or wood chips component in the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `1 part chicken manure`
+  String get partChickenManure {
+    return Intl.message(
+      '1 part chicken manure',
+      name: 'partChickenManure',
+      desc:
+          'Description of the chicken manure component in the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `1 part green garden waste (chopped small)`
+  String get partGreenGardenWasteChoppedSmall {
+    return Intl.message(
+      '1 part green garden waste (chopped small)',
+      name: 'partGreenGardenWasteChoppedSmall',
+      desc:
+          'Description of the green garden waste component in the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `Mix thoroughly, ensure adequate moisture, and turn every 3 days. Can be ready in 3-4 weeks if conditions are ideal.`
+  String get mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days {
+    return Intl.message(
+      'Mix thoroughly, ensure adequate moisture, and turn every 3 days. Can be ready in 3-4 weeks if conditions are ideal.',
+      name: 'mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days',
+      desc:
+          'Description of the preparation and readiness time for the fast hot compost recipe',
+      args: [],
+    );
+  }
+
+  /// `Instructions`
+  String get instructions {
+    return Intl.message(
+      'Instructions',
+      name: 'instructions',
+      desc: 'Label for the instructions section',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -743,6 +2046,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 
