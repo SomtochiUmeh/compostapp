@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chooseASite": MessageLookupByLibrary.simpleMessage("اختر موقعاً"),
     "chooseComponent": MessageLookupByLibrary.simpleMessage("اختر مكوناً"),
     "close": MessageLookupByLibrary.simpleMessage("إغلاق"),
+    "cn": MessageLookupByLibrary.simpleMessage("ك/ن"),
     "cnRatioExplained": MessageLookupByLibrary.simpleMessage(
       "شرح نسبة الكربون إلى النيتروجين:",
     ),
@@ -343,6 +344,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseFillAllFields": MessageLookupByLibrary.simpleMessage(
       "الرجاء ملء جميع الحقول",
     ),
+    "possibleCauses": MessageLookupByLibrary.simpleMessage("الأسباب المحتملة"),
     "potassium": MessageLookupByLibrary.simpleMessage("بوتاسيوم"),
     "price": m3,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("أسعار المكونات"),

@@ -2037,6 +2037,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Possible Causes:`
+  String get possibleCauses {
+    return Intl.message(
+      'Possible Causes:',
+      name: 'possibleCauses',
+      desc: 'Label for the possible causes section',
+      args: [],
+    );
+  }
+
+  /// `C/N`
+  String get cn {
+    return Intl.message(
+      'C/N',
+      name: 'cn',
+      desc: 'Label for the carbon to nitrogen ratio',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

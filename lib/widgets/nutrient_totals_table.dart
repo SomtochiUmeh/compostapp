@@ -114,7 +114,7 @@ class NutrientTotalsTable extends StatelessWidget {
         horizontalMargin: 15,
         columns: [
           DataColumn(label: Text(S.of(context).totalWeightKg)),
-          const DataColumn(label: Text('C/N')),
+          DataColumn(label: Text(S.of(context).cn)),
           ...nutrients.map(
             (nutrient) => DataColumn(
               label: Text(NutrientConstants.getNutrientLabel(nutrient)),

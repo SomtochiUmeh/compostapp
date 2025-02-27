@@ -811,5 +811,13 @@
     "instructions": "Instructions",
     "@instructions": {
         "description": "Label for the instructions section"
+    },
+    "possibleCauses": "Possible Causes:",
+    "@possibleCauses": {
+        "description": "Label for the possible causes section"
+    },
+    "cn": "C/N",
+    "@cn": {
+        "description": "Label for the carbon to nitrogen ratio"
     }
 }

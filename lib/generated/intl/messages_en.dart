@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chooseASite": MessageLookupByLibrary.simpleMessage("Choose a site"),
     "chooseComponent": MessageLookupByLibrary.simpleMessage("Choose Component"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
+    "cn": MessageLookupByLibrary.simpleMessage("C/N"),
     "cnRatioExplained": MessageLookupByLibrary.simpleMessage(
       "C:N Ratio Explained:",
     ),
@@ -347,6 +348,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pleaseFillAllFields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
+    "possibleCauses": MessageLookupByLibrary.simpleMessage("Possible Causes:"),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
     "price": m3,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("Ingredient Prices"),
