@@ -159,7 +159,7 @@ void main() {
     // Check that the primary color has more red than blue or green,
     // which is characteristic of brown
     final primaryColor = colorScheme.primary;
-    expect(primaryColor.r > primaryColor.b, isTrue);
-    expect(primaryColor.r > primaryColor.g, isTrue);
+    expect(primaryColor.red > primaryColor.blue, isTrue);
+    expect(primaryColor.red > primaryColor.green, isTrue);
   });
 }

@@ -253,30 +253,4 @@ class CompostComponentsData {
       ),
     ),
   ];
-
-  /// Get available components for a specific date
-  static List<CompostComponent> getAvailableComponents(DateTime date) {
-    return components
-        .where((component) => component.isAvailableOn(date))
-        .toList();
-  }
-
-  /// Get components with prices
-  static List<CompostComponent> getPricedComponents() {
-    return components.where((component) => component.price != null).toList();
-  }
-
-  /// Get components by nutrient threshold
-  static List<CompostComponent> getComponentsByNutrientThreshold({
-    required String nutrient,
-    required double threshold,
-    bool above = true,
-  }) {
-    return components.where((component) {
-      final nutrientContent = component.nutrients.toMap()[nutrient] ?? 0.0;
-      return above
-          ? nutrientContent >= threshold
-          : nutrientContent <= threshold;
-    }).toList();
-  }
 }
