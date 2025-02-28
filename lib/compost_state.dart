@@ -3,6 +3,7 @@ import '../models/compost_component_model.dart';
 import '../services/persistence_manager.dart';
 import '../data/compost_components_data.dart';
 import './models/price_model.dart';
+import '../models/availability_model.dart';
 
 class CompostState extends ChangeNotifier {
   final PersistenceManager persistenceManager;
@@ -27,7 +28,7 @@ class CompostState extends ChangeNotifier {
         .indexWhere((comp) => comp.getName() == updatedComponent.getName());
     if (index != -1) {
       components[index] = updatedComponent;
-      persistenceManager.updateComponentPrices(components);
+      persistenceManager.updateComponentInfo(components);
       notifyListeners();
     }
   }
@@ -59,7 +60,29 @@ class CompostState extends ChangeNotifier {
       );
 
       components[index] = updatedComponent;
-      persistenceManager.updateComponentPrices(components);
+      persistenceManager.updateComponentInfo(components);
+      notifyListeners();
+    }
+  }
+
+  // Helper method to update availability
+  void updateComponentAvailability(
+      String componentId, AvailabilityPeriod newAvailability) {
+    final index = components.indexWhere((comp) => comp.id == componentId);
+    if (index != -1) {
+      final component = components[index];
+
+      final updatedComponent = CompostComponent(
+        id: component.id,
+        name: component.name,
+        availability: newAvailability,
+        nutrients: component.nutrients,
+        price: component.price,
+        sources: component.sources,
+      );
+
+      components[index] = updatedComponent;
+      persistenceManager.updateComponentInfo(components);
       notifyListeners();
     }
   }

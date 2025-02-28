@@ -238,8 +238,8 @@
     "@allComponents": {
         "description": "Section title for all components list"
     },
-    "costPerUnit": "Coût/Unité",
-    "@costPerUnit": {
+    "costPerTon": "Coût/tonne",
+    "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
     "currencyFCFA": "FCFA",
@@ -819,5 +819,86 @@
     "cn": "C/N",
     "@cn": {
         "description": "Label for the carbon to nitrogen ratio"
+    },
+    "editAvailability": "Modifier la disponibilité",
+    "@editAvailability": {
+        "description": "Label for the edit availability button"
+    },
+    "editAvailabilityFor": "Modifier la disponibilité pour {componentName}",
+    "@editAvailabilityFor": {
+        "placeholders": {
+            "componentName": {
+                "type": "String",
+                "example": "Rice straw"
+            }
+        }
+    },
+    "startMonth": "Mois de début",
+    "@startMonth": {
+        "description": "Label for the start month input field"
+    },
+    "endMonth": "Mois de fin",
+    "@endMonth": {
+        "description": "Label for the end month input field"
+    },
+    "january": "Janvier",
+    "@january": {
+        "description": "Label for January"
+    },
+    "february": "Février",
+    "@february": {
+        "description": "Label for February"
+    },
+    "march": "Mars",
+    "@march": {
+        "description": "Label for March"
+    },
+    "april": "Avril",
+    "@april": {
+        "description": "Label for April"
+    },
+    "may": "Mai",
+    "@may": {
+        "description": "Label for May"
+    },
+    "june": "Juin",
+    "@june": {
+        "description": "Label for June"
+    },
+    "july": "Juillet",
+    "@july": {
+        "description": "Label for July"
+    },
+    "august": "Août",
+    "@august": {
+        "description": "Label for August"
+    },
+    "september": "Septembre",
+    "@september": {
+        "description": "Label for September"
+    },
+    "october": "Octobre",
+    "@october": {
+        "description": "Label for October"
+    },
+    "november": "Novembre",
+    "@november": {
+        "description": "Label for November"
+    },
+    "december": "Décembre",
+    "@december": {
+        "description": "Label for December"
+    },
+    "save": "Sauvegarder",
+    "@save": {
+        "description": "Label for the save button"
+    },
+    "to": "à",
+    "@to": {
+        "description": "For custom availability string"
+    },
+    "available": "Disponible:",
+    "@available": {
+        "description": "For custom availability string"
     }
 }

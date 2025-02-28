@@ -20,15 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(selector) =>
+  static String m0(componentName) => "تعديل فترة التوفر لـ ${componentName}";
+
+  static String m1(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'مخلفات المانجو مع البذور', 'componentCashewShells': 'قشور الكاجو', 'componentRiceHulls': 'قشور الأرز/نخالة الأرز', 'componentRiceStraw': 'قش الأرز - موسم الأمطار', 'componentSugarcaneBagasse': 'تفل قصب السكر', 'componentChickenManure': 'روث الدجاج المجفف', 'componentCowDung': 'روث البقر', 'componentCottonStraw': 'قش القطن', 'componentRiceHuskAsh': 'رماد قشور الأرز', 'componentLime': 'الجير', 'componentCompostPlus': 'سماد +', 'componentDolomites': 'الدولوميت', 'componentCornStraw': 'قش الذرة', 'componentCassavaPeels': 'قشور الكاسافا', 'componentRiceChickenLitter': 'فراش (نخالة الأرز + روث الدجاج)', 'componentRiceStrawCounter': 'قش الأرز - خارج الموسم', 'other': 'مكون غير معروف'})}";
 
-  static String m1(nutrientName, min, max) =>
+  static String m2(nutrientName, min, max) =>
       "رائع! ${nutrientName} ضمن النطاق الأمثل (${min} - ${max})";
 
-  static String m2(value) => "${value} (%)";
+  static String m3(value) => "${value} (%)";
 
-  static String m3(price, amount, unit) =>
+  static String m4(price, amount, unit) =>
       "السعر: ${price} فرنك إفريقي لكل ${amount} ${unit}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -62,6 +64,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "ammoniaSmellTooMuchNitrogen": MessageLookupByLibrary.simpleMessage(
       "رائحة الأمونيا: نيتروجين زائد",
     ),
+    "april": MessageLookupByLibrary.simpleMessage("أبريل"),
+    "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "متوفر: يناير إلى ديسمبر",
     ),
@@ -80,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "availabilitySepToDec": MessageLookupByLibrary.simpleMessage(
       "متوفر: سبتمبر إلى ديسمبر",
     ),
+    "available": MessageLookupByLibrary.simpleMessage("متوفر:"),
     "avoidAddingMeatDairyOilsOrPetWaste": MessageLookupByLibrary.simpleMessage(
       "تجنب إضافة اللحوم أو منتجات الألبان أو الزيوت أو فضلات الحيوانات الأليفة",
     ),
@@ -198,7 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3. مرحلة التبريد (الأيام 25-35)",
     ),
     "costFCFA": MessageLookupByLibrary.simpleMessage("التكلفة (فرنك إفريقي)"),
-    "costPerUnit": MessageLookupByLibrary.simpleMessage("التكلفة/الوحدة"),
+    "costPerTon": MessageLookupByLibrary.simpleMessage("التكلفة/طن"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
       "غطي بقايا الطعام بمواد بنية",
     ),
@@ -213,20 +218,27 @@ class MessageLookup extends MessageLookupByLibrary {
     "days2to5": MessageLookupByLibrary.simpleMessage("الأيام 2-5"),
     "days35to60": MessageLookupByLibrary.simpleMessage("الأيام 35-60+"),
     "days5to25": MessageLookupByLibrary.simpleMessage("الأيام 5-25"),
+    "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
     "dryLeaves": MessageLookupByLibrary.simpleMessage("أوراق جافة"),
     "dryMatter": MessageLookupByLibrary.simpleMessage("المادة الجافة"),
+    "editAvailability": MessageLookupByLibrary.simpleMessage(
+      "تعديل فترة التوفر",
+    ),
+    "editAvailabilityFor": m0,
     "editComponent": MessageLookupByLibrary.simpleMessage("تعديل المكون"),
+    "endMonth": MessageLookupByLibrary.simpleMessage("شهر النهاية"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "بقايا طعام مكشوفة",
     ),
     "fastHotCompost": MessageLookupByLibrary.simpleMessage(
       "السماد الساخن السريع",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("فبراير"),
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "عندما تحتاج إلى السماد بسرعة.",
     ),
     "freshPlant": MessageLookupByLibrary.simpleMessage("نباتات طازجة"),
-    "getTranslation": m0,
+    "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("المواد الخضراء"),
     "heating": MessageLookupByLibrary.simpleMessage("التسخين"),
     "heatingPhaseDays5to25": MessageLookupByLibrary.simpleMessage(
@@ -246,6 +258,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ingredient": MessageLookupByLibrary.simpleMessage("المكون"),
     "ingredients": MessageLookupByLibrary.simpleMessage("المكونات"),
     "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
+    "january": MessageLookupByLibrary.simpleMessage("يناير"),
+    "july": MessageLookupByLibrary.simpleMessage("يوليو"),
+    "june": MessageLookupByLibrary.simpleMessage("يونيو"),
     "keepItLikeADampSpongeNotTooDry": MessageLookupByLibrary.simpleMessage(
       "حافظ عليها مثل الإسفنجة الرطبة (ليست جافة جداً ولا مبللة جداً).",
     ),
@@ -262,10 +277,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "maintainMoisture": MessageLookupByLibrary.simpleMessage(
       "الحفاظ على الرطوبة",
     ),
+    "march": MessageLookupByLibrary.simpleMessage("مارس"),
     "maturationPhaseDays35to60": MessageLookupByLibrary.simpleMessage(
       "4. مرحلة النضج (الأيام 35-60+)",
     ),
     "maturing": MessageLookupByLibrary.simpleMessage("النضج"),
+    "may": MessageLookupByLibrary.simpleMessage("مايو"),
     "meatDairyOrFattyFoodsInCompost": MessageLookupByLibrary.simpleMessage(
       "لحوم أو منتجات ألبان أو أطعمة دهنية في السماد",
     ),
@@ -288,8 +305,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "notEnoughNitrogenAddGreens": MessageLookupByLibrary.simpleMessage(
       "نقص النيتروجين (أضف مواد \'خضراء\')",
     ),
+    "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage("تحليل المغذيات"),
-    "nutrientInOptimalRange": m1,
+    "nutrientInOptimalRange": m2,
+    "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "optimumMoisture": MessageLookupByLibrary.simpleMessage("الرطوبة المثالية"),
     "organicCarbon": MessageLookupByLibrary.simpleMessage("كربون عضوي"),
     "organismsChangeAsConditionsShift": MessageLookupByLibrary.simpleMessage(
@@ -319,7 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "partsDryLeaves": MessageLookupByLibrary.simpleMessage(
       "3 أجزاء من الأوراق الجافة",
     ),
-    "percentage": m2,
+    "percentage": m3,
     "pestsInTheCompost": MessageLookupByLibrary.simpleMessage(
       "الآفات في السماد",
     ),
@@ -346,7 +365,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "possibleCauses": MessageLookupByLibrary.simpleMessage("الأسباب المحتملة"),
     "potassium": MessageLookupByLibrary.simpleMessage("بوتاسيوم"),
-    "price": m3,
+    "price": m4,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("أسعار المكونات"),
     "prices": MessageLookupByLibrary.simpleMessage("الأسعار"),
     "quickCheck": MessageLookupByLibrary.simpleMessage("فحص سريع"),
@@ -373,6 +392,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sampleCompostRecipes": MessageLookupByLibrary.simpleMessage(
       "نماذج وصفات السماد العضوي",
     ),
+    "save": MessageLookupByLibrary.simpleMessage("يحفظ"),
+    "september": MessageLookupByLibrary.simpleMessage("سبتمبر"),
     "simpleRule": MessageLookupByLibrary.simpleMessage("قاعدة بسيطة:"),
     "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood":
         MessageLookupByLibrary.simpleMessage(
@@ -383,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "تعود كائنات التربة، تستقر المغذيات، يتشكل الدبال.",
         ),
     "solutions": MessageLookupByLibrary.simpleMessage("الحلول:"),
+    "startMonth": MessageLookupByLibrary.simpleMessage("شهر البداية"),
     "startup": MessageLookupByLibrary.simpleMessage("البدء"),
     "startupDays2to5": MessageLookupByLibrary.simpleMessage(
       "1. البدء (الأيام 2-5)",
@@ -406,6 +428,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "تم تصميم هذا التطبيق لمساعدتك في إنشاء وإدارة السماد الهوائي المفتوح. استخدم الأدوات أدناه للتعرف على السماد العضوي واستكشاف الوصفات أو إنشاء وصفاتك الخاصة!",
         ),
+    "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "tooDryAddFreshGreenMaterials": MessageLookupByLibrary.simpleMessage(
       "جافة جداً: أضف مواد \'خضراء\' طازجة",
     ),
