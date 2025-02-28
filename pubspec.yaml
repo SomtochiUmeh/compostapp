@@ -41,6 +41,7 @@ dependencies:
   intl_utils: any
   shared_preferences: ^2.3.3
   provider: ^6.1.2
+  mockito: ^5.4.4
 
 dev_dependencies:
   flutter_test:
