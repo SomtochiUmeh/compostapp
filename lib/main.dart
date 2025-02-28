@@ -6,11 +6,11 @@ import './compost_state.dart';
 import './services/persistence_manager.dart';
 import './generated/l10n.dart';
 
+// coverage:ignore-start
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PersistenceManager.init();
   final persistenceManager = PersistenceManager();
-
   runApp(
     MultiProvider(
       providers: [
@@ -22,6 +22,7 @@ void main() async {
     ),
   );
 }
+// coverage:ignore-end
 
 class CompostCalculatorApp extends StatelessWidget {
   const CompostCalculatorApp({super.key});

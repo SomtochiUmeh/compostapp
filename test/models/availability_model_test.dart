@@ -122,6 +122,60 @@ void main() {
           localizedString.contains('5'), false); // Should use name not number
     });
 
+    // getMonthName tests
+    testWidgets('getMonthName returns correct localized month names',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableApp());
+      await tester.pumpAndSettle();
+
+      // Test each month
+      final Map<int, String> expectedMonthNames = {
+        1: S.current.january,
+        2: S.current.february,
+        3: S.current.march,
+        4: S.current.april,
+        5: S.current.may,
+        6: S.current.june,
+        7: S.current.july,
+        8: S.current.august,
+        9: S.current.september,
+        10: S.current.october,
+        11: S.current.november,
+        12: S.current.december,
+      };
+
+      // Test each month by checking the localized period
+      for (var i = 1; i <= 12; i++) {
+        // Create periods with start month = i and end month = i
+        final singleMonthPeriod = AvailabilityPeriod(i, i);
+        final localizedPeriod = singleMonthPeriod.getLocalizedPeriod();
+
+        // The period should contain the month name
+        expect(localizedPeriod.contains(expectedMonthNames[i]!), isTrue,
+            reason:
+                "Failed to find ${expectedMonthNames[i]} in $localizedPeriod for month $i");
+      }
+    });
+
+    // Test handling invalid month values
+    testWidgets('getMonthName handles invalid month numbers',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableApp());
+      await tester.pumpAndSettle();
+      final testMonthName = AvailabilityPeriod.getMonthName(0);
+
+      // The getMonthName method should return the month number as a string for invalid values
+      expect(testMonthName, equals("0"));
+
+      // Test a month number above 12
+      final testLargeMonthName = AvailabilityPeriod.getMonthName(13);
+      expect(testLargeMonthName, equals("13"));
+
+      // Test a negative month number
+      final testNegativeMonthName = AvailabilityPeriod.getMonthName(-1);
+      expect(testNegativeMonthName, equals("-1"));
+    });
+
     test('toJson and fromJson work correctly', () {
       // Test predefined period
       const predefinedPeriod = AvailabilityPeriod.marToAug;

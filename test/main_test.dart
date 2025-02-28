@@ -11,155 +11,203 @@ import 'package:compostapp/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 // Generate mocks
-@GenerateMocks([PersistenceManager])
+@GenerateMocks([PersistenceManager, CompostState])
 import 'main_test.mocks.dart';
 
 void main() {
   late MockPersistenceManager mockPersistenceManager;
+  late MockCompostState mockCompostState;
 
   setUp(() {
     mockPersistenceManager = MockPersistenceManager();
+    mockCompostState = MockCompostState();
 
-    // Mock the necessary methods of PersistenceManager
+    // Setup default mock behavior
     when(mockPersistenceManager.getSavedComponents())
         .thenAnswer((_) => Future.value([]));
+    when(mockCompostState.components).thenReturn([]);
+    when(mockCompostState.getAvailableComponents(any)).thenReturn([]);
   });
 
-  testWidgets('CompostCalculatorApp initializes with correct structure',
-      (WidgetTester tester) async {
-    // Create a CompostCalculatorApp with the mock persistence manager
-    await tester.pumpWidget(
-      MultiProvider(
+  // Helper function to create the test app with the necessary providers and mocks
+  Widget createTestApp({bool useInnerState = false}) {
+    if (!useInnerState) {
+      return MultiProvider(
         providers: [
-          ChangeNotifierProvider<CompostState>(
-            create: (context) => CompostState(mockPersistenceManager),
-          ),
+          ChangeNotifierProvider<CompostState>.value(value: mockCompostState),
           Provider<PersistenceManager>.value(value: mockPersistenceManager),
         ],
         child: const CompostCalculatorApp(),
-      ),
-    );
-
-    // Allow widget to build
-    await tester.pumpAndSettle();
-
-    // Verify MaterialApp is correctly configured
-    final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
-    expect(materialApp.title, 'Compost Calculator');
-
-    // Verify localization is set up
-    expect(materialApp.localizationsDelegates, isNotNull);
-    expect(materialApp.localizationsDelegates!.length,
-        equals(4)); // Should have 4 delegates
-
-    // Verify supported locales
-    expect(materialApp.supportedLocales, isNotNull);
-    expect(materialApp.supportedLocales.isNotEmpty, isTrue);
-
-    // Verify theme
-    expect(materialApp.theme, isNotNull);
-    expect(materialApp.theme!.useMaterial3, isTrue);
-    expect(materialApp.theme!.colorScheme, isNotNull);
-
-    // Verify home page
-    expect(materialApp.home.runtimeType, AppHomePage);
-  });
-
-  testWidgets('Providers are correctly instantiated',
-      (WidgetTester tester) async {
-    // Create a test widget that consumes the providers
-    await tester.pumpWidget(
-      MultiProvider(
+      );
+    } else {
+      return MultiProvider(
         providers: [
-          ChangeNotifierProvider<CompostState>(
-            create: (context) => CompostState(mockPersistenceManager),
-          ),
+          ChangeNotifierProvider<CompostState>.value(value: mockCompostState),
           Provider<PersistenceManager>.value(value: mockPersistenceManager),
         ],
-        child: MaterialApp(
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          home: Builder(
-            builder: (context) {
-              // Access the providers - use try-catch to handle potential exceptions
-              CompostState? compostState;
-              PersistenceManager? persistenceManager;
-
-              try {
-                compostState =
-                    Provider.of<CompostState>(context, listen: false);
-              } catch (e) {
-                debugPrint('Error accessing CompostState: $e');
-              }
-
-              try {
-                persistenceManager =
-                    Provider.of<PersistenceManager>(context, listen: false);
-              } catch (e) {
-                debugPrint('Error accessing PersistenceManager: $e');
-              }
-
-              // Return a widget that displays info about the providers
-              return Column(
-                children: [
-                  Text(
-                      'CompostState: ${compostState != null ? 'initialized' : 'null'}'),
-                  Text(
-                      'PersistenceManager: ${persistenceManager != null ? 'initialized' : 'null'}'),
-                ],
-              );
-            },
-          ),
+        child: Builder(
+          builder: (context) {
+            return const CompostCalculatorApp();
+          },
         ),
-      ),
-    );
+      );
+    }
+  }
 
-    // Verify providers are accessible
-    expect(find.text('CompostState: initialized'), findsOneWidget);
-    expect(find.text('PersistenceManager: initialized'), findsOneWidget);
+  group('CompostCalculatorApp Tests', () {
+    testWidgets('renders MaterialApp with correct theme',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+      expect(materialApp.theme?.useMaterial3, true);
+
+      // Verify the theme is using a brown-based color scheme
+      final colorScheme = materialApp.theme!.colorScheme;
+      expect(colorScheme, isNotNull);
+
+      // Brown typically has red > green & blue
+      final primaryColor = colorScheme.primary;
+      expect(primaryColor.red > primaryColor.blue, isTrue);
+      expect(primaryColor.red > primaryColor.green, isTrue);
+    });
+
+    testWidgets('configures correct localization delegates',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+      final expectedDelegates = [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ];
+
+      for (final delegate in expectedDelegates) {
+        expect(materialApp.localizationsDelegates, contains(delegate));
+      }
+    });
+
+    testWidgets('supports correct locales', (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+      expect(materialApp.supportedLocales, equals(S.delegate.supportedLocales));
+      expect(materialApp.supportedLocales.isNotEmpty, isTrue);
+    });
+
+    testWidgets('sets AppHomePage as the home screen',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      expect(find.byType(AppHomePage), findsOneWidget);
+    });
+
+    testWidgets('provides all required providers', (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final homeContext = tester.element(find.byType(AppHomePage));
+
+      // Verify both providers are accessible
+      expect(Provider.of<CompostState>(homeContext, listen: false), isNotNull);
+      expect(Provider.of<PersistenceManager>(homeContext, listen: false),
+          isNotNull);
+    });
+
+    testWidgets('providers are accessible throughout widget tree',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      // Get contexts at different levels of the widget tree
+      final appHomePageContext = tester.element(find.byType(AppHomePage));
+
+      // Find a child widget of AppHomePage (e.g., a Card or Text widget)
+      final childWidgetContext = tester.element(find.byType(Card).first);
+
+      // Verify providers are accessible at both levels
+      expect(Provider.of<CompostState>(appHomePageContext, listen: false),
+          isNotNull);
+      expect(Provider.of<PersistenceManager>(appHomePageContext, listen: false),
+          isNotNull);
+
+      expect(Provider.of<CompostState>(childWidgetContext, listen: false),
+          isNotNull);
+      expect(Provider.of<PersistenceManager>(childWidgetContext, listen: false),
+          isNotNull);
+    });
+  });
+
+  group('CompostCalculatorApp Theme Tests', () {
+    testWidgets('theme uses Material 3', (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+      expect(materialApp.theme?.useMaterial3, isTrue);
+    });
+
+    testWidgets('theme provides consistent colors to descendants',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final appContext = tester.element(find.byType(AppHomePage));
+      final theme = Theme.of(appContext);
+
+      // Test theme properties
+      expect(theme.useMaterial3, isTrue);
+
+      // Seed color should be brown, which means red > green & blue
+      final primaryColor = theme.colorScheme.primary;
+      expect(primaryColor.red > primaryColor.blue, isTrue);
+      expect(primaryColor.red > primaryColor.green, isTrue);
+
+      // Test consistency of colors throughout different theme properties
+      expect(theme.colorScheme.primary, theme.primaryColor);
+      expect(theme.colorScheme.surface, theme.scaffoldBackgroundColor);
+    });
+  });
+
+  group('CompostCalculatorApp Structure Tests', () {
+    testWidgets('MaterialApp is properly configured',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
+
+      // Check basic MaterialApp configuration
+      expect(materialApp.title, 'Compost Calculator');
+      expect(materialApp.home, isA<AppHomePage>());
+      expect(materialApp.localizationsDelegates, isNotNull);
+      expect(materialApp.supportedLocales, isNotNull);
+      expect(materialApp.theme, isNotNull);
+    });
+
+    testWidgets('Home screen is properly rendered',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestApp());
+      await tester.pumpAndSettle();
+
+      // Verify the AppHomePage is rendered with expected content
+      expect(find.byType(AppHomePage), findsOneWidget);
+
+      // Verify some key elements of the home page
+      expect(find.text('Compost Calculator'), findsOneWidget); // App title
+
+      // AppHomePage should have some basic UI elements
+      expect(find.byType(AppBar), findsOneWidget);
+      expect(find.byType(Card), findsAtLeastNWidgets(1));
+    });
   });
 
   // Note: We can't easily test main() directly as it calls static methods and creates
-  // instances that are difficult to mock in Dart. Instead, we test the components
-  // that main() uses and verify their behavior individually.
-
-  testWidgets('ColorScheme is properly initialized from seed color',
-      (WidgetTester tester) async {
-    // Create a CompostCalculatorApp
-    await tester.pumpWidget(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider<CompostState>(
-            create: (context) => CompostState(mockPersistenceManager),
-          ),
-          Provider<PersistenceManager>.value(value: mockPersistenceManager),
-        ],
-        child: const CompostCalculatorApp(),
-      ),
-    );
-
-    // Allow widget to build
-    await tester.pumpAndSettle();
-
-    // Get the MaterialApp
-    final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
-
-    // Verify that a color scheme is created and it uses a brown seed color
-    final colorScheme = materialApp.theme!.colorScheme;
-
-    // We can't directly check the seed color, but we can verify that
-    // the primary color is in the brown family
-    expect(colorScheme.primary, isNotNull);
-
-    // Check that the primary color has more red than blue or green,
-    // which is characteristic of brown
-    final primaryColor = colorScheme.primary;
-    expect(primaryColor.red > primaryColor.blue, isTrue);
-    expect(primaryColor.red > primaryColor.green, isTrue);
-  });
+  // instances that are difficult to mock in Dart.
 }

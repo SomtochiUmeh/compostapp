@@ -65,11 +65,11 @@ class AvailabilityPeriod {
         return S.current.availabilitySepToDec;
       default:
         // For custom periods, return a generic localized string
-        return '${S.current.available} ${_getMonthName(startMonth)} ${S.current.to} ${_getMonthName(endMonth)}';
+        return '${S.current.available} ${getMonthName(startMonth)} ${S.current.to} ${getMonthName(endMonth)}';
     }
   }
 
-  static String _getMonthName(int month) {
+  static String getMonthName(int month) {
     switch (month) {
       case 1:
         return S.current.january;
