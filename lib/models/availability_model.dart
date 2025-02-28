@@ -1,47 +1,143 @@
 import '../generated/l10n.dart';
 
-enum AvailabilityPeriod {
-  janToDec, // January to December
-  marToAug, // March to August
-  octToDec, // October to December
-  octToJan, // October to January
-  mayToJul, // May to July
-  sepToDec // September to December
-}
+class AvailabilityPeriod {
+  final int startMonth; // 1-12 for Jan-Dec
+  final int endMonth; // 1-12 for Jan-Dec
+  final String name;
 
-extension AvailabilityPeriodExtension on AvailabilityPeriod {
+  // Pre-defined availability periods
+  static const AvailabilityPeriod janToDec =
+      AvailabilityPeriod._predefined('janToDec', 1, 12);
+  static const AvailabilityPeriod marToAug =
+      AvailabilityPeriod._predefined('marToAug', 3, 8);
+  static const AvailabilityPeriod octToDec =
+      AvailabilityPeriod._predefined('octToDec', 10, 12);
+  static const AvailabilityPeriod octToJan =
+      AvailabilityPeriod._predefined('octToJan', 10, 1);
+  static const AvailabilityPeriod mayToJul =
+      AvailabilityPeriod._predefined('mayToJul', 5, 7);
+  static const AvailabilityPeriod sepToDec =
+      AvailabilityPeriod._predefined('sepToDec', 9, 12);
+
+  // List of all predefined periods
+  static const List<AvailabilityPeriod> values = [
+    janToDec,
+    marToAug,
+    octToDec,
+    octToJan,
+    mayToJul,
+    sepToDec
+  ];
+
+  // Private constructor for predefined periods
+  const AvailabilityPeriod._predefined(
+      this.name, this.startMonth, this.endMonth);
+
+  // Public constructor for custom periods
+  AvailabilityPeriod(this.startMonth, this.endMonth)
+      : name = 'custom_${startMonth}_to_$endMonth';
+
   bool isAvailable(DateTime date) {
     final month = date.month;
-    switch (this) {
-      case AvailabilityPeriod.janToDec:
-        return true;
-      case AvailabilityPeriod.marToAug:
-        return month >= 3 && month <= 8;
-      case AvailabilityPeriod.octToDec:
-        return month >= 10 && month <= 12;
-      case AvailabilityPeriod.octToJan:
-        return month >= 10 || month <= 1;
-      case AvailabilityPeriod.mayToJul:
-        return month >= 5 && month <= 7;
-      case AvailabilityPeriod.sepToDec:
-        return month >= 9 && month <= 12;
+    if (startMonth <= endMonth) {
+      // Normal range within a year (e.g., Mar-Aug)
+      return month >= startMonth && month <= endMonth;
+    } else {
+      // Range spanning across years (e.g., Oct-Jan)
+      return month >= startMonth || month <= endMonth;
     }
   }
 
   String getLocalizedPeriod() {
-    switch (this) {
-      case AvailabilityPeriod.janToDec:
+    // Try to get predefined localized string if this is a predefined period
+    switch (name) {
+      case 'janToDec':
         return S.current.availabilityJanToDec;
-      case AvailabilityPeriod.marToAug:
+      case 'marToAug':
         return S.current.availabilityMarToAug;
-      case AvailabilityPeriod.octToDec:
+      case 'octToDec':
         return S.current.availabilityOctToDec;
-      case AvailabilityPeriod.octToJan:
+      case 'octToJan':
         return S.current.availabilityOctToJan;
-      case AvailabilityPeriod.mayToJul:
+      case 'mayToJul':
         return S.current.availabilityMayToJul;
-      case AvailabilityPeriod.sepToDec:
+      case 'sepToDec':
         return S.current.availabilitySepToDec;
+      default:
+        // For custom periods, return a generic localized string
+        return '${S.current.available} ${_getMonthName(startMonth)} ${S.current.to} ${_getMonthName(endMonth)}';
     }
   }
+
+  static String _getMonthName(int month) {
+    switch (month) {
+      case 1:
+        return S.current.january;
+      case 2:
+        return S.current.february;
+      case 3:
+        return S.current.march;
+      case 4:
+        return S.current.april;
+      case 5:
+        return S.current.may;
+      case 6:
+        return S.current.june;
+      case 7:
+        return S.current.july;
+      case 8:
+        return S.current.august;
+      case 9:
+        return S.current.september;
+      case 10:
+        return S.current.october;
+      case 11:
+        return S.current.november;
+      case 12:
+        return S.current.december;
+      default:
+        return month.toString();
+    }
+  }
+
+  // For serialization/deserialization
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'startMonth': startMonth,
+      'endMonth': endMonth,
+    };
+  }
+
+  factory AvailabilityPeriod.fromJson(Map<String, dynamic> json) {
+    // Check if this is a predefined period
+    final name = json['name'];
+    for (var period in values) {
+      if (period.name == name) {
+        return period;
+      }
+    }
+
+    // This is a custom period
+    return AvailabilityPeriod(
+      json['startMonth'] as int,
+      json['endMonth'] as int,
+    );
+  }
+
+  // For comparison
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is AvailabilityPeriod &&
+          runtimeType == other.runtimeType &&
+          startMonth == other.startMonth &&
+          endMonth == other.endMonth;
+
+  @override
+  int get hashCode => startMonth.hashCode ^ endMonth.hashCode;
+
+  // For string representation (used in persistence)
+  @override
+  String toString() => name;
 }

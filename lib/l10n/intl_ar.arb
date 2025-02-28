@@ -238,8 +238,8 @@
     "@allComponents": {
         "description": "Section title for all components list"
     },
-    "costPerUnit": "التكلفة/الوحدة",
-    "@costPerUnit": {
+    "costPerTon": "التكلفة/طن",
+    "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
     "currencyFCFA": "فرنك إفريقي",
@@ -819,5 +819,86 @@
     "cn": "ك/ن",
     "@cn": {
         "description": "Label for the carbon to nitrogen ratio"
+    },
+    "editAvailability": "تعديل فترة التوفر",
+    "@editAvailability": {
+        "description": "Label for editing availability"
+    },
+    "editAvailabilityFor": "تعديل فترة التوفر لـ {componentName}",
+    "@editAvailabilityFor": {
+        "placeholders": {
+            "componentName": {
+                "type": "String",
+                "example": "Rice straw"
+            }
+        }
+    },
+    "startMonth": "شهر البداية",
+    "@startMonth": {
+        "description": "Label for the start month input field"
+    },
+    "endMonth": "شهر النهاية",
+    "@endMonth": {
+        "description": "Label for the end month input field"
+    },
+    "january": "يناير",
+    "@january": {
+        "description": "Name of the month January"
+    },
+    "february": "فبراير",
+    "@february": {
+        "description": "Name of the month February"
+    },
+    "march": "مارس",
+    "@march": {
+        "description": "Name of the month March"
+    },
+    "april": "أبريل",
+    "@april": {
+        "description": "Name of the month April"
+    },
+    "may": "مايو",
+    "@may": {
+        "description": "Name of the month May"
+    },
+    "june": "يونيو",
+    "@june": {
+        "description": "Name of the month June"
+    },
+    "july": "يوليو",
+    "@july": {
+        "description": "Name of the month July"
+    },
+    "august": "أغسطس",
+    "@august": {
+        "description": "Name of the month August"
+    },
+    "september": "سبتمبر",
+    "@september": {
+        "description": "Name of the month September"
+    },
+    "october": "أكتوبر",
+    "@october": {
+        "description": "Name of the month October"
+    },
+    "november": "نوفمبر",
+    "@november": {
+        "description": "Name of the month November"
+    },
+    "december": "ديسمبر",
+    "@december": {
+        "description": "Name of the month December"
+    },
+    "save": "يحفظ",
+    "@save": {
+        "description": "Label for the save button"
+    },
+    "to": "إلى",
+    "@to": {
+        "description": "For custom availability string"
+    },
+    "available": "متوفر:",
+    "@available": {
+        "description": "For custom availability string"
     }
 }

@@ -58,8 +58,8 @@ class PersistenceManager {
     return [];
   }
 
-  // Component Price & Availability Management
-  Future<bool> updateComponentPrices(List<CompostComponent> components) async {
+  // Component Info Management (Price, Availability, etc.)
+  Future<bool> updateComponentInfo(List<CompostComponent> components) async {
     final List<Map<String, dynamic>> componentsJson =
         components.map((component) => _componentToJson(component)).toList();
     final String json = jsonEncode(componentsJson);
@@ -121,7 +121,7 @@ class PersistenceManager {
     return {
       'id': component.id,
       'name': component.name,
-      'availability': component.availability.toString(),
+      'availability': component.availability.toJson(),
       'nutrients': {
         'dryMatterPercent': component.nutrients.dryMatterPercent,
         'organicCarbonPercent': component.nutrients.organicCarbonPercent,
@@ -145,9 +145,7 @@ class PersistenceManager {
     return CompostComponent(
       id: json['id'],
       name: json['name'],
-      availability: AvailabilityPeriod.values.firstWhere(
-        (e) => e.toString() == json['availability'],
-      ),
+      availability: AvailabilityPeriod.fromJson(json['availability']),
       nutrients: NutrientContent(
         dryMatterPercent: json['nutrients']['dryMatterPercent'],
         organicCarbonPercent: json['nutrients']['organicCarbonPercent'],

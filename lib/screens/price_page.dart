@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../compost_state.dart';
 import '../models/compost_component_model.dart';
 import '../generated/l10n.dart';
-import '../models/availability_model.dart';
+import '../widgets/edit_availability_dialog.dart';
 
 class PricesPage extends StatelessWidget {
   const PricesPage({super.key});
@@ -23,18 +23,43 @@ class PricesPage extends StatelessWidget {
     CompostState compostState,
     BuildContext context,
   ) {
-    return ListTile(
-      title: Text(component.getName()),
-      subtitle: Text(component.availability.getLocalizedPeriod()),
-      trailing: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ListTile(
+          title: Text(component.getName()),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => _showEditAvailabilityDialog(
+                      context,
+                      component,
+                      compostState,
+                    ),
+                    icon:
+                        Icon(Icons.edit_calendar, color: Colors.brown.shade700),
+                    tooltip: S.of(context).editAvailability,
+                    constraints:
+                        const BoxConstraints(minWidth: 40, minHeight: 40),
+                  ),
+                  Expanded(
+                    child: Text(
+                      component.availability.getLocalizedPeriod(),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          trailing: SizedBox(
             width: 120,
             child: TextFormField(
               initialValue: (component.price?.pricePerTon ?? 0).toString(),
               decoration: InputDecoration(
-                labelText: S.of(context).costPerUnit,
+                labelText: S.of(context).costPerTon,
                 suffixText: S.of(context).currencyFCFA,
                 isDense: true,
               ),
@@ -49,7 +74,27 @@ class PricesPage extends StatelessWidget {
               },
             ),
           ),
-        ],
+        ),
+        const Divider(),
+      ],
+    );
+  }
+
+  void _showEditAvailabilityDialog(
+    BuildContext context,
+    CompostComponent component,
+    CompostState compostState,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) => EditAvailabilityDialog(
+        componentId: component.id,
+        componentName: component.getName(),
+        currentAvailability: component.availability,
+        onSave: (newAvailability) {
+          compostState.updateComponentAvailability(
+              component.id, newAvailability);
+        },
       ),
     );
   }

@@ -595,11 +595,11 @@ class S {
     );
   }
 
-  /// `Cost/Unit`
-  String get costPerUnit {
+  /// `Cost/Ton`
+  String get costPerTon {
     return Intl.message(
-      'Cost/Unit',
-      name: 'costPerUnit',
+      'Cost/Ton',
+      name: 'costPerTon',
       desc: 'Label for cost per unit input field',
       args: [],
     );
@@ -2054,6 +2054,196 @@ class S {
       'C/N',
       name: 'cn',
       desc: 'Label for the carbon to nitrogen ratio',
+      args: [],
+    );
+  }
+
+  /// `Edit availability`
+  String get editAvailability {
+    return Intl.message(
+      'Edit availability',
+      name: 'editAvailability',
+      desc: 'Button label for editing the availability of a component',
+      args: [],
+    );
+  }
+
+  /// `Edit Availability for {componentName}`
+  String editAvailabilityFor(String componentName) {
+    return Intl.message(
+      'Edit Availability for $componentName',
+      name: 'editAvailabilityFor',
+      desc: '',
+      args: [componentName],
+    );
+  }
+
+  /// `Start Month`
+  String get startMonth {
+    return Intl.message(
+      'Start Month',
+      name: 'startMonth',
+      desc: 'Label for the start month input field',
+      args: [],
+    );
+  }
+
+  /// `End Month`
+  String get endMonth {
+    return Intl.message(
+      'End Month',
+      name: 'endMonth',
+      desc: 'Label for the end month input field',
+      args: [],
+    );
+  }
+
+  /// `January`
+  String get january {
+    return Intl.message(
+      'January',
+      name: 'january',
+      desc: 'Name of the month January',
+      args: [],
+    );
+  }
+
+  /// `February`
+  String get february {
+    return Intl.message(
+      'February',
+      name: 'february',
+      desc: 'Name of the month February',
+      args: [],
+    );
+  }
+
+  /// `March`
+  String get march {
+    return Intl.message(
+      'March',
+      name: 'march',
+      desc: 'Name of the month March',
+      args: [],
+    );
+  }
+
+  /// `April`
+  String get april {
+    return Intl.message(
+      'April',
+      name: 'april',
+      desc: 'Name of the month April',
+      args: [],
+    );
+  }
+
+  /// `May`
+  String get may {
+    return Intl.message(
+      'May',
+      name: 'may',
+      desc: 'Name of the month May',
+      args: [],
+    );
+  }
+
+  /// `June`
+  String get june {
+    return Intl.message(
+      'June',
+      name: 'june',
+      desc: 'Name of the month June',
+      args: [],
+    );
+  }
+
+  /// `July`
+  String get july {
+    return Intl.message(
+      'July',
+      name: 'july',
+      desc: 'Name of the month July',
+      args: [],
+    );
+  }
+
+  /// `August`
+  String get august {
+    return Intl.message(
+      'August',
+      name: 'august',
+      desc: 'Name of the month August',
+      args: [],
+    );
+  }
+
+  /// `September`
+  String get september {
+    return Intl.message(
+      'September',
+      name: 'september',
+      desc: 'Name of the month September',
+      args: [],
+    );
+  }
+
+  /// `October`
+  String get october {
+    return Intl.message(
+      'October',
+      name: 'october',
+      desc: 'Name of the month October',
+      args: [],
+    );
+  }
+
+  /// `November`
+  String get november {
+    return Intl.message(
+      'November',
+      name: 'november',
+      desc: 'Name of the month November',
+      args: [],
+    );
+  }
+
+  /// `December`
+  String get december {
+    return Intl.message(
+      'December',
+      name: 'december',
+      desc: 'Name of the month December',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: 'Button label for saving changes',
+      args: [],
+    );
+  }
+
+  /// `to`
+  String get to {
+    return Intl.message(
+      'to',
+      name: 'to',
+      desc: 'For custom availability string',
+      args: [],
+    );
+  }
+
+  /// `Available:`
+  String get available {
+    return Intl.message(
+      'Available:',
+      name: 'available',
+      desc: 'For custom availability string',
       args: [],
     );
   }

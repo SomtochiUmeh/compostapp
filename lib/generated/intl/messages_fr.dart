@@ -20,15 +20,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
-  static String m0(selector) =>
+  static String m0(componentName) =>
+      "Modifier la disponibilité pour ${componentName}";
+
+  static String m1(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'Déchets de mangue avec graines', 'componentCashewShells': 'Coques de cajou', 'componentRiceHulls': 'Balles de riz/Son de riz', 'componentRiceStraw': 'Paille de riz - saison humide', 'componentSugarcaneBagasse': 'Bagasse de canne à sucre', 'componentChickenManure': 'Fumier de poulet séché', 'componentCowDung': 'Bouse de vache', 'componentCottonStraw': 'Paille de coton', 'componentRiceHuskAsh': 'Cendre de balle de riz', 'componentLime': 'Chaux', 'componentCompostPlus': 'Compost +', 'componentDolomites': 'Dolomites', 'componentCornStraw': 'Paille de maïs', 'componentCassavaPeels': 'Épluchures de manioc', 'componentRiceChickenLitter': 'Litière (son de riz + fumier de poulet)', 'componentRiceStrawCounter': 'Paille de riz - contre-saison', 'other': 'Composant inconnu'})}";
 
-  static String m1(nutrientName, min, max) =>
+  static String m2(nutrientName, min, max) =>
       "Excellent! ${nutrientName} est dans la plage optimale (${min} - ${max})";
 
-  static String m2(value) => "${value} (%)";
+  static String m3(value) => "${value} (%)";
 
-  static String m3(price, amount, unit) =>
+  static String m4(price, amount, unit) =>
       "Prix: ${price} FCFA par ${amount} ${unit}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -70,6 +73,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "ammoniaSmellTooMuchNitrogen": MessageLookupByLibrary.simpleMessage(
       "Odeur d\'ammoniac: Trop d\'azote",
     ),
+    "april": MessageLookupByLibrary.simpleMessage("Avril"),
+    "august": MessageLookupByLibrary.simpleMessage("Août"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Disponible: Janvier à Décembre",
     ),
@@ -88,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "availabilitySepToDec": MessageLookupByLibrary.simpleMessage(
       "Disponible: Septembre à Décembre",
     ),
+    "available": MessageLookupByLibrary.simpleMessage("Disponible:"),
     "avoidAddingMeatDairyOilsOrPetWaste": MessageLookupByLibrary.simpleMessage(
       "Éviter d\'ajouter de la viande, des produits laitiers, des huiles ou des déchets d\'animaux",
     ),
@@ -212,7 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3. Phase de Refroidissement (Jours 25-35)",
     ),
     "costFCFA": MessageLookupByLibrary.simpleMessage("Coût (FCFA)"),
-    "costPerUnit": MessageLookupByLibrary.simpleMessage("Coût/Unité"),
+    "costPerTon": MessageLookupByLibrary.simpleMessage("Coût/tonne"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
       "Couvrir les restes alimentaires avec des matières brunes",
     ),
@@ -227,22 +233,29 @@ class MessageLookup extends MessageLookupByLibrary {
     "days2to5": MessageLookupByLibrary.simpleMessage("Jours 2-5"),
     "days35to60": MessageLookupByLibrary.simpleMessage("Jours 35-60+"),
     "days5to25": MessageLookupByLibrary.simpleMessage("Jours 5-25"),
+    "december": MessageLookupByLibrary.simpleMessage("Décembre"),
     "dryLeaves": MessageLookupByLibrary.simpleMessage("Feuilles sèches"),
     "dryMatter": MessageLookupByLibrary.simpleMessage("Matière Sèche"),
+    "editAvailability": MessageLookupByLibrary.simpleMessage(
+      "Modifier la disponibilité",
+    ),
+    "editAvailabilityFor": m0,
     "editComponent": MessageLookupByLibrary.simpleMessage(
       "Modifier le Composant",
     ),
+    "endMonth": MessageLookupByLibrary.simpleMessage("Mois de fin"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "Restes alimentaires exposés",
     ),
     "fastHotCompost": MessageLookupByLibrary.simpleMessage(
       "Compost Chaud Rapide",
     ),
+    "february": MessageLookupByLibrary.simpleMessage("Février"),
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "Pour quand vous avez besoin de compost rapidement.",
     ),
     "freshPlant": MessageLookupByLibrary.simpleMessage("Plantes fraîches"),
-    "getTranslation": m0,
+    "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("Verts"),
     "heating": MessageLookupByLibrary.simpleMessage("Chauffage"),
     "heatingPhaseDays5to25": MessageLookupByLibrary.simpleMessage(
@@ -262,6 +275,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ingredient": MessageLookupByLibrary.simpleMessage("Ingrédient"),
     "ingredients": MessageLookupByLibrary.simpleMessage("Ingrédients"),
     "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
+    "january": MessageLookupByLibrary.simpleMessage("Janvier"),
+    "july": MessageLookupByLibrary.simpleMessage("Juillet"),
+    "june": MessageLookupByLibrary.simpleMessage("Juin"),
     "keepItLikeADampSpongeNotTooDry": MessageLookupByLibrary.simpleMessage(
       "Garder comme une éponge humide (ni trop sec ni détrempé).",
     ),
@@ -280,10 +296,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "maintainMoisture": MessageLookupByLibrary.simpleMessage(
       "Maintenir l\'humidité",
     ),
+    "march": MessageLookupByLibrary.simpleMessage("Mars"),
     "maturationPhaseDays35to60": MessageLookupByLibrary.simpleMessage(
       "4. Phase de Maturation (Jours 35-60+)",
     ),
     "maturing": MessageLookupByLibrary.simpleMessage("Maturation"),
+    "may": MessageLookupByLibrary.simpleMessage("Mai"),
     "meatDairyOrFattyFoodsInCompost": MessageLookupByLibrary.simpleMessage(
       "Viande, produits laitiers ou aliments gras dans le compost",
     ),
@@ -306,10 +324,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "notEnoughNitrogenAddGreens": MessageLookupByLibrary.simpleMessage(
       "Pas assez d\'azote (ajouter des \'verts\')",
     ),
+    "november": MessageLookupByLibrary.simpleMessage("Novembre"),
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage(
       "Analyse des Nutriments",
     ),
-    "nutrientInOptimalRange": m1,
+    "nutrientInOptimalRange": m2,
+    "october": MessageLookupByLibrary.simpleMessage("Octobre"),
     "optimumMoisture": MessageLookupByLibrary.simpleMessage(
       "Humidité Optimale",
     ),
@@ -341,7 +361,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "partsDryLeaves": MessageLookupByLibrary.simpleMessage(
       "3 parts de feuilles sèches",
     ),
-    "percentage": m2,
+    "percentage": m3,
     "pestsInTheCompost": MessageLookupByLibrary.simpleMessage(
       "Nuisibles dans le Compost",
     ),
@@ -370,7 +390,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "possibleCauses": MessageLookupByLibrary.simpleMessage("Causes Possibles"),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
-    "price": m3,
+    "price": m4,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage(
       "Prix des Ingrédients",
     ),
@@ -401,6 +421,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sampleCompostRecipes": MessageLookupByLibrary.simpleMessage(
       "Exemples de Recettes de Compost",
     ),
+    "save": MessageLookupByLibrary.simpleMessage("Sauvegarder"),
+    "september": MessageLookupByLibrary.simpleMessage("Septembre"),
     "simpleRule": MessageLookupByLibrary.simpleMessage("Règle simple:"),
     "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood":
         MessageLookupByLibrary.simpleMessage(
@@ -411,6 +433,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "Les organismes du sol reviennent, les nutriments se stabilisent, l\'humus se forme.",
         ),
     "solutions": MessageLookupByLibrary.simpleMessage("Solutions:"),
+    "startMonth": MessageLookupByLibrary.simpleMessage("Mois de début"),
     "startup": MessageLookupByLibrary.simpleMessage("Démarrage"),
     "startupDays2to5": MessageLookupByLibrary.simpleMessage(
       "1. Démarrage (Jours 2-5)",
@@ -434,6 +457,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Cette application est conçue pour vous aider à créer et gérer le compostage aérobie en tas. Utilisez les outils ci-dessous pour en apprendre davantage sur le compostage, explorer des recettes ou créer les vôtres!",
         ),
+    "to": MessageLookupByLibrary.simpleMessage("à"),
     "tooDryAddFreshGreenMaterials": MessageLookupByLibrary.simpleMessage(
       "Trop sec: Ajouter des matières \'vertes\' fraîches",
     ),
