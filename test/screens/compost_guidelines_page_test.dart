@@ -82,4 +82,129 @@ void main() {
       }
     });
   });
+
+  group('CompostGuidelinesPage Navigation Tests', () {
+    // testWidgets('Navigation to all guideline detail pages works correctly',
+    //     (WidgetTester tester) async {
+    //   // Define all guideline titles to test
+    //   final guidelineTitles = [
+    //     'Aerobic Composting Process',
+    //     'How to Make Compost',
+    //     'C:N Ratio & Optimum Compost Conditions',
+    //     'Troubleshooting Compost Problems'
+    //   ];
+
+    //   // Test navigation for each guideline item
+    //   for (final title in guidelineTitles) {
+    //     // Build the CompostGuidelinesPage fresh for each test
+    //     await tester.pumpWidget(createTestableCompostGuidelinesPage());
+    //     await tester.pumpAndSettle();
+
+    //     // Verify the CompostGuidelinesPage is rendered with the expected items
+    //     expect(find.text(title, skipOffstage: false), findsOneWidget);
+
+    //     // Find and tap on the guideline item
+    //     await tester.tap(find.text(title, skipOffstage: false));
+    //     await tester.pumpAndSettle();
+
+    //     // Verify navigation to GuidelineDetailPage with correct title
+    //     expect(find.byType(GuidelineDetailPage), findsOneWidget);
+    //     expect(find.text(title, skipOffstage: false), findsAtLeastNWidgets(1));
+
+    //     // Verify some content is displayed - different for each type of guideline
+    //     if (title == 'Aerobic Composting Process') {
+    //       expect(
+    //           find.text('Composting happens in four stages:',
+    //               skipOffstage: false),
+    //           findsOneWidget);
+    //     } else if (title == 'How to Make Compost') {
+    //       expect(find.text('Visual Tip', skipOffstage: false), findsOneWidget);
+    //     } else if (title == 'C:N Ratio & Optimum Compost Conditions') {
+    //       expect(find.text('C:N Ratio Explained:', skipOffstage: false),
+    //           findsOneWidget);
+    //     } else if (title == 'Troubleshooting Compost Problems') {
+    //       expect(
+    //           find.text('Common Compost Problems & Solutions',
+    //               skipOffstage: false),
+    //           findsOneWidget);
+    //     }
+    //   }
+    // });
+
+    // Test each navigation individually for more detailed coverage
+    testWidgets('Navigate to Aerobic Composting Process detail page',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableCompostGuidelinesPage());
+      await tester.pumpAndSettle();
+
+      const title = 'Aerobic Composting Process';
+      await tester.tap(find.text(title));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(GuidelineDetailPage), findsOneWidget);
+      expect(find.text(title), findsOneWidget);
+
+      // Check for specific Aerobic Composting content
+      expect(find.text('Composting happens in four stages:'), findsOneWidget);
+      expect(find.text('Start-up'), findsOneWidget);
+      expect(find.text('Heating'), findsOneWidget);
+      expect(find.text('Cooling'), findsOneWidget);
+      expect(find.text('Maturing'), findsOneWidget);
+    });
+
+    testWidgets('Navigate to How to Make Compost detail page',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableCompostGuidelinesPage());
+      await tester.pumpAndSettle();
+
+      const title = 'How to Make Compost';
+      await tester.tap(find.text(title));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(GuidelineDetailPage), findsOneWidget);
+      expect(find.text(title), findsOneWidget);
+
+      // Check for specific How to Make Compost content
+      expect(find.text('Visual Tip'), findsOneWidget);
+      expect(find.text('Choose a site'), findsOneWidget);
+      expect(find.text('Layer materials'), findsOneWidget);
+    });
+
+    testWidgets(
+        'Navigate to C:N Ratio & Optimum Compost Conditions detail page',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableCompostGuidelinesPage());
+      await tester.pumpAndSettle();
+
+      const title = 'C:N Ratio & Optimum Compost Conditions';
+      await tester.tap(find.text(title));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(GuidelineDetailPage), findsOneWidget);
+      expect(find.text(title), findsOneWidget);
+
+      // Check for specific C:N Ratio content
+      expect(find.text('C:N Ratio Explained:'), findsOneWidget);
+      expect(find.text('High Carbon'), findsOneWidget);
+      expect(find.text('High Nitrogen'), findsOneWidget);
+    });
+
+    testWidgets('Navigate to Troubleshooting Compost Problems detail page',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(createTestableCompostGuidelinesPage());
+      await tester.pumpAndSettle();
+
+      const title = 'Troubleshooting Compost Problems';
+      await tester.tap(find.text(title));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(GuidelineDetailPage), findsOneWidget);
+      expect(find.text(title), findsOneWidget);
+
+      // Check for specific Troubleshooting content
+      expect(find.text('Common Compost Problems & Solutions'), findsOneWidget);
+      expect(find.text('Quick Check'), findsOneWidget);
+      expect(find.text('Pile Isn\'t Heating Up'), findsOneWidget);
+    });
+  });
 }
