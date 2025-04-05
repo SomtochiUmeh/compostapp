@@ -8,7 +8,7 @@ Agricultural processing in regions like Burkina Faso generates substantial waste
 
 With fertilizer prices doubling due to global factors, composting has become an increasingly important alternative for maintaining soil fertility. CompostApp helps users create balanced compost with the right nutrient proportions using available waste materials.
 
-## Handover Guide for NGO Users
+## Handover Guide for NGO Staff
 
 This section provides essential guidance for non-technical users who need to maintain and update the app after the initial development phase.
 
@@ -168,7 +168,7 @@ lib/
 └── widgets/                     # Reusable UI components
 ```
 
-## Getting Started
+## Setup Instructions for Developers
 
 ### Prerequisites
 - Flutter SDK
