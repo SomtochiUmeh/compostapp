@@ -625,6 +625,46 @@ class S {
     );
   }
 
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: 'Language selection label',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: 'English language name',
+      args: [],
+    );
+  }
+
+  /// `French`
+  String get french {
+    return Intl.message(
+      'French',
+      name: 'french',
+      desc: 'French language name',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: 'Arabic language name',
+      args: [],
+    );
+  }
+
   /// `Available: March to August`
   String get availabilityMarToAug {
     return Intl.message(

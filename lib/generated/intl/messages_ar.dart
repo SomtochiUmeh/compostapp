@@ -9,7 +9,6 @@
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
-// coverage:ignore-start
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -66,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رائحة الأمونيا: نيتروجين زائد",
     ),
     "april": MessageLookupByLibrary.simpleMessage("أبريل"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "متوفر: يناير إلى ديسمبر",
@@ -228,6 +228,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editAvailabilityFor": m0,
     "editComponent": MessageLookupByLibrary.simpleMessage("تعديل المكون"),
     "endMonth": MessageLookupByLibrary.simpleMessage("شهر النهاية"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "بقايا طعام مكشوفة",
     ),
@@ -238,6 +239,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "عندما تحتاج إلى السماد بسرعة.",
     ),
+    "french": MessageLookupByLibrary.simpleMessage("French"),
     "freshPlant": MessageLookupByLibrary.simpleMessage("نباتات طازجة"),
     "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("المواد الخضراء"),
@@ -269,6 +271,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "الاحتياجات الأساسية: الماء، الأكسجين، المواد العضوية صغيرة الحجم.",
         ),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn":
         MessageLookupByLibrary.simpleMessage(
           "ضع المكونات في طبقات، رطبها، وقلبها كل 1-2 أسبوع. تكون جاهزة في 3-6 أشهر.",
@@ -511,4 +514,3 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
   };
 }
-// coverage:ignore-end

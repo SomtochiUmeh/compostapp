@@ -9,7 +9,6 @@
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
-// coverage:ignore-start
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -75,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Odeur d\'ammoniac: Trop d\'azote",
     ),
     "april": MessageLookupByLibrary.simpleMessage("Avril"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "august": MessageLookupByLibrary.simpleMessage("Août"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Disponible: Janvier à Décembre",
@@ -245,6 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Modifier le Composant",
     ),
     "endMonth": MessageLookupByLibrary.simpleMessage("Mois de fin"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "Restes alimentaires exposés",
     ),
@@ -255,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "Pour quand vous avez besoin de compost rapidement.",
     ),
+    "french": MessageLookupByLibrary.simpleMessage("French"),
     "freshPlant": MessageLookupByLibrary.simpleMessage("Plantes fraîches"),
     "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("Verts"),
@@ -286,6 +288,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Besoins essentiels: Eau, oxygène, matière organique de petite taille.",
         ),
+    "language": MessageLookupByLibrary.simpleMessage("Langue"),
     "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn":
         MessageLookupByLibrary.simpleMessage(
           "Disposer les ingrédients en couches, humidifier et retourner toutes les 1-2 semaines. Prêt en 3-6 mois.",
@@ -536,4 +539,3 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
   };
 }
-// coverage:ignore-end
