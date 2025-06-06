@@ -60,6 +60,7 @@ void main() {
       expect(find.text('English'), findsOneWidget);
       expect(find.text('Français'), findsOneWidget);
       expect(find.text('العربية'), findsOneWidget);
+      expect(find.text('Afrikaans'), findsOneWidget);
     });
 
     testWidgets('shows check mark for current locale', (WidgetTester tester) async {
@@ -135,6 +136,9 @@ void main() {
             break;
           case 'ar':
             expectedText = 'العربية';
+            break;
+          case 'af':
+            expectedText = 'Afrikaans';
             break;
           default:
             expectedText = locale.languageCode.toUpperCase();

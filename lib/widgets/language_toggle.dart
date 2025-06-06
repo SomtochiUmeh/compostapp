@@ -53,6 +53,8 @@ class LanguageToggle extends StatelessWidget {
         return S.of(context).french;
       case 'ar':
         return S.of(context).arabic;
+      case 'af':
+        return S.of(context).afrikaans;
       default:
         return locale.languageCode.toUpperCase();
     }

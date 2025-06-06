@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aerobicCompostingProcess": MessageLookupByLibrary.simpleMessage(
       "Aerobic Composting Process",
     ),
+    "afrikaans": MessageLookupByLibrary.simpleMessage("Afrikaans"),
     "allAvailableComponentsHaveBeenAdded": MessageLookupByLibrary.simpleMessage(
       "All available components have been added",
     ),

@@ -266,6 +266,10 @@
     "@arabic": {
         "description": "Arabic language name"
     },
+    "afrikaans": "Afrikaans",
+    "@afrikaans": {
+        "description": "Afrikaans language name"
+    },
     "availabilityMarToAug": "Available: March to August",
     "@availabilityMarToAug": {
         "description": "Availability period March to August"

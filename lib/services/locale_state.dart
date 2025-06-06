@@ -12,6 +12,7 @@ class LocaleState extends ChangeNotifier {
     Locale('en'), // English
     Locale('fr'), // French
     Locale('ar'), // Arabic
+    Locale('af'), // Afrikaans
   ];
   
   Locale get currentLocale => _currentLocale;
@@ -73,6 +74,8 @@ class LocaleState extends ChangeNotifier {
         return 'Français';
       case 'ar':
         return 'العربية';
+      case 'af':
+        return 'Afrikaans';
       default:
         return locale.languageCode.toUpperCase();
     }

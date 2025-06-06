@@ -23,6 +23,7 @@ void main() {
       expect(LocaleState.supportedLocales, contains(const Locale('en')));
       expect(LocaleState.supportedLocales, contains(const Locale('fr')));
       expect(LocaleState.supportedLocales, contains(const Locale('ar')));
+      expect(LocaleState.supportedLocales, contains(const Locale('af')));
       expect(LocaleState.supportedLocales.length, equals(4));
     });
 
@@ -92,16 +93,18 @@ void main() {
       expect(localeState.getLanguageDisplayName(const Locale('en'), MockBuildContext()), equals('English'));
       expect(localeState.getLanguageDisplayName(const Locale('fr'), MockBuildContext()), equals('Français'));
       expect(localeState.getLanguageDisplayName(const Locale('ar'), MockBuildContext()), equals('العربية'));
+      expect(localeState.getLanguageDisplayName(const Locale('af'), MockBuildContext()), equals('Afrikaans'));
       expect(localeState.getLanguageDisplayName(const Locale('unknown'), MockBuildContext()), equals('UNKNOWN'));
     });
 
     test('getSupportedLocalesWithNames returns correct list', () {
       final localesWithNames = localeState.getSupportedLocalesWithNames(MockBuildContext());
       
-      expect(localesWithNames.length, equals(3));
+      expect(localesWithNames.length, equals(4));
       expect(localesWithNames.any((entry) => entry.key == const Locale('en') && entry.value == 'English'), isTrue);
       expect(localesWithNames.any((entry) => entry.key == const Locale('fr') && entry.value == 'Français'), isTrue);
       expect(localesWithNames.any((entry) => entry.key == const Locale('ar') && entry.value == 'العربية'), isTrue);
+      expect(localesWithNames.any((entry) => entry.key == const Locale('af') && entry.value == 'Afrikaans'), isTrue);
     });
   });
 }
