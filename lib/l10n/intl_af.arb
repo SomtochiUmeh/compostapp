@@ -1,58 +1,58 @@
 {
-    "@@locale": "fr",
-    "recipeBuilder": "Créateur de Recettes",
+    "@@locale": "af",
+    "recipeBuilder": "Resep Bouer",
     "@recipeBuilder": {
         "description": "Recipe Builder Navbar label"
     },
-    "prices": "Prix",
+    "prices": "Pryse",
     "@prices": {
         "description": "Prices Navbar label"
     },
-    "allAvailableComponentsHaveBeenAdded": "Tous les composants disponibles ont été ajoutés",
+    "allAvailableComponentsHaveBeenAdded": "Alle beskikbare komponente is bygevoeg",
     "@allAvailableComponentsHaveBeenAdded": {
         "description": "Message shown when no more components can be added to the recipe"
     },
-    "compostRecipeBuilder": "Créateur de Recettes de Compost",
+    "compostRecipeBuilder": "Kompos Resep Bouer",
     "@compostRecipeBuilder": {
         "description": "Main title of the compost recipe builder page"
     },
-    "recipeQualityGuide": "Guide de Qualité des Recettes",
+    "recipeQualityGuide": "Resep Kwaliteit Gids",
     "@recipeQualityGuide": {
         "description": "Title for the recipe quality information dialog"
     },
-    "recipeQualityInfo": "Coche verte: Niveau de nutriment dans la plage recommandée\nFlèche rouge vers le haut: Niveau de nutriment en dessous de la plage recommandée\nFlèche orange vers le bas: Niveau de nutriment au-dessus de la plage recommandée\n\nLes plages recommandées sont basées sur les normes de compost municipal.",
+    "recipeQualityInfo": "Groen regmerkie: Voedingstofvlak binne aanbevole reeks\nRooi pyl op: Voedingstofvlak onder aanbevole reeks\nOranje pyl af: Voedingstofvlak bo aanbevole reeks\n\nAanbevole reekse is gebaseer op munisipale kompos standaarde.",
     "@recipeQualityInfo": {
         "description": "Detailed explanation of the nutrient level indicators in the recipe quality guide"
     },
-    "close": "Fermer",
+    "close": "Sluit",
     "@close": {
         "description": "Button label for closing dialogs or screens"
     },
-    "components": "Composants",
+    "components": "Komponente",
     "@components": {
         "description": "Section header for the list of compost components"
     },
-    "noComponentsAddedYetClickTheButtonBelowToAdd": "Aucun composant ajouté. Cliquez sur le bouton ci-dessous pour ajouter des composants à votre recette de compost.",
+    "noComponentsAddedYetClickTheButtonBelowToAdd": "Geen komponente bygevoeg nog nie. Klik die knoppie hieronder om komponente by jou kompos resep te voeg.",
     "@noComponentsAddedYetClickTheButtonBelowToAdd": {
         "description": "Message shown when the recipe has no components"
     },
-    "addComponent": "Ajouter un Composant",
+    "addComponent": "Voeg Komponent By",
     "@addComponent": {
         "description": "Button label for adding a new component to the recipe"
     },
-    "nutrientAnalysis": "Analyse des Nutriments",
+    "nutrientAnalysis": "Voedingstof Analise",
     "@nutrientAnalysis": {
         "description": "Section header for the nutrient analysis table"
     },
-    "editComponent": "Modifier le Composant",
+    "editComponent": "Wysig Komponent",
     "@editComponent": {
         "description": "Title for the dialog when editing an existing component"
     },
-    "chooseComponent": "Choisir un Composant",
+    "chooseComponent": "Kies Komponent",
     "@chooseComponent": {
         "description": "Label for the component selection dropdown"
     },
-    "weight": "Poids (kg)",
+    "weight": "Gewig (kg)",
     "@weight": {
         "description": "Label for the weight input field"
     },
@@ -60,11 +60,11 @@
     "@unitKgs": {
         "description": "Unit kgs"
     },
-    "unitTons": "tonnes",
+    "unitTons": "ton",
     "@unitTons": {
         "description": "Unit tons"
     },
-    "price": "Prix: {price} FCFA par {amount} {unit}",
+    "price": "Prys: {price} FCFA per {amount} {unit}",
     "@price": {
         "description": "Price information display format",
         "placeholders": {
@@ -82,31 +82,31 @@
             }
         }
     },
-    "cancel": "Annuler",
+    "cancel": "Kanselleer",
     "@cancel": {
         "description": "Label for cancel button"
     },
-    "update": "Mettre à jour",
+    "update": "Opdateer",
     "@update": {
         "description": "Label for update button when editing a component"
     },
-    "add": "Ajouter",
+    "add": "Voeg By",
     "@add": {
         "description": "Label for add button when adding a new component"
     },
-    "pleaseEnterValidWeight": "Veuillez entrer un poids valide",
+    "pleaseEnterValidWeight": "Voer asseblief 'n geldige gewig in",
     "@pleaseEnterValidWeight": {
         "description": "Error message when weight input is invalid"
     },
-    "pleaseFillAllFields": "Veuillez remplir tous les champs",
+    "pleaseFillAllFields": "Vul asseblief alle velde in",
     "@pleaseFillAllFields": {
         "description": "Error message when required fields are empty"
     },
-    "component": "Composant",
+    "component": "Komponent",
     "@component": {
         "description": "Single component label for table header"
     },
-    "costFCFA": "Coût (FCFA)",
+    "costFCFA": "Koste (FCFA)",
     "@costFCFA": {
         "description": "Column header for cost in FCFA currency"
     },
@@ -144,83 +144,83 @@
     "@magnesium": {
         "description": "Nutrient name for magnesium (lowercase)"
     },
-    "dryMatter": "Matière Sèche",
+    "dryMatter": "Droë Materie",
     "@dryMatter": {
         "description": "Nutrient name for dry matter content"
     },
-    "totalWeightKg": "Poids Total (kg)",
+    "totalWeightKg": "Totale Gewig (kg)",
     "@totalWeightKg": {
         "description": "Column header for total weight in kilograms"
     },
-    "totalCostFCFA": "Coût Total (FCFA)",
+    "totalCostFCFA": "Totale Koste (FCFA)",
     "@totalCostFCFA": {
         "description": "Column header for total cost in FCFA currency"
     },
-    "componentMangoWaste": "Déchets de mangue avec graines",
+    "componentMangoWaste": "Mango afval met pitte",
     "@componentMangoWaste": {
         "description": "Name of mango waste component"
     },
-    "componentCashewShells": "Coques de cajou",
+    "componentCashewShells": "Kasjoeneut doppe",
     "@componentCashewShells": {
         "description": "Name of cashew shells component"
     },
-    "componentRiceHulls": "Balles de riz/Son de riz",
+    "componentRiceHulls": "Rys doppe/Rys semels",
     "@componentRiceHulls": {
         "description": "Name of rice hulls/bran component"
     },
-    "componentRiceStraw": "Paille de riz - saison humide",
+    "componentRiceStraw": "Rys strooi - nat seisoen",
     "@componentRiceStraw": {
         "description": "Name of rice straw component"
     },
-    "componentSugarcaneBagasse": "Bagasse de canne à sucre",
+    "componentSugarcaneBagasse": "Suikerriet bagasse",
     "@componentSugarcaneBagasse": {
         "description": "Name of sugarcane bagasse component"
     },
-    "componentChickenManure": "Fumier de poulet séché",
+    "componentChickenManure": "Gedroogde hoender mis",
     "@componentChickenManure": {
         "description": "Name of dried chicken manure component"
     },
-    "componentCowDung": "Bouse de vache",
+    "componentCowDung": "Koei mis",
     "@componentCowDung": {
         "description": "Name of cow dung component"
     },
-    "componentCottonStraw": "Paille de coton",
+    "componentCottonStraw": "Katoen strooi",
     "@componentCottonStraw": {
         "description": "Name of cotton straw component"
     },
-    "componentRiceHuskAsh": "Cendre de balle de riz",
+    "componentRiceHuskAsh": "Rys Dop As",
     "@componentRiceHuskAsh": {
         "description": "Name of rice husk ash component"
     },
-    "componentLime": "Chaux",
+    "componentLime": "Kalk",
     "@componentLime": {
         "description": "Name of lime component"
     },
-    "componentCompostPlus": "Compost +",
+    "componentCompostPlus": "Kompos +",
     "@componentCompostPlus": {
         "description": "Name of compost plus component"
     },
-    "componentDolomites": "Dolomites",
+    "componentDolomites": "Dolomiet",
     "@componentDolomites": {
         "description": "Name of dolomites component"
     },
-    "componentCornStraw": "Paille de maïs",
+    "componentCornStraw": "Mielie strooi",
     "@componentCornStraw": {
         "description": "Name of corn straw component"
     },
-    "componentCassavaPeels": "Épluchures de manioc",
+    "componentCassavaPeels": "Kassawa skille",
     "@componentCassavaPeels": {
         "description": "Name of cassava peels component"
     },
-    "componentRiceChickenLitter": "Litière (son de riz + fumier de poulet)",
+    "componentRiceChickenLitter": "Strooisel (rys semels + hoender mis)",
     "@componentRiceChickenLitter": {
         "description": "Name of rice bran and chicken manure litter component"
     },
-    "componentRiceStrawCounter": "Paille de riz - contre-saison",
+    "componentRiceStrawCounter": "Rys strooi - teen-seisoen",
     "@componentRiceStrawCounter": {
         "description": "Name of counter-season rice straw component"
     },
-    "getTranslation": "{selector, select, componentMangoWaste {Déchets de mangue avec graines} componentCashewShells {Coques de cajou} componentRiceHulls {Balles de riz/Son de riz} componentRiceStraw {Paille de riz - saison humide} componentSugarcaneBagasse {Bagasse de canne à sucre} componentChickenManure {Fumier de poulet séché} componentCowDung {Bouse de vache} componentCottonStraw {Paille de coton} componentRiceHuskAsh {Cendre de balle de riz} componentLime {Chaux} componentCompostPlus {Compost +} componentDolomites {Dolomites} componentCornStraw {Paille de maïs} componentCassavaPeels {Épluchures de manioc} componentRiceChickenLitter {Litière (son de riz + fumier de poulet)} componentRiceStrawCounter {Paille de riz - contre-saison} other {Composant inconnu}}",
+    "getTranslation": "{selector, select, componentMangoWaste {Mango afval met pitte} componentCashewShells {Kasjoeneut doppe} componentRiceHulls {Rys doppe/Rys semels} componentRiceStraw {Rys strooi - nat seisoen} componentSugarcaneBagasse {Suikerriet bagasse} componentChickenManure {Gedroogde hoender mis} componentCowDung {Koei mis} componentCottonStraw {Katoen strooi} componentRiceHuskAsh {Rys Dop As} componentLime {Kalk} componentCompostPlus {Kompos +} componentDolomites {Dolomiet} componentCornStraw {Mielie strooi} componentCassavaPeels {Kassawa skille} componentRiceChickenLitter {Strooisel (rys semels + hoender mis)} componentRiceStrawCounter {Rys strooi - teen-seisoen} other {Onbekende komponent}}",
     "@getTranslation": {
         "description": "Translation selector for component names",
         "placeholders": {
@@ -230,15 +230,15 @@
             }
         }
     },
-    "pricePageTitle": "Prix des Ingrédients",
+    "pricePageTitle": "Bestanddeel Pryse",
     "@pricePageTitle": {
         "description": "Title of the prices page"
     },
-    "allComponents": "Tous les Composants",
+    "allComponents": "Alle Komponente",
     "@allComponents": {
         "description": "Section title for all components list"
     },
-    "costPerTon": "Coût/tonne",
+    "costPerTon": "Koste/Ton",
     "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
@@ -246,11 +246,11 @@
     "@currencyFCFA": {
         "description": "Currency label for FCFA"
     },
-    "availabilityJanToDec": "Disponible: Janvier à Décembre",
+    "availabilityJanToDec": "Beskikbaar: Januarie tot Desember",
     "@availabilityJanToDec": {
         "description": "Availability period January to December"
     },
-    "language": "Langue",
+    "language": "Taal",
     "@language": {
         "description": "Language selection label"
     },
@@ -270,31 +270,31 @@
     "@afrikaans": {
         "description": "Afrikaans language name"
     },
-    "availabilityMarToAug": "Disponible: Mars à Août",
+    "availabilityMarToAug": "Beskikbaar: Maart tot Augustus",
     "@availabilityMarToAug": {
         "description": "Availability period March to August"
     },
-    "availabilityOctToDec": "Disponible: Octobre à Décembre",
+    "availabilityOctToDec": "Beskikbaar: Oktober tot Desember",
     "@availabilityOctToDec": {
         "description": "Availability period October to December"
     },
-    "availabilityOctToJan": "Disponible: Octobre à Janvier",
+    "availabilityOctToJan": "Beskikbaar: Oktober tot Januarie",
     "@availabilityOctToJan": {
         "description": "Availability period October to January"
     },
-    "availabilityMayToJul": "Disponible: Mai à Juillet",
+    "availabilityMayToJul": "Beskikbaar: Mei tot Julie",
     "@availabilityMayToJul": {
         "description": "Availability period May to July"
     },
-    "availabilitySepToDec": "Disponible: Septembre à Décembre",
+    "availabilitySepToDec": "Beskikbaar: September tot Desember",
     "@availabilitySepToDec": {
         "description": "Availability period September to December"
     },
-    "water": "Eau",
+    "water": "Water",
     "@water": {
         "description": "Nutrient name for water"
     },
-    "nutrientInOptimalRange": "Excellent! {nutrientName} est dans la plage optimale ({min} - {max})",
+    "nutrientInOptimalRange": "Uitstekend! {nutrientName} is binne die optimale reeks ({min} - {max})",
     "@nutrientInOptimalRange": {
         "description": "Message shown when a nutrient value is within the optimal range",
         "placeholders": {
@@ -312,527 +312,527 @@
             }
         }
     },
-    "ingredients": "Ingrédients",
+    "ingredients": "Bestanddele",
     "@ingredients": {
         "description": "Section header for the list of compost ingredients"
     },
-    "ingredient": "Ingrédient",
+    "ingredient": "Bestanddeel",
     "@ingredient": {
         "description": "Single ingredient label for table header"
     },
-    "addIngredient": "Ajouter un Ingrédient",
+    "addIngredient": "Voeg Bestanddeel By",
     "@addIngredient": {
         "description": "Button label for adding a new compost ingredient to the recipe"
     },
-    "allIngredients": "Tous les Ingrédients",
+    "allIngredients": "Alle Bestanddele",
     "@allIngredients": {
         "description": "Section title for all ingredients list"
     },
-    "compostCalculator": "Calculateur de Compost",
+    "compostCalculator": "Kompos Sakrekenaar",
     "@compostCalculator": {
         "description": "Main title of the compost calculator page"
     },
-    "welcomeToCompostCalculator": "Bienvenue au Calculateur de Compost",
+    "welcomeToCompostCalculator": "Welkom by Kompos Sakrekenaar",
     "@welcomeToCompostCalculator": {
         "description": "Welcome message for the compost calculator page"
     },
-    "thisAppIsDesignedToHelpYouCreateAndManage": "Cette application est conçue pour vous aider à créer et gérer le compostage aérobie en tas. Utilisez les outils ci-dessous pour en apprendre davantage sur le compostage, explorer des recettes ou créer les vôtres!",
+    "thisAppIsDesignedToHelpYouCreateAndManage": "Hierdie toepassing is ontwerp om jou te help om oop-hoop aërobiese kompostering te skep en bestuur. Gebruik die gereedskap hieronder om meer oor kompostering te leer, resepte te verken, of jou eie te skep!",
     "@thisAppIsDesignedToHelpYouCreateAndManage": {
         "description": "Description of the app's purpose and features"
     },
-    "compostGuidelines": "Directives de Compostage",
+    "compostGuidelines": "Kompos Riglyne",
     "@compostGuidelines": {
         "description": "Title for the compost guidelines section"
     },
-    "sampleCompostRecipes": "Exemples de Recettes de Compost",
+    "sampleCompostRecipes": "Voorbeeld Kompos Resepte",
     "@sampleCompostRecipes": {
         "description": "Title for the sample compost recipes section"
     },
-    "aerobicCompostingProcess": "Processus de Compostage Aérobie",
+    "aerobicCompostingProcess": "Aërobiese Kompos Proses",
     "@aerobicCompostingProcess": {
         "description": "Title for the aerobic composting process section"
     },
-    "howToMakeCompost": "Comment Faire du Compost",
+    "howToMakeCompost": "Hoe om Kompos te Maak",
     "@howToMakeCompost": {
         "description": "Title for the how-to guide on making compost"
     },
-    "cnRatioOptimumCompostConditions": "Ratio C:N & Conditions Optimales de Compost",
+    "cnRatioOptimumCompostConditions": "C:N Verhouding & Optimale Kompos Toestande",
     "@cnRatioOptimumCompostConditions": {
         "description": "Title for the C:N ratio and optimum compost conditions section"
     },
-    "troubleshootingCompostProblems": "Résolution des Problèmes de Compost",
+    "troubleshootingCompostProblems": "Kompos Probleme Oplos",
     "@troubleshootingCompostProblems": {
         "description": "Title for the troubleshooting compost problems section"
     },
-    "contentNotAvailable": "Contenu non disponible",
+    "contentNotAvailable": "Inhoud nie beskikbaar nie",
     "@contentNotAvailable": {
         "description": "Message shown when content is not available"
     },
-    "compostingHappensInFourStages": "Le compostage se déroule en quatre étapes:",
+    "compostingHappensInFourStages": "Kompostering gebeur in vier fases:",
     "@compostingHappensInFourStages": {
         "description": "Description of the four stages of composting"
     },
-    "day1": "Jour 1",
+    "day1": "Dag 1",
     "@day1": {
         "description": "Label for Day 1 in the composting timeline"
     },
-    "day5": "Jour 5",
+    "day5": "Dag 5",
     "@day5": {
         "description": "Label for Day 5 in the composting timeline"
     },
-    "day25": "Jour 25",
+    "day25": "Dag 25",
     "@day25": {
         "description": "Label for Day 25 in the composting timeline"
     },
-    "day35": "Jour 35",
+    "day35": "Dag 35",
     "@day35": {
         "description": "Label for Day 35 in the composting timeline"
     },
-    "day60": "Jour 60+",
+    "day60": "Dag 60+",
     "@day60": {
         "description": "Label for Day 60 and beyond in the composting timeline"
     },
-    "startup": "Démarrage",
+    "startup": "Begin",
     "@startup": {
         "description": "Label for the start-up phase in the composting timeline"
     },
-    "days2to5": "Jours 2-5",
+    "days2to5": "Dae 2-5",
     "@days2to5": {
         "description": "Label for Days 2 to 5 in the composting timeline"
     },
-    "heating": "Chauffage",
+    "heating": "Verhitting",
     "@heating": {
         "description": "Label for the heating phase in the composting timeline"
     },
-    "days5to25": "Jours 5-25",
+    "days5to25": "Dae 5-25",
     "@days5to25": {
         "description": "Label for Days 5 to 25 in the composting timeline"
     },
-    "cooling": "Refroidissement",
+    "cooling": "Afkoeling",
     "@cooling": {
         "description": "Label for the cooling phase in the composting timeline"
     },
-    "days25to35": "Jours 25-35",
+    "days25to35": "Dae 25-35",
     "@days25to35": {
         "description": "Label for Days 25 to 35 in the composting timeline"
     },
-    "maturing": "Maturation",
+    "maturing": "Rypwording",
     "@maturing": {
         "description": "Label for the maturing phase in the composting timeline"
     },
-    "days35to60": "Jours 35-60+",
+    "days35to60": "Dae 35-60+",
     "@days35to60": {
         "description": "Label for Days 35 and beyond in the composting timeline"
     },
-    "compostingTimelineProcess": "Processus Chronologique du Compostage",
+    "compostingTimelineProcess": "Kompos Tydlyn Proses",
     "@compostingTimelineProcess": {
         "description": "Title for the composting timeline process section"
     },
-    "startupDays2to5": "1. Démarrage (Jours 2-5)",
+    "startupDays2to5": "1. Begin (Dae 2-5)",
     "@startupDays2to5": {
         "description": "Label for the start-up phase in the composting timeline"
     },
-    "microorganismsBeginBreakingDownWaste": "Les micro-organismes commencent à décomposer les déchets.",
+    "microorganismsBeginBreakingDownWaste": "Mikro-organismes begin om afval af te breek.",
     "@microorganismsBeginBreakingDownWaste": {
         "description": "Description of the start-up phase in the composting timeline"
     },
-    "temperature20to45c": "Température: 20–45°C",
+    "temperature20to45c": "Temperatuur: 20–45°C",
     "@temperature20to45c": {
         "description": "Temperature range for the start-up phase in the composting timeline"
     },
-    "keyNeedsWaterOxygenSmallsizedOrganicMatter": "Besoins essentiels: Eau, oxygène, matière organique de petite taille.",
+    "keyNeedsWaterOxygenSmallsizedOrganicMatter": "Sleutel behoeftes: Water, suurstof, klein-grootte organiese materie.",
     "@keyNeedsWaterOxygenSmallsizedOrganicMatter": {
         "description": "Key needs for the start-up phase in the composting timeline"
     },
-    "heatingPhaseDays5to25": "2. Phase de Chauffage (Jours 5-25)",
+    "heatingPhaseDays5to25": "2. Verhittings Fase (Dae 5-25)",
     "@heatingPhaseDays5to25": {
         "description": "Label for the heating phase in the composting timeline"
     },
-    "temperature45to65c": "Température: 45–65°C",
+    "temperature45to65c": "Temperatuur: 45–65°C",
     "@temperature45to65c": {
         "description": "Temperature range for the heating phase in the composting timeline"
     },
-    "breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": "Décompose les matières à décomposition rapide, tue les agents pathogènes et les graines de mauvaises herbes.",
+    "breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": "Breek vinnig-ontbindende materiale af, dood patogene en onkruid sade.",
     "@breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds": {
         "description": "Description of the heating phase in the composting timeline"
     },
-    "organismsChangeAsConditionsShift": "Les organismes changent au fur et à mesure que les conditions évoluent.",
+    "organismsChangeAsConditionsShift": "Organismes verander soos toestande skuif.",
     "@organismsChangeAsConditionsShift": {
         "description": "Description of the organism changes during the heating phase in the composting timeline"
     },
-    "coolingPhaseDays25to35": "3. Phase de Refroidissement (Jours 25-35)",
+    "coolingPhaseDays25to35": "3. Afkoelings Fase (Dae 25-35)",
     "@coolingPhaseDays25to35": {
         "description": "Label for the cooling phase in the composting timeline"
     },
-    "temperature25to45c": "Température: 25–45°C",
+    "temperature25to45c": "Temperatuur: 25–45°C",
     "@temperature25to45c": {
         "description": "Temperature range for the cooling phase in the composting timeline"
     },
-    "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": "Décomposition plus lente, les champignons décomposent les matières plus résistantes (paille, bois).",
+    "slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": "Stadiger ontbinding, swamme breek taaier materiale af (strooi, hout).",
     "@slowerDecompositionFungiBreakDownTougherMaterialsStrawWood": {
         "description": "Description of the cooling phase in the composting timeline"
     },
-    "thePileShrinksAsMaterialDecomposes": "Le tas rétrécit à mesure que la matière se décompose.",
+    "thePileShrinksAsMaterialDecomposes": "Die hoop krimp soos materiaal ontbind.",
     "@thePileShrinksAsMaterialDecomposes": {
         "description": "Description of the pile shrinkage during the cooling phase in the composting timeline"
     },
-    "maturationPhaseDays35to60": "4. Phase de Maturation (Jours 35-60+)",
+    "maturationPhaseDays35to60": "4. Rypwording Fase (Dae 35-60+)",
     "@maturationPhaseDays35to60": {
         "description": "Label for the maturation phase in the composting timeline"
     },
-    "temperature20to40c": "Température: 20–40°C",
+    "temperature20to40c": "Temperatuur: 20–40°C",
     "@temperature20to40c": {
         "description": "Temperature range for the maturation phase in the composting timeline"
     },
-    "soilOrganismsReturnNutrientsStabilizeHumusForms": "Les organismes du sol reviennent, les nutriments se stabilisent, l'humus se forme.",
+    "soilOrganismsReturnNutrientsStabilizeHumusForms": "Grond organismes keer terug, voedingstowwe stabiliseer, humus vorm.",
     "@soilOrganismsReturnNutrientsStabilizeHumusForms": {
         "description": "Description of the maturation phase in the composting timeline"
     },
-    "readyWhenDarkEarthySmellNoHeatInTheCenter": "Prêt quand: Sombre, odeur de terre, pas de chaleur au centre.",
+    "readyWhenDarkEarthySmellNoHeatInTheCenter": "Gereed wanneer: Donker, aardse reuk, geen hitte in die middel.",
     "@readyWhenDarkEarthySmellNoHeatInTheCenter": {
         "description": "Description of the readiness indicators during the maturation phase in the composting timeline"
     },
-    "canBeStoredFor6to12MonthsKeepDryToAvoid": "Peut être stocké pendant 6 à 12 mois (garder au sec pour éviter la perte de nutriments).",
+    "canBeStoredFor6to12MonthsKeepDryToAvoid": "Kan gestoor word vir 6–12 maande (hou droog om voedingstof verlies te voorkom).",
     "@canBeStoredFor6to12MonthsKeepDryToAvoid": {
         "description": "Description of the storage conditions for mature compost"
     },
-    "visualTip": "Conseil Visuel",
+    "visualTip": "Visuele Wenk",
     "@visualTip": {
         "description": "Title for the visual tip section"
     },
-    "yourCompostPileShouldBeLargeEnoughToMaintainHeat": "Votre tas de compost doit être assez grand pour maintenir la chaleur (au moins 1m×1m×1m), mais assez petit pour être facilement retourné et géré.",
+    "yourCompostPileShouldBeLargeEnoughToMaintainHeat": "Jou kompos hoop moet groot genoeg wees om hitte te behou (ten minste 1m×1m×1m), maar klein genoeg om maklik te draai en bestuur.",
     "@yourCompostPileShouldBeLargeEnoughToMaintainHeat": {
         "description": "Description of the ideal size for a compost pile"
     },
-    "chooseASite": "Choisir un site",
+    "chooseASite": "Kies 'n plek",
     "@chooseASite": {
         "description": "Title for the choose a site section"
     },
-    "welldrainedShadyNearAWaterSource": "Bien drainé, ombragé, près d'une source d'eau.",
+    "welldrainedShadyNearAWaterSource": "Goed gedreineer, skaduwee, naby 'n water bron.",
     "@welldrainedShadyNearAWaterSource": {
         "description": "Description of the ideal site conditions for composting"
     },
-    "layerMaterials": "Disposer en couches",
+    "layerMaterials": "Laag materiale",
     "@layerMaterials": {
         "description": "Title for the layer materials section"
     },
-    "balanceCarbonDryBrownsAndNitrogenGreens": "Équilibrer le carbone (matières brunes sèches) et l'azote (matières vertes).",
+    "balanceCarbonDryBrownsAndNitrogenGreens": "Balanseer koolstof (droë bruins) en stikstof (groenes).",
     "@balanceCarbonDryBrownsAndNitrogenGreens": {
         "description": "Description of the material layering process in composting"
     },
-    "maintainMoisture": "Maintenir l'humidité",
+    "maintainMoisture": "Handhaaf vog",
     "@maintainMoisture": {
         "description": "Title for the maintain moisture section"
     },
-    "keepItLikeADampSpongeNotTooDry": "Garder comme une éponge humide (ni trop sec ni détrempé).",
+    "keepItLikeADampSpongeNotTooDry": "Hou dit soos 'n klam spons (nie te droog of deurweek nie).",
     "@keepItLikeADampSpongeNotTooDry": {
         "description": "Description of the ideal moisture level for composting"
     },
-    "turnThePileRegularly": "Retourner le tas régulièrement",
+    "turnThePileRegularly": "Draai die hoop gereeld",
     "@turnThePileRegularly": {
         "description": "Title for the turn the pile regularly section"
     },
-    "mixEvery714DaysForAeration": "Mélanger tous les 7 à 14 jours pour l'aération.",
+    "mixEvery714DaysForAeration": "Meng elke 7–14 dae vir belugting.",
     "@mixEvery714DaysForAeration": {
         "description": "Description of the turning process in composting"
     },
-    "checkReadiness": "Vérifier la maturité",
+    "checkReadiness": "Toets gereedheid",
     "@checkReadiness": {
         "description": "Title for the check readiness section"
     },
-    "whenDarkCrumblyAndSmellsEarthyItsDone": "Quand il est sombre, friable et sent la terre, c'est prêt!",
+    "whenDarkCrumblyAndSmellsEarthyItsDone": "Wanneer donker, kruimelig en ruik aards, is dit klaar!",
     "@whenDarkCrumblyAndSmellsEarthyItsDone": {
         "description": "Description of the indicators for compost readiness"
     },
-    "cnRatioExplained": "Explication du Ratio C:N:",
+    "cnRatioExplained": "C:N Verhouding Verduidelik:",
     "@cnRatioExplained": {
         "description": "Title for the C:N ratio explanation section"
     },
-    "idealCarbonnitrogenRatio30to1": "Ratio idéal Carbone:Azote = 30:1",
+    "idealCarbonnitrogenRatio30to1": "Ideale Koolstof:Stikstof verhouding = 30:1",
     "@idealCarbonnitrogenRatio30to1": {
         "description": "Description of the ideal C:N ratio for composting"
     },
-    "tooMuchCarbonDecompositionSlowsDown": "Trop de carbone? La décomposition ralentit.",
+    "tooMuchCarbonDecompositionSlowsDown": "Te veel koolstof? Ontbinding vertraag.",
     "@tooMuchCarbonDecompositionSlowsDown": {
         "description": "Description of the effect of too much carbon in composting"
     },
-    "tooMuchNitrogenSmellySoggyPile": "Trop d'azote? Tas malodorant et détrempé.",
+    "tooMuchNitrogenSmellySoggyPile": "Te veel stikstof? Stinkende, deurweekte hoop.",
     "@tooMuchNitrogenSmellySoggyPile": {
         "description": "Description of the effect of too much nitrogen in composting"
     },
-    "simpleRule": "Règle simple:",
+    "simpleRule": "Eenvoudige reël:",
     "@simpleRule": {
         "description": "Title for the simple rule section"
     },
-    "bucketNitrogenrichMaterialsGreens": "1 seau de matières riches en azote (vertes)",
+    "bucketNitrogenrichMaterialsGreens": "1 emmer stikstof-ryke materiale (groenes)",
     "@bucketNitrogenrichMaterialsGreens": {
         "description": "Description of the nitrogen-rich materials (greens) in composting"
     },
-    "bucketsDryCarbonMaterialsBrowns": "2 seaux de matières carbonées sèches (brunes)",
+    "bucketsDryCarbonMaterialsBrowns": "2 emmers droë koolstof materiale (bruins)",
     "@bucketsDryCarbonMaterialsBrowns": {
         "description": "Description of the dry carbon materials (browns) in composting"
     },
-    "highCarbon": "Riche en Carbone",
+    "highCarbon": "Hoë Koolstof",
     "@highCarbon": {
         "description": "Label for high carbon materials"
     },
-    "browns": "Bruns",
+    "browns": "Bruins",
     "@browns": {
         "description": "Label for brown materials"
     },
-    "cashewShells": "Coques de cajou",
+    "cashewShells": "Kasjoeneut doppe",
     "@cashewShells": {
         "description": "Name of cashew shells component"
     },
-    "riceHusks": "Balles de riz",
+    "riceHusks": "Rys doppe",
     "@riceHusks": {
         "description": "Name of rice husks component"
     },
-    "dryLeaves": "Feuilles sèches",
+    "dryLeaves": "Droë blare",
     "@dryLeaves": {
         "description": "Name of dry leaves component"
     },
-    "highNitrogen": "Riche en Azote",
+    "highNitrogen": "Hoë Stikstof",
     "@highNitrogen": {
         "description": "Label for high nitrogen materials"
     },
-    "greens": "Verts",
+    "greens": "Groenes",
     "@greens": {
         "description": "Label for green materials"
     },
-    "chickenManure": "Fumier de poulet",
+    "chickenManure": "Hoender mis",
     "@chickenManure": {
         "description": "Name of chicken manure component"
     },
-    "cowDung": "Bouse de vache",
+    "cowDung": "Koei mis",
     "@cowDung": {
         "description": "Name of cow dung component"
     },
-    "freshPlant": "Plantes fraîches",
+    "freshPlant": "Vars plant",
     "@freshPlant": {
         "description": "Name of fresh plant component"
     },
-    "optimumMoisture": "Humidité Optimale",
+    "optimumMoisture": "Optimale Vog",
     "@optimumMoisture": {
         "description": "Title for the optimum moisture section"
     },
-    "yourCompostShouldHaveTheMoistureLevelOfAWrungout": "Votre compost doit avoir le niveau d'humidité d'une éponge essorée - humide mais pas détrempé.",
+    "yourCompostShouldHaveTheMoistureLevelOfAWrungout": "Jou kompos moet die vog vlak van 'n uitgewringde spons hê - klam maar nie deurweek nie.",
     "@yourCompostShouldHaveTheMoistureLevelOfAWrungout": {
         "description": "Description of the ideal moisture level for composting"
     },
-    "oxygenRequirements": "Besoins en Oxygène",
+    "oxygenRequirements": "Suurstof Vereistes",
     "@oxygenRequirements": {
         "description": "Title for the oxygen requirements section"
     },
-    "regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": "Le retournement régulier (toutes les 1-2 semaines) assure un bon flux d'oxygène pour la décomposition aérobie.",
+    "regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": "Gereelde draai (elke 1-2 weke) verseker behoorlike suurstof vloei vir aërobiese ontbinding.",
     "@regularTurningEvery12WeeksEnsuresProperOxygenFlowFor": {
         "description": "Description of the importance of regular turning for oxygen flow in composting"
     },
-    "commonCompostProblemsSolutions": "Problèmes Courants de Compost & Solutions",
+    "commonCompostProblemsSolutions": "Algemene Kompos Probleme & Oplossings",
     "@commonCompostProblemsSolutions": {
         "description": "Title for the common compost problems and solutions section"
     },
-    "quickCheck": "Vérification Rapide",
+    "quickCheck": "Vinnige Toets",
     "@quickCheck": {
         "description": "Title for the quick check section"
     },
-    "aHealthyCompostPileShouldBeWarmSlightlyDampAnd": "Un tas de compost sain doit être chaud, légèrement humide et avoir une odeur de terre. Si le vôtre ne correspond pas à cette description, consultez les conseils de dépannage ci-dessus!",
+    "aHealthyCompostPileShouldBeWarmSlightlyDampAnd": "'n Gesonde kompos hoop moet warm, effens klam wees en 'n aardse reuk hê. As joune nie hierdie beskrywing pas nie, kyk na die probleemoplossing wenke hierbo!",
     "@aHealthyCompostPileShouldBeWarmSlightlyDampAnd": {
         "description": "Description of the characteristics of a healthy compost pile"
     },
-    "pileIsntHeatingUp": "Le Tas ne Chauffe Pas",
+    "pileIsntHeatingUp": "Hoop Verhit Nie",
     "@pileIsntHeatingUp": {
         "description": "Title for the pile isn't heating up section"
     },
-    "pileTooSmallShouldBeAtLeast3x3x3Feet": "Tas trop petit (devrait être d'au moins 1m×1m×1m)",
+    "pileTooSmallShouldBeAtLeast3x3x3Feet": "Hoop te klein (moet ten minste 1m×1m×1m wees)",
     "@pileTooSmallShouldBeAtLeast3x3x3Feet": {
         "description": "Description of the issue when the compost pile is too small"
     },
-    "tooDryAddWater": "Trop sec (ajouter de l'eau)",
+    "tooDryAddWater": "Te droog (voeg water by)",
     "@tooDryAddWater": {
         "description": "Description of the issue when the compost pile is too dry"
     },
-    "notEnoughNitrogenAddGreens": "Pas assez d'azote (ajouter des 'verts')",
+    "notEnoughNitrogenAddGreens": "Nie genoeg stikstof nie (voeg 'groenes' by)",
     "@notEnoughNitrogenAddGreens": {
         "description": "Description of the issue when there is not enough nitrogen in the compost pile"
     },
-    "coldWeatherInsulateOrWaitForWarmerConditions": "Temps froid (isoler ou attendre des conditions plus chaudes)",
+    "coldWeatherInsulateOrWaitForWarmerConditions": "Koue weer (isoleer of wag vir warmer toestande)",
     "@coldWeatherInsulateOrWaitForWarmerConditions": {
         "description": "Description of the issue when the compost pile is affected by cold weather"
     },
-    "pileIsFinishedComposting": "Le tas a fini de composter",
+    "pileIsFinishedComposting": "Hoop is klaar met kompostering",
     "@pileIsFinishedComposting": {
         "description": "Description of the issue when the compost pile is finished composting"
     },
-    "addMoreNitrogenrichMaterials": "Ajouter plus de matières riches en azote",
+    "addMoreNitrogenrichMaterials": "Voeg meer stikstof-ryke materiale by",
     "@addMoreNitrogenrichMaterials": {
         "description": "Description of the solution when the compost pile needs more nitrogen-rich materials"
     },
-    "checkMoistureAndAddWaterIfNeeded": "Vérifier l'humidité et ajouter de l'eau si nécessaire",
+    "checkMoistureAndAddWaterIfNeeded": "Toets vog en voeg water by indien nodig",
     "@checkMoistureAndAddWaterIfNeeded": {
         "description": "Description of the solution when the compost pile needs moisture adjustment"
     },
-    "turnThePileToIncreaseOxygen": "Retourner le tas pour augmenter l'oxygène",
+    "turnThePileToIncreaseOxygen": "Draai die hoop om suurstof te verhoog",
     "@turnThePileToIncreaseOxygen": {
         "description": "Description of the solution when the compost pile needs more oxygen"
     },
-    "increasePileSize": "Augmenter la taille du tas",
+    "increasePileSize": "Vergroot hoop grootte",
     "@increasePileSize": {
         "description": "Description of the solution when the compost pile needs to be larger"
     },
-    "badOdors": "Mauvaises Odeurs",
+    "badOdors": "Slegte Reuke",
     "@badOdors": {
         "description": "Title for the bad odors section"
     },
-    "ammoniaSmellTooMuchNitrogen": "Odeur d'ammoniac: Trop d'azote",
+    "ammoniaSmellTooMuchNitrogen": "Ammoniak reuk: Te veel stikstof",
     "@ammoniaSmellTooMuchNitrogen": {
         "description": "Description of the issue when there is too much nitrogen in the compost pile"
     },
-    "rottenEggSmellAnaerobicConditionsNotEnoughOxygen": "Odeur d'œuf pourri: Conditions anaérobies (pas assez d'oxygène)",
+    "rottenEggSmellAnaerobicConditionsNotEnoughOxygen": "Rotte eier reuk: Anaërobiese toestande (nie genoeg suurstof nie)",
     "@rottenEggSmellAnaerobicConditionsNotEnoughOxygen": {
         "description": "Description of the issue when there are anaerobic conditions in the compost pile"
     },
-    "otherMaterialsMeatDairyEtc": "Matières 'autres' (viande, produits laitiers, etc.)",
+    "otherMaterialsMeatDairyEtc": "'Ander' materiale (vleis, suiwel, ens.)",
     "@otherMaterialsMeatDairyEtc": {
         "description": "Description of the issue when there are 'other' materials like meat or dairy in the compost pile"
     },
-    "addCarbonrichMaterialsDryLeavesStraw": "Ajouter des matières riches en carbone (feuilles sèches, paille)",
+    "addCarbonrichMaterialsDryLeavesStraw": "Voeg koolstof-ryke materiale by (droë blare, strooi)",
     "@addCarbonrichMaterialsDryLeavesStraw": {
         "description": "Description of the solution when the compost pile needs more carbon-rich materials"
     },
-    "turnThePileToAddOxygen": "Retourner le tas pour ajouter de l'oxygène",
+    "turnThePileToAddOxygen": "Draai die hoop om suurstof by te voeg",
     "@turnThePileToAddOxygen": {
         "description": "Description of the solution when the compost pile needs more oxygen"
     },
-    "coverFoodScrapsWithBrowns": "Couvrir les restes alimentaires avec des matières brunes",
+    "coverFoodScrapsWithBrowns": "Bedek kos reste met bruins",
     "@coverFoodScrapsWithBrowns": {
         "description": "Description of the solution when the compost pile needs to cover food scraps with browns"
     },
-    "avoidAddingMeatDairyOrOils": "Éviter d'ajouter de la viande, des produits laitiers ou des huiles",
+    "avoidAddingMeatDairyOrOils": "Vermy byvoeging van vleis, suiwel, of olies",
     "@avoidAddingMeatDairyOrOils": {
         "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, or oils"
     },
-    "pestsInTheCompost": "Nuisibles dans le Compost",
+    "pestsInTheCompost": "Plae in die Kompos",
     "@pestsInTheCompost": {
         "description": "Title for the pests in the compost section"
     },
-    "exposedFoodScraps": "Restes alimentaires exposés",
+    "exposedFoodScraps": "Blootgestelde kos reste",
     "@exposedFoodScraps": {
         "description": "Description of the issue when there are exposed food scraps in the compost pile"
     },
-    "meatDairyOrFattyFoodsInCompost": "Viande, produits laitiers ou aliments gras dans le compost",
+    "meatDairyOrFattyFoodsInCompost": "Vleis, suiwel of vetterige kos in kompos",
     "@meatDairyOrFattyFoodsInCompost": {
         "description": "Description of the issue when there are meat, dairy, or fatty foods in the compost pile"
     },
-    "pileNotHotEnough": "Tas pas assez chaud",
+    "pileNotHotEnough": "Hoop nie warm genoeg nie",
     "@pileNotHotEnough": {
         "description": "Description of the issue when the compost pile is not hot enough"
     },
-    "buryFoodScrapsInTheCenterOfThePile": "Enterrer les restes alimentaires au centre du tas",
+    "buryFoodScrapsInTheCenterOfThePile": "Begrawe kos reste in die middel van die hoop",
     "@buryFoodScrapsInTheCenterOfThePile": {
         "description": "Description of the solution when the compost pile needs to bury food scraps in the center"
     },
-    "avoidAddingMeatDairyOilsOrPetWaste": "Éviter d'ajouter de la viande, des produits laitiers, des huiles ou des déchets d'animaux",
+    "avoidAddingMeatDairyOilsOrPetWaste": "Vermy byvoeging van vleis, suiwel, olies, of troeteldier afval",
     "@avoidAddingMeatDairyOilsOrPetWaste": {
         "description": "Description of the solution when the compost pile needs to avoid adding meat, dairy, oils, or pet waste"
     },
-    "turnPileRegularlyToMaintainHeat": "Retourner le tas régulièrement pour maintenir la chaleur",
+    "turnPileRegularlyToMaintainHeat": "Draai hoop gereeld om hitte te behou",
     "@turnPileRegularlyToMaintainHeat": {
         "description": "Description of the solution when the compost pile needs to turn regularly to maintain heat"
     },
-    "useARodentresistantBinIfNecessary": "Utiliser un bac résistant aux rongeurs si nécessaire",
+    "useARodentresistantBinIfNecessary": "Gebruik 'n knaagdier-weerstandige houer indien nodig",
     "@useARodentresistantBinIfNecessary": {
         "description": "Description of the solution when the compost pile needs to use a rodent-resistant bin if necessary"
     },
-    "pileIsTooWetdry": "Le Tas est Trop Humide/Sec",
+    "pileIsTooWetdry": "Hoop is Te Nat/Droog",
     "@pileIsTooWetdry": {
         "description": "Title for the pile is too wet/dry section"
     },
-    "tooWetSoggyMaterialsPoorDrainage": "Trop humide: Matières détrempées, mauvais drainage",
+    "tooWetSoggyMaterialsPoorDrainage": "Te nat: Deurweekte materiale, swak dreinering",
     "@tooWetSoggyMaterialsPoorDrainage": {
         "description": "Description of the issue when the compost pile is too wet due to soggy materials or poor drainage"
     },
-    "tooDryNotEnoughWaterTooMuchSunExposure": "Trop sec: Pas assez d'eau, trop d'exposition au soleil",
+    "tooDryNotEnoughWaterTooMuchSunExposure": "Te droog: Nie genoeg water nie, te veel son blootstelling",
     "@tooDryNotEnoughWaterTooMuchSunExposure": {
         "description": "Description of the issue when the compost pile is too dry due to not enough water or too much sun exposure"
     },
-    "tooWetAddDryCarbonrichMaterials": "Trop humide: Ajouter des matières sèches riches en carbone",
+    "tooWetAddDryCarbonrichMaterials": "Te nat: Voeg droë, koolstof-ryke materiale by",
     "@tooWetAddDryCarbonrichMaterials": {
         "description": "Description of the solution when the compost pile is too wet and needs to add dry, carbon-rich materials"
     },
-    "tooWetTurnThePileToHelpItDryOut": "Trop humide: Retourner le tas pour aider à le sécher",
+    "tooWetTurnThePileToHelpItDryOut": "Te nat: Draai die hoop om dit te help droog",
     "@tooWetTurnThePileToHelpItDryOut": {
         "description": "Description of the solution when the compost pile is too wet and needs to turn the pile to help it dry out"
     },
-    "tooWetCoverDuringHeavyRains": "Trop humide: Couvrir pendant les fortes pluies",
+    "tooWetCoverDuringHeavyRains": "Te nat: Bedek tydens swaar reën",
     "@tooWetCoverDuringHeavyRains": {
         "description": "Description of the solution when the compost pile is too wet and needs to cover during heavy rains"
     },
-    "tooDryAddWaterWhileTurningThePile": "Trop sec: Ajouter de l'eau en retournant le tas",
+    "tooDryAddWaterWhileTurningThePile": "Te droog: Voeg water by terwyl jy die hoop draai",
     "@tooDryAddWaterWhileTurningThePile": {
         "description": "Description of the solution when the compost pile is too dry and needs to add water while turning the pile"
     },
-    "tooDryAddFreshGreenMaterials": "Trop sec: Ajouter des matières 'vertes' fraîches",
+    "tooDryAddFreshGreenMaterials": "Te droog: Voeg vars 'groen' materiale by",
     "@tooDryAddFreshGreenMaterials": {
         "description": "Description of the solution when the compost pile is too dry and needs to add fresh 'green' materials"
     },
-    "solutions": "Solutions:",
+    "solutions": "Oplossings:",
     "@solutions": {
         "description": "Label for the solutions section"
     },
-    "basicGardenCompost": "Compost de Jardin Basique",
+    "basicGardenCompost": "Basiese Tuin Kompos",
     "@basicGardenCompost": {
         "description": "Title for the basic garden compost recipe"
     },
-    "aSimpleBalancedRecipeForGeneralGardenUse": "Une recette simple et équilibrée pour un usage général au jardin.",
+    "aSimpleBalancedRecipeForGeneralGardenUse": "'n Eenvoudige, gebalanseerde resep vir algemene tuin gebruik.",
     "@aSimpleBalancedRecipeForGeneralGardenUse": {
         "description": "Description of the basic garden compost recipe"
     },
-    "partsDryLeaves": "3 parts de feuilles sèches",
+    "partsDryLeaves": "3 dele droë blare",
     "@partsDryLeaves": {
         "description": "Description of the dry leaves component in the basic garden compost recipe"
     },
-    "partFreshGrassClippings": "1 part de tontes de gazon fraîches",
+    "partFreshGrassClippings": "1 deel vars gras snoeisel",
     "@partFreshGrassClippings": {
         "description": "Description of the fresh grass clippings component in the basic garden compost recipe"
     },
-    "partVegetableScraps": "1 part de restes de légumes",
+    "partVegetableScraps": "1 deel groente reste",
     "@partVegetableScraps": {
         "description": "Description of the vegetable scraps component in the basic garden compost recipe"
     },
-    "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": "Disposer les ingrédients en couches, humidifier et retourner toutes les 1-2 semaines. Prêt en 3-6 mois.",
+    "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": "Laag bestanddele, maak klam, en draai elke 1-2 weke. Gereed in 3-6 maande.",
     "@layerIngredientsMoistenAndTurnEvery12WeeksReadyIn": {
         "description": "Description of the preparation and readiness time for the basic garden compost recipe"
     },
-    "fastHotCompost": "Compost Chaud Rapide",
+    "fastHotCompost": "Vinnige Warm Kompos",
     "@fastHotCompost": {
         "description": "Title for the fast hot compost recipe"
     },
-    "forWhenYouNeedCompostQuickly": "Pour quand vous avez besoin de compost rapidement.",
+    "forWhenYouNeedCompostQuickly": "Vir wanneer jy kompos vinnig nodig het.",
     "@forWhenYouNeedCompostQuickly": {
         "description": "Description of the fast hot compost recipe"
     },
-    "partsChoppedStrawOrWoodChips": "2 parts de paille hachée ou de copeaux de bois",
+    "partsChoppedStrawOrWoodChips": "2 dele gekapte strooi of hout skyfies",
     "@partsChoppedStrawOrWoodChips": {
         "description": "Description of the chopped straw or wood chips component in the fast hot compost recipe"
     },
-    "partChickenManure": "1 part de fumier de poulet",
+    "partChickenManure": "1 deel hoender mis",
     "@partChickenManure": {
         "description": "Description of the chicken manure component in the fast hot compost recipe"
     },
-    "partGreenGardenWasteChoppedSmall": "1 part de déchets verts de jardin (finement hachés)",
+    "partGreenGardenWasteChoppedSmall": "1 deel groen tuin afval (klein gekap)",
     "@partGreenGardenWasteChoppedSmall": {
         "description": "Description of the green garden waste component in the fast hot compost recipe"
     },
-    "mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": "Mélanger soigneusement, assurer une humidité adéquate et retourner tous les 3 jours. Peut être prêt en 3-4 semaines si les conditions sont idéales.",
+    "mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": "Meng deeglik, verseker voldoende vog, en draai elke 3 dae. Kan gereed wees in 3-4 weke as toestande ideaal is.",
     "@mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days": {
         "description": "Description of the preparation and readiness time for the fast hot compost recipe"
     },
-    "instructions": "Instructions",
+    "instructions": "Instruksies",
     "@instructions": {
         "description": "Label for the instructions section"
     },
-    "possibleCauses": "Causes Possibles",
+    "possibleCauses": "Moontlike Oorsake:",
     "@possibleCauses": {
         "description": "Label for the possible causes section"
     },
@@ -840,11 +840,11 @@
     "@cn": {
         "description": "Label for the carbon to nitrogen ratio"
     },
-    "editAvailability": "Modifier la disponibilité",
+    "editAvailability": "Wysig beskikbaarheid",
     "@editAvailability": {
-        "description": "Label for the edit availability button"
+        "description": "Button label for editing the availability of a component"
     },
-    "editAvailabilityFor": "Modifier la disponibilité pour {componentName}",
+    "editAvailabilityFor": "Wysig Beskikbaarheid vir {componentName}",
     "@editAvailabilityFor": {
         "placeholders": {
             "componentName": {
@@ -853,71 +853,71 @@
             }
         }
     },
-    "startMonth": "Mois de début",
+    "startMonth": "Begin Maand",
     "@startMonth": {
         "description": "Label for the start month input field"
     },
-    "endMonth": "Mois de fin",
+    "endMonth": "Eind Maand",
     "@endMonth": {
         "description": "Label for the end month input field"
     },
-    "january": "Janvier",
+    "january": "Januarie",
     "@january": {
-        "description": "Label for January"
+        "description": "Name of the month January"
     },
-    "february": "Février",
+    "february": "Februarie",
     "@february": {
-        "description": "Label for February"
+        "description": "Name of the month February"
     },
-    "march": "Mars",
+    "march": "Maart",
     "@march": {
-        "description": "Label for March"
+        "description": "Name of the month March"
     },
-    "april": "Avril",
+    "april": "April",
     "@april": {
-        "description": "Label for April"
+        "description": "Name of the month April"
     },
-    "may": "Mai",
+    "may": "Mei",
     "@may": {
-        "description": "Label for May"
+        "description": "Name of the month May"
     },
-    "june": "Juin",
+    "june": "Junie",
     "@june": {
-        "description": "Label for June"
+        "description": "Name of the month June"
     },
-    "july": "Juillet",
+    "july": "Julie",
     "@july": {
-        "description": "Label for July"
+        "description": "Name of the month July"
     },
-    "august": "Août",
+    "august": "Augustus",
     "@august": {
-        "description": "Label for August"
+        "description": "Name of the month August"
     },
-    "september": "Septembre",
+    "september": "September",
     "@september": {
-        "description": "Label for September"
+        "description": "Name of the month September"
     },
-    "october": "Octobre",
+    "october": "Oktober",
     "@october": {
-        "description": "Label for October"
+        "description": "Name of the month October"
     },
-    "november": "Novembre",
+    "november": "November",
     "@november": {
-        "description": "Label for November"
+        "description": "Name of the month November"
     },
-    "december": "Décembre",
+    "december": "Desember",
     "@december": {
-        "description": "Label for December"
+        "description": "Name of the month December"
     },
-    "save": "Sauvegarder",
+    "save": "Stoor",
     "@save": {
-        "description": "Label for the save button"
+        "description": "Button label for saving changes"
     },
-    "to": "à",
+    "to": "tot",
     "@to": {
         "description": "For custom availability string"
     },
-    "available": "Disponible:",
+    "available": "Beskikbaar:",
     "@available": {
         "description": "For custom availability string"
     }

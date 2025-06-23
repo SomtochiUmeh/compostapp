@@ -3,6 +3,7 @@ import './home_screen.dart';
 import './compost_guidelines_page.dart';
 import './sample_recipes_page.dart';
 import '../generated/l10n.dart';
+import '../widgets/language_toggle.dart';
 
 class AppHomePage extends StatelessWidget {
   const AppHomePage({super.key});
@@ -18,6 +19,9 @@ class AppHomePage extends StatelessWidget {
           style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
+        actions: const [
+          LanguageToggle(),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
