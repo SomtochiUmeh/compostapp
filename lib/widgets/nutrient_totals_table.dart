@@ -121,7 +121,7 @@ class NutrientTotalsTable extends StatelessWidget {
             ),
           ),
           if (components.any((comp) => comp.component.price != null))
-            DataColumn(label: Text(S.of(context).totalCostFCFA)),
+            DataColumn(label: Text(S.of(context).costTotal)),
         ],
         rows: [
           DataRow(

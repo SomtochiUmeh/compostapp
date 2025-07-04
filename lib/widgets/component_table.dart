@@ -41,7 +41,7 @@ class ComponentTable extends StatelessWidget {
       ColumnDefinition(label: S.current.water, key: 'water'),
       if (items.any((item) => item.component.price != null))
         ColumnDefinition(
-            label: S.current.costFCFA, key: 'cost', decimalPlaces: 2),
+            label: S.current.costTotal, key: 'cost', decimalPlaces: 2),
     ];
   }
 

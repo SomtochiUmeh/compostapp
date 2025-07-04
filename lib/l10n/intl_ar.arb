@@ -106,9 +106,9 @@
     "@component": {
         "description": "Single component label for table header"
     },
-    "costFCFA": "التكلفة (فرنك إفريقي)",
-    "@costFCFA": {
-        "description": "Column header for cost in FCFA currency"
+    "costTotal": "التكلفة الإجمالية",
+    "@costTotal": {
+        "description": "Column header for total cost"
     },
     "percentage": "{value} (%)",
     "@percentage": {

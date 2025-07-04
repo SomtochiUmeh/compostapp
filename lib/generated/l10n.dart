@@ -276,12 +276,12 @@ class S {
     );
   }
 
-  /// `Cost (FCFA)`
-  String get costFCFA {
+  /// `Total Cost`
+  String get costTotal {
     return Intl.message(
-      'Cost (FCFA)',
-      name: 'costFCFA',
-      desc: 'Column header for cost in FCFA currency',
+      'Total Cost',
+      name: 'costTotal',
+      desc: 'Column header for total cost',
       args: [],
     );
   }

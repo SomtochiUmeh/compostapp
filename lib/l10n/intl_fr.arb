@@ -106,9 +106,9 @@
     "@component": {
         "description": "Single component label for table header"
     },
-    "costFCFA": "Coût (FCFA)",
-    "@costFCFA": {
-        "description": "Column header for cost in FCFA currency"
+    "costTotal": "Coût Total",
+    "@costTotal": {
+        "description": "Column header for total cost"
     },
     "percentage": "{value} (%)",
     "@percentage": {
