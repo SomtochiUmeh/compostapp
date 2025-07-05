@@ -69,8 +69,8 @@ void main() {
 
       // Brown typically has red > green & blue
       final primaryColor = colorScheme.primary;
-      expect(primaryColor.r > primaryColor.b, isTrue);
-      expect(primaryColor.r > primaryColor.g, isTrue);
+      expect(primaryColor.red > primaryColor.blue, isTrue);
+      expect(primaryColor.red > primaryColor.green, isTrue);
     });
 
     testWidgets('configures correct localization delegates',
@@ -166,8 +166,8 @@ void main() {
 
       // Seed color should be brown, which means red > green & blue
       final primaryColor = theme.colorScheme.primary;
-      expect(primaryColor.r > primaryColor.b, isTrue);
-      expect(primaryColor.r > primaryColor.g, isTrue);
+      expect(primaryColor.red > primaryColor.blue, isTrue);
+      expect(primaryColor.red > primaryColor.green, isTrue);
 
       // Test consistency of colors throughout different theme properties
       expect(theme.colorScheme.primary, theme.primaryColor);
