@@ -2,7 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:compostapp/models/recipe_model.dart';
 import 'package:compostapp/models/recipe_component_model.dart';
 import 'package:compostapp/models/compost_component_model.dart';
-import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/price_model.dart';
 
@@ -13,7 +12,6 @@ class MockCompostComponent extends CompostComponent {
   MockCompostComponent({
     required super.id,
     required this.mockName,
-    required super.availability,
     required super.nutrients,
     super.price,
   }) : super(
@@ -34,7 +32,6 @@ void main() {
       final component1 = MockCompostComponent(
         id: 'comp1',
         mockName: 'Component 1',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5, // 50%
           organicCarbonPercent: 0.3, // 30%
@@ -51,7 +48,6 @@ void main() {
       final component2 = MockCompostComponent(
         id: 'comp2',
         mockName: 'Component 2',
-        availability: AvailabilityPeriod.marToAug,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.8, // 80%
           organicCarbonPercent: 0.4, // 40%

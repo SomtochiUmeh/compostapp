@@ -1,5 +1,4 @@
 import '../models/compost_component_model.dart';
-import '../models/availability_model.dart';
 import '../models/nutrient_content_model.dart';
 import '../models/price_model.dart';
 
@@ -8,7 +7,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'MangoWaste',
       name: 'Mango waste with seeds',
-      availability: AvailabilityPeriod.marToAug,
       nutrients: NutrientContent(
         dryMatterPercent: 28.37 / 100,
         organicCarbonPercent: 21.00 / 100,
@@ -23,7 +21,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'CashewShells',
       name: 'Cashew shells',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 80.00 / 100,
         organicCarbonPercent: 51.00 / 100,
@@ -38,7 +35,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'RiceHulls',
       name: 'Rice hulls/Rice bran',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 92.80 / 100,
         organicCarbonPercent: 34.90 / 100,
@@ -54,7 +50,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'RiceStraw',
       name: 'Rice straw - wet season',
-      availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 85.00 / 100,
         organicCarbonPercent: 51.76 / 100,
@@ -69,7 +64,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'SugarcaneBagasse',
       name: 'Sugarcane bagasse',
-      availability: AvailabilityPeriod.octToJan,
       nutrients: NutrientContent(
         dryMatterPercent: 30.20 / 100,
         organicCarbonPercent: 5.70 / 100,
@@ -84,7 +78,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'ChickenManure',
       name: 'Dried chicken manure',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 87.60 / 100,
         organicCarbonPercent: 51.64 / 100,
@@ -100,7 +93,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'CowDung',
       name: 'Cow dung',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 16.70 / 100,
         organicCarbonPercent: 37.93 / 100,
@@ -115,7 +107,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'CottonStraw',
       name: 'Cotton straw',
-      availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 75.70 / 100,
         organicCarbonPercent: 51.00 / 100,
@@ -130,7 +121,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'RiceHuskAsh',
       name: 'Rice Husk Ash',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 100.00 / 100,
         organicCarbonPercent: 0.22 / 100,
@@ -146,7 +136,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'Lime',
       name: 'Lime',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 100.00 / 100,
         organicCarbonPercent: 0.00 / 100,
@@ -162,7 +151,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'CompostPlus',
       name: 'Compost +',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 100.00 / 100,
         organicCarbonPercent: 0.00 / 100,
@@ -178,7 +166,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'Dolomites',
       name: 'Dolomites',
-      availability: AvailabilityPeriod.janToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 100.00 / 100,
         organicCarbonPercent: 0.00 / 100,
@@ -194,7 +181,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'CornStraw',
       name: 'Corn straw',
-      availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 80.45 / 100,
         organicCarbonPercent: 46.66 / 100,
@@ -209,7 +195,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'CassavaPeels',
       name: 'Cassava peels',
-      availability: AvailabilityPeriod.octToDec,
       nutrients: NutrientContent(
         dryMatterPercent: 27.20 / 100,
         organicCarbonPercent: 43.60 / 100,
@@ -224,7 +209,6 @@ class CompostComponentsData {
     CompostComponent(
       id: 'RiceChickenLitter',
       name: 'Litter (rice bran + chicken manure)',
-      availability: AvailabilityPeriod.sepToDec,
       nutrients: const NutrientContent(
         dryMatterPercent: 90.20 / 100,
         organicCarbonPercent: 43.27 / 100,
@@ -240,7 +224,6 @@ class CompostComponentsData {
     const CompostComponent(
       id: 'RiceStrawCounter',
       name: 'Rice straw - counter-season',
-      availability: AvailabilityPeriod.mayToJul,
       nutrients: NutrientContent(
         dryMatterPercent: 85.00 / 100,
         organicCarbonPercent: 51.76 / 100,

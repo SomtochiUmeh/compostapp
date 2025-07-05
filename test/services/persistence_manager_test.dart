@@ -6,7 +6,6 @@ import 'package:compostapp/models/recipe_component_model.dart';
 import 'package:compostapp/models/compost_component_model.dart';
 import 'package:compostapp/models/price_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
-import 'package:compostapp/models/availability_model.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';
 
@@ -15,7 +14,6 @@ class TestCompostComponent extends CompostComponent {
   TestCompostComponent({
     required super.id,
     required super.name,
-    required super.availability,
     required super.nutrients,
     super.price,
     super.sources,
@@ -38,7 +36,6 @@ void main() {
   final testComponent = TestCompostComponent(
     id: 'test1',
     name: 'Test Component 1',
-    availability: AvailabilityPeriod.janToDec,
     nutrients: const NutrientContent(
       dryMatterPercent: 0.5,
       organicCarbonPercent: 0.3,
@@ -329,11 +326,10 @@ void main() {
     test('Components with custom availability periods are serialized correctly',
         () async {
       // Arrange
-      final customComponent = CompostComponent(
+      const customComponent = CompostComponent(
         id: 'custom1',
         name: 'Custom Component',
-        availability: AvailabilityPeriod(2, 7), // Custom Feb-Jul availability
-        nutrients: const NutrientContent(
+        nutrients: NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
           nitrogenPercent: 0.1,
@@ -352,8 +348,6 @@ void main() {
       // Assert
       expect(savedComponents, isNotNull);
       expect(savedComponents!.length, 1);
-      expect(savedComponents[0].availability.startMonth, 2);
-      expect(savedComponents[0].availability.endMonth, 7);
     });
 
     group('Currency Management', () {
@@ -363,7 +357,7 @@ void main() {
 
         // Assert
         expect(result, isTrue);
-        
+
         // Verify by reading back from SharedPreferences
         final prefs = await SharedPreferences.getInstance();
         expect(prefs.getString('selected_currency'), 'USD');
@@ -398,7 +392,7 @@ void main() {
 
         // Assert
         expect(result, isTrue);
-        
+
         // Verify by reading back from SharedPreferences
         final prefs = await SharedPreferences.getInstance();
         expect(prefs.getString('selected_currency'), 'GBP');
@@ -406,12 +400,12 @@ void main() {
     });
 
     group('Regional Pricing Serialization', () {
-      test('components with regional prices are serialized correctly', () async {
+      test('components with regional prices are serialized correctly',
+          () async {
         // Arrange
         final componentWithRegionalPricing = TestCompostComponent(
           id: 'regional1',
           name: 'Regional Component',
-          availability: AvailabilityPeriod.janToDec,
           nutrients: const NutrientContent(
             dryMatterPercent: 0.5,
             organicCarbonPercent: 0.3,
@@ -433,13 +427,14 @@ void main() {
         );
 
         // Act
-        await persistenceManager.updateComponentInfo([componentWithRegionalPricing]);
+        await persistenceManager
+            .updateComponentInfo([componentWithRegionalPricing]);
         final savedComponents = await persistenceManager.getSavedComponents();
 
         // Assert
         expect(savedComponents, isNotNull);
         expect(savedComponents!.length, 1);
-        
+
         final savedComponent = savedComponents[0];
         expect(savedComponent.price, isNotNull);
         expect(savedComponent.price!.pricePerTon, 1000);
@@ -449,12 +444,12 @@ void main() {
         expect(savedComponent.price!.regionalPrices!['GBP'], 2.5);
       });
 
-      test('components without regional prices are serialized correctly', () async {
+      test('components without regional prices are serialized correctly',
+          () async {
         // Arrange
         final componentWithoutRegionalPricing = TestCompostComponent(
           id: 'no_regional1',
           name: 'No Regional Component',
-          availability: AvailabilityPeriod.janToDec,
           nutrients: const NutrientContent(
             dryMatterPercent: 0.5,
             organicCarbonPercent: 0.3,
@@ -469,13 +464,14 @@ void main() {
         );
 
         // Act
-        await persistenceManager.updateComponentInfo([componentWithoutRegionalPricing]);
+        await persistenceManager
+            .updateComponentInfo([componentWithoutRegionalPricing]);
         final savedComponents = await persistenceManager.getSavedComponents();
 
         // Assert
         expect(savedComponents, isNotNull);
         expect(savedComponents!.length, 1);
-        
+
         final savedComponent = savedComponents[0];
         expect(savedComponent.price, isNotNull);
         expect(savedComponent.price!.pricePerTon, 500);
@@ -487,7 +483,6 @@ void main() {
         final componentWithDecimalPrices = TestCompostComponent(
           id: 'decimal1',
           name: 'Decimal Component',
-          availability: AvailabilityPeriod.janToDec,
           nutrients: const NutrientContent(
             dryMatterPercent: 0.5,
             organicCarbonPercent: 0.3,
@@ -508,7 +503,8 @@ void main() {
         );
 
         // Act
-        await persistenceManager.updateComponentInfo([componentWithDecimalPrices]);
+        await persistenceManager
+            .updateComponentInfo([componentWithDecimalPrices]);
         final savedComponents = await persistenceManager.getSavedComponents();
 
         // Assert
@@ -524,7 +520,6 @@ void main() {
         final component = TestCompostComponent(
           id: 'empty1',
           name: 'Empty Regional',
-          availability: AvailabilityPeriod.janToDec,
           nutrients: const NutrientContent(
             dryMatterPercent: 0.5,
             organicCarbonPercent: 0.3,

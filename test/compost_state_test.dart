@@ -5,7 +5,6 @@ import 'package:mockito/annotations.dart';
 import 'package:compostapp/compost_state.dart';
 import 'package:compostapp/services/persistence_manager.dart';
 import 'package:compostapp/models/compost_component_model.dart';
-import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/price_model.dart';
 import 'package:compostapp/generated/l10n.dart';
@@ -20,7 +19,6 @@ class TestCompostComponent extends CompostComponent {
   TestCompostComponent({
     required super.id,
     required super.name,
-    required super.availability,
     required super.nutrients,
     super.price,
     super.sources,
@@ -62,7 +60,6 @@ void main() {
       TestCompostComponent(
         id: 'test1',
         name: 'Test Component 1',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
@@ -78,7 +75,6 @@ void main() {
       TestCompostComponent(
         id: 'test2',
         name: 'Test Component 2',
-        availability: AvailabilityPeriod.marToAug,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.6,
           organicCarbonPercent: 0.4,
@@ -97,6 +93,10 @@ void main() {
         .thenAnswer((_) => Future.value(null));
     when(mockPersistenceManager.getSelectedCurrency())
         .thenAnswer((_) => Future.value(null));
+    when(mockPersistenceManager.getCustomIngredients())
+        .thenAnswer((_) => Future.value([]));
+    when(mockPersistenceManager.saveCustomIngredients(any))
+        .thenAnswer((_) => Future.value(true));
 
     // Initialize CompostState with the mock
     compostState = CompostState(mockPersistenceManager);
@@ -148,7 +148,6 @@ void main() {
       final updatedComponent = TestCompostComponent(
         id: 'test1',
         name: 'Test Component 1',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
@@ -192,7 +191,6 @@ void main() {
       final nonExistentComponent = TestCompostComponent(
         id: 'nonexistent',
         name: 'Non-existent Component',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
@@ -210,33 +208,6 @@ void main() {
 
       // Verify persistence was not called
       verifyNever(mockPersistenceManager.updateComponentInfo(any));
-    });
-
-    testWidgets(
-        'getAvailableComponents returns components available on specific date',
-        (WidgetTester tester) async {
-      // Create a test widget to initialize localization
-      await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
-
-      // Set up initial components
-      compostState.components = List.from(testComponents);
-
-      // Test for a date when only first component should be available
-      final janDate = DateTime(2023, 1, 15);
-      final availableInJan = compostState.getAvailableComponents(janDate);
-      expect(availableInJan.length, equals(1));
-      expect(availableInJan[0].id, equals('test1'));
-
-      // Test for a date when both should be available
-      final aprDate = DateTime(2023, 4, 15);
-      final availableInApr = compostState.getAvailableComponents(aprDate);
-      expect(availableInApr.length, equals(2));
-
-      // Test for a date when only the year-round component should be available
-      final sepDate = DateTime(2023, 9, 15);
-      final availableInSep = compostState.getAvailableComponents(sepDate);
-      expect(availableInSep.length, equals(1));
-      expect(availableInSep[0].id, equals('test1'));
     });
 
     testWidgets('updateComponentPrice updates price and persists changes',

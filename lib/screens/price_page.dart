@@ -4,6 +4,8 @@ import '../compost_state.dart';
 import '../models/compost_component_model.dart';
 import '../generated/l10n.dart';
 import '../widgets/currency_selector.dart';
+import '../widgets/custom_ingredient_dialog.dart';
+import '../widgets/edit_custom_ingredient_dialog.dart';
 import '../constants/currency_constants.dart';
 
 class PricesPage extends StatefulWidget {
@@ -25,7 +27,8 @@ class _PricesPageState extends State<PricesPage> {
   }
 
   /// Update controller text if it differs from expected value
-  void _updateControllerIfNeeded(String key, double newPrice, int decimalPlaces) {
+  void _updateControllerIfNeeded(
+      String key, double newPrice, int decimalPlaces) {
     if (_controllers.containsKey(key)) {
       final expectedText = newPrice.toStringAsFixed(decimalPlaces);
       if (_controllers[key]!.text != expectedText) {
@@ -35,24 +38,29 @@ class _PricesPageState extends State<PricesPage> {
   }
 
   /// Update all controllers for untouched currencies when CFA base price changes
-  void _updateUntouchedControllers(List<CompostComponent> components, String currentCurrency) {
+  void _updateUntouchedControllers(
+      List<CompostComponent> components, String currentCurrency) {
     for (var component in components) {
       for (var currency in CurrencyConstants.getSupportedCurrencies()) {
-        if (currency != currentCurrency && component.price?.isUntouchedCurrency(currency) == true) {
+        if (currency != currentCurrency &&
+            component.price?.isUntouchedCurrency(currency) == true) {
           final key = '${component.getName()}_$currency';
           final price = component.price!.getPriceForCurrency(currency);
-          final decimalPlaces = CurrencyConstants.currencies[currency]!['decimalPlaces'];
+          final decimalPlaces =
+              CurrencyConstants.currencies[currency]!['decimalPlaces'];
           _updateControllerIfNeeded(key, price, decimalPlaces);
         }
       }
     }
   }
 
-  TextEditingController _getController(String componentName, CompostComponent component, String currency) {
+  TextEditingController _getController(
+      String componentName, CompostComponent component, String currency) {
     final key = '${componentName}_$currency';
     final price = component.price?.getPriceForCurrency(currency) ?? 0.0;
-    final decimalPlaces = CurrencyConstants.currencies[currency]!['decimalPlaces'];
-    
+    final decimalPlaces =
+        CurrencyConstants.currencies[currency]!['decimalPlaces'];
+
     // Always ensure controller has current value
     if (!_controllers.containsKey(key)) {
       _controllers[key] = TextEditingController(
@@ -62,7 +70,7 @@ class _PricesPageState extends State<PricesPage> {
       // Update existing controller if the price has changed
       _updateControllerIfNeeded(key, price, decimalPlaces);
     }
-    
+
     return _controllers[key]!;
   }
 
@@ -84,12 +92,52 @@ class _PricesPageState extends State<PricesPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ListTile(
-          title: Text(component.getName()),
-          trailing: SizedBox(
-            width: 120,
-            child: _buildPriceInput(component, compostState, context),
-          ),
+        Row(
+          children: [
+            Expanded(
+              child: ListTile(
+                title: Row(
+                  children: [
+                    if (component.isCustom) ...[
+                      const Icon(
+                        Icons.person_add,
+                        size: 16,
+                        color: Colors.blue,
+                      ),
+                      const SizedBox(width: 4),
+                    ],
+                    Expanded(child: Text(component.getName())),
+                  ],
+                ),
+                trailing: SizedBox(
+                  width: 120,
+                  child: _buildPriceInput(component, compostState, context),
+                ),
+              ),
+            ),
+            if (component.isCustom) ...[
+              Column(
+                children: [
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _buildCompactIconButton(
+                        Icons.edit,
+                        () => _editCustomIngredient(
+                            context, compostState, component),
+                      ),
+                      _buildCompactIconButton(
+                        Icons.delete,
+                        () => _deleteCustomIngredient(
+                            context, compostState, component),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ],
         ),
         const Divider(),
       ],
@@ -106,13 +154,14 @@ class _PricesPageState extends State<PricesPage> {
       component,
       compostState.selectedCurrency,
     );
-    
+
     return TextFormField(
       key: ValueKey('${component.getName()}_${compostState.selectedCurrency}'),
       controller: controller,
       decoration: InputDecoration(
         labelText: S.of(context).costPerTon,
-        suffixText: CurrencyConstants.getCurrencySymbol(compostState.selectedCurrency),
+        suffixText:
+            CurrencyConstants.getCurrencySymbol(compostState.selectedCurrency),
         isDense: true,
       ),
       keyboardType: const TextInputType.numberWithOptions(decimal: true),
@@ -125,13 +174,94 @@ class _PricesPageState extends State<PricesPage> {
             newPrice,
             currency: compostState.selectedCurrency,
           );
-          
+
           // If this is a CFA price change, update controllers for untouched currencies
           if (compostState.selectedCurrency == 'CFA') {
-            _updateUntouchedControllers(compostState.components, compostState.selectedCurrency);
+            _updateUntouchedControllers(
+                compostState.components, compostState.selectedCurrency);
           }
         }
       },
+    );
+  }
+
+  Widget _buildCompactIconButton(IconData icon, VoidCallback onPressed) {
+    return SizedBox(
+      width: 24,
+      height: 24,
+      child: IconButton(
+        icon: Icon(icon, size: 16),
+        onPressed: onPressed,
+        padding: EdgeInsets.zero,
+      ),
+    );
+  }
+
+  void _showAddCustomIngredientDialog(
+      BuildContext context, CompostState compostState) {
+    showDialog(
+      context: context,
+      builder: (context) => CustomIngredientDialog(
+        onAdd: (ingredient) async {
+          await compostState.addCustomIngredient(ingredient);
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                  content: Text('Added custom ingredient: ${ingredient.name}')),
+            );
+          }
+        },
+      ),
+    );
+  }
+
+  void _editCustomIngredient(BuildContext context, CompostState compostState,
+      CompostComponent component) {
+    showDialog(
+      context: context,
+      builder: (context) => EditCustomIngredientDialog(
+        ingredient: component,
+        onUpdate: (updatedIngredient) async {
+          await compostState.updateCustomIngredient(updatedIngredient);
+          if (context.mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                  content:
+                      Text('Updated ingredient: ${updatedIngredient.name}')),
+            );
+          }
+        },
+      ),
+    );
+  }
+
+  void _deleteCustomIngredient(BuildContext context, CompostState compostState,
+      CompostComponent component) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete Custom Ingredient'),
+        content: Text('Are you sure you want to delete "${component.name}"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(S.of(context).cancel),
+          ),
+          TextButton(
+            onPressed: () async {
+              await compostState.deleteCustomIngredient(component.id);
+              if (context.mounted) {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                      content: Text('Deleted ingredient: ${component.name}')),
+                );
+              }
+            },
+            child: const Text('Delete', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
     );
   }
 
@@ -140,11 +270,35 @@ class _PricesPageState extends State<PricesPage> {
     return Scaffold(
       body: Consumer<CompostState>(
         builder: (context, compostState, child) {
-          final components = compostState.components;
+          final components = compostState.allComponents;
 
           return ListView(
             children: [
-              const CurrencySelector(),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    const Expanded(child: CurrencySelector()),
+                    const SizedBox(width: 8),
+                    ElevatedButton.icon(
+                      onPressed: () =>
+                          _showAddCustomIngredientDialog(context, compostState),
+                      icon: Icon(Icons.add,
+                          size: 16,
+                          color: Theme.of(context).colorScheme.onPrimary),
+                      label: const Text("Add Ingredient"),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context).colorScheme.primary,
+                        foregroundColor:
+                            Theme.of(context).colorScheme.onPrimary,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        minimumSize: const Size(0, 32),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               const Divider(),
               _buildSectionTitle(S.of(context).allIngredients),
               ...components.map((component) =>

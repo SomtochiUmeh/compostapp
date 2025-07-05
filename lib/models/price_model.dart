@@ -73,4 +73,20 @@ class Price {
     final price = getPriceForCurrency(currency);
     return (price / 1000) * amount;
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'pricePerTon': pricePerTon,
+      'regionalPrices': regionalPrices,
+    };
+  }
+
+  static Price fromJson(Map<String, dynamic> json) {
+    return Price(
+      pricePerTon: json['pricePerTon']?.toDouble() ?? 0.0,
+      regionalPrices: json['regionalPrices'] != null
+          ? Map<String, double>.from(json['regionalPrices'])
+          : null,
+    );
+  }
 }

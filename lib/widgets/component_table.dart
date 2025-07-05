@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/recipe_component_model.dart';
+import '../models/compost_component_model.dart';
 import '../constants/nutrient_constants.dart';
 import '../constants/currency_constants.dart';
 import '../compost_state.dart';
@@ -68,10 +69,13 @@ class ComponentTable extends StatelessWidget {
                     final item = items[index];
                     return DataRow(
                       cells: columns
-                          .map((col) => DataCell(Text(
-                                _formatValue(item, col, compostState.selectedCurrency),
-                                overflow: TextOverflow.ellipsis,
-                              )))
+                          .map((col) => DataCell(
+                                col.key == 'name' 
+                                    ? _buildIngredientCell(item.component)
+                                    : Text(
+                                        _formatValue(item, col, compostState.selectedCurrency),
+                                        overflow: TextOverflow.ellipsis,
+                                      )))
                           .toList(),
                     );
                   }),
@@ -100,6 +104,28 @@ class ComponentTable extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+
+  Widget _buildIngredientCell(CompostComponent component) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (component.isCustom) ...[
+          const Icon(
+            Icons.person_add,
+            size: 16,
+            color: Colors.blue,
+          ),
+          const SizedBox(width: 4),
+        ],
+        Expanded(
+          child: Text(
+            component.getName(),
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      ],
     );
   }
 

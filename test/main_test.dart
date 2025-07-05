@@ -26,7 +26,7 @@ void main() {
     when(mockPersistenceManager.getSavedComponents())
         .thenAnswer((_) => Future.value([]));
     when(mockCompostState.components).thenReturn([]);
-    when(mockCompostState.getAvailableComponents(any)).thenReturn([]);
+    when(mockCompostState.allComponents).thenReturn([]);
   });
 
   // Helper function to create the test app with the necessary providers and mocks
@@ -69,8 +69,8 @@ void main() {
 
       // Brown typically has red > green & blue
       final primaryColor = colorScheme.primary;
-      expect(primaryColor.red > primaryColor.blue, isTrue);
-      expect(primaryColor.red > primaryColor.green, isTrue);
+      expect(primaryColor.r > primaryColor.b, isTrue);
+      expect(primaryColor.r > primaryColor.g, isTrue);
     });
 
     testWidgets('configures correct localization delegates',
@@ -166,8 +166,8 @@ void main() {
 
       // Seed color should be brown, which means red > green & blue
       final primaryColor = theme.colorScheme.primary;
-      expect(primaryColor.red > primaryColor.blue, isTrue);
-      expect(primaryColor.red > primaryColor.green, isTrue);
+      expect(primaryColor.r > primaryColor.b, isTrue);
+      expect(primaryColor.r > primaryColor.g, isTrue);
 
       // Test consistency of colors throughout different theme properties
       expect(theme.colorScheme.primary, theme.primaryColor);

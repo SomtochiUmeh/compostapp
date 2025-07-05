@@ -31,28 +31,30 @@ void main() {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: S.delegate.supportedLocales,
-          home: Scaffold(
+          home: const Scaffold(
             body: CurrencySelector(),
           ),
         ),
       );
     }
 
-    testWidgets('renders correctly with default currency', (WidgetTester tester) async {
+    testWidgets('renders correctly with default currency',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
       // Verify currency label is displayed
       expect(find.text('Currency'), findsOneWidget);
-      
+
       // Verify dropdown is present
       expect(find.byType(DropdownButton<String>), findsOneWidget);
-      
+
       // Verify default CFA selection is shown
       expect(find.text('CFA (FCFA)'), findsOneWidget);
     });
 
-    testWidgets('shows all supported currencies in dropdown', (WidgetTester tester) async {
+    testWidgets('shows all supported currencies in dropdown',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
@@ -70,7 +72,8 @@ void main() {
       expect(find.text('GHS (₵)'), findsOneWidget);
     });
 
-    testWidgets('calls setSelectedCurrency when currency is changed', (WidgetTester tester) async {
+    testWidgets('calls setSelectedCurrency when currency is changed',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
@@ -86,9 +89,10 @@ void main() {
       verify(mockCompostState.setSelectedCurrency('USD')).called(1);
     });
 
-    testWidgets('displays different selected currency correctly', (WidgetTester tester) async {
+    testWidgets('displays different selected currency correctly',
+        (WidgetTester tester) async {
       when(mockCompostState.selectedCurrency).thenReturn('USD');
-      
+
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
@@ -103,10 +107,10 @@ void main() {
 
       // Verify row layout - expect at least one (allowing for multiple in the widget tree)
       expect(find.byType(Row), findsWidgets);
-      
+
       // Verify SizedBox spacing - expect at least one
       expect(find.byType(SizedBox), findsWidgets);
-      
+
       // Verify container styling (there might be multiple containers)
       expect(find.byType(Container), findsWidgets);
     });
@@ -119,34 +123,56 @@ void main() {
       expect(find.byType(DropdownButtonHideUnderline), findsOneWidget);
     });
 
-    testWidgets('handles null currency selection gracefully', (WidgetTester tester) async {
+    testWidgets('handles null currency selection gracefully',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
       // This should not crash the widget
-      final dropdown = tester.widget<DropdownButton<String>>(find.byType(DropdownButton<String>));
+      final dropdown = tester
+          .widget<DropdownButton<String>>(find.byType(DropdownButton<String>));
       expect(dropdown.onChanged, isNotNull);
-      
+
       // Calling with null should not cause errors (though setSelectedCurrency won't be called)
       dropdown.onChanged!(null);
       await tester.pumpAndSettle();
-      
+
       // Verify setSelectedCurrency was not called with null
       verifyNever(mockCompostState.setSelectedCurrency(null));
     });
 
-    testWidgets('updates when CompostState selectedCurrency changes', (WidgetTester tester) async {
+    testWidgets('updates when CompostState selectedCurrency changes',
+        (WidgetTester tester) async {
+      // Create a separate mock for EUR testing
+      final eurMockCompostState = MockCompostState();
+      when(eurMockCompostState.selectedCurrency).thenReturn('EUR');
+
+      Widget createEurTestableWidget() {
+        return ChangeNotifierProvider<CompostState>.value(
+          value: eurMockCompostState,
+          child: MaterialApp(
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            home: const Scaffold(
+              body: CurrencySelector(),
+            ),
+          ),
+        );
+      }
+
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
       // Initially shows CFA
       expect(find.text('CFA (FCFA)'), findsOneWidget);
 
-      // Change the mock to return EUR
-      when(mockCompostState.selectedCurrency).thenReturn('EUR');
-      
-      // Rebuild the widget (simulating notifyListeners)
-      await tester.pumpWidget(createTestableWidget());
+      // Test with EUR widget
+      await tester.pumpWidget(createEurTestableWidget());
       await tester.pumpAndSettle();
 
       // Should now show EUR
@@ -154,20 +180,22 @@ void main() {
       expect(find.text('CFA (FCFA)'), findsNothing);
     });
 
-    testWidgets('displays correct text style for currency label', (WidgetTester tester) async {
+    testWidgets('displays correct text style for currency label',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
       // Find the currency label text
       final textFinder = find.text('Currency');
       expect(textFinder, findsOneWidget);
-      
+
       final text = tester.widget<Text>(textFinder);
       expect(text.style, isNotNull);
       // The style should use Theme.of(context).textTheme.titleMedium
     });
 
-    testWidgets('dropdown items have correct text style', (WidgetTester tester) async {
+    testWidgets('dropdown items have correct text style',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestableWidget());
       await tester.pumpAndSettle();
 
@@ -178,8 +206,8 @@ void main() {
       // Find dropdown menu items and verify they have proper styling
       final dropdownItems = find.byType(DropdownMenuItem<String>);
       expect(dropdownItems, findsWidgets); // Should find dropdown items
-      
-      // There might be duplicates in the widget tree during testing, 
+
+      // There might be duplicates in the widget tree during testing,
       // so just verify that we can find items with the expected currencies
       expect(find.text('CFA (FCFA)'), findsWidgets);
       expect(find.text('USD (\$)'), findsWidgets);
