@@ -35,7 +35,7 @@ class CompostState extends ChangeNotifier {
     }
   }
 
-  void setSelectedCurrency(String currency) async {
+  Future<void> setSelectedCurrency(String currency) async {
     if (CurrencyConstants.isCurrencySupported(currency)) {
       _selectedCurrency = currency;
       await persistenceManager.setSelectedCurrency(currency);

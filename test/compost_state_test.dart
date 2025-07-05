@@ -285,6 +285,193 @@ void main() {
       verifyNever(mockPersistenceManager.updateComponentInfo(any));
     });
 
+    group('Currency Management', () {
+      testWidgets('setSelectedCurrency updates currency and notifies listeners',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Mock successful currency persistence
+        when(mockPersistenceManager.setSelectedCurrency(any))
+            .thenAnswer((_) => Future.value(true));
+
+        // Track notifications
+        bool notifierCalled = false;
+        compostState.addListener(() {
+          notifierCalled = true;
+        });
+
+        // Change currency to USD
+        await compostState.setSelectedCurrency('USD');
+
+        // Verify currency was updated
+        expect(compostState.selectedCurrency, equals('USD'));
+
+        // Verify persistence was called
+        verify(mockPersistenceManager.setSelectedCurrency('USD')).called(1);
+
+        // Verify listeners were notified
+        expect(notifierCalled, isTrue);
+      });
+
+      testWidgets('setSelectedCurrency does nothing for unsupported currency',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        final originalCurrency = compostState.selectedCurrency;
+
+        // Track notifications
+        bool notifierCalled = false;
+        compostState.addListener(() {
+          notifierCalled = true;
+        });
+
+        // Try to set unsupported currency
+        await compostState.setSelectedCurrency('XYZ');
+
+        // Verify currency was not changed
+        expect(compostState.selectedCurrency, equals(originalCurrency));
+
+        // Verify persistence was not called
+        verifyNever(mockPersistenceManager.setSelectedCurrency(any));
+
+        // Verify listeners were not notified
+        expect(notifierCalled, isFalse);
+      });
+
+      testWidgets(
+          'updateComponentPrice with currency parameter sets regional price',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Set up initial components
+        compostState.components = List.from(testComponents);
+
+        // Mock successful persistence
+        when(mockPersistenceManager.updateComponentInfo(any))
+            .thenAnswer((_) => Future.value(true));
+
+        // Update price in USD (regional pricing)
+        compostState.updateComponentPrice('Test Component 1', 2.5,
+            currency: 'USD');
+
+        // Verify regional price was set
+        final updatedComponent = compostState.components.firstWhere(
+          (comp) => comp.id == 'test1',
+        );
+        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+        expect(updatedComponent.price?.hasRegionalPrice('USD'), isTrue);
+
+        // Verify CFA price remains unchanged
+        expect(updatedComponent.price?.pricePerTon,
+            equals(100)); // original CFA price
+      });
+
+      testWidgets(
+          'updateComponentPrice with CFA currency updates base price and preserves regional',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Set up initial components with regional pricing
+        compostState.components = List.from(testComponents);
+
+        // Mock successful persistence
+        when(mockPersistenceManager.updateComponentInfo(any))
+            .thenAnswer((_) => Future.value(true));
+
+        // First set a regional price
+        compostState.updateComponentPrice('Test Component 1', 2.5,
+            currency: 'USD');
+
+        // Verify base CFA price is still 100 and regional USD price is set
+        var checkComponent = compostState.components.firstWhere(
+          (comp) => comp.id == 'test1',
+        );
+        expect(checkComponent.price?.pricePerTon,
+            equals(100)); // Should still be 100
+        expect(checkComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+
+        // Reset mock calls
+        clearInteractions(mockPersistenceManager);
+
+        // Mock successful persistence for second call
+        when(mockPersistenceManager.updateComponentInfo(any))
+            .thenAnswer((_) => Future.value(true));
+
+        // Then update CFA price
+        compostState.updateComponentPrice('Test Component 1', 200,
+            currency: 'CFA');
+        final updatedComponent = compostState.components.firstWhere(
+          (comp) => comp.id == 'test1',
+        );
+
+        // Verify regional USD price is preserved
+        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+        expect(updatedComponent.price?.hasRegionalPrice('USD'), isTrue);
+      });
+
+      testWidgets('loads saved currency on initialization',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Mock saved currency
+        when(mockPersistenceManager.getSelectedCurrency())
+            .thenAnswer((_) => Future.value('EUR'));
+
+        // Create new CompostState to trigger initialization
+        final newCompostState = CompostState(mockPersistenceManager);
+
+        // Wait for async initialization to complete
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Verify currency was loaded
+        expect(newCompostState.selectedCurrency, equals('EUR'));
+      });
+
+      testWidgets(
+          'falls back to default currency when saved currency is invalid',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Mock invalid saved currency
+        when(mockPersistenceManager.getSelectedCurrency())
+            .thenAnswer((_) => Future.value('INVALID'));
+
+        // Create new CompostState to trigger initialization
+        final newCompostState = CompostState(mockPersistenceManager);
+
+        // Wait for async initialization to complete
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Verify falls back to default currency
+        expect(newCompostState.selectedCurrency, equals('CFA'));
+      });
+
+      testWidgets('falls back to default currency when no saved currency',
+          (WidgetTester tester) async {
+        // Create a test widget to initialize localization
+        await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
+
+        // Mock no saved currency
+        when(mockPersistenceManager.getSelectedCurrency())
+            .thenAnswer((_) => Future.value(null));
+
+        // Create new CompostState to trigger initialization
+        final newCompostState = CompostState(mockPersistenceManager);
+
+        // Wait for async initialization to complete
+        await tester.pump(const Duration(milliseconds: 100));
+
+        // Verify uses default currency
+        expect(newCompostState.selectedCurrency, equals('CFA'));
+      });
+    });
+
     testWidgets('notifyListeners is called after component updates',
         (WidgetTester tester) async {
       // Create a test widget to initialize localization

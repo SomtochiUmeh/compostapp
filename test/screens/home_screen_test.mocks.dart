@@ -183,10 +183,13 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
           as bool);
 
   @override
-  void setSelectedCurrency(String? currency) => super.noSuchMethod(
-    Invocation.method(#setSelectedCurrency, [currency]),
-    returnValueForMissingStub: null,
-  );
+  _i3.Future<void> setSelectedCurrency(String? currency) =>
+      (super.noSuchMethod(
+            Invocation.method(#setSelectedCurrency, [currency]),
+            returnValue: _i3.Future<void>.value(),
+            returnValueForMissingStub: _i3.Future<void>.value(),
+          )
+          as _i3.Future<void>);
 
   @override
   void updateComponent(_i5.CompostComponent? updatedComponent) =>

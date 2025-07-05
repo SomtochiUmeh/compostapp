@@ -3,7 +3,8 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i6;
+import 'dart:async' as _i6;
+import 'dart:ui' as _i7;
 
 import 'package:compostapp/compost_state.dart' as _i3;
 import 'package:compostapp/models/compost_component_model.dart' as _i4;
@@ -81,10 +82,13 @@ class MockCompostState extends _i1.Mock implements _i3.CompostState {
           as bool);
 
   @override
-  void setSelectedCurrency(String? currency) => super.noSuchMethod(
-    Invocation.method(#setSelectedCurrency, [currency]),
-    returnValueForMissingStub: null,
-  );
+  _i6.Future<void> setSelectedCurrency(String? currency) =>
+      (super.noSuchMethod(
+            Invocation.method(#setSelectedCurrency, [currency]),
+            returnValue: _i6.Future<void>.value(),
+            returnValueForMissingStub: _i6.Future<void>.value(),
+          )
+          as _i6.Future<void>);
 
   @override
   void updateComponent(_i4.CompostComponent? updatedComponent) =>
@@ -116,13 +120,13 @@ class MockCompostState extends _i1.Mock implements _i3.CompostState {
   );
 
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#addListener, [listener]),
     returnValueForMissingStub: null,
   );
 
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#removeListener, [listener]),
     returnValueForMissingStub: null,
   );
