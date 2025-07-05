@@ -1,35 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 import 'package:compostapp/widgets/nutrient_totals_table.dart';
 import 'package:compostapp/models/recipe_component_model.dart';
 import 'package:compostapp/models/compost_component_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/price_model.dart';
+import 'package:compostapp/compost_state.dart';
 import 'package:compostapp/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:mockito/annotations.dart';
+
+@GenerateMocks([CompostState])
+import 'nutrient_totals_table_test.mocks.dart';
 
 // Helper function to create a testable nutrient totals table
 Widget createTestableTable({
   required List<RecipeComponent> components,
 }) {
-  return MaterialApp(
-    localizationsDelegates: const [
-      S.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate,
-    ],
-    supportedLocales: S.delegate.supportedLocales,
-    home: ScaffoldMessenger(
-      child: Builder(
-        builder: (BuildContext context) {
-          return Scaffold(
-            body: NutrientTotalsTable(
-              components: components,
-            ),
-          );
-        },
+  final mockCompostState = MockCompostState();
+  when(mockCompostState.selectedCurrency).thenReturn('CFA');
+  
+  return ChangeNotifierProvider<CompostState>.value(
+    value: mockCompostState,
+    child: MaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      home: ScaffoldMessenger(
+        child: Builder(
+          builder: (BuildContext context) {
+            return Scaffold(
+              body: NutrientTotalsTable(
+                components: components,
+              ),
+            );
+          },
+        ),
       ),
     ),
   );
@@ -231,8 +244,8 @@ void main() {
 
       await tester.pumpAndSettle();
 
-      // Verify total cost is shown correctly
-      expect(find.text('1.00'), findsOneWidget);
+      // Verify total cost is shown correctly (formatted with currency)
+      expect(find.text('FCFA 1'), findsOneWidget);
     });
   });
 }

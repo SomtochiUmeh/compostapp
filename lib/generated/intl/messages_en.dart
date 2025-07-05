@@ -204,12 +204,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Cooling Phase (Days 25-35)",
     ),
-    "costFCFA": MessageLookupByLibrary.simpleMessage("Cost (FCFA)"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Cost/Ton"),
+    "costTotal": MessageLookupByLibrary.simpleMessage("Total Cost"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
       "Cover food scraps with browns",
     ),
     "cowDung": MessageLookupByLibrary.simpleMessage("Cow dung"),
+    "currency": MessageLookupByLibrary.simpleMessage("Currency"),
     "currencyFCFA": MessageLookupByLibrary.simpleMessage("FCFA"),
     "day1": MessageLookupByLibrary.simpleMessage("Day 1"),
     "day25": MessageLookupByLibrary.simpleMessage("Day 25"),

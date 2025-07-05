@@ -106,9 +106,9 @@
     "@component": {
         "description": "Single component label for table header"
     },
-    "costFCFA": "Cost (FCFA)",
-    "@costFCFA": {
-        "description": "Column header for cost in FCFA currency"
+    "costTotal": "Total Cost",
+    "@costTotal": {
+        "description": "Column header for total cost"
     },
     "percentage": "{value} (%)",
     "@percentage": {
@@ -241,6 +241,10 @@
     "costPerTon": "Cost/Ton",
     "@costPerTon": {
         "description": "Label for cost per unit input field"
+    },
+    "currency": "Currency",
+    "@currency": {
+        "description": "Label for currency selection"
     },
     "currencyFCFA": "FCFA",
     "@currencyFCFA": {

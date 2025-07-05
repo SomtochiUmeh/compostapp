@@ -7,11 +7,11 @@ import 'dart:async' as _i3;
 import 'dart:ui' as _i8;
 
 import 'package:compostapp/compost_state.dart' as _i6;
-import 'package:compostapp/models/availability_model.dart' as _i7;
 import 'package:compostapp/models/compost_component_model.dart' as _i5;
 import 'package:compostapp/models/recipe_model.dart' as _i4;
 import 'package:compostapp/services/persistence_manager.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:mockito/src/dummies.dart' as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -115,6 +115,22 @@ class MockPersistenceManager extends _i1.Mock
             returnValue: _i3.Future<bool>.value(false),
           )
           as _i3.Future<bool>);
+
+  @override
+  _i3.Future<bool> setSelectedCurrency(String? currency) =>
+      (super.noSuchMethod(
+            Invocation.method(#setSelectedCurrency, [currency]),
+            returnValue: _i3.Future<bool>.value(false),
+          )
+          as _i3.Future<bool>);
+
+  @override
+  _i3.Future<String?> getSelectedCurrency() =>
+      (super.noSuchMethod(
+            Invocation.method(#getSelectedCurrency, []),
+            returnValue: _i3.Future<String?>.value(),
+          )
+          as _i3.Future<String?>);
 }
 
 /// A class which mocks [CompostState].
@@ -151,9 +167,29 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
   );
 
   @override
+  String get selectedCurrency =>
+      (super.noSuchMethod(
+            Invocation.getter(#selectedCurrency),
+            returnValue: _i7.dummyValue<String>(
+              this,
+              Invocation.getter(#selectedCurrency),
+            ),
+          )
+          as String);
+
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+
+  @override
+  _i3.Future<void> setSelectedCurrency(String? currency) =>
+      (super.noSuchMethod(
+            Invocation.method(#setSelectedCurrency, [currency]),
+            returnValue: _i3.Future<void>.value(),
+            returnValueForMissingStub: _i3.Future<void>.value(),
+          )
+          as _i3.Future<void>);
 
   @override
   void updateComponent(_i5.CompostComponent? updatedComponent) =>
@@ -171,21 +207,16 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
           as List<_i5.CompostComponent>);
 
   @override
-  void updateComponentPrice(String? componentName, double? newPrice) =>
-      super.noSuchMethod(
-        Invocation.method(#updateComponentPrice, [componentName, newPrice]),
-        returnValueForMissingStub: null,
-      );
-
-  @override
-  void updateComponentAvailability(
-    String? componentId,
-    _i7.AvailabilityPeriod? newAvailability,
-  ) => super.noSuchMethod(
-    Invocation.method(#updateComponentAvailability, [
-      componentId,
-      newAvailability,
-    ]),
+  void updateComponentPrice(
+    String? componentName,
+    double? newPrice, {
+    String? currency = 'CFA',
+  }) => super.noSuchMethod(
+    Invocation.method(
+      #updateComponentPrice,
+      [componentName, newPrice],
+      {#currency: currency},
+    ),
     returnValueForMissingStub: null,
   );
 

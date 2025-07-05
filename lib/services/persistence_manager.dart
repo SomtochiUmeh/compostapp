@@ -12,6 +12,7 @@ class PersistenceManager {
   static const String _recipeKey = 'current_recipe';
   static const String _recipesHistoryKey = 'recipes_history';
   static const String _componentsKey = 'components_data';
+  static const String _selectedCurrencyKey = 'selected_currency';
 
   static Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -92,6 +93,15 @@ class PersistenceManager {
     return await _prefs?.clear() ?? false;
   }
 
+  // Currency Management
+  Future<bool> setSelectedCurrency(String currency) async {
+    return await _prefs?.setString(_selectedCurrencyKey, currency) ?? false;
+  }
+
+  Future<String?> getSelectedCurrency() async {
+    return _prefs?.getString(_selectedCurrencyKey);
+  }
+
   // JSON Conversion Helpers
   Map<String, dynamic> _recipeToJson(Recipe recipe) {
     return {
@@ -135,6 +145,7 @@ class PersistenceManager {
       'price': component.price != null
           ? {
               'pricePerTon': component.price!.pricePerTon,
+              'regionalPrices': component.price!.regionalPrices,
             }
           : null,
       'sources': component.sources,
@@ -158,7 +169,14 @@ class PersistenceManager {
       ),
       price: json['price'] != null
           ? Price(
-              pricePerTon: json['price']['pricePerTon'],
+              pricePerTon: json['price']['pricePerTon'].toDouble(),
+              regionalPrices: json['price']['regionalPrices'] != null
+                  ? Map<String, double>.from(
+                      json['price']['regionalPrices'].map(
+                        (key, value) => MapEntry(key, value.toDouble()),
+                      ),
+                    )
+                  : null,
             )
           : null,
       sources: List<String>.from(json['sources']),

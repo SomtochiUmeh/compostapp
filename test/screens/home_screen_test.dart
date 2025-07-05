@@ -38,10 +38,9 @@ void main() {
         .thenAnswer((_) => Future.value(true));
 
     // Add stubs for the CompostState methods that might be called
+    when(mockCompostState.selectedCurrency).thenReturn('CFA');
     when(mockCompostState.updateComponent(any)).thenReturn(null);
     when(mockCompostState.updateComponentPrice(any, any)).thenReturn(null);
-    when(mockCompostState.updateComponentAvailability(any, any))
-        .thenReturn(null);
   });
 
   // Helper function to create a testable HomeScreen widget with mocks

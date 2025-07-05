@@ -9,7 +9,6 @@
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
-// coverage:ignore-start
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -218,12 +217,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Phase de Refroidissement (Jours 25-35)",
     ),
-    "costFCFA": MessageLookupByLibrary.simpleMessage("Coût (FCFA)"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Coût/tonne"),
+    "costTotal": MessageLookupByLibrary.simpleMessage("Coût Total"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
       "Couvrir les restes alimentaires avec des matières brunes",
     ),
     "cowDung": MessageLookupByLibrary.simpleMessage("Bouse de vache"),
+    "currency": MessageLookupByLibrary.simpleMessage("Devise"),
     "currencyFCFA": MessageLookupByLibrary.simpleMessage("FCFA"),
     "day1": MessageLookupByLibrary.simpleMessage("Jour 1"),
     "day25": MessageLookupByLibrary.simpleMessage("Jour 25"),
@@ -536,4 +536,3 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
   };
 }
-// coverage:ignore-end

@@ -106,4 +106,20 @@ class MockPersistenceManager extends _i1.Mock
             returnValue: _i3.Future<bool>.value(false),
           )
           as _i3.Future<bool>);
+
+  @override
+  _i3.Future<bool> setSelectedCurrency(String? currency) =>
+      (super.noSuchMethod(
+            Invocation.method(#setSelectedCurrency, [currency]),
+            returnValue: _i3.Future<bool>.value(false),
+          )
+          as _i3.Future<bool>);
+
+  @override
+  _i3.Future<String?> getSelectedCurrency() =>
+      (super.noSuchMethod(
+            Invocation.method(#getSelectedCurrency, []),
+            returnValue: _i3.Future<String?>.value(),
+          )
+          as _i3.Future<String?>);
 }

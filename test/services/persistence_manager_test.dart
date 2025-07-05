@@ -355,5 +355,199 @@ void main() {
       expect(savedComponents[0].availability.startMonth, 2);
       expect(savedComponents[0].availability.endMonth, 7);
     });
+
+    group('Currency Management', () {
+      test('setSelectedCurrency saves currency successfully', () async {
+        // Act
+        final result = await persistenceManager.setSelectedCurrency('USD');
+
+        // Assert
+        expect(result, isTrue);
+        
+        // Verify by reading back from SharedPreferences
+        final prefs = await SharedPreferences.getInstance();
+        expect(prefs.getString('selected_currency'), 'USD');
+      });
+
+      test('getSelectedCurrency returns saved currency', () async {
+        // Arrange
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('selected_currency', 'EUR');
+
+        // Act
+        final currency = await persistenceManager.getSelectedCurrency();
+
+        // Assert
+        expect(currency, 'EUR');
+      });
+
+      test('getSelectedCurrency returns null when no currency saved', () async {
+        // Act
+        final currency = await persistenceManager.getSelectedCurrency();
+
+        // Assert
+        expect(currency, isNull);
+      });
+
+      test('setSelectedCurrency overwrites existing currency', () async {
+        // Arrange
+        await persistenceManager.setSelectedCurrency('USD');
+
+        // Act
+        final result = await persistenceManager.setSelectedCurrency('GBP');
+
+        // Assert
+        expect(result, isTrue);
+        
+        // Verify by reading back from SharedPreferences
+        final prefs = await SharedPreferences.getInstance();
+        expect(prefs.getString('selected_currency'), 'GBP');
+      });
+    });
+
+    group('Regional Pricing Serialization', () {
+      test('components with regional prices are serialized correctly', () async {
+        // Arrange
+        final componentWithRegionalPricing = TestCompostComponent(
+          id: 'regional1',
+          name: 'Regional Component',
+          availability: AvailabilityPeriod.janToDec,
+          nutrients: const NutrientContent(
+            dryMatterPercent: 0.5,
+            organicCarbonPercent: 0.3,
+            nitrogenPercent: 0.1,
+            phosphorusPercent: 0.05,
+            potassiumPercent: 0.02,
+            calciumPercent: 0.03,
+            magnesiumPercent: 0.01,
+            carbonNitrogenRatio: 3.0,
+          ),
+          price: Price(
+            pricePerTon: 1000,
+            regionalPrices: {
+              'USD': 1.5,
+              'EUR': 2.0,
+              'GBP': 2.5,
+            },
+          ),
+        );
+
+        // Act
+        await persistenceManager.updateComponentInfo([componentWithRegionalPricing]);
+        final savedComponents = await persistenceManager.getSavedComponents();
+
+        // Assert
+        expect(savedComponents, isNotNull);
+        expect(savedComponents!.length, 1);
+        
+        final savedComponent = savedComponents[0];
+        expect(savedComponent.price, isNotNull);
+        expect(savedComponent.price!.pricePerTon, 1000);
+        expect(savedComponent.price!.regionalPrices, isNotNull);
+        expect(savedComponent.price!.regionalPrices!['USD'], 1.5);
+        expect(savedComponent.price!.regionalPrices!['EUR'], 2.0);
+        expect(savedComponent.price!.regionalPrices!['GBP'], 2.5);
+      });
+
+      test('components without regional prices are serialized correctly', () async {
+        // Arrange
+        final componentWithoutRegionalPricing = TestCompostComponent(
+          id: 'no_regional1',
+          name: 'No Regional Component',
+          availability: AvailabilityPeriod.janToDec,
+          nutrients: const NutrientContent(
+            dryMatterPercent: 0.5,
+            organicCarbonPercent: 0.3,
+            nitrogenPercent: 0.1,
+            phosphorusPercent: 0.05,
+            potassiumPercent: 0.02,
+            calciumPercent: 0.03,
+            magnesiumPercent: 0.01,
+            carbonNitrogenRatio: 3.0,
+          ),
+          price: Price(pricePerTon: 500),
+        );
+
+        // Act
+        await persistenceManager.updateComponentInfo([componentWithoutRegionalPricing]);
+        final savedComponents = await persistenceManager.getSavedComponents();
+
+        // Assert
+        expect(savedComponents, isNotNull);
+        expect(savedComponents!.length, 1);
+        
+        final savedComponent = savedComponents[0];
+        expect(savedComponent.price, isNotNull);
+        expect(savedComponent.price!.pricePerTon, 500);
+        expect(savedComponent.price!.regionalPrices, isNull);
+      });
+
+      test('regional prices with decimal values are preserved', () async {
+        // Arrange
+        final componentWithDecimalPrices = TestCompostComponent(
+          id: 'decimal1',
+          name: 'Decimal Component',
+          availability: AvailabilityPeriod.janToDec,
+          nutrients: const NutrientContent(
+            dryMatterPercent: 0.5,
+            organicCarbonPercent: 0.3,
+            nitrogenPercent: 0.1,
+            phosphorusPercent: 0.05,
+            potassiumPercent: 0.02,
+            calciumPercent: 0.03,
+            magnesiumPercent: 0.01,
+            carbonNitrogenRatio: 3.0,
+          ),
+          price: Price(
+            pricePerTon: 1234.56,
+            regionalPrices: {
+              'USD': 1.234,
+              'EUR': 2.567,
+            },
+          ),
+        );
+
+        // Act
+        await persistenceManager.updateComponentInfo([componentWithDecimalPrices]);
+        final savedComponents = await persistenceManager.getSavedComponents();
+
+        // Assert
+        final savedComponent = savedComponents![0];
+        expect(savedComponent.price!.pricePerTon, 1234.56);
+        expect(savedComponent.price!.regionalPrices!['USD'], 1.234);
+        expect(savedComponent.price!.regionalPrices!['EUR'], 2.567);
+      });
+
+      test('empty regional prices map is handled correctly', () async {
+        // Arrange - Create price with empty regional prices
+        final price = Price(pricePerTon: 1000, regionalPrices: {});
+        final component = TestCompostComponent(
+          id: 'empty1',
+          name: 'Empty Regional',
+          availability: AvailabilityPeriod.janToDec,
+          nutrients: const NutrientContent(
+            dryMatterPercent: 0.5,
+            organicCarbonPercent: 0.3,
+            nitrogenPercent: 0.1,
+            phosphorusPercent: 0.05,
+            potassiumPercent: 0.02,
+            calciumPercent: 0.03,
+            magnesiumPercent: 0.01,
+            carbonNitrogenRatio: 3.0,
+          ),
+          price: price,
+        );
+
+        // Act
+        await persistenceManager.updateComponentInfo([component]);
+        final savedComponents = await persistenceManager.getSavedComponents();
+
+        // Assert
+        final savedComponent = savedComponents![0];
+        expect(savedComponent.price, isNotNull);
+        expect(savedComponent.price!.regionalPrices, isNotNull);
+        expect(savedComponent.price!.regionalPrices!.isEmpty, isTrue);
+      });
+    });
   });
 }
