@@ -3,13 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:ui' as _i6;
+import 'dart:ui' as _i7;
 
 import 'package:compostapp/compost_state.dart' as _i3;
-import 'package:compostapp/models/availability_model.dart' as _i5;
+import 'package:compostapp/models/availability_model.dart' as _i6;
 import 'package:compostapp/models/compost_component_model.dart' as _i4;
 import 'package:compostapp/services/persistence_manager.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:mockito/src/dummies.dart' as _i5;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -65,9 +66,26 @@ class MockCompostState extends _i1.Mock implements _i3.CompostState {
   );
 
   @override
+  String get selectedCurrency =>
+      (super.noSuchMethod(
+            Invocation.getter(#selectedCurrency),
+            returnValue: _i5.dummyValue<String>(
+              this,
+              Invocation.getter(#selectedCurrency),
+            ),
+          )
+          as String);
+
+  @override
   bool get hasListeners =>
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
+
+  @override
+  void setSelectedCurrency(String? currency) => super.noSuchMethod(
+    Invocation.method(#setSelectedCurrency, [currency]),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void updateComponent(_i4.CompostComponent? updatedComponent) =>
@@ -85,16 +103,23 @@ class MockCompostState extends _i1.Mock implements _i3.CompostState {
           as List<_i4.CompostComponent>);
 
   @override
-  void updateComponentPrice(String? componentName, double? newPrice) =>
-      super.noSuchMethod(
-        Invocation.method(#updateComponentPrice, [componentName, newPrice]),
-        returnValueForMissingStub: null,
-      );
+  void updateComponentPrice(
+    String? componentName,
+    double? newPrice, {
+    String? currency = 'CFA',
+  }) => super.noSuchMethod(
+    Invocation.method(
+      #updateComponentPrice,
+      [componentName, newPrice],
+      {#currency: currency},
+    ),
+    returnValueForMissingStub: null,
+  );
 
   @override
   void updateComponentAvailability(
     String? componentId,
-    _i5.AvailabilityPeriod? newAvailability,
+    _i6.AvailabilityPeriod? newAvailability,
   ) => super.noSuchMethod(
     Invocation.method(#updateComponentAvailability, [
       componentId,
@@ -104,13 +129,13 @@ class MockCompostState extends _i1.Mock implements _i3.CompostState {
   );
 
   @override
-  void addListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i7.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#addListener, [listener]),
     returnValueForMissingStub: null,
   );
 
   @override
-  void removeListener(_i6.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i7.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#removeListener, [listener]),
     returnValueForMissingStub: null,
   );

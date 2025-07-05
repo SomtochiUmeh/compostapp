@@ -210,6 +210,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cover food scraps with browns",
     ),
     "cowDung": MessageLookupByLibrary.simpleMessage("Cow dung"),
+    "currency": MessageLookupByLibrary.simpleMessage("Currency"),
     "currencyFCFA": MessageLookupByLibrary.simpleMessage("FCFA"),
     "day1": MessageLookupByLibrary.simpleMessage("Day 1"),
     "day25": MessageLookupByLibrary.simpleMessage("Day 25"),

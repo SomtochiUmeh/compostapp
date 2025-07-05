@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/recipe_component_model.dart';
 import '../constants/nutrient_constants.dart';
+import '../constants/currency_constants.dart';
+import '../compost_state.dart';
 import '../generated/l10n.dart';
 
 class ColumnDefinition {
@@ -47,52 +50,56 @@ class ComponentTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: DataTable(
-              columnSpacing: 20,
-              horizontalMargin: 15,
-              columns: columns
-                  .map((col) => DataColumn(label: Text(col.label)))
-                  .toList(),
-              rows: List.generate(items.length, (index) {
-                final item = items[index];
-                return DataRow(
-                  cells: columns
-                      .map((col) => DataCell(Text(
-                            _formatValue(item, col),
-                            overflow: TextOverflow.ellipsis,
-                          )))
-                      .toList(),
-                );
-              }),
-            ),
-          ),
-        ),
-        const VerticalDivider(width: 1),
-        Column(
+    return Consumer<CompostState>(
+      builder: (context, compostState, child) {
+        return Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(height: 56, alignment: Alignment.center),
-            ...List.generate(items.length, (index) {
-              return SizedBox(
-                height: 48,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _buildCompactIconButton(Icons.edit, () => onEdit(index)),
-                    _buildCompactIconButton(
-                        Icons.delete, () => onDelete(index)),
-                  ],
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: DataTable(
+                  columnSpacing: 20,
+                  horizontalMargin: 15,
+                  columns: columns
+                      .map((col) => DataColumn(label: Text(col.label)))
+                      .toList(),
+                  rows: List.generate(items.length, (index) {
+                    final item = items[index];
+                    return DataRow(
+                      cells: columns
+                          .map((col) => DataCell(Text(
+                                _formatValue(item, col, compostState.selectedCurrency),
+                                overflow: TextOverflow.ellipsis,
+                              )))
+                          .toList(),
+                    );
+                  }),
                 ),
-              );
-            }),
+              ),
+            ),
+            const VerticalDivider(width: 1),
+            Column(
+              children: [
+                Container(height: 56, alignment: Alignment.center),
+                ...List.generate(items.length, (index) {
+                  return SizedBox(
+                    height: 48,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _buildCompactIconButton(Icons.edit, () => onEdit(index)),
+                        _buildCompactIconButton(
+                            Icons.delete, () => onDelete(index)),
+                      ],
+                    ),
+                  );
+                }),
+              ],
+            ),
           ],
-        ),
-      ],
+        );
+      },
     );
   }
 
@@ -108,17 +115,18 @@ class ComponentTable extends StatelessWidget {
     );
   }
 
-  String _formatValue(RecipeComponent item, ColumnDefinition col) {
+  String _formatValue(RecipeComponent item, ColumnDefinition col, String selectedCurrency) {
     switch (col.key) {
       case 'name':
         return item.component.getName();
       case 'weight':
         return item.amount.toStringAsFixed(col.decimalPlaces);
       case 'cost':
-        return item.component.price
-                ?.calculatePrice(item.amount)
-                .toStringAsFixed(col.decimalPlaces) ??
-            '0.00';
+        if (item.component.price == null) {
+          return CurrencyConstants.formatPrice(0, selectedCurrency);
+        }
+        final cost = item.component.price!.calculatePrice(item.amount, currency: selectedCurrency);
+        return CurrencyConstants.formatPrice(cost, selectedCurrency);
       case 'water':
         double dryMatter = item.component.nutrients.toMap()['dryMatter'] ?? 0.0;
         dryMatter *= item.amount;

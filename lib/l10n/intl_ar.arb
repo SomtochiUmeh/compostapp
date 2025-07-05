@@ -242,6 +242,10 @@
     "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
+    "currency": "العملة",
+    "@currency": {
+        "description": "Label for currency selection"
+    },
     "currencyFCFA": "فرنك إفريقي",
     "@currencyFCFA": {
         "description": "Currency label for FCFA"

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/recipe_component_model.dart';
 import '../constants/compost_quality_standards.dart';
 import '../constants/nutrient_constants.dart';
+import '../constants/currency_constants.dart';
+import '../compost_state.dart';
 import '../generated/l10n.dart';
 
 class NutrientTotalsTable extends StatelessWidget {
@@ -107,66 +110,71 @@ class NutrientTotalsTable extends StatelessWidget {
     final totals = _calculateTotals();
     final nutrients = [...NutrientConstants.trackedNutrients];
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: DataTable(
-        columnSpacing: 20,
-        horizontalMargin: 15,
-        columns: [
-          DataColumn(label: Text(S.of(context).totalWeightKg)),
-          DataColumn(label: Text(S.of(context).cn)),
-          ...nutrients.map(
-            (nutrient) => DataColumn(
-              label: Text(NutrientConstants.getNutrientLabel(nutrient)),
-            ),
-          ),
-          if (components.any((comp) => comp.component.price != null))
-            DataColumn(label: Text(S.of(context).costTotal)),
-        ],
-        rows: [
-          DataRow(
-            cells: [
-              DataCell(Text(totals['weight']?.toStringAsFixed(2) ?? '0.00')),
-              DataCell(
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(totals['cnRatio']?.toStringAsFixed(2) ?? '0.00'),
-                    const SizedBox(width: 4),
-                    _buildComparisonIcon(
-                        'cnRatio', totals['cnRatio'] ?? 0, context),
-                  ],
-                ),
-              ),
+    return Consumer<CompostState>(
+      builder: (context, compostState, child) {
+        return SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: DataTable(
+            columnSpacing: 20,
+            horizontalMargin: 15,
+            columns: [
+              DataColumn(label: Text(S.of(context).totalWeightKg)),
+              DataColumn(label: Text(S.of(context).cn)),
               ...nutrients.map(
-                (nutrient) => DataCell(
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(totals[nutrient]?.toStringAsFixed(2) ?? '0.00'),
-                      const SizedBox(width: 4),
-                      // _buildComparisonIcon(
-                      //     nutrient, totals[nutrient] ?? 0, context),
-                    ],
-                  ),
+                (nutrient) => DataColumn(
+                  label: Text(NutrientConstants.getNutrientLabel(nutrient)),
                 ),
               ),
               if (components.any((comp) => comp.component.price != null))
-                DataCell(Text(
-                  _calculateTotalCost().toStringAsFixed(2),
-                )),
+                DataColumn(label: Text(S.of(context).costTotal)),
+            ],
+            rows: [
+              DataRow(
+                cells: [
+                  DataCell(Text(totals['weight']?.toStringAsFixed(2) ?? '0.00')),
+                  DataCell(
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(totals['cnRatio']?.toStringAsFixed(2) ?? '0.00'),
+                        const SizedBox(width: 4),
+                        _buildComparisonIcon(
+                            'cnRatio', totals['cnRatio'] ?? 0, context),
+                      ],
+                    ),
+                  ),
+                  ...nutrients.map(
+                    (nutrient) => DataCell(
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(totals[nutrient]?.toStringAsFixed(2) ?? '0.00'),
+                          const SizedBox(width: 4),
+                          // _buildComparisonIcon(
+                          //     nutrient, totals[nutrient] ?? 0, context),
+                        ],
+                      ),
+                    ),
+                  ),
+                  if (components.any((comp) => comp.component.price != null))
+                    DataCell(Text(
+                      _calculateTotalCostInCurrency(compostState.selectedCurrency),
+                    )),
+                ],
+              ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
-  double _calculateTotalCost() {
-    return components.fold<double>(
+
+  String _calculateTotalCostInCurrency(String currency) {
+    final totalCost = components.fold<double>(
       0,
-      (total, comp) =>
-          total + (comp.component.price?.calculatePrice(comp.amount) ?? 0),
+      (total, comp) => total + (comp.component.price?.calculatePrice(comp.amount, currency: currency) ?? 0),
     );
+    return CurrencyConstants.formatPrice(totalCost, currency);
   }
 }

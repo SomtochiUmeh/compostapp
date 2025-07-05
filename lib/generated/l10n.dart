@@ -605,6 +605,16 @@ class S {
     );
   }
 
+  /// `Currency`
+  String get currency {
+    return Intl.message(
+      'Currency',
+      name: 'currency',
+      desc: 'Label for currency selection',
+      args: [],
+    );
+  }
+
   /// `FCFA`
   String get currencyFCFA {
     return Intl.message(

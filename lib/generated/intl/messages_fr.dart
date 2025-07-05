@@ -223,6 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Couvrir les restes alimentaires avec des matières brunes",
     ),
     "cowDung": MessageLookupByLibrary.simpleMessage("Bouse de vache"),
+    "currency": MessageLookupByLibrary.simpleMessage("Devise"),
     "currencyFCFA": MessageLookupByLibrary.simpleMessage("FCFA"),
     "day1": MessageLookupByLibrary.simpleMessage("Jour 1"),
     "day25": MessageLookupByLibrary.simpleMessage("Jour 25"),

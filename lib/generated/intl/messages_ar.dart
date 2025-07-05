@@ -208,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "غطي بقايا الطعام بمواد بنية",
     ),
     "cowDung": MessageLookupByLibrary.simpleMessage("روث البقر"),
+    "currency": MessageLookupByLibrary.simpleMessage("العملة"),
     "currencyFCFA": MessageLookupByLibrary.simpleMessage("فرنك إفريقي"),
     "day1": MessageLookupByLibrary.simpleMessage("اليوم 1"),
     "day25": MessageLookupByLibrary.simpleMessage("اليوم 25"),
