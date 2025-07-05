@@ -95,6 +95,8 @@ void main() {
     // Set up mock response for getSavedComponents - default to null
     when(mockPersistenceManager.getSavedComponents())
         .thenAnswer((_) => Future.value(null));
+    when(mockPersistenceManager.getSelectedCurrency())
+        .thenAnswer((_) => Future.value(null));
 
     // Initialize CompostState with the mock
     compostState = CompostState(mockPersistenceManager);
@@ -278,55 +280,6 @@ void main() {
 
       // Update with non-existent component name
       compostState.updateComponentPrice('Non-existent Component', 300);
-
-      // Verify persistence was not called
-      verifyNever(mockPersistenceManager.updateComponentInfo(any));
-    });
-
-    testWidgets(
-        'updateComponentAvailability updates availability and persists changes',
-        (WidgetTester tester) async {
-      // Create a test widget to initialize localization
-      await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
-
-      // Set up initial components
-      compostState.components = List.from(testComponents);
-
-      // Mock successful persistence
-      when(mockPersistenceManager.updateComponentInfo(any))
-          .thenAnswer((_) => Future.value(true));
-
-      // Update the availability using component ID
-      compostState.updateComponentAvailability(
-          'test1', AvailabilityPeriod.marToAug);
-
-      // Verify availability was updated
-      final updatedIndex =
-          compostState.components.indexWhere((comp) => comp.id == 'test1');
-      expect(updatedIndex, isNot(-1));
-      expect(compostState.components[updatedIndex].availability,
-          equals(AvailabilityPeriod.marToAug));
-
-      // Verify persistence was called
-      verify(mockPersistenceManager.updateComponentInfo(any)).called(1);
-    });
-
-    testWidgets(
-        'updateComponentAvailability does nothing if component not found',
-        (WidgetTester tester) async {
-      // Create a test widget to initialize localization
-      await tester.pumpWidget(createTestableWidget(child: const SizedBox()));
-
-      // Set up initial components
-      compostState.components = List.from(testComponents);
-
-      // Mock successful persistence
-      when(mockPersistenceManager.updateComponentInfo(any))
-          .thenAnswer((_) => Future.value(true));
-
-      // Update with non-existent component ID
-      compostState.updateComponentAvailability(
-          'nonexistent', AvailabilityPeriod.marToAug);
 
       // Verify persistence was not called
       verifyNever(mockPersistenceManager.updateComponentInfo(any));

@@ -4,10 +4,9 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
-import 'dart:ui' as _i9;
+import 'dart:ui' as _i8;
 
 import 'package:compostapp/compost_state.dart' as _i6;
-import 'package:compostapp/models/availability_model.dart' as _i8;
 import 'package:compostapp/models/compost_component_model.dart' as _i5;
 import 'package:compostapp/models/recipe_model.dart' as _i4;
 import 'package:compostapp/services/persistence_manager.dart' as _i2;
@@ -219,25 +218,13 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
   );
 
   @override
-  void updateComponentAvailability(
-    String? componentId,
-    _i8.AvailabilityPeriod? newAvailability,
-  ) => super.noSuchMethod(
-    Invocation.method(#updateComponentAvailability, [
-      componentId,
-      newAvailability,
-    ]),
-    returnValueForMissingStub: null,
-  );
-
-  @override
-  void addListener(_i9.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i8.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#addListener, [listener]),
     returnValueForMissingStub: null,
   );
 
   @override
-  void removeListener(_i9.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i8.VoidCallback? listener) => super.noSuchMethod(
     Invocation.method(#removeListener, [listener]),
     returnValueForMissingStub: null,
   );

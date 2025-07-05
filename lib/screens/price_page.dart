@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import '../compost_state.dart';
 import '../models/compost_component_model.dart';
 import '../generated/l10n.dart';
-import '../widgets/edit_availability_dialog.dart';
 import '../widgets/currency_selector.dart';
 import '../constants/currency_constants.dart';
 
@@ -87,32 +86,6 @@ class _PricesPageState extends State<PricesPage> {
       children: [
         ListTile(
           title: Text(component.getName()),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () => _showEditAvailabilityDialog(
-                      context,
-                      component,
-                      compostState,
-                    ),
-                    icon:
-                        Icon(Icons.edit_calendar, color: Colors.brown.shade700),
-                    tooltip: S.of(context).editAvailability,
-                    constraints:
-                        const BoxConstraints(minWidth: 40, minHeight: 40),
-                  ),
-                  Expanded(
-                    child: Text(
-                      component.availability.getLocalizedPeriod(),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
           trailing: SizedBox(
             width: 120,
             child: _buildPriceInput(component, compostState, context),
@@ -159,25 +132,6 @@ class _PricesPageState extends State<PricesPage> {
           }
         }
       },
-    );
-  }
-
-  void _showEditAvailabilityDialog(
-    BuildContext context,
-    CompostComponent component,
-    CompostState compostState,
-  ) {
-    showDialog(
-      context: context,
-      builder: (context) => EditAvailabilityDialog(
-        componentId: component.id,
-        componentName: component.getName(),
-        currentAvailability: component.availability,
-        onSave: (newAvailability) {
-          compostState.updateComponentAvailability(
-              component.id, newAvailability);
-        },
-      ),
     );
   }
 

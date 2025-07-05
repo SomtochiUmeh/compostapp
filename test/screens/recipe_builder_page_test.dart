@@ -98,6 +98,7 @@ void main() {
 
     // Set up mock behaviors
     when(mockCompostState.components).thenReturn(testComponents);
+    when(mockCompostState.selectedCurrency).thenReturn('CFA');
     when(mockCompostState.getAvailableComponents(any))
         .thenReturn(testComponents);
 

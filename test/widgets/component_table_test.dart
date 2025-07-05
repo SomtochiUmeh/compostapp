@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 import 'package:compostapp/widgets/component_table.dart';
 import 'package:compostapp/models/recipe_component_model.dart';
 import 'package:compostapp/models/compost_component_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/price_model.dart';
+import 'package:compostapp/compost_state.dart';
 import 'package:compostapp/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mockito/mockito.dart';
+import 'package:mockito/annotations.dart';
+
+@GenerateMocks([CompostState])
+import 'component_table_test.mocks.dart';
 
 // Helper function to create a testable component table
 Widget createTestableTable({
@@ -15,19 +22,25 @@ Widget createTestableTable({
   required Function(int) onEdit,
   required Function(int) onDelete,
 }) {
-  return MaterialApp(
-    localizationsDelegates: const [
-      S.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate,
-    ],
-    supportedLocales: S.delegate.supportedLocales,
-    home: Scaffold(
-      body: ComponentTable(
-        items: items,
-        onEdit: onEdit,
-        onDelete: onDelete,
+  final mockCompostState = MockCompostState();
+  when(mockCompostState.selectedCurrency).thenReturn('CFA');
+  
+  return ChangeNotifierProvider<CompostState>.value(
+    value: mockCompostState,
+    child: MaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
+      home: Scaffold(
+        body: ComponentTable(
+          items: items,
+          onEdit: onEdit,
+          onDelete: onDelete,
+        ),
       ),
     ),
   );
