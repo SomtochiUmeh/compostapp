@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aerobicCompostingProcess": MessageLookupByLibrary.simpleMessage(
       "Processus de Compostage Aérobie",
     ),
+    "afrikaans": MessageLookupByLibrary.simpleMessage("Afrikaans"),
     "allAvailableComponentsHaveBeenAdded": MessageLookupByLibrary.simpleMessage(
       "Tous les composants disponibles ont été ajoutés",
     ),
@@ -74,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Odeur d\'ammoniac: Trop d\'azote",
     ),
     "april": MessageLookupByLibrary.simpleMessage("Avril"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "august": MessageLookupByLibrary.simpleMessage("Août"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Disponible: Janvier à Décembre",
@@ -245,6 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Modifier le Composant",
     ),
     "endMonth": MessageLookupByLibrary.simpleMessage("Mois de fin"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "Restes alimentaires exposés",
     ),
@@ -255,6 +258,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "Pour quand vous avez besoin de compost rapidement.",
     ),
+    "french": MessageLookupByLibrary.simpleMessage("French"),
     "freshPlant": MessageLookupByLibrary.simpleMessage("Plantes fraîches"),
     "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("Verts"),
@@ -286,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Besoins essentiels: Eau, oxygène, matière organique de petite taille.",
         ),
+    "language": MessageLookupByLibrary.simpleMessage("Langue"),
     "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn":
         MessageLookupByLibrary.simpleMessage(
           "Disposer les ingrédients en couches, humidifier et retourner toutes les 1-2 semaines. Prêt en 3-6 mois.",

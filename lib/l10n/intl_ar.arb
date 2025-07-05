@@ -254,6 +254,26 @@
     "@availabilityJanToDec": {
         "description": "Availability period January to December"
     },
+    "language": "اللغة",
+    "@language": {
+        "description": "Language selection label"
+    },
+    "english": "English",
+    "@english": {
+        "description": "English language name"
+    },
+    "french": "French",
+    "@french": {
+        "description": "French language name"
+    },
+    "arabic": "Arabic",
+    "@arabic": {
+        "description": "Arabic language name"
+    },
+    "afrikaans": "Afrikaans",
+    "@afrikaans": {
+        "description": "Afrikaans language name"
+    },
     "availabilityMarToAug": "متوفر: مارس إلى أغسطس",
     "@availabilityMarToAug": {
         "description": "Availability period March to August"

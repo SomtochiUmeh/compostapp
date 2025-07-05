@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aerobicCompostingProcess": MessageLookupByLibrary.simpleMessage(
       "Aerobic Composting Process",
     ),
+    "afrikaans": MessageLookupByLibrary.simpleMessage("Afrikaans"),
     "allAvailableComponentsHaveBeenAdded": MessageLookupByLibrary.simpleMessage(
       "All available components have been added",
     ),
@@ -65,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ammonia smell: Too much nitrogen",
     ),
     "april": MessageLookupByLibrary.simpleMessage("April"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "august": MessageLookupByLibrary.simpleMessage("August"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Available: January to December",
@@ -230,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editAvailabilityFor": m0,
     "editComponent": MessageLookupByLibrary.simpleMessage("Edit Component"),
     "endMonth": MessageLookupByLibrary.simpleMessage("End Month"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "Exposed food scraps",
     ),
@@ -238,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "forWhenYouNeedCompostQuickly": MessageLookupByLibrary.simpleMessage(
       "For when you need compost quickly.",
     ),
+    "french": MessageLookupByLibrary.simpleMessage("French"),
     "freshPlant": MessageLookupByLibrary.simpleMessage("Fresh plant"),
     "getTranslation": m1,
     "greens": MessageLookupByLibrary.simpleMessage("Greens"),
@@ -269,6 +273,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Key Needs: Water, oxygen, small-sized organic matter.",
         ),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "layerIngredientsMoistenAndTurnEvery12WeeksReadyIn":
         MessageLookupByLibrary.simpleMessage(
           "Layer ingredients, moisten, and turn every 1-2 weeks. Ready in 3-6 months.",
