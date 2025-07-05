@@ -25,7 +25,7 @@ void main() {
 
     // Setup default responses for all methods that will be called
     when(mockCompostState.components).thenReturn([]);
-    when(mockCompostState.getAvailableComponents(any)).thenReturn([]);
+    when(mockCompostState.allComponents).thenReturn([]);
 
     // Stub all methods that might be called on PersistenceManager
     when(mockPersistenceManager.getSavedComponents())

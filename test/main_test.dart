@@ -26,7 +26,7 @@ void main() {
     when(mockPersistenceManager.getSavedComponents())
         .thenAnswer((_) => Future.value([]));
     when(mockCompostState.components).thenReturn([]);
-    when(mockCompostState.getAvailableComponents(any)).thenReturn([]);
+    when(mockCompostState.allComponents).thenReturn([]);
   });
 
   // Helper function to create the test app with the necessary providers and mocks

@@ -108,6 +108,24 @@ class MockPersistenceManager extends _i1.Mock
           as _i3.Future<bool>);
 
   @override
+  _i3.Future<bool> saveCustomIngredients(
+    List<_i5.CompostComponent>? ingredients,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#saveCustomIngredients, [ingredients]),
+            returnValue: _i3.Future<bool>.value(false),
+          )
+          as _i3.Future<bool>);
+
+  @override
+  _i3.Future<List<_i5.CompostComponent>?> getCustomIngredients() =>
+      (super.noSuchMethod(
+            Invocation.method(#getCustomIngredients, []),
+            returnValue: _i3.Future<List<_i5.CompostComponent>?>.value(),
+          )
+          as _i3.Future<List<_i5.CompostComponent>?>);
+
+  @override
   _i3.Future<bool> setSelectedCurrency(String? currency) =>
       (super.noSuchMethod(
             Invocation.method(#setSelectedCurrency, [currency]),

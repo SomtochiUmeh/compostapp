@@ -69,7 +69,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
   void _showAddComponentDialog(BuildContext context) {
     // Get the latest component data from CompostState
     final compostState = context.read<CompostState>();
-    final availableComponents = compostState.components
+    final availableComponents = compostState.allComponents
         .where((component) => !selectedComponents.any(
             (selected) => selected.component.getName() == component.getName()))
         .toList();
@@ -110,13 +110,32 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     final component = selectedComponents[index];
     // Get the latest component data from CompostState
     final compostState = context.read<CompostState>();
-    final updatedComponent = compostState.components
-        .firstWhere((c) => c.getName() == component.component.getName());
+    
+    // For custom ingredients, look up by ID to handle name changes
+    // For predefined ingredients, look up by name for backwards compatibility
+    CompostComponent? updatedComponent;
+    if (component.component.isCustom) {
+      updatedComponent = compostState.allComponents
+          .where((c) => c.id == component.component.id)
+          .firstOrNull;
+    } else {
+      updatedComponent = compostState.allComponents
+          .where((c) => c.getName() == component.component.getName())
+          .firstOrNull;
+    }
+    
+    // If component not found (e.g., custom ingredient was deleted), show error
+    if (updatedComponent == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Ingredient "${component.component.getName()}" no longer exists')),
+      );
+      return;
+    }
 
     showDialog(
       context: context,
       builder: (context) => AddComponentDialog(
-        availableComponents: [updatedComponent],
+        availableComponents: [updatedComponent!],
         initialWeight: component.amount,
         onAdd: (comp, weight) {
           setState(() {
@@ -138,26 +157,90 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     });
   }
 
+  // Helper method to compare component lists for changes
+  bool _componentsEqual(List<RecipeComponent> list1, List<RecipeComponent> list2) {
+    if (list1.length != list2.length) return false;
+    
+    for (int i = 0; i < list1.length; i++) {
+      if (list1[i].component.id != list2[i].component.id ||
+          list1[i].amount != list2[i].amount) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Consumer<CompostState>(
         builder: (context, compostState, child) {
           // Update selected components with latest prices and availability
-          final updatedComponents = selectedComponents.map((component) {
-            final latestComponent = compostState.components.firstWhere(
-              (c) => c.getName() == component.component.getName(),
-              orElse: () => component.component,
-            );
-            return RecipeComponent(
-              component: latestComponent,
-              amount: component.amount,
-            );
-          }).toList();
+          // Also filter out any deleted custom ingredients
+          final updatedComponents = selectedComponents
+              .where((component) {
+                // Keep component only if it still exists
+                if (component.component.isCustom) {
+                  return compostState.allComponents
+                      .any((c) => c.id == component.component.id);
+                } else {
+                  return compostState.allComponents
+                      .any((c) => c.getName() == component.component.getName());
+                }
+              })
+              .map((component) {
+                CompostComponent latestComponent;
+                
+                // For custom ingredients, look up by ID to handle name changes
+                if (component.component.isCustom) {
+                  latestComponent = compostState.allComponents
+                      .where((c) => c.id == component.component.id)
+                      .firstOrNull ?? component.component;
+                } else {
+                  // For predefined ingredients, look up by name
+                  latestComponent = compostState.allComponents
+                      .where((c) => c.getName() == component.component.getName())
+                      .firstOrNull ?? component.component;
+                }
+                return RecipeComponent(
+                  component: latestComponent,
+                  amount: component.amount,
+                );
+              }).toList();
 
-          if (updatedComponents.length == selectedComponents.length) {
-            selectedComponents = updatedComponents;
+          // Update selectedComponents if there are changes (updates or deletions)
+          final originalLength = selectedComponents.length;
+          if (updatedComponents.length != selectedComponents.length ||
+              !_componentsEqual(selectedComponents, updatedComponents)) {
+            // Defer setState to avoid calling it during build
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted) {
+                setState(() {
+                  selectedComponents = updatedComponents;
+                });
+                if (updatedComponents.length < originalLength) {
+                  // Some ingredients were deleted, save the updated recipe and notify user
+                  _saveRecipe();
+                  final removedCount = originalLength - updatedComponents.length;
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          removedCount == 1
+                              ? 'Removed 1 deleted ingredient from recipe'
+                              : 'Removed $removedCount deleted ingredients from recipe',
+                        ),
+                        backgroundColor: Colors.orange,
+                      ),
+                    );
+                  }
+                }
+              }
+            });
           }
+
+          // Use updatedComponents for rendering to immediately reflect changes
+          final componentsToDisplay = updatedComponents;
 
           return Column(
             children: [
@@ -170,7 +253,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                       children: [
                         _buildSectionTitle(
                             S.of(context).ingredients, Icons.compost),
-                        if (selectedComponents.isEmpty)
+                        if (componentsToDisplay.isEmpty)
                           Card(
                             child: Padding(
                               padding: const EdgeInsets.all(16),
@@ -185,7 +268,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                           )
                         else
                           ComponentTable(
-                            items: selectedComponents,
+                            items: componentsToDisplay,
                             onEdit: _editComponent,
                             onDelete: _deleteComponent,
                           ),
@@ -209,7 +292,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                 padding: const EdgeInsets.all(2.0),
                 child: Column(
                   children: [
-                    if (selectedComponents.isNotEmpty) ...[
+                    if (componentsToDisplay.isNotEmpty) ...[
                       Row(
                         children: [
                           _buildSectionTitle(
@@ -240,7 +323,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                         ],
                       ),
                       NutrientTotalsTable(
-                        components: selectedComponents,
+                        components: componentsToDisplay,
                       ),
                     ]
                   ],

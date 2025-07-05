@@ -117,6 +117,24 @@ class MockPersistenceManager extends _i1.Mock
           as _i3.Future<bool>);
 
   @override
+  _i3.Future<bool> saveCustomIngredients(
+    List<_i5.CompostComponent>? ingredients,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#saveCustomIngredients, [ingredients]),
+            returnValue: _i3.Future<bool>.value(false),
+          )
+          as _i3.Future<bool>);
+
+  @override
+  _i3.Future<List<_i5.CompostComponent>?> getCustomIngredients() =>
+      (super.noSuchMethod(
+            Invocation.method(#getCustomIngredients, []),
+            returnValue: _i3.Future<List<_i5.CompostComponent>?>.value(),
+          )
+          as _i3.Future<List<_i5.CompostComponent>?>);
+
+  @override
   _i3.Future<bool> setSelectedCurrency(String? currency) =>
       (super.noSuchMethod(
             Invocation.method(#setSelectedCurrency, [currency]),
@@ -167,6 +185,21 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
   );
 
   @override
+  List<_i5.CompostComponent> get customIngredients =>
+      (super.noSuchMethod(
+            Invocation.getter(#customIngredients),
+            returnValue: <_i5.CompostComponent>[],
+          )
+          as List<_i5.CompostComponent>);
+
+  @override
+  set customIngredients(List<_i5.CompostComponent>? _customIngredients) =>
+      super.noSuchMethod(
+        Invocation.setter(#customIngredients, _customIngredients),
+        returnValueForMissingStub: null,
+      );
+
+  @override
   String get selectedCurrency =>
       (super.noSuchMethod(
             Invocation.getter(#selectedCurrency),
@@ -176,6 +209,14 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
             ),
           )
           as String);
+
+  @override
+  List<_i5.CompostComponent> get allComponents =>
+      (super.noSuchMethod(
+            Invocation.getter(#allComponents),
+            returnValue: <_i5.CompostComponent>[],
+          )
+          as List<_i5.CompostComponent>);
 
   @override
   bool get hasListeners =>
@@ -199,12 +240,41 @@ class MockCompostState extends _i1.Mock implements _i6.CompostState {
       );
 
   @override
-  List<_i5.CompostComponent> getAvailableComponents(DateTime? date) =>
+  _i3.Future<void> addCustomIngredient(_i5.CompostComponent? ingredient) =>
       (super.noSuchMethod(
-            Invocation.method(#getAvailableComponents, [date]),
-            returnValue: <_i5.CompostComponent>[],
+            Invocation.method(#addCustomIngredient, [ingredient]),
+            returnValue: _i3.Future<void>.value(),
+            returnValueForMissingStub: _i3.Future<void>.value(),
           )
-          as List<_i5.CompostComponent>);
+          as _i3.Future<void>);
+
+  @override
+  _i3.Future<void> updateCustomIngredient(
+    _i5.CompostComponent? updatedIngredient,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#updateCustomIngredient, [updatedIngredient]),
+            returnValue: _i3.Future<void>.value(),
+            returnValueForMissingStub: _i3.Future<void>.value(),
+          )
+          as _i3.Future<void>);
+
+  @override
+  _i3.Future<void> deleteCustomIngredient(String? ingredientId) =>
+      (super.noSuchMethod(
+            Invocation.method(#deleteCustomIngredient, [ingredientId]),
+            returnValue: _i3.Future<void>.value(),
+            returnValueForMissingStub: _i3.Future<void>.value(),
+          )
+          as _i3.Future<void>);
+
+  @override
+  bool componentExists(_i5.CompostComponent? component) =>
+      (super.noSuchMethod(
+            Invocation.method(#componentExists, [component]),
+            returnValue: false,
+          )
+          as bool);
 
   @override
   void updateComponentPrice(

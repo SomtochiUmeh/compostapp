@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:compostapp/screens/price_page.dart';
 import 'package:compostapp/compost_state.dart';
 import 'package:compostapp/models/compost_component_model.dart';
-import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/price_model.dart';
 import 'package:compostapp/generated/l10n.dart';
@@ -28,7 +27,6 @@ void main() {
       CompostComponent(
         id: 'test1',
         name: 'Test Component 1',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
@@ -44,7 +42,6 @@ void main() {
       const CompostComponent(
         id: 'test2',
         name: 'Test Component 2',
-        availability: AvailabilityPeriod.marToAug,
         nutrients: NutrientContent(
           dryMatterPercent: 0.6,
           organicCarbonPercent: 0.4,
@@ -60,9 +57,8 @@ void main() {
 
     // Set up mock behaviors that might be called
     when(mockCompostState.components).thenReturn(testComponents);
+    when(mockCompostState.allComponents).thenReturn(testComponents); // Add this for the new getter
     when(mockCompostState.selectedCurrency).thenReturn('CFA');
-    when(mockCompostState.getAvailableComponents(any))
-        .thenReturn(testComponents);
     when(mockCompostState.updateComponent(any)).thenReturn(null);
     when(mockCompostState.updateComponentPrice(any, any)).thenReturn(null);
   });
@@ -99,7 +95,6 @@ void main() {
 
       // Verify TextFormFields are present for price input
       expect(find.byType(TextFormField), findsNWidgets(2));
-
     });
 
     testWidgets('Price update works correctly', (WidgetTester tester) async {
@@ -109,7 +104,7 @@ void main() {
       // Find the first price text field
       final priceFields = find.byType(TextFormField);
       expect(priceFields, findsNWidgets(2));
-      
+
       final firstPriceField = priceFields.first;
 
       // Update the price
@@ -117,7 +112,6 @@ void main() {
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pumpAndSettle();
     });
-
 
     testWidgets('Components without price show empty price field',
         (WidgetTester tester) async {
@@ -129,13 +123,14 @@ void main() {
       expect(textFields, findsNWidgets(2));
     });
 
-    testWidgets('Currency selector is rendered correctly', (WidgetTester tester) async {
+    testWidgets('Currency selector is rendered correctly',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestablePricesPage());
       await tester.pumpAndSettle();
 
       // Verify currency selector dropdown is present
       expect(find.byType(DropdownButton<String>), findsOneWidget);
-      
+
       // Verify default currency is shown
       expect(find.text('CFA (FCFA)'), findsOneWidget);
     });

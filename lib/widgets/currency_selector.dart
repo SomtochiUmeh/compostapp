@@ -12,7 +12,7 @@ class CurrencySelector extends StatelessWidget {
     return Consumer<CompostState>(
       builder: (context, compostState, child) {
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [

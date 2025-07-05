@@ -5,13 +5,13 @@ import '../models/recipe_component_model.dart';
 import '../models/compost_component_model.dart';
 import '../models/price_model.dart';
 import '../models/nutrient_content_model.dart';
-import '../models/availability_model.dart';
 
 class PersistenceManager {
   static SharedPreferences? _prefs;
   static const String _recipeKey = 'current_recipe';
   static const String _recipesHistoryKey = 'recipes_history';
   static const String _componentsKey = 'components_data';
+  static const String _customIngredientsKey = 'custom_ingredients';
   static const String _selectedCurrencyKey = 'selected_currency';
 
   static Future<void> init() async {
@@ -93,6 +93,25 @@ class PersistenceManager {
     return await _prefs?.clear() ?? false;
   }
 
+  // Custom Ingredients Management
+  Future<bool> saveCustomIngredients(List<CompostComponent> ingredients) async {
+    final List<Map<String, dynamic>> ingredientsJson =
+        ingredients.map((ingredient) => ingredient.toJson()).toList();
+    final String json = jsonEncode(ingredientsJson);
+    return await _prefs?.setString(_customIngredientsKey, json) ?? false;
+  }
+
+  Future<List<CompostComponent>?> getCustomIngredients() async {
+    final String? ingredientsJson = _prefs?.getString(_customIngredientsKey);
+    if (ingredientsJson != null) {
+      final List<dynamic> decodedList = json.decode(ingredientsJson);
+      return decodedList
+          .map((json) => CompostComponent.fromJson(json))
+          .toList();
+    }
+    return null;
+  }
+
   // Currency Management
   Future<bool> setSelectedCurrency(String currency) async {
     return await _prefs?.setString(_selectedCurrencyKey, currency) ?? false;
@@ -131,7 +150,6 @@ class PersistenceManager {
     return {
       'id': component.id,
       'name': component.name,
-      'availability': component.availability.toJson(),
       'nutrients': {
         'dryMatterPercent': component.nutrients.dryMatterPercent,
         'organicCarbonPercent': component.nutrients.organicCarbonPercent,
@@ -149,6 +167,8 @@ class PersistenceManager {
             }
           : null,
       'sources': component.sources,
+      'isCustom': component.isCustom,
+      'createdBy': component.createdBy,
     };
   }
 
@@ -156,7 +176,6 @@ class PersistenceManager {
     return CompostComponent(
       id: json['id'],
       name: json['name'],
-      availability: AvailabilityPeriod.fromJson(json['availability']),
       nutrients: NutrientContent(
         dryMatterPercent: json['nutrients']['dryMatterPercent'],
         organicCarbonPercent: json['nutrients']['organicCarbonPercent'],
@@ -180,6 +199,8 @@ class PersistenceManager {
             )
           : null,
       sources: List<String>.from(json['sources']),
+      isCustom: json['isCustom'] ?? false,
+      createdBy: json['createdBy'],
     );
   }
 }

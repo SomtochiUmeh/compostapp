@@ -12,7 +12,6 @@ import 'package:compostapp/services/persistence_manager.dart';
 import 'package:compostapp/models/compost_component_model.dart';
 import 'package:compostapp/models/recipe_component_model.dart';
 import 'package:compostapp/models/recipe_model.dart';
-import 'package:compostapp/models/availability_model.dart';
 import 'package:compostapp/models/nutrient_content_model.dart';
 import 'package:compostapp/models/price_model.dart';
 import 'package:compostapp/generated/l10n.dart';
@@ -27,7 +26,6 @@ class TestCompostComponent extends CompostComponent {
   TestCompostComponent({
     required super.id,
     required super.name,
-    required super.availability,
     required super.nutrients,
     super.price,
     super.sources,
@@ -52,7 +50,6 @@ void main() {
       TestCompostComponent(
         id: 'test1',
         name: 'Test Component 1',
-        availability: AvailabilityPeriod.janToDec,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.5,
           organicCarbonPercent: 0.3,
@@ -68,7 +65,6 @@ void main() {
       TestCompostComponent(
         id: 'test2',
         name: 'Test Component 2',
-        availability: AvailabilityPeriod.marToAug,
         nutrients: const NutrientContent(
           dryMatterPercent: 0.6,
           organicCarbonPercent: 0.4,
@@ -98,9 +94,8 @@ void main() {
 
     // Set up mock behaviors
     when(mockCompostState.components).thenReturn(testComponents);
+    when(mockCompostState.allComponents).thenReturn(testComponents); // Add this for the new getter
     when(mockCompostState.selectedCurrency).thenReturn('CFA');
-    when(mockCompostState.getAvailableComponents(any))
-        .thenReturn(testComponents);
 
     // Setup responses for PersistenceManager
     when(mockPersistenceManager.getLatestRecipe())
