@@ -19,31 +19,31 @@ class AppColors {
   static const Color onBackground = black;
 
   // Utility colors with opacity
-  static Color primaryLight =
-      senseOrange.withValues(alpha: 0.15); // Subtle orange
-  static Color primaryMedium = senseOrange.withValues(alpha: 0.6);
+  static const Color primaryLight =
+      Color.fromARGB(38, 234, 91, 12); // Subtle orange (15% opacity)
+  static const Color primaryMedium = Color.fromARGB(153, 234, 91, 12); // 60% opacity
   static Color primaryDark = const Color(0xFFD14805);
 
-  static Color secondaryLight = senseRed.withValues(alpha: 0.2);
-  static Color secondaryMedium = senseRed.withValues(alpha: 0.6);
+  static const Color secondaryLight = Color.fromARGB(51, 220, 28, 62); // 20% opacity
+  static const Color secondaryMedium = Color.fromARGB(153, 220, 28, 62); // 60% opacity
   static Color secondaryDark = const Color(0xFFB01529);
 
   // Premium gradient backgrounds
-  static LinearGradient get backgroundGradient => LinearGradient(
+  static LinearGradient get backgroundGradient => const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          senseOrange.withValues(alpha: 0.08), // Very light orange at top
+          Color.fromARGB(20, 234, 91, 12), // Very light orange at top (8% opacity)
           white, // White at bottom
         ],
       );
 
-  static LinearGradient get navBarGradient => LinearGradient(
+  static LinearGradient get navBarGradient => const LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          senseOrange.withValues(alpha: 0.12), // Slightly more orange
-          senseOrange.withValues(alpha: 0.06), // Very light orange
+          Color.fromARGB(31, 234, 91, 12), // Slightly more orange (12% opacity)
+          Color.fromARGB(15, 234, 91, 12), // Very light orange (6% opacity)
         ],
       );
 
