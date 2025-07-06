@@ -49,19 +49,19 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Add Custom Ingredient'),
+      title: Text(S.of(context).addCustomIngredient),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomTextField(
-              labelText: 'Ingredient Name',
+              labelText: S.of(context).ingredientName,
               controller: _nameController,
             ),
             const SizedBox(height: 16),
             const SizedBox(height: 16),
             CustomTextField(
-              labelText: 'Price per Ton (CFA)',
+              labelText: S.of(context).pricePerTonCFA,
               controller: _priceController,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
@@ -69,7 +69,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(height: 16),
             const SizedBox(height: 24),
             Text(
-              'Nutrient Content (%)',
+              S.of(context).nutrientContentPercent,
               style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 16),
@@ -97,7 +97,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
           children: [
             Expanded(
               child: CustomTextField(
-                labelText: 'Dry Matter %',
+                labelText: S.of(context).dryMatterPercent,
                 controller: _dryMatterController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -106,7 +106,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(width: 8),
             Expanded(
               child: CustomTextField(
-                labelText: 'Organic Carbon %',
+                labelText: S.of(context).organicCarbonPercent,
                 controller: _organicCarbonController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -119,7 +119,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
           children: [
             Expanded(
               child: CustomTextField(
-                labelText: 'Nitrogen %',
+                labelText: S.of(context).nitrogenPercent,
                 controller: _nitrogenController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -128,7 +128,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(width: 8),
             Expanded(
               child: CustomTextField(
-                labelText: 'Phosphorus %',
+                labelText: S.of(context).phosphorusPercent,
                 controller: _phosphorusController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -141,7 +141,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
           children: [
             Expanded(
               child: CustomTextField(
-                labelText: 'Potassium %',
+                labelText: S.of(context).potassiumPercent,
                 controller: _potassiumController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -150,7 +150,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(width: 8),
             Expanded(
               child: CustomTextField(
-                labelText: 'Calcium %',
+                labelText: S.of(context).calciumPercent,
                 controller: _calciumController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -163,7 +163,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
           children: [
             Expanded(
               child: CustomTextField(
-                labelText: 'Magnesium %',
+                labelText: S.of(context).magnesiumPercent,
                 controller: _magnesiumController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -172,7 +172,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(width: 8),
             Expanded(
               child: CustomTextField(
-                labelText: 'C:N Ratio',
+                labelText: S.of(context).carbonNitrogenRatio,
                 controller: _carbonNitrogenController,
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -187,7 +187,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
   void _validateAndSave() {
     if (_nameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter an ingredient name')),
+        SnackBar(content: Text(S.of(context).pleaseEnterIngredientName)),
       );
       return;
     }

@@ -904,5 +904,113 @@
     "available": "متوفر:",
     "@available": {
         "description": "For custom availability string"
+    },
+    "getHelp": "احصل على المساعدة",
+    "@getHelp": {
+        "description": "Title for the help dialog and tooltip for help button"
+    },
+    "needAssistanceWithCompostCalculator": "هل تحتاج إلى مساعدة مع حاسبة الكمبوست؟",
+    "@needAssistanceWithCompostCalculator": {
+        "description": "Question asking if user needs help with the app"
+    },
+    "contactOurSupportTeam": "اتصل بفريق الدعم الخاص بنا:",
+    "@contactOurSupportTeam": {
+        "description": "Text introducing the support email contact information"
+    },
+    "helpEmailSubjectInstruction": "يرجى تضمين \"Compost Calculator App - Help Request\" في موضوع رسالتك الإلكترونية.",
+    "@helpEmailSubjectInstruction": {
+        "description": "Instructions for what to include in the email subject line when contacting support"
+    },
+    "addCustomIngredient": "إضافة مكون مخصص",
+    "@addCustomIngredient": {
+        "description": "Title for the add custom ingredient dialog"
+    },
+    "editCustomIngredient": "تعديل المكون المخصص",
+    "@editCustomIngredient": {
+        "description": "Title for the edit custom ingredient dialog"
+    },
+    "deleteCustomIngredient": "حذف المكون المخصص",
+    "@deleteCustomIngredient": {
+        "description": "Title for the delete custom ingredient dialog"
+    },
+    "ingredientName": "اسم المكون",
+    "@ingredientName": {
+        "description": "Label for ingredient name input field"
+    },
+    "pricePerTonCFA": "السعر لكل طن (فرنك أفريقي)",
+    "@pricePerTonCFA": {
+        "description": "Label for price per ton input field in CFA currency"
+    },
+    "nutrientContentPercent": "محتوى المغذيات (%)",
+    "@nutrientContentPercent": {
+        "description": "Section title for nutrient content percentage inputs"
+    },
+    "pleaseEnterIngredientName": "يرجى إدخال اسم المكون",
+    "@pleaseEnterIngredientName": {
+        "description": "Error message when ingredient name is empty"
+    },
+    "areYouSureDeleteIngredient": "هل أنت متأكد من أنك تريد حذف \"{ingredientName}\"؟",
+    "@areYouSureDeleteIngredient": {
+        "description": "Confirmation message for deleting a custom ingredient"
+    },
+    "delete": "حذف",
+    "@delete": {
+        "description": "Button label for delete action"
+    },
+    "addedCustomIngredient": "تم إضافة مكون مخصص: {ingredientName}",
+    "@addedCustomIngredient": {
+        "description": "Success message when custom ingredient is added"
+    },
+    "updatedIngredient": "تم تحديث المكون: {ingredientName}",
+    "@updatedIngredient": {
+        "description": "Success message when ingredient is updated"
+    },
+    "deletedIngredient": "تم حذف المكون: {ingredientName}",
+    "@deletedIngredient": {
+        "description": "Success message when ingredient is deleted"
+    },
+    "dryMatterPercent": "المادة الجافة %",
+    "@dryMatterPercent": {
+        "description": "Label for dry matter percentage input field"
+    },
+    "organicCarbonPercent": "الكربون العضوي %",
+    "@organicCarbonPercent": {
+        "description": "Label for organic carbon percentage input field"
+    },
+    "nitrogenPercent": "النيتروجين %",
+    "@nitrogenPercent": {
+        "description": "Label for nitrogen percentage input field"
+    },
+    "phosphorusPercent": "الفوسفور %",
+    "@phosphorusPercent": {
+        "description": "Label for phosphorus percentage input field"
+    },
+    "potassiumPercent": "البوتاسيوم %",
+    "@potassiumPercent": {
+        "description": "Label for potassium percentage input field"
+    },
+    "calciumPercent": "الكالسيوم %",
+    "@calciumPercent": {
+        "description": "Label for calcium percentage input field"
+    },
+    "magnesiumPercent": "المغنيسيوم %",
+    "@magnesiumPercent": {
+        "description": "Label for magnesium percentage input field"
+    },
+    "carbonNitrogenRatio": "نسبة ك:ن",
+    "@carbonNitrogenRatio": {
+        "description": "Label for carbon to nitrogen ratio input field"
+    },
+    "ingredientNoLongerExists": "المكون \"{ingredientName}\" لم يعد موجوداً",
+    "@ingredientNoLongerExists": {
+        "description": "Error message when an ingredient has been deleted but is still in recipe"
+    },
+    "removedDeletedIngredientSingle": "تم إزالة مكون واحد محذوف من الوصفة",
+    "@removedDeletedIngredientSingle": {
+        "description": "Message when 1 deleted ingredient is removed from recipe"
+    },
+    "removedDeletedIngredientsMultiple": "تم إزالة {count} مكونات محذوفة من الوصفة",
+    "@removedDeletedIngredientsMultiple": {
+        "description": "Message when multiple deleted ingredients are removed from recipe"
     }
 }

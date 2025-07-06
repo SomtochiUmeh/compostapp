@@ -904,5 +904,113 @@
     "available": "Available:",
     "@available": {
         "description": "For custom availability string"
+    },
+    "getHelp": "Get Help",
+    "@getHelp": {
+        "description": "Title for the help dialog and tooltip for help button"
+    },
+    "needAssistanceWithCompostCalculator": "Need assistance with the Compost Calculator?",
+    "@needAssistanceWithCompostCalculator": {
+        "description": "Question asking if user needs help with the app"
+    },
+    "contactOurSupportTeam": "Contact our support team:",
+    "@contactOurSupportTeam": {
+        "description": "Text introducing the support email contact information"
+    },
+    "helpEmailSubjectInstruction": "Please include \"Compost Calculator App - Help Request\" in your subject line.",
+    "@helpEmailSubjectInstruction": {
+        "description": "Instructions for what to include in the email subject line when contacting support"
+    },
+    "addCustomIngredient": "Add Custom Ingredient",
+    "@addCustomIngredient": {
+        "description": "Title for the add custom ingredient dialog"
+    },
+    "editCustomIngredient": "Edit Custom Ingredient",
+    "@editCustomIngredient": {
+        "description": "Title for the edit custom ingredient dialog"
+    },
+    "deleteCustomIngredient": "Delete Custom Ingredient",
+    "@deleteCustomIngredient": {
+        "description": "Title for the delete custom ingredient dialog"
+    },
+    "ingredientName": "Ingredient Name",
+    "@ingredientName": {
+        "description": "Label for ingredient name input field"
+    },
+    "pricePerTonCFA": "Price per Ton (CFA)",
+    "@pricePerTonCFA": {
+        "description": "Label for price per ton input field in CFA currency"
+    },
+    "nutrientContentPercent": "Nutrient Content (%)",
+    "@nutrientContentPercent": {
+        "description": "Section title for nutrient content percentage inputs"
+    },
+    "pleaseEnterIngredientName": "Please enter an ingredient name",
+    "@pleaseEnterIngredientName": {
+        "description": "Error message when ingredient name is empty"
+    },
+    "areYouSureDeleteIngredient": "Are you sure you want to delete \"{ingredientName}\"?",
+    "@areYouSureDeleteIngredient": {
+        "description": "Confirmation message for deleting a custom ingredient"
+    },
+    "delete": "Delete",
+    "@delete": {
+        "description": "Button label for delete action"
+    },
+    "addedCustomIngredient": "Added custom ingredient: {ingredientName}",
+    "@addedCustomIngredient": {
+        "description": "Success message when custom ingredient is added"
+    },
+    "updatedIngredient": "Updated ingredient: {ingredientName}",
+    "@updatedIngredient": {
+        "description": "Success message when ingredient is updated"
+    },
+    "deletedIngredient": "Deleted ingredient: {ingredientName}",
+    "@deletedIngredient": {
+        "description": "Success message when ingredient is deleted"
+    },
+    "dryMatterPercent": "Dry Matter %",
+    "@dryMatterPercent": {
+        "description": "Label for dry matter percentage input field"
+    },
+    "organicCarbonPercent": "Organic Carbon %",
+    "@organicCarbonPercent": {
+        "description": "Label for organic carbon percentage input field"
+    },
+    "nitrogenPercent": "Nitrogen %",
+    "@nitrogenPercent": {
+        "description": "Label for nitrogen percentage input field"
+    },
+    "phosphorusPercent": "Phosphorus %",
+    "@phosphorusPercent": {
+        "description": "Label for phosphorus percentage input field"
+    },
+    "potassiumPercent": "Potassium %",
+    "@potassiumPercent": {
+        "description": "Label for potassium percentage input field"
+    },
+    "calciumPercent": "Calcium %",
+    "@calciumPercent": {
+        "description": "Label for calcium percentage input field"
+    },
+    "magnesiumPercent": "Magnesium %",
+    "@magnesiumPercent": {
+        "description": "Label for magnesium percentage input field"
+    },
+    "carbonNitrogenRatio": "C:N Ratio",
+    "@carbonNitrogenRatio": {
+        "description": "Label for carbon to nitrogen ratio input field"
+    },
+    "ingredientNoLongerExists": "Ingredient \"{ingredientName}\" no longer exists",
+    "@ingredientNoLongerExists": {
+        "description": "Error message when an ingredient has been deleted but is still in recipe"
+    },
+    "removedDeletedIngredientSingle": "Removed 1 deleted ingredient from recipe",
+    "@removedDeletedIngredientSingle": {
+        "description": "Message when 1 deleted ingredient is removed from recipe"
+    },
+    "removedDeletedIngredientsMultiple": "Removed {count} deleted ingredients from recipe",
+    "@removedDeletedIngredientsMultiple": {
+        "description": "Message when multiple deleted ingredients are removed from recipe"
     }
 }

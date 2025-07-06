@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
+import '../constants/app_colors.dart';
 
 class SampleRecipesPage extends StatelessWidget {
   const SampleRecipesPage({super.key});
@@ -8,11 +9,11 @@ class SampleRecipesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown.shade200,
+        backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
           S.of(context).sampleCompostRecipes,
-          style: const TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
         ),
         centerTitle: true,
       ),

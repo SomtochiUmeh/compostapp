@@ -5,6 +5,7 @@ import './screens/app_home_page.dart';
 import './compost_state.dart';
 import './services/persistence_manager.dart';
 import './generated/l10n.dart';
+import './constants/app_colors.dart';
 
 // coverage:ignore-start
 void main() async {
@@ -41,7 +42,7 @@ class CompostCalculatorApp extends StatelessWidget {
       // locale: const Locale('fr'),
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.senseRed),
       ),
       home: const AppHomePage(),
     );
