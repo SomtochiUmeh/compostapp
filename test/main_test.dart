@@ -63,11 +63,11 @@ void main() {
       final materialApp = tester.widget<MaterialApp>(find.byType(MaterialApp));
       expect(materialApp.theme?.useMaterial3, true);
 
-      // Verify the theme is using a brown-based color scheme
+      // Verify the theme is using a red-based color scheme (Sense Red)
       final colorScheme = materialApp.theme!.colorScheme;
       expect(colorScheme, isNotNull);
 
-      // Brown typically has red > green & blue
+      // Sense Red (#dc1c3e) should have red > green & blue
       final primaryColor = colorScheme.primary;
       expect(primaryColor.red > primaryColor.blue, isTrue);
       expect(primaryColor.red > primaryColor.green, isTrue);
@@ -164,7 +164,7 @@ void main() {
       // Test theme properties
       expect(theme.useMaterial3, isTrue);
 
-      // Seed color should be brown, which means red > green & blue
+      // Seed color should be Sense Red, which means red > green & blue
       final primaryColor = theme.colorScheme.primary;
       expect(primaryColor.red > primaryColor.blue, isTrue);
       expect(primaryColor.red > primaryColor.green, isTrue);

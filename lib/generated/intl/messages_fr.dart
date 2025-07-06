@@ -20,19 +20,36 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
-  static String m0(componentName) =>
+  static String m0(ingredientName) =>
+      "Ingrédient personnalisé ajouté: ${ingredientName}";
+
+  static String m1(ingredientName) =>
+      "Êtes-vous sûr de vouloir supprimer \"${ingredientName}\"?";
+
+  static String m2(ingredientName) => "Ingrédient supprimé: ${ingredientName}";
+
+  static String m3(componentName) =>
       "Modifier la disponibilité pour ${componentName}";
 
-  static String m1(selector) =>
+  static String m4(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'Déchets de mangue avec graines', 'componentCashewShells': 'Coques de cajou', 'componentRiceHulls': 'Balles de riz/Son de riz', 'componentRiceStraw': 'Paille de riz - saison humide', 'componentSugarcaneBagasse': 'Bagasse de canne à sucre', 'componentChickenManure': 'Fumier de poulet séché', 'componentCowDung': 'Bouse de vache', 'componentCottonStraw': 'Paille de coton', 'componentRiceHuskAsh': 'Cendre de balle de riz', 'componentLime': 'Chaux', 'componentCompostPlus': 'Compost +', 'componentDolomites': 'Dolomites', 'componentCornStraw': 'Paille de maïs', 'componentCassavaPeels': 'Épluchures de manioc', 'componentRiceChickenLitter': 'Litière (son de riz + fumier de poulet)', 'componentRiceStrawCounter': 'Paille de riz - contre-saison', 'other': 'Composant inconnu'})}";
 
-  static String m2(nutrientName, min, max) =>
+  static String m5(ingredientName) =>
+      "L\'ingrédient \"${ingredientName}\" n\'existe plus";
+
+  static String m6(nutrientName, min, max) =>
       "Excellent! ${nutrientName} est dans la plage optimale (${min} - ${max})";
 
-  static String m3(value) => "${value} (%)";
+  static String m7(value) => "${value} (%)";
 
-  static String m4(price, amount, unit) =>
+  static String m8(price, amount, unit) =>
       "Prix: ${price} FCFA par ${amount} ${unit}";
+
+  static String m9(count) =>
+      "${count} ingrédients supprimés retirés de la recette";
+
+  static String m10(ingredientName) =>
+      "Ingrédient mis à jour: ${ingredientName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -52,12 +69,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "addComponent": MessageLookupByLibrary.simpleMessage(
       "Ajouter un Composant",
     ),
+    "addCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "Ajouter un Ingrédient Personnalisé",
+    ),
     "addIngredient": MessageLookupByLibrary.simpleMessage(
       "Ajouter un Ingrédient",
     ),
     "addMoreNitrogenrichMaterials": MessageLookupByLibrary.simpleMessage(
       "Ajouter plus de matières riches en azote",
     ),
+    "addedCustomIngredient": m0,
     "aerobicCompostingProcess": MessageLookupByLibrary.simpleMessage(
       "Processus de Compostage Aérobie",
     ),
@@ -74,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Odeur d\'ammoniac: Trop d\'azote",
     ),
     "april": MessageLookupByLibrary.simpleMessage("Avril"),
+    "areYouSureDeleteIngredient": m1,
     "august": MessageLookupByLibrary.simpleMessage("Août"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "Disponible: Janvier à Décembre",
@@ -122,10 +144,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enterrer les restes alimentaires au centre du tas",
     ),
     "calcium": MessageLookupByLibrary.simpleMessage("CaO"),
+    "calciumPercent": MessageLookupByLibrary.simpleMessage("Calcium %"),
     "canBeStoredFor6to12MonthsKeepDryToAvoid": MessageLookupByLibrary.simpleMessage(
       "Peut être stocké pendant 6 à 12 mois (garder au sec pour éviter la perte de nutriments).",
     ),
     "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
+    "carbonNitrogenRatio": MessageLookupByLibrary.simpleMessage("Ratio C:N"),
     "cashewShells": MessageLookupByLibrary.simpleMessage("Coques de cajou"),
     "checkMoistureAndAddWaterIfNeeded": MessageLookupByLibrary.simpleMessage(
       "Vérifier l\'humidité et ajouter de l\'eau si nécessaire",
@@ -210,6 +234,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "compostingTimelineProcess": MessageLookupByLibrary.simpleMessage(
       "Processus Chronologique du Compostage",
     ),
+    "contactOurSupportTeam": MessageLookupByLibrary.simpleMessage(
+      "Contactez notre équipe de support:",
+    ),
     "contentNotAvailable": MessageLookupByLibrary.simpleMessage(
       "Contenu non disponible",
     ),
@@ -235,14 +262,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "days35to60": MessageLookupByLibrary.simpleMessage("Jours 35-60+"),
     "days5to25": MessageLookupByLibrary.simpleMessage("Jours 5-25"),
     "december": MessageLookupByLibrary.simpleMessage("Décembre"),
+    "delete": MessageLookupByLibrary.simpleMessage("Supprimer"),
+    "deleteCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "Supprimer l\'Ingrédient Personnalisé",
+    ),
+    "deletedIngredient": m2,
     "dryLeaves": MessageLookupByLibrary.simpleMessage("Feuilles sèches"),
     "dryMatter": MessageLookupByLibrary.simpleMessage("Matière Sèche"),
+    "dryMatterPercent": MessageLookupByLibrary.simpleMessage("Matière Sèche %"),
     "editAvailability": MessageLookupByLibrary.simpleMessage(
       "Modifier la disponibilité",
     ),
-    "editAvailabilityFor": m0,
+    "editAvailabilityFor": m3,
     "editComponent": MessageLookupByLibrary.simpleMessage(
       "Modifier le Composant",
+    ),
+    "editCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "Modifier l\'Ingrédient Personnalisé",
     ),
     "endMonth": MessageLookupByLibrary.simpleMessage("Mois de fin"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
@@ -256,11 +292,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Pour quand vous avez besoin de compost rapidement.",
     ),
     "freshPlant": MessageLookupByLibrary.simpleMessage("Plantes fraîches"),
-    "getTranslation": m1,
+    "getHelp": MessageLookupByLibrary.simpleMessage("Obtenir de l\'aide"),
+    "getTranslation": m4,
     "greens": MessageLookupByLibrary.simpleMessage("Verts"),
     "heating": MessageLookupByLibrary.simpleMessage("Chauffage"),
     "heatingPhaseDays5to25": MessageLookupByLibrary.simpleMessage(
       "2. Phase de Chauffage (Jours 5-25)",
+    ),
+    "helpEmailSubjectInstruction": MessageLookupByLibrary.simpleMessage(
+      "Veuillez inclure \"Compost Calculator App - Help Request\" dans l\'objet de votre email.",
     ),
     "highCarbon": MessageLookupByLibrary.simpleMessage("Riche en Carbone"),
     "highNitrogen": MessageLookupByLibrary.simpleMessage("Riche en Azote"),
@@ -274,6 +314,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Augmenter la taille du tas",
     ),
     "ingredient": MessageLookupByLibrary.simpleMessage("Ingrédient"),
+    "ingredientName": MessageLookupByLibrary.simpleMessage(
+      "Nom de l\'Ingrédient",
+    ),
+    "ingredientNoLongerExists": m5,
     "ingredients": MessageLookupByLibrary.simpleMessage("Ingrédients"),
     "instructions": MessageLookupByLibrary.simpleMessage("Instructions"),
     "january": MessageLookupByLibrary.simpleMessage("Janvier"),
@@ -294,6 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Disposer en couches",
     ),
     "magnesium": MessageLookupByLibrary.simpleMessage("MgO"),
+    "magnesiumPercent": MessageLookupByLibrary.simpleMessage("Magnésium %"),
     "maintainMoisture": MessageLookupByLibrary.simpleMessage(
       "Maintenir l\'humidité",
     ),
@@ -317,7 +362,11 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Mélanger soigneusement, assurer une humidité adéquate et retourner tous les 3 jours. Peut être prêt en 3-4 semaines si les conditions sont idéales.",
         ),
+    "needAssistanceWithCompostCalculator": MessageLookupByLibrary.simpleMessage(
+      "Besoin d\'aide avec le Calculateur de Compost?",
+    ),
     "nitrogen": MessageLookupByLibrary.simpleMessage("N"),
+    "nitrogenPercent": MessageLookupByLibrary.simpleMessage("Azote %"),
     "noComponentsAddedYetClickTheButtonBelowToAdd":
         MessageLookupByLibrary.simpleMessage(
           "Aucun composant ajouté. Cliquez sur le bouton ci-dessous pour ajouter des composants à votre recette de compost.",
@@ -329,12 +378,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage(
       "Analyse des Nutriments",
     ),
-    "nutrientInOptimalRange": m2,
+    "nutrientContentPercent": MessageLookupByLibrary.simpleMessage(
+      "Contenu Nutritif (%)",
+    ),
+    "nutrientInOptimalRange": m6,
     "october": MessageLookupByLibrary.simpleMessage("Octobre"),
     "optimumMoisture": MessageLookupByLibrary.simpleMessage(
       "Humidité Optimale",
     ),
     "organicCarbon": MessageLookupByLibrary.simpleMessage("C Org"),
+    "organicCarbonPercent": MessageLookupByLibrary.simpleMessage(
+      "Carbone Organique %",
+    ),
     "organismsChangeAsConditionsShift": MessageLookupByLibrary.simpleMessage(
       "Les organismes changent au fur et à mesure que les conditions évoluent.",
     ),
@@ -362,11 +417,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "partsDryLeaves": MessageLookupByLibrary.simpleMessage(
       "3 parts de feuilles sèches",
     ),
-    "percentage": m3,
+    "percentage": m7,
     "pestsInTheCompost": MessageLookupByLibrary.simpleMessage(
       "Nuisibles dans le Compost",
     ),
     "phosphorus": MessageLookupByLibrary.simpleMessage("P₂O₅"),
+    "phosphorusPercent": MessageLookupByLibrary.simpleMessage("Phosphore %"),
     "pileIsFinishedComposting": MessageLookupByLibrary.simpleMessage(
       "Le tas a fini de composter",
     ),
@@ -383,6 +439,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Tas trop petit (devrait être d\'au moins 1m×1m×1m)",
         ),
+    "pleaseEnterIngredientName": MessageLookupByLibrary.simpleMessage(
+      "Veuillez entrer un nom d\'ingrédient",
+    ),
     "pleaseEnterValidWeight": MessageLookupByLibrary.simpleMessage(
       "Veuillez entrer un poids valide",
     ),
@@ -391,9 +450,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "possibleCauses": MessageLookupByLibrary.simpleMessage("Causes Possibles"),
     "potassium": MessageLookupByLibrary.simpleMessage("K₂O"),
-    "price": m4,
+    "potassiumPercent": MessageLookupByLibrary.simpleMessage("Potassium %"),
+    "price": m8,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage(
       "Prix des Ingrédients",
+    ),
+    "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
+      "Prix par Tonne (FCFA)",
     ),
     "prices": MessageLookupByLibrary.simpleMessage("Prix"),
     "quickCheck": MessageLookupByLibrary.simpleMessage("Vérification Rapide"),
@@ -414,6 +477,10 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Le retournement régulier (toutes les 1-2 semaines) assure un bon flux d\'oxygène pour la décomposition aérobie.",
         ),
+    "removedDeletedIngredientSingle": MessageLookupByLibrary.simpleMessage(
+      "1 ingrédient supprimé retiré de la recette",
+    ),
+    "removedDeletedIngredientsMultiple": m9,
     "riceHusks": MessageLookupByLibrary.simpleMessage("Balles de riz"),
     "rottenEggSmellAnaerobicConditionsNotEnoughOxygen":
         MessageLookupByLibrary.simpleMessage(
@@ -510,6 +577,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "unitKgs": MessageLookupByLibrary.simpleMessage("kg"),
     "unitTons": MessageLookupByLibrary.simpleMessage("tonnes"),
     "update": MessageLookupByLibrary.simpleMessage("Mettre à jour"),
+    "updatedIngredient": m10,
     "useARodentresistantBinIfNecessary": MessageLookupByLibrary.simpleMessage(
       "Utiliser un bac résistant aux rongeurs si nécessaire",
     ),

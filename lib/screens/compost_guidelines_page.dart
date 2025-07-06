@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './guideline_detail_page.dart';
 import '../generated/l10n.dart';
+import '../constants/app_colors.dart';
 
 class CompostGuidelinesPage extends StatelessWidget {
   const CompostGuidelinesPage({super.key});
@@ -9,11 +10,11 @@ class CompostGuidelinesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.brown.shade200,
+          backgroundColor: AppColors.primary,
           elevation: 0,
           title: Text(
             S.of(context).compostGuidelines,
-            style: const TextStyle(color: Colors.white, fontSize: 20),
+            style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -63,12 +64,12 @@ class CompostGuidelinesPage extends StatelessWidget {
       if (showDivider)
         Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
-          child: Divider(thickness: 2, color: Colors.brown.shade200),
+          child: Divider(thickness: 2, color: AppColors.primaryLight),
         ),
       Card(
           margin: const EdgeInsets.only(bottom: 16.0),
           child: ListTile(
-            leading: Icon(icon, color: Colors.brown.shade300, size: 36),
+            leading: Icon(icon, color: AppColors.secondary, size: 36),
             title: Text(
               title,
               style: const TextStyle(

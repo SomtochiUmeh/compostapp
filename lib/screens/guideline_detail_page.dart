@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
+import '../constants/app_colors.dart';
 
 class GuidelineDetailPage extends StatelessWidget {
   final String title;
@@ -10,11 +11,11 @@ class GuidelineDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown.shade200,
+        backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
           title,
-          style: const TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
         ),
         centerTitle: true,
       ),
@@ -82,11 +83,11 @@ class GuidelineDetailPage extends StatelessWidget {
                 _buildTimelineMarker(S.current.startup, Icons.play_arrow,
                     Colors.green.shade300, S.current.days2to5),
                 _buildTimelineMarker(S.current.heating, Icons.whatshot,
-                    Colors.orange.shade300, S.current.days5to25),
+                    AppColors.secondary, S.current.days5to25),
                 _buildTimelineMarker(S.current.cooling, Icons.ac_unit,
                     Colors.blue.shade300, S.current.days25to35),
                 _buildTimelineMarker(S.current.maturing, Icons.eco,
-                    Colors.brown.shade300, S.current.days35to60),
+                    AppColors.primary, S.current.days35to60),
               ],
             ),
           ],
@@ -118,7 +119,7 @@ class GuidelineDetailPage extends StatelessWidget {
             S.current.breaksDownFastdecomposingMaterialsKillsPathogensWeedSeeds,
             S.current.organismsChangeAsConditionsShift,
           ],
-          Colors.orange.shade300,
+          AppColors.secondary,
         ),
         _buildCompostStage(
           S.current.coolingPhaseDays25to35,
@@ -140,7 +141,7 @@ class GuidelineDetailPage extends StatelessWidget {
             S.current.readyWhenDarkEarthySmellNoHeatInTheCenter,
             S.current.canBeStoredFor6to12MonthsKeepDryToAvoid,
           ],
-          Colors.brown.shade300,
+          AppColors.primary,
         ),
       ],
     );
@@ -173,15 +174,15 @@ class GuidelineDetailPage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       decoration: BoxDecoration(
-        color: Colors.brown.shade50,
+        color: AppColors.primaryLight,
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(color: Colors.brown.shade200, width: 1),
+        border: Border.all(color: AppColors.primaryMedium, width: 1),
       ),
       child: Text(
         text,
         style: TextStyle(
             fontSize: 10,
-            color: Colors.brown.shade800,
+            color: AppColors.primaryDark,
             fontWeight: FontWeight.bold),
       ),
     );
@@ -250,9 +251,9 @@ class GuidelineDetailPage extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Colors.brown.shade50,
+            color: AppColors.primaryLight,
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.brown.shade200),
+            border: Border.all(color: AppColors.primaryMedium),
           ),
           child: Row(
             children: [
@@ -309,7 +310,7 @@ class GuidelineDetailPage extends StatelessWidget {
           S.current.turnThePileRegularly,
           S.current.mixEvery714DaysForAeration,
           Icons.rotate_left,
-          Colors.orange,
+          AppColors.secondary,
         ),
         _buildCompostStep(
           "5",
@@ -440,8 +441,8 @@ class GuidelineDetailPage extends StatelessWidget {
                   S.current.riceHusks,
                   S.current.dryLeaves
                 ],
-                Colors.brown.shade700,
-                Colors.brown.shade100,
+                AppColors.primaryDark,
+                AppColors.primaryLight,
               ),
             ),
             const SizedBox(width: 16),

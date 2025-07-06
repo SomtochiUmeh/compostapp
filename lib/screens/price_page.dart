@@ -7,6 +7,7 @@ import '../widgets/currency_selector.dart';
 import '../widgets/custom_ingredient_dialog.dart';
 import '../widgets/edit_custom_ingredient_dialog.dart';
 import '../constants/currency_constants.dart';
+import '../constants/app_colors.dart';
 
 class PricesPage extends StatefulWidget {
   const PricesPage({super.key});
@@ -102,7 +103,7 @@ class _PricesPageState extends State<PricesPage> {
                       const Icon(
                         Icons.person_add,
                         size: 16,
-                        color: Colors.blue,
+                        color: AppColors.secondary,
                       ),
                       const SizedBox(width: 4),
                     ],
@@ -207,7 +208,7 @@ class _PricesPageState extends State<PricesPage> {
           if (context.mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                  content: Text('Added custom ingredient: ${ingredient.name}')),
+                  content: Text(S.of(context).addedCustomIngredient(ingredient.name))),
             );
           }
         },
@@ -227,7 +228,7 @@ class _PricesPageState extends State<PricesPage> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                   content:
-                      Text('Updated ingredient: ${updatedIngredient.name}')),
+                      Text(S.of(context).updatedIngredient(updatedIngredient.name))),
             );
           }
         },
@@ -240,8 +241,8 @@ class _PricesPageState extends State<PricesPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Delete Custom Ingredient'),
-        content: Text('Are you sure you want to delete "${component.name}"?'),
+        title: Text(S.of(context).deleteCustomIngredient),
+        content: Text(S.of(context).areYouSureDeleteIngredient(component.name)),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -254,11 +255,12 @@ class _PricesPageState extends State<PricesPage> {
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                      content: Text('Deleted ingredient: ${component.name}')),
+                      content: Text(S.of(context).deletedIngredient(component.name))),
                 );
               }
             },
-            child: const Text('Delete', style: TextStyle(color: Colors.red)),
+            child:
+                Text(S.of(context).delete, style: const TextStyle(color: AppColors.error)),
           ),
         ],
       ),
@@ -283,14 +285,12 @@ class _PricesPageState extends State<PricesPage> {
                     ElevatedButton.icon(
                       onPressed: () =>
                           _showAddCustomIngredientDialog(context, compostState),
-                      icon: Icon(Icons.add,
-                          size: 16,
-                          color: Theme.of(context).colorScheme.onPrimary),
-                      label: const Text("Add Ingredient"),
+                      icon: const Icon(Icons.add,
+                          size: 16, color: AppColors.onSecondary),
+                      label: Text(S.of(context).addIngredient),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Theme.of(context).colorScheme.primary,
-                        foregroundColor:
-                            Theme.of(context).colorScheme.onPrimary,
+                        backgroundColor: AppColors.secondary,
+                        foregroundColor: AppColors.onSecondary,
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 4),
                         minimumSize: const Size(0, 32),

@@ -6,6 +6,7 @@ import '../constants/nutrient_constants.dart';
 import '../constants/currency_constants.dart';
 import '../compost_state.dart';
 import '../generated/l10n.dart';
+import '../constants/app_colors.dart';
 
 class ColumnDefinition {
   final String label;
@@ -69,13 +70,13 @@ class ComponentTable extends StatelessWidget {
                     final item = items[index];
                     return DataRow(
                       cells: columns
-                          .map((col) => DataCell(
-                                col.key == 'name' 
-                                    ? _buildIngredientCell(item.component)
-                                    : Text(
-                                        _formatValue(item, col, compostState.selectedCurrency),
-                                        overflow: TextOverflow.ellipsis,
-                                      )))
+                          .map((col) => DataCell(col.key == 'name'
+                              ? _buildIngredientCell(item.component)
+                              : Text(
+                                  _formatValue(
+                                      item, col, compostState.selectedCurrency),
+                                  overflow: TextOverflow.ellipsis,
+                                )))
                           .toList(),
                     );
                   }),
@@ -92,7 +93,8 @@ class ComponentTable extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        _buildCompactIconButton(Icons.edit, () => onEdit(index)),
+                        _buildCompactIconButton(
+                            Icons.edit, () => onEdit(index)),
                         _buildCompactIconButton(
                             Icons.delete, () => onDelete(index)),
                       ],
@@ -115,7 +117,7 @@ class ComponentTable extends StatelessWidget {
           const Icon(
             Icons.person_add,
             size: 16,
-            color: Colors.blue,
+            color: AppColors.secondary,
           ),
           const SizedBox(width: 4),
         ],
@@ -141,7 +143,8 @@ class ComponentTable extends StatelessWidget {
     );
   }
 
-  String _formatValue(RecipeComponent item, ColumnDefinition col, String selectedCurrency) {
+  String _formatValue(
+      RecipeComponent item, ColumnDefinition col, String selectedCurrency) {
     switch (col.key) {
       case 'name':
         return item.component.getName();
@@ -151,7 +154,8 @@ class ComponentTable extends StatelessWidget {
         if (item.component.price == null) {
           return CurrencyConstants.formatPrice(0, selectedCurrency);
         }
-        final cost = item.component.price!.calculatePrice(item.amount, currency: selectedCurrency);
+        final cost = item.component.price!
+            .calculatePrice(item.amount, currency: selectedCurrency);
         return CurrencyConstants.formatPrice(cost, selectedCurrency);
       case 'water':
         double dryMatter = item.component.nutrients.toMap()['dryMatter'] ?? 0.0;

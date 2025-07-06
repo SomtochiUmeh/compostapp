@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../services/persistence_manager.dart';
 import '../models/destination_model.dart';
 import './recipe_builder_page.dart';
 import './price_page.dart';
 import "../generated/l10n.dart";
 import './app_home_page.dart';
+import '../constants/app_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,6 +21,76 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late List<GlobalKey<NavigatorState>> _navigatorKeys;
   late List<AnimationController> _faders;
   late List<Destination> _destinations;
+
+  void _sendHelpEmail() async {
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'learning@timeforsense.com',
+      query: 'subject=Compost Calculator App - Help Request',
+    );
+
+    try {
+      if (await canLaunchUrl(emailUri)) {
+        await launchUrl(emailUri);
+      } else {
+        if (context.mounted) _showHelpDialog();
+      }
+    } catch (e) {
+      // If email app is not available, show help dialog
+      if (context.mounted) _showHelpDialog();
+    }
+  }
+
+  void _showHelpDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Row(
+            children: [
+              const Icon(Icons.help_outline, color: AppColors.primary),
+              const SizedBox(width: 8),
+              Text(S.of(context).getHelp),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                S.of(context).needAssistanceWithCompostCalculator,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 16),
+              Text(S.of(context).contactOurSupportTeam),
+              const SizedBox(height: 8),
+              const SelectableText(
+                'learning@timeforsense.com',
+                style: TextStyle(
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                S.of(context).helpEmailSubjectInstruction,
+                style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                S.of(context).close,
+                style: const TextStyle(color: AppColors.primary),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   void initState() {
@@ -82,44 +154,65 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.brown.shade200,
+          backgroundColor: AppColors.primary,
           elevation: 0,
           title: Text(
             _destinations[_selectedIndex].label,
-            style: const TextStyle(color: Colors.white, fontSize: 20),
+            style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
           ),
           centerTitle: true,
           leading: IconButton(
-            icon: const Icon(Icons.home, color: Colors.white),
+            icon: const Icon(Icons.home, color: AppColors.onPrimary),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
+          actions: [
+            IconButton(
+              onPressed: () => _sendHelpEmail(),
+              icon: const Icon(Icons.help_outline, color: AppColors.onPrimary),
+              tooltip: S.of(context).getHelp,
+            ),
+          ],
         ),
-        body: Stack(
-          children: List.generate(
-              _destinations.length, (index) => _buildOffstageNavigator(index)),
+        body: Container(
+          decoration: BoxDecoration(gradient: AppColors.backgroundGradient),
+          child: Stack(
+            children: List.generate(_destinations.length,
+                (index) => _buildOffstageNavigator(index)),
+          ),
         ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: _selectedIndex,
-          onDestinationSelected: (index) {
-            setState(() {
-              _selectedIndex = index;
-              for (int i = 0; i < _faders.length; i++) {
-                if (i == index) {
-                  _faders[i].forward();
-                } else {
-                  _faders[i].reverse();
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(gradient: AppColors.navBarGradient),
+          child: NavigationBar(
+            selectedIndex: _selectedIndex,
+            backgroundColor:
+                Colors.transparent, // Make nav bar transparent to show gradient
+            indicatorColor:
+                AppColors.primary, // Orange background for selected item
+            surfaceTintColor: AppColors.primary,
+            onDestinationSelected: (index) {
+              setState(() {
+                _selectedIndex = index;
+                for (int i = 0; i < _faders.length; i++) {
+                  if (i == index) {
+                    _faders[i].forward();
+                  } else {
+                    _faders[i].reverse();
+                  }
                 }
-              }
-            });
-          },
-          destinations: _destinations
-              .map((d) => NavigationDestination(
-                    icon: Icon(d.icon),
-                    label: d.label,
-                  ))
-              .toList(),
+              });
+            },
+            destinations: _destinations
+                .map((d) => NavigationDestination(
+                      icon: Icon(d.icon),
+                      selectedIcon: Icon(d.icon,
+                          color:
+                              AppColors.onPrimary), // White icon when selected
+                      label: d.label,
+                    ))
+                .toList(),
+          ),
         ),
       ),
     );

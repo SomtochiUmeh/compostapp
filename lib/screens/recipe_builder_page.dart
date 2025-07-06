@@ -9,6 +9,7 @@ import '../widgets/nutrient_totals_table.dart';
 import '../compost_state.dart';
 import '../services/persistence_manager.dart';
 import '../generated/l10n.dart';
+import '../constants/app_colors.dart';
 
 class RecipeBuilderPage extends StatefulWidget {
   final PersistenceManager persistenceManager;
@@ -110,7 +111,7 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
     final component = selectedComponents[index];
     // Get the latest component data from CompostState
     final compostState = context.read<CompostState>();
-    
+
     // For custom ingredients, look up by ID to handle name changes
     // For predefined ingredients, look up by name for backwards compatibility
     CompostComponent? updatedComponent;
@@ -123,11 +124,13 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
           .where((c) => c.getName() == component.component.getName())
           .firstOrNull;
     }
-    
+
     // If component not found (e.g., custom ingredient was deleted), show error
     if (updatedComponent == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Ingredient "${component.component.getName()}" no longer exists')),
+        SnackBar(
+            content: Text(
+                S.of(context).ingredientNoLongerExists(component.component.getName()))),
       );
       return;
     }
@@ -158,9 +161,10 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
   }
 
   // Helper method to compare component lists for changes
-  bool _componentsEqual(List<RecipeComponent> list1, List<RecipeComponent> list2) {
+  bool _componentsEqual(
+      List<RecipeComponent> list1, List<RecipeComponent> list2) {
     if (list1.length != list2.length) return false;
-    
+
     for (int i = 0; i < list1.length; i++) {
       if (list1[i].component.id != list2[i].component.id ||
           list1[i].amount != list2[i].amount) {
@@ -177,36 +181,37 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
         builder: (context, compostState, child) {
           // Update selected components with latest prices and availability
           // Also filter out any deleted custom ingredients
-          final updatedComponents = selectedComponents
-              .where((component) {
-                // Keep component only if it still exists
-                if (component.component.isCustom) {
-                  return compostState.allComponents
-                      .any((c) => c.id == component.component.id);
-                } else {
-                  return compostState.allComponents
-                      .any((c) => c.getName() == component.component.getName());
-                }
-              })
-              .map((component) {
-                CompostComponent latestComponent;
-                
-                // For custom ingredients, look up by ID to handle name changes
-                if (component.component.isCustom) {
-                  latestComponent = compostState.allComponents
+          final updatedComponents = selectedComponents.where((component) {
+            // Keep component only if it still exists
+            if (component.component.isCustom) {
+              return compostState.allComponents
+                  .any((c) => c.id == component.component.id);
+            } else {
+              return compostState.allComponents
+                  .any((c) => c.getName() == component.component.getName());
+            }
+          }).map((component) {
+            CompostComponent latestComponent;
+
+            // For custom ingredients, look up by ID to handle name changes
+            if (component.component.isCustom) {
+              latestComponent = compostState.allComponents
                       .where((c) => c.id == component.component.id)
-                      .firstOrNull ?? component.component;
-                } else {
-                  // For predefined ingredients, look up by name
-                  latestComponent = compostState.allComponents
-                      .where((c) => c.getName() == component.component.getName())
-                      .firstOrNull ?? component.component;
-                }
-                return RecipeComponent(
-                  component: latestComponent,
-                  amount: component.amount,
-                );
-              }).toList();
+                      .firstOrNull ??
+                  component.component;
+            } else {
+              // For predefined ingredients, look up by name
+              latestComponent = compostState.allComponents
+                      .where(
+                          (c) => c.getName() == component.component.getName())
+                      .firstOrNull ??
+                  component.component;
+            }
+            return RecipeComponent(
+              component: latestComponent,
+              amount: component.amount,
+            );
+          }).toList();
 
           // Update selectedComponents if there are changes (updates or deletions)
           final originalLength = selectedComponents.length;
@@ -221,16 +226,17 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                 if (updatedComponents.length < originalLength) {
                   // Some ingredients were deleted, save the updated recipe and notify user
                   _saveRecipe();
-                  final removedCount = originalLength - updatedComponents.length;
+                  final removedCount =
+                      originalLength - updatedComponents.length;
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
                           removedCount == 1
-                              ? 'Removed 1 deleted ingredient from recipe'
-                              : 'Removed $removedCount deleted ingredients from recipe',
+                              ? S.of(context).removedDeletedIngredientSingle
+                              : S.of(context).removedDeletedIngredientsMultiple(removedCount),
                         ),
-                        backgroundColor: Colors.orange,
+                        backgroundColor: AppColors.secondary,
                       ),
                     );
                   }
@@ -278,8 +284,8 @@ class _RecipeBuilderPageState extends State<RecipeBuilderPage> {
                           icon: const Icon(Icons.add),
                           label: Text(S.of(context).addIngredient),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.brown.shade300,
-                            foregroundColor: Colors.white,
+                            backgroundColor: AppColors.secondary,
+                            foregroundColor: AppColors.onSecondary,
                             padding: const EdgeInsets.symmetric(vertical: 12),
                           ),
                         ),

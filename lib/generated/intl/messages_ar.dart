@@ -20,18 +20,32 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(componentName) => "تعديل فترة التوفر لـ ${componentName}";
+  static String m0(ingredientName) => "تم إضافة مكون مخصص: ${ingredientName}";
 
-  static String m1(selector) =>
+  static String m1(ingredientName) =>
+      "هل أنت متأكد من أنك تريد حذف \"${ingredientName}\"؟";
+
+  static String m2(ingredientName) => "تم حذف المكون: ${ingredientName}";
+
+  static String m3(componentName) => "تعديل فترة التوفر لـ ${componentName}";
+
+  static String m4(selector) =>
       "${Intl.select(selector, {'componentMangoWaste': 'مخلفات المانجو مع البذور', 'componentCashewShells': 'قشور الكاجو', 'componentRiceHulls': 'قشور الأرز/نخالة الأرز', 'componentRiceStraw': 'قش الأرز - موسم الأمطار', 'componentSugarcaneBagasse': 'تفل قصب السكر', 'componentChickenManure': 'روث الدجاج المجفف', 'componentCowDung': 'روث البقر', 'componentCottonStraw': 'قش القطن', 'componentRiceHuskAsh': 'رماد قشور الأرز', 'componentLime': 'الجير', 'componentCompostPlus': 'سماد +', 'componentDolomites': 'الدولوميت', 'componentCornStraw': 'قش الذرة', 'componentCassavaPeels': 'قشور الكاسافا', 'componentRiceChickenLitter': 'فراش (نخالة الأرز + روث الدجاج)', 'componentRiceStrawCounter': 'قش الأرز - خارج الموسم', 'other': 'مكون غير معروف'})}";
 
-  static String m2(nutrientName, min, max) =>
+  static String m5(ingredientName) =>
+      "المكون \"${ingredientName}\" لم يعد موجوداً";
+
+  static String m6(nutrientName, min, max) =>
       "رائع! ${nutrientName} ضمن النطاق الأمثل (${min} - ${max})";
 
-  static String m3(value) => "${value} (%)";
+  static String m7(value) => "${value} (%)";
 
-  static String m4(price, amount, unit) =>
+  static String m8(price, amount, unit) =>
       "السعر: ${price} فرنك إفريقي لكل ${amount} ${unit}";
+
+  static String m9(count) => "تم إزالة ${count} مكونات محذوفة من الوصفة";
+
+  static String m10(ingredientName) => "تم تحديث المكون: ${ingredientName}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -49,10 +63,14 @@ class MessageLookup extends MessageLookupByLibrary {
           "أضف مواد غنية بالكربون (أوراق جافة، قش)",
         ),
     "addComponent": MessageLookupByLibrary.simpleMessage("إضافة مكون"),
+    "addCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "إضافة مكون مخصص",
+    ),
     "addIngredient": MessageLookupByLibrary.simpleMessage("إضافة مكون"),
     "addMoreNitrogenrichMaterials": MessageLookupByLibrary.simpleMessage(
       "أضف المزيد من المواد الغنية بالنيتروجين",
     ),
+    "addedCustomIngredient": m0,
     "aerobicCompostingProcess": MessageLookupByLibrary.simpleMessage(
       "عملية التسميد الهوائي",
     ),
@@ -65,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "رائحة الأمونيا: نيتروجين زائد",
     ),
     "april": MessageLookupByLibrary.simpleMessage("أبريل"),
+    "areYouSureDeleteIngredient": m1,
     "august": MessageLookupByLibrary.simpleMessage("أغسطس"),
     "availabilityJanToDec": MessageLookupByLibrary.simpleMessage(
       "متوفر: يناير إلى ديسمبر",
@@ -114,11 +133,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "ادفن بقايا الطعام في وسط الكومة",
     ),
     "calcium": MessageLookupByLibrary.simpleMessage("كالسيوم"),
+    "calciumPercent": MessageLookupByLibrary.simpleMessage("الكالسيوم %"),
     "canBeStoredFor6to12MonthsKeepDryToAvoid":
         MessageLookupByLibrary.simpleMessage(
           "يمكن تخزينه لمدة 6-12 شهراً (يحفظ جافاً لتجنب فقدان المغذيات).",
         ),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "carbonNitrogenRatio": MessageLookupByLibrary.simpleMessage("نسبة ك:ن"),
     "cashewShells": MessageLookupByLibrary.simpleMessage("قشور الكاجو"),
     "checkMoistureAndAddWaterIfNeeded": MessageLookupByLibrary.simpleMessage(
       "تحقق من الرطوبة وأضف الماء إذا لزم الأمر",
@@ -195,6 +216,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "compostingTimelineProcess": MessageLookupByLibrary.simpleMessage(
       "مراحل عملية التسميد",
     ),
+    "contactOurSupportTeam": MessageLookupByLibrary.simpleMessage(
+      "اتصل بفريق الدعم الخاص بنا:",
+    ),
     "contentNotAvailable": MessageLookupByLibrary.simpleMessage(
       "المحتوى غير متوفر",
     ),
@@ -220,13 +244,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "days35to60": MessageLookupByLibrary.simpleMessage("الأيام 35-60+"),
     "days5to25": MessageLookupByLibrary.simpleMessage("الأيام 5-25"),
     "december": MessageLookupByLibrary.simpleMessage("ديسمبر"),
+    "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "deleteCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "حذف المكون المخصص",
+    ),
+    "deletedIngredient": m2,
     "dryLeaves": MessageLookupByLibrary.simpleMessage("أوراق جافة"),
     "dryMatter": MessageLookupByLibrary.simpleMessage("المادة الجافة"),
+    "dryMatterPercent": MessageLookupByLibrary.simpleMessage("المادة الجافة %"),
     "editAvailability": MessageLookupByLibrary.simpleMessage(
       "تعديل فترة التوفر",
     ),
-    "editAvailabilityFor": m0,
+    "editAvailabilityFor": m3,
     "editComponent": MessageLookupByLibrary.simpleMessage("تعديل المكون"),
+    "editCustomIngredient": MessageLookupByLibrary.simpleMessage(
+      "تعديل المكون المخصص",
+    ),
     "endMonth": MessageLookupByLibrary.simpleMessage("شهر النهاية"),
     "exposedFoodScraps": MessageLookupByLibrary.simpleMessage(
       "بقايا طعام مكشوفة",
@@ -239,11 +272,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "عندما تحتاج إلى السماد بسرعة.",
     ),
     "freshPlant": MessageLookupByLibrary.simpleMessage("نباتات طازجة"),
-    "getTranslation": m1,
+    "getHelp": MessageLookupByLibrary.simpleMessage("احصل على المساعدة"),
+    "getTranslation": m4,
     "greens": MessageLookupByLibrary.simpleMessage("المواد الخضراء"),
     "heating": MessageLookupByLibrary.simpleMessage("التسخين"),
     "heatingPhaseDays5to25": MessageLookupByLibrary.simpleMessage(
       "2. مرحلة التسخين (الأيام 5-25)",
+    ),
+    "helpEmailSubjectInstruction": MessageLookupByLibrary.simpleMessage(
+      "يرجى تضمين \"Compost Calculator App - Help Request\" في موضوع رسالتك الإلكترونية.",
     ),
     "highCarbon": MessageLookupByLibrary.simpleMessage("غني بالكربون"),
     "highNitrogen": MessageLookupByLibrary.simpleMessage("غني بالنيتروجين"),
@@ -257,6 +294,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "زيادة حجم الكومة",
     ),
     "ingredient": MessageLookupByLibrary.simpleMessage("المكون"),
+    "ingredientName": MessageLookupByLibrary.simpleMessage("اسم المكون"),
+    "ingredientNoLongerExists": m5,
     "ingredients": MessageLookupByLibrary.simpleMessage("المكونات"),
     "instructions": MessageLookupByLibrary.simpleMessage("التعليمات"),
     "january": MessageLookupByLibrary.simpleMessage("يناير"),
@@ -275,6 +314,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "layerMaterials": MessageLookupByLibrary.simpleMessage("طبقات المواد"),
     "magnesium": MessageLookupByLibrary.simpleMessage("مغنيسيوم"),
+    "magnesiumPercent": MessageLookupByLibrary.simpleMessage("المغنيسيوم %"),
     "maintainMoisture": MessageLookupByLibrary.simpleMessage(
       "الحفاظ على الرطوبة",
     ),
@@ -298,7 +338,11 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "اخلط جيداً، وتأكد من الرطوبة المناسبة، وقلب كل 3 أيام. قد يكون جاهزاً في 3-4 أسابيع إذا كانت الظروف مثالية.",
         ),
+    "needAssistanceWithCompostCalculator": MessageLookupByLibrary.simpleMessage(
+      "هل تحتاج إلى مساعدة مع حاسبة الكمبوست؟",
+    ),
     "nitrogen": MessageLookupByLibrary.simpleMessage("نيتروجين"),
+    "nitrogenPercent": MessageLookupByLibrary.simpleMessage("النيتروجين %"),
     "noComponentsAddedYetClickTheButtonBelowToAdd":
         MessageLookupByLibrary.simpleMessage(
           "لم تتم إضافة مكونات بعد. انقر على الزر أدناه لإضافة مكونات إلى وصفة السماد العضوي الخاصة بك.",
@@ -308,10 +352,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "november": MessageLookupByLibrary.simpleMessage("نوفمبر"),
     "nutrientAnalysis": MessageLookupByLibrary.simpleMessage("تحليل المغذيات"),
-    "nutrientInOptimalRange": m2,
+    "nutrientContentPercent": MessageLookupByLibrary.simpleMessage(
+      "محتوى المغذيات (%)",
+    ),
+    "nutrientInOptimalRange": m6,
     "october": MessageLookupByLibrary.simpleMessage("أكتوبر"),
     "optimumMoisture": MessageLookupByLibrary.simpleMessage("الرطوبة المثالية"),
     "organicCarbon": MessageLookupByLibrary.simpleMessage("كربون عضوي"),
+    "organicCarbonPercent": MessageLookupByLibrary.simpleMessage(
+      "الكربون العضوي %",
+    ),
     "organismsChangeAsConditionsShift": MessageLookupByLibrary.simpleMessage(
       "تتغير الكائنات الحية مع تغير الظروف.",
     ),
@@ -339,11 +389,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "partsDryLeaves": MessageLookupByLibrary.simpleMessage(
       "3 أجزاء من الأوراق الجافة",
     ),
-    "percentage": m3,
+    "percentage": m7,
     "pestsInTheCompost": MessageLookupByLibrary.simpleMessage(
       "الآفات في السماد",
     ),
     "phosphorus": MessageLookupByLibrary.simpleMessage("فوسفور"),
+    "phosphorusPercent": MessageLookupByLibrary.simpleMessage("الفوسفور %"),
     "pileIsFinishedComposting": MessageLookupByLibrary.simpleMessage(
       "الكومة انتهت من التسميد",
     ),
@@ -358,6 +409,9 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "الكومة صغيرة جداً (يجب أن تكون على الأقل 1م×1م×1م)",
         ),
+    "pleaseEnterIngredientName": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال اسم المكون",
+    ),
     "pleaseEnterValidWeight": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال وزن صحيح",
     ),
@@ -366,8 +420,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "possibleCauses": MessageLookupByLibrary.simpleMessage("الأسباب المحتملة"),
     "potassium": MessageLookupByLibrary.simpleMessage("بوتاسيوم"),
-    "price": m4,
+    "potassiumPercent": MessageLookupByLibrary.simpleMessage("البوتاسيوم %"),
+    "price": m8,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("أسعار المكونات"),
+    "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
+      "السعر لكل طن (فرنك أفريقي)",
+    ),
     "prices": MessageLookupByLibrary.simpleMessage("الأسعار"),
     "quickCheck": MessageLookupByLibrary.simpleMessage("فحص سريع"),
     "readyWhenDarkEarthySmellNoHeatInTheCenter":
@@ -385,6 +443,10 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "التقليب المنتظم (كل 1-2 أسبوع) يضمن تدفق الأكسجين المناسب للتحلل الهوائي.",
         ),
+    "removedDeletedIngredientSingle": MessageLookupByLibrary.simpleMessage(
+      "تم إزالة مكون واحد محذوف من الوصفة",
+    ),
+    "removedDeletedIngredientsMultiple": m9,
     "riceHusks": MessageLookupByLibrary.simpleMessage("قشور الأرز"),
     "rottenEggSmellAnaerobicConditionsNotEnoughOxygen":
         MessageLookupByLibrary.simpleMessage(
@@ -485,6 +547,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "unitKgs": MessageLookupByLibrary.simpleMessage("كجم"),
     "unitTons": MessageLookupByLibrary.simpleMessage("طن"),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
+    "updatedIngredient": m10,
     "useARodentresistantBinIfNecessary": MessageLookupByLibrary.simpleMessage(
       "استخدم حاوية مقاومة للقوارض إذا لزم الأمر",
     ),

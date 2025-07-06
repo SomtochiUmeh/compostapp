@@ -2257,6 +2257,278 @@ class S {
       args: [],
     );
   }
+
+  /// `Get Help`
+  String get getHelp {
+    return Intl.message(
+      'Get Help',
+      name: 'getHelp',
+      desc: 'Title for the help dialog and tooltip for help button',
+      args: [],
+    );
+  }
+
+  /// `Need assistance with the Compost Calculator?`
+  String get needAssistanceWithCompostCalculator {
+    return Intl.message(
+      'Need assistance with the Compost Calculator?',
+      name: 'needAssistanceWithCompostCalculator',
+      desc: 'Question asking if user needs help with the app',
+      args: [],
+    );
+  }
+
+  /// `Contact our support team:`
+  String get contactOurSupportTeam {
+    return Intl.message(
+      'Contact our support team:',
+      name: 'contactOurSupportTeam',
+      desc: 'Text introducing the support email contact information',
+      args: [],
+    );
+  }
+
+  /// `Please include "Compost Calculator App - Help Request" in your subject line.`
+  String get helpEmailSubjectInstruction {
+    return Intl.message(
+      'Please include "Compost Calculator App - Help Request" in your subject line.',
+      name: 'helpEmailSubjectInstruction',
+      desc:
+          'Instructions for what to include in the email subject line when contacting support',
+      args: [],
+    );
+  }
+
+  /// `Add Custom Ingredient`
+  String get addCustomIngredient {
+    return Intl.message(
+      'Add Custom Ingredient',
+      name: 'addCustomIngredient',
+      desc: 'Title for the add custom ingredient dialog',
+      args: [],
+    );
+  }
+
+  /// `Edit Custom Ingredient`
+  String get editCustomIngredient {
+    return Intl.message(
+      'Edit Custom Ingredient',
+      name: 'editCustomIngredient',
+      desc: 'Title for the edit custom ingredient dialog',
+      args: [],
+    );
+  }
+
+  /// `Delete Custom Ingredient`
+  String get deleteCustomIngredient {
+    return Intl.message(
+      'Delete Custom Ingredient',
+      name: 'deleteCustomIngredient',
+      desc: 'Title for the delete custom ingredient dialog',
+      args: [],
+    );
+  }
+
+  /// `Ingredient Name`
+  String get ingredientName {
+    return Intl.message(
+      'Ingredient Name',
+      name: 'ingredientName',
+      desc: 'Label for ingredient name input field',
+      args: [],
+    );
+  }
+
+  /// `Price per Ton (CFA)`
+  String get pricePerTonCFA {
+    return Intl.message(
+      'Price per Ton (CFA)',
+      name: 'pricePerTonCFA',
+      desc: 'Label for price per ton input field in CFA currency',
+      args: [],
+    );
+  }
+
+  /// `Nutrient Content (%)`
+  String get nutrientContentPercent {
+    return Intl.message(
+      'Nutrient Content (%)',
+      name: 'nutrientContentPercent',
+      desc: 'Section title for nutrient content percentage inputs',
+      args: [],
+    );
+  }
+
+  /// `Please enter an ingredient name`
+  String get pleaseEnterIngredientName {
+    return Intl.message(
+      'Please enter an ingredient name',
+      name: 'pleaseEnterIngredientName',
+      desc: 'Error message when ingredient name is empty',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete "{ingredientName}"?`
+  String areYouSureDeleteIngredient(Object ingredientName) {
+    return Intl.message(
+      'Are you sure you want to delete "$ingredientName"?',
+      name: 'areYouSureDeleteIngredient',
+      desc: 'Confirmation message for deleting a custom ingredient',
+      args: [ingredientName],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: 'Button label for delete action',
+      args: [],
+    );
+  }
+
+  /// `Added custom ingredient: {ingredientName}`
+  String addedCustomIngredient(Object ingredientName) {
+    return Intl.message(
+      'Added custom ingredient: $ingredientName',
+      name: 'addedCustomIngredient',
+      desc: 'Success message when custom ingredient is added',
+      args: [ingredientName],
+    );
+  }
+
+  /// `Updated ingredient: {ingredientName}`
+  String updatedIngredient(Object ingredientName) {
+    return Intl.message(
+      'Updated ingredient: $ingredientName',
+      name: 'updatedIngredient',
+      desc: 'Success message when ingredient is updated',
+      args: [ingredientName],
+    );
+  }
+
+  /// `Deleted ingredient: {ingredientName}`
+  String deletedIngredient(Object ingredientName) {
+    return Intl.message(
+      'Deleted ingredient: $ingredientName',
+      name: 'deletedIngredient',
+      desc: 'Success message when ingredient is deleted',
+      args: [ingredientName],
+    );
+  }
+
+  /// `Dry Matter %`
+  String get dryMatterPercent {
+    return Intl.message(
+      'Dry Matter %',
+      name: 'dryMatterPercent',
+      desc: 'Label for dry matter percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Organic Carbon %`
+  String get organicCarbonPercent {
+    return Intl.message(
+      'Organic Carbon %',
+      name: 'organicCarbonPercent',
+      desc: 'Label for organic carbon percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Nitrogen %`
+  String get nitrogenPercent {
+    return Intl.message(
+      'Nitrogen %',
+      name: 'nitrogenPercent',
+      desc: 'Label for nitrogen percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Phosphorus %`
+  String get phosphorusPercent {
+    return Intl.message(
+      'Phosphorus %',
+      name: 'phosphorusPercent',
+      desc: 'Label for phosphorus percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Potassium %`
+  String get potassiumPercent {
+    return Intl.message(
+      'Potassium %',
+      name: 'potassiumPercent',
+      desc: 'Label for potassium percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Calcium %`
+  String get calciumPercent {
+    return Intl.message(
+      'Calcium %',
+      name: 'calciumPercent',
+      desc: 'Label for calcium percentage input field',
+      args: [],
+    );
+  }
+
+  /// `Magnesium %`
+  String get magnesiumPercent {
+    return Intl.message(
+      'Magnesium %',
+      name: 'magnesiumPercent',
+      desc: 'Label for magnesium percentage input field',
+      args: [],
+    );
+  }
+
+  /// `C:N Ratio`
+  String get carbonNitrogenRatio {
+    return Intl.message(
+      'C:N Ratio',
+      name: 'carbonNitrogenRatio',
+      desc: 'Label for carbon to nitrogen ratio input field',
+      args: [],
+    );
+  }
+
+  /// `Ingredient "{ingredientName}" no longer exists`
+  String ingredientNoLongerExists(Object ingredientName) {
+    return Intl.message(
+      'Ingredient "$ingredientName" no longer exists',
+      name: 'ingredientNoLongerExists',
+      desc:
+          'Error message when an ingredient has been deleted but is still in recipe',
+      args: [ingredientName],
+    );
+  }
+
+  /// `Removed 1 deleted ingredient from recipe`
+  String get removedDeletedIngredientSingle {
+    return Intl.message(
+      'Removed 1 deleted ingredient from recipe',
+      name: 'removedDeletedIngredientSingle',
+      desc: 'Message when 1 deleted ingredient is removed from recipe',
+      args: [],
+    );
+  }
+
+  /// `Removed {count} deleted ingredients from recipe`
+  String removedDeletedIngredientsMultiple(Object count) {
+    return Intl.message(
+      'Removed $count deleted ingredients from recipe',
+      name: 'removedDeletedIngredientsMultiple',
+      desc: 'Message when multiple deleted ingredients are removed from recipe',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
