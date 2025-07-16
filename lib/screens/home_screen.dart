@@ -168,10 +168,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             },
           ),
           actions: [
-            IconButton(
-              onPressed: () => _sendHelpEmail(),
-              icon: const Icon(Icons.help_outline, color: AppColors.onPrimary),
-              tooltip: S.of(context).getHelp,
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: GestureDetector(
+                onTap: () => _sendHelpEmail(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.help_outline, color: AppColors.onPrimary, size: 20),
+                    Text(
+                      S.of(context).getHelp,
+                      style: const TextStyle(color: AppColors.onPrimary, fontSize: 10),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
