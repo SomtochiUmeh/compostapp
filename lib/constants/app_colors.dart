@@ -33,7 +33,7 @@ class AppColors {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          Color.fromARGB(20, 234, 91, 12), // Very light orange at top (8% opacity)
+          white, // White at top
           white, // White at bottom
         ],
       );
@@ -42,8 +42,8 @@ class AppColors {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          Color.fromARGB(31, 234, 91, 12), // Slightly more orange (12% opacity)
-          Color.fromARGB(15, 234, 91, 12), // Very light orange (6% opacity)
+          white, // White at top
+          white, // White at bottom
         ],
       );
 
