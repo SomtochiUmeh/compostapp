@@ -242,6 +242,10 @@
     "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
+    "costPerKg": "Cost/kg",
+    "@costPerKg": {
+        "description": "Label for cost per kilogram input field"
+    },
     "currency": "Currency",
     "@currency": {
         "description": "Label for currency selection"
@@ -940,6 +944,10 @@
     "pricePerTonCFA": "Price per Ton (CFA)",
     "@pricePerTonCFA": {
         "description": "Label for price per ton input field in CFA currency"
+    },
+    "pricePerKgCFA": "Price per kg (CFA)",
+    "@pricePerKgCFA": {
+        "description": "Label for price per kilogram input field in CFA currency"
     },
     "nutrientContentPercent": "Nutrient Content (%)",
     "@nutrientContentPercent": {

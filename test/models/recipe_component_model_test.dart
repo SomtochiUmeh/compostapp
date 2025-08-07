@@ -40,7 +40,7 @@ void main() {
           magnesiumPercent: 0.01,
           carbonNitrogenRatio: 3.0,
         ),
-        price: Price(pricePerTon: 100),
+        price: Price(pricePerKg: 0.1),
       );
     });
 
@@ -63,7 +63,7 @@ void main() {
 
       expect(recipeComponent.component.id, equals('test-id'));
       expect(recipeComponent.component.getName(), equals('Test Component'));
-      expect(recipeComponent.component.price?.pricePerTon, equals(100));
+      expect(recipeComponent.component.price?.pricePerKg, equals(0.1));
     });
 
     test('amount property can be accessed directly', () {

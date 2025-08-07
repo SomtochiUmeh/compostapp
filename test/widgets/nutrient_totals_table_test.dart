@@ -88,7 +88,7 @@ void main() {
             magnesiumPercent: 0.01,
             carbonNitrogenRatio: 30.0,
           ),
-          price: Price(pricePerTon: 100),
+          price: Price(pricePerKg: 0.1),
         ),
         amount: 10.0,
       ),
@@ -231,7 +231,7 @@ void main() {
 
     testWidgets('Calculates total cost correctly', (WidgetTester tester) async {
       // Only first component has price (100 per ton)
-      // Cost = 100/1000 * 10 = 1.00
+      // Cost = 0.1 * 10 = 1.00
       await tester.pumpWidget(createTestableTable(
         components: testComponents,
       ));

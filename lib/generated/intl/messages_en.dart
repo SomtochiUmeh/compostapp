@@ -229,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Cooling Phase (Days 25-35)",
     ),
+    "costPerKg": MessageLookupByLibrary.simpleMessage("Cost/kg"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Cost/Ton"),
     "costTotal": MessageLookupByLibrary.simpleMessage("Total Cost"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
@@ -428,6 +429,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "potassiumPercent": MessageLookupByLibrary.simpleMessage("Potassium %"),
     "price": m8,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("Ingredient Prices"),
+    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage("Price per kg (CFA)"),
     "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
       "Price per Ton (CFA)",
     ),

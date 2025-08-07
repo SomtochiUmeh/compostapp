@@ -605,6 +605,16 @@ class S {
     );
   }
 
+  /// `Cost/kg`
+  String get costPerKg {
+    return Intl.message(
+      'Cost/kg',
+      name: 'costPerKg',
+      desc: 'Label for cost per kilogram input field',
+      args: [],
+    );
+  }
+
   /// `Currency`
   String get currency {
     return Intl.message(
@@ -2345,6 +2355,16 @@ class S {
       'Price per Ton (CFA)',
       name: 'pricePerTonCFA',
       desc: 'Label for price per ton input field in CFA currency',
+      args: [],
+    );
+  }
+
+  /// `Price per kg (CFA)`
+  String get pricePerKgCFA {
+    return Intl.message(
+      'Price per kg (CFA)',
+      name: 'pricePerKgCFA',
+      desc: 'Label for price per kilogram input field in CFA currency',
       args: [],
     );
   }
