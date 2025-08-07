@@ -37,7 +37,7 @@ void main() {
           magnesiumPercent: 0.01,
           carbonNitrogenRatio: 3.0,
         ),
-        price: Price(pricePerTon: 100),
+        price: Price(pricePerKg: 0.1),
       ),
       const CompostComponent(
         id: 'test2',

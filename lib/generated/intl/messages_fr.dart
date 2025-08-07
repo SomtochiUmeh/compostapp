@@ -244,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Phase de Refroidissement (Jours 25-35)",
     ),
+    "costPerKg": MessageLookupByLibrary.simpleMessage("Coût/kg"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Coût/tonne"),
     "costTotal": MessageLookupByLibrary.simpleMessage("Coût Total"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
@@ -455,6 +456,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pricePageTitle": MessageLookupByLibrary.simpleMessage(
       "Prix des Ingrédients",
     ),
+    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage("Prix par kg (FCFA)"),
     "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
       "Prix par Tonne (FCFA)",
     ),

@@ -55,7 +55,7 @@ void main() {
         magnesiumPercent: 0.01,
         carbonNitrogenRatio: 3.0,
       ),
-      price: Price(pricePerTon: 100),
+      price: Price(pricePerKg: 0.1),
       sources: const ['Source 1', 'Source 2'],
     );
   });
@@ -67,7 +67,7 @@ void main() {
       expect(testComponent.nutrients.dryMatterPercent, 0.5);
       expect(testComponent.nutrients.organicCarbonPercent, 0.3);
       expect(testComponent.nutrients.nitrogenPercent, 0.1);
-      expect(testComponent.price?.pricePerTon, 100);
+      expect(testComponent.price?.pricePerKg, 0.1);
       expect(testComponent.sources, ['Source 1', 'Source 2']);
     });
 
@@ -79,7 +79,7 @@ void main() {
     test('handles optional price field correctly', () {
       // Component with price
       expect(testComponent.price, isNotNull);
-      expect(testComponent.price?.pricePerTon, 100);
+      expect(testComponent.price?.pricePerKg, 0.1);
 
       // Component without price
       final noPriceComponent = TestCompostComponent(

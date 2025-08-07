@@ -160,7 +160,7 @@ class _PricesPageState extends State<PricesPage> {
       key: ValueKey('${component.getName()}_${compostState.selectedCurrency}'),
       controller: controller,
       decoration: InputDecoration(
-        labelText: S.of(context).costPerTon,
+        labelText: S.of(context).costPerKg,
         suffixText:
             CurrencyConstants.getCurrencySymbol(compostState.selectedCurrency),
         isDense: true,

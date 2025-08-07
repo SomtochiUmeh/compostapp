@@ -110,7 +110,7 @@ class CompostState extends ChangeNotifier {
         components.indexWhere((comp) => comp.getName() == componentName);
     if (predefinedIndex != -1) {
       final component = components[predefinedIndex];
-      final currentPrice = component.price ?? Price(pricePerTon: 0);
+      final currentPrice = component.price ?? Price(pricePerKg: 0);
       final updatedPrice = currency == 'CFA'
           ? currentPrice.updateCFAPrice(newPrice)
           : currentPrice.withRegionalPrice(currency, newPrice);
@@ -136,7 +136,7 @@ class CompostState extends ChangeNotifier {
         customIngredients.indexWhere((comp) => comp.getName() == componentName);
     if (customIndex != -1) {
       final component = customIngredients[customIndex];
-      final currentPrice = component.price ?? Price(pricePerTon: 0);
+      final currentPrice = component.price ?? Price(pricePerKg: 0);
       final updatedPrice = currency == 'CFA'
           ? currentPrice.updateCFAPrice(newPrice)
           : currentPrice.withRegionalPrice(currency, newPrice);

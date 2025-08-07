@@ -162,7 +162,7 @@ class PersistenceManager {
       },
       'price': component.price != null
           ? {
-              'pricePerTon': component.price!.pricePerTon,
+              'pricePerKg': component.price!.pricePerKg,
               'regionalPrices': component.price!.regionalPrices,
             }
           : null,
@@ -188,7 +188,8 @@ class PersistenceManager {
       ),
       price: json['price'] != null
           ? Price(
-              pricePerTon: json['price']['pricePerTon'].toDouble(),
+              pricePerKg: json['price']['pricePerKg']?.toDouble() ?? 
+                  (json['price']['pricePerTon']?.toDouble() ?? 0.0) / 1000, // Migration support
               regionalPrices: json['price']['regionalPrices'] != null
                   ? Map<String, double>.from(
                       json['price']['regionalPrices'].map(

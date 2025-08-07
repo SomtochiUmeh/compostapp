@@ -61,7 +61,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
             const SizedBox(height: 16),
             const SizedBox(height: 16),
             CustomTextField(
-              labelText: S.of(context).pricePerTonCFA,
+              labelText: S.of(context).pricePerKgCFA,
               controller: _priceController,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
@@ -217,7 +217,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
     );
 
     // Create price if provided
-    final priceModel = price > 0 ? Price(pricePerTon: price) : null;
+    final priceModel = price > 0 ? Price(pricePerKg: price) : null;
 
     // Generate unique ID
     final id = 'custom_${DateTime.now().millisecondsSinceEpoch}';

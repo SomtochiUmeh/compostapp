@@ -41,7 +41,7 @@ class _EditCustomIngredientDialogState extends State<EditCustomIngredientDialog>
 
   void _populateFields() {
     _nameController.text = widget.ingredient.name;
-    _priceController.text = widget.ingredient.price?.pricePerTon.toString() ?? '';
+    _priceController.text = widget.ingredient.price?.pricePerKg.toString() ?? '';
     
     // Populate nutrient fields - convert from decimal to percentage for display
     _dryMatterController.text = (widget.ingredient.nutrients.dryMatterPercent * 100).toString();
@@ -83,7 +83,7 @@ class _EditCustomIngredientDialogState extends State<EditCustomIngredientDialog>
             ),
             const SizedBox(height: 16),
             CustomTextField(
-              labelText: S.of(context).pricePerTonCFA,
+              labelText: S.of(context).pricePerKgCFA,
               controller: _priceController,
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
             ),
@@ -229,7 +229,7 @@ class _EditCustomIngredientDialogState extends State<EditCustomIngredientDialog>
     );
 
     // Create price if provided
-    final priceModel = price > 0 ? Price(pricePerTon: price) : null;
+    final priceModel = price > 0 ? Price(pricePerKg: price) : null;
 
     // Create updated ingredient with same ID
     final updatedIngredient = CompostComponent(

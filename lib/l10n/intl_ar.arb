@@ -242,6 +242,10 @@
     "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
+    "costPerKg": "التكلفة/كيلو",
+    "@costPerKg": {
+        "description": "Label for cost per kilogram input field"
+    },
     "currency": "العملة",
     "@currency": {
         "description": "Label for currency selection"
@@ -940,6 +944,10 @@
     "pricePerTonCFA": "السعر لكل طن (فرنك أفريقي)",
     "@pricePerTonCFA": {
         "description": "Label for price per ton input field in CFA currency"
+    },
+    "pricePerKgCFA": "السعر لكل كيلو (فرنك أفريقي)",
+    "@pricePerKgCFA": {
+        "description": "Label for price per kilogram input field in CFA currency"
     },
     "nutrientContentPercent": "محتوى المغذيات (%)",
     "@nutrientContentPercent": {

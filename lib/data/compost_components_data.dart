@@ -45,7 +45,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.19 / 100,
         carbonNitrogenRatio: 129.26,
       ),
-      price: Price(pricePerTon: 70000),
+      price: Price(pricePerKg: 70),
     ),
     const CompostComponent(
       id: 'RiceStraw',
@@ -88,7 +88,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.63 / 100,
         carbonNitrogenRatio: 9.65,
       ),
-      price: Price(pricePerTon: 20000),
+      price: Price(pricePerKg: 20),
     ),
     const CompostComponent(
       id: 'CowDung',
@@ -131,7 +131,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.00 / 100,
         carbonNitrogenRatio: 2.44,
       ),
-      price: Price(pricePerTon: 100000),
+      price: Price(pricePerKg: 100),
     ),
     CompostComponent(
       id: 'Lime',
@@ -146,7 +146,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.00 / 100,
         carbonNitrogenRatio: 0.00,
       ),
-      price: Price(pricePerTon: 20000),
+      price: Price(pricePerKg: 20),
     ),
     CompostComponent(
       id: 'CompostPlus',
@@ -161,7 +161,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.00 / 100,
         carbonNitrogenRatio: 0.00,
       ),
-      price: Price(pricePerTon: 10000),
+      price: Price(pricePerKg: 10),
     ),
     CompostComponent(
       id: 'Dolomites',
@@ -176,7 +176,7 @@ class CompostComponentsData {
         magnesiumPercent: 5.00 / 100,
         carbonNitrogenRatio: 0.00,
       ),
-      price: Price(pricePerTon: 35000),
+      price: Price(pricePerKg: 35),
     ),
     const CompostComponent(
       id: 'CornStraw',
@@ -219,7 +219,7 @@ class CompostComponentsData {
         magnesiumPercent: 0.41 / 100,
         carbonNitrogenRatio: 15.40,
       ),
-      price: Price(pricePerTon: 10000),
+      price: Price(pricePerKg: 10),
     ),
     const CompostComponent(
       id: 'RiceStrawCounter',
