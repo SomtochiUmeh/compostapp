@@ -195,14 +195,20 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
     final price = double.tryParse(_priceController.text) ?? 0.0;
 
     // Parse nutrient values and convert from percentage to decimal
-    final dryMatter = (double.tryParse(_dryMatterController.text) ?? 0.0) / 100.0;
-    final organicCarbon = (double.tryParse(_organicCarbonController.text) ?? 0.0) / 100.0;
+    final dryMatter =
+        (double.tryParse(_dryMatterController.text) ?? 0.0) / 100.0;
+    final organicCarbon =
+        (double.tryParse(_organicCarbonController.text) ?? 0.0) / 100.0;
     final nitrogen = (double.tryParse(_nitrogenController.text) ?? 0.0) / 100.0;
-    final phosphorus = (double.tryParse(_phosphorusController.text) ?? 0.0) / 100.0;
-    final potassium = (double.tryParse(_potassiumController.text) ?? 0.0) / 100.0;
+    final phosphorus =
+        (double.tryParse(_phosphorusController.text) ?? 0.0) / 100.0;
+    final potassium =
+        (double.tryParse(_potassiumController.text) ?? 0.0) / 100.0;
     final calcium = (double.tryParse(_calciumController.text) ?? 0.0) / 100.0;
-    final magnesium = (double.tryParse(_magnesiumController.text) ?? 0.0) / 100.0;
-    final carbonNitrogen = double.tryParse(_carbonNitrogenController.text) ?? 0.0; // C:N ratio is not a percentage
+    final magnesium =
+        (double.tryParse(_magnesiumController.text) ?? 0.0) / 100.0;
+    final carbonNitrogen = double.tryParse(_carbonNitrogenController.text) ??
+        0.0; // C:N ratio is not a percentage
 
     // Create nutrient content
     final nutrients = NutrientContent(
@@ -217,7 +223,7 @@ class _CustomIngredientDialogState extends State<CustomIngredientDialog> {
     );
 
     // Create price if provided
-    final priceModel = price > 0 ? Price(pricePerKg: price) : null;
+    final priceModel = price > 0 ? Price(pricePerTon: price) : null;
 
     // Generate unique ID
     final id = 'custom_${DateTime.now().millisecondsSinceEpoch}';

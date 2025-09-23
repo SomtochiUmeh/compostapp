@@ -75,7 +75,7 @@ void main() {
           magnesiumPercent: 0.01,
           carbonNitrogenRatio: 3.0,
         ),
-        price: Price(pricePerKg: 0.1),
+        price: Price(pricePerTon: 100),
       ),
       TestCompostComponent(
         id: 'test2',
@@ -110,7 +110,7 @@ void main() {
       expect(find.byType(AlertDialog), findsOneWidget);
       expect(find.text('Add Component'), findsOneWidget);
       expect(find.text('Choose Component'), findsOneWidget);
-      expect(find.text('Weight (kg)'), findsOneWidget);
+      expect(find.text('Weight (tons)'), findsOneWidget);
       expect(find.text('Cancel'), findsOneWidget);
       expect(find.text('Add'), findsOneWidget);
       expect(find.text('Update'), findsNothing);

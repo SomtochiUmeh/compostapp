@@ -52,7 +52,7 @@
     "@chooseComponent": {
         "description": "Label for the component selection dropdown"
     },
-    "weight": "الوزن (كجم)",
+    "weight": "الوزن (طن)",
     "@weight": {
         "description": "Label for the weight input field"
     },
@@ -148,7 +148,7 @@
     "@dryMatter": {
         "description": "Nutrient name for dry matter content"
     },
-    "totalWeightKg": "الوزن الإجمالي (كجم)",
+    "totalWeightKg": "الوزن الإجمالي (طن)",
     "@totalWeightKg": {
         "description": "Column header for total weight in kilograms"
     },
@@ -242,9 +242,9 @@
     "@costPerTon": {
         "description": "Label for cost per unit input field"
     },
-    "costPerKg": "التكلفة/كيلو",
+    "costPerKg": "التكلفة/طن",
     "@costPerKg": {
-        "description": "Label for cost per kilogram input field"
+        "description": "Label for cost per ton input field"
     },
     "currency": "العملة",
     "@currency": {
@@ -945,9 +945,9 @@
     "@pricePerTonCFA": {
         "description": "Label for price per ton input field in CFA currency"
     },
-    "pricePerKgCFA": "السعر لكل كيلو (فرنك أفريقي)",
+    "pricePerKgCFA": "السعر لكل طن (فرنك أفريقي)",
     "@pricePerKgCFA": {
-        "description": "Label for price per kilogram input field in CFA currency"
+        "description": "Label for price per ton input field in CFA currency"
     },
     "nutrientContentPercent": "محتوى المغذيات (%)",
     "@nutrientContentPercent": {

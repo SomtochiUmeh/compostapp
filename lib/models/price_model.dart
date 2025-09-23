@@ -1,21 +1,21 @@
 import '../constants/currency_constants.dart';
 
 class Price {
-  final double pricePerKg; // Base CFA price per kg
+  final double pricePerTon; // Base CFA price per ton
   final Map<String, double>? regionalPrices; // Optional regional overrides
 
   Price({
-    required this.pricePerKg,
+    required this.pricePerTon,
     this.regionalPrices,
   });
 
   /// Get price for specific currency (regional if available, converted if not)
   double getPriceForCurrency(String currency) {
-    if (currency == 'CFA') return pricePerKg;
+    if (currency == 'CFA') return pricePerTon;
     if (regionalPrices?.containsKey(currency) == true) {
       return regionalPrices![currency]!; // Use regional price
     }
-    return CurrencyConstants.convertFromCFA(pricePerKg, currency); // Fallback to conversion
+    return CurrencyConstants.convertFromCFA(pricePerTon, currency); // Fallback to conversion
   }
 
   /// Set regional price for specific currency
@@ -26,14 +26,14 @@ class Price {
       // If setting CFA, update base price and remove from regional
       newRegionalPrices.remove('CFA');
       return Price(
-        pricePerKg: price, 
+        pricePerTon: price, 
         regionalPrices: newRegionalPrices.isEmpty ? null : newRegionalPrices,
       );
     }
     
     newRegionalPrices[currency] = price;
     return Price(
-      pricePerKg: pricePerKg, 
+      pricePerTon: pricePerTon, 
       regionalPrices: newRegionalPrices,
     );
   }
@@ -46,7 +46,7 @@ class Price {
     newRegional.remove(currency);
     
     return Price(
-      pricePerKg: pricePerKg,
+      pricePerTon: pricePerTon,
       regionalPrices: newRegional.isEmpty ? null : newRegional,
     );
   }
@@ -64,37 +64,38 @@ class Price {
   /// Update CFA price and preserve regional overrides
   Price updateCFAPrice(double newCfaPrice) {
     return Price(
-      pricePerKg: newCfaPrice,
+      pricePerTon: newCfaPrice,
       regionalPrices: regionalPrices, // Keep all regional overrides unchanged
     );
   }
 
   double calculatePrice(double amount, {String currency = 'CFA'}) {
-    final price = getPriceForCurrency(currency);
-    return price * amount;
+    final pricePerTon = getPriceForCurrency(currency);
+    // Amount is already in tons, multiply directly by price per ton
+    return amount * pricePerTon;
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'pricePerKg': pricePerKg,
+      'pricePerTon': pricePerTon,
       'regionalPrices': regionalPrices,
     };
   }
 
   static Price fromJson(Map<String, dynamic> json) {
-    // Handle migration from pricePerTon to pricePerKg
-    double pricePerKg;
-    if (json.containsKey('pricePerKg')) {
-      pricePerKg = json['pricePerKg']?.toDouble() ?? 0.0;
-    } else if (json.containsKey('pricePerTon')) {
-      // Migrate from old format: divide by 1000 to convert ton to kg
-      pricePerKg = (json['pricePerTon']?.toDouble() ?? 0.0) / 1000;
+    // Handle migration from pricePerKg to pricePerTon
+    double pricePerTon;
+    if (json.containsKey('pricePerTon')) {
+      pricePerTon = json['pricePerTon']?.toDouble() ?? 0.0;
+    } else if (json.containsKey('pricePerKg')) {
+      // Migrate from old format: multiply by 1000 to convert kg to ton
+      pricePerTon = (json['pricePerKg']?.toDouble() ?? 0.0) * 1000;
     } else {
-      pricePerKg = 0.0;
+      pricePerTon = 0.0;
     }
     
     return Price(
-      pricePerKg: pricePerKg,
+      pricePerTon: pricePerTon,
       regionalPrices: json['regionalPrices'] != null
           ? Map<String, double>.from(json['regionalPrices'])
           : null,

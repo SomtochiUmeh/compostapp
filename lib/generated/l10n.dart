@@ -186,10 +186,10 @@ class S {
     );
   }
 
-  /// `Weight (kg)`
+  /// `Weight (tons)`
   String get weight {
     return Intl.message(
-      'Weight (kg)',
+      'Weight (tons)',
       name: 'weight',
       desc: 'Label for the weight input field',
       args: [],
@@ -366,10 +366,10 @@ class S {
     );
   }
 
-  /// `Total Weight (kg)`
+  /// `Total Weight (tons)`
   String get totalWeightKg {
     return Intl.message(
-      'Total Weight (kg)',
+      'Total Weight (tons)',
       name: 'totalWeightKg',
       desc: 'Column header for total weight in kilograms',
       args: [],
@@ -605,12 +605,12 @@ class S {
     );
   }
 
-  /// `Cost/kg`
+  /// `Cost/ton`
   String get costPerKg {
     return Intl.message(
-      'Cost/kg',
+      'Cost/ton',
       name: 'costPerKg',
-      desc: 'Label for cost per kilogram input field',
+      desc: 'Label for cost per ton input field',
       args: [],
     );
   }
@@ -2359,12 +2359,12 @@ class S {
     );
   }
 
-  /// `Price per kg (CFA)`
+  /// `Price per ton (CFA)`
   String get pricePerKgCFA {
     return Intl.message(
-      'Price per kg (CFA)',
+      'Price per ton (CFA)',
       name: 'pricePerKgCFA',
-      desc: 'Label for price per kilogram input field in CFA currency',
+      desc: 'Label for price per ton input field in CFA currency',
       args: [],
     );
   }

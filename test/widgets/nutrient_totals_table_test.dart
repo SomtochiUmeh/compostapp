@@ -88,7 +88,7 @@ void main() {
             magnesiumPercent: 0.01,
             carbonNitrogenRatio: 30.0,
           ),
-          price: Price(pricePerKg: 0.1),
+          price: Price(pricePerTon: 100),
         ),
         amount: 10.0,
       ),
@@ -231,7 +231,7 @@ void main() {
 
     testWidgets('Calculates total cost correctly', (WidgetTester tester) async {
       // Only first component has price (100 per ton)
-      // Cost = 0.1 * 10 = 1.00
+      // Cost = 100 * 10 = 1000
       await tester.pumpWidget(createTestableTable(
         components: testComponents,
       ));
@@ -239,7 +239,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Verify total cost is shown correctly (formatted with currency)
-      expect(find.text('FCFA 1'), findsOneWidget);
+      expect(find.text('FCFA 1000'), findsOneWidget);
     });
   });
 }
