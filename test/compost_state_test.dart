@@ -70,7 +70,7 @@ void main() {
           magnesiumPercent: 0.01,
           carbonNitrogenRatio: 3.0,
         ),
-        price: Price(pricePerKg: 0.1),
+        price: Price(pricePerTon: 100),
       ),
       TestCompostComponent(
         id: 'test2',
@@ -158,7 +158,7 @@ void main() {
           magnesiumPercent: 0.01,
           carbonNitrogenRatio: 3.0,
         ),
-        price: Price(pricePerKg: 0.2), // Changed price
+        price: Price(pricePerTon: 200), // Changed price
       );
 
       // Mock successful persistence
@@ -172,8 +172,8 @@ void main() {
       final updatedIndex = compostState.components.indexWhere(
           (comp) => comp.id == 'test1'); // Use ID instead of getName
       expect(updatedIndex, isNot(-1));
-      expect(compostState.components[updatedIndex].price?.pricePerKg,
-          equals(0.2));
+      expect(compostState.components[updatedIndex].price?.pricePerTon,
+          equals(200));
 
       // Verify persistence was called
       verify(mockPersistenceManager.updateComponentInfo(any)).called(1);
@@ -223,15 +223,15 @@ void main() {
           .thenAnswer((_) => Future.value(true));
 
       // Update the price using component name
-      compostState.updateComponentPrice('Test Component 1', 0.3);
+      compostState.updateComponentPrice('Test Component 1', 300);
 
       // Verify price was updated
       final updatedIndex = compostState.components.indexWhere((comp) =>
           comp.id ==
           'test1'); // Use ID instead of getName to avoid localization issues
       expect(updatedIndex, isNot(-1));
-      expect(compostState.components[updatedIndex].price?.pricePerKg,
-          equals(0.3));
+      expect(compostState.components[updatedIndex].price?.pricePerTon,
+          equals(300));
 
       // Verify persistence was called
       verify(mockPersistenceManager.updateComponentInfo(any)).called(1);
@@ -250,7 +250,7 @@ void main() {
           .thenAnswer((_) => Future.value(true));
 
       // Update with non-existent component name
-      compostState.updateComponentPrice('Non-existent Component', 0.3);
+      compostState.updateComponentPrice('Non-existent Component', 300);
 
       // Verify persistence was not called
       verifyNever(mockPersistenceManager.updateComponentInfo(any));
@@ -325,19 +325,19 @@ void main() {
             .thenAnswer((_) => Future.value(true));
 
         // Update price in USD (regional pricing)
-        compostState.updateComponentPrice('Test Component 1', 2.5,
+        compostState.updateComponentPrice('Test Component 1', 2500,
             currency: 'USD');
 
         // Verify regional price was set
         final updatedComponent = compostState.components.firstWhere(
           (comp) => comp.id == 'test1',
         );
-        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2500));
         expect(updatedComponent.price?.hasRegionalPrice('USD'), isTrue);
 
         // Verify CFA price remains unchanged
-        expect(updatedComponent.price?.pricePerKg,
-            equals(0.1)); // original CFA price
+        expect(updatedComponent.price?.pricePerTon,
+            equals(100)); // original CFA price
       });
 
       testWidgets(
@@ -354,16 +354,16 @@ void main() {
             .thenAnswer((_) => Future.value(true));
 
         // First set a regional price
-        compostState.updateComponentPrice('Test Component 1', 2.5,
+        compostState.updateComponentPrice('Test Component 1', 2500,
             currency: 'USD');
 
         // Verify base CFA price is still 100 and regional USD price is set
         var checkComponent = compostState.components.firstWhere(
           (comp) => comp.id == 'test1',
         );
-        expect(checkComponent.price?.pricePerKg,
-            equals(0.1)); // Should still be 0.1
-        expect(checkComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+        expect(checkComponent.price?.pricePerTon,
+            equals(100)); // Should still be 100
+        expect(checkComponent.price?.getPriceForCurrency('USD'), equals(2500));
 
         // Reset mock calls
         clearInteractions(mockPersistenceManager);
@@ -373,14 +373,14 @@ void main() {
             .thenAnswer((_) => Future.value(true));
 
         // Then update CFA price
-        compostState.updateComponentPrice('Test Component 1', 0.2,
+        compostState.updateComponentPrice('Test Component 1', 200,
             currency: 'CFA');
         final updatedComponent = compostState.components.firstWhere(
           (comp) => comp.id == 'test1',
         );
 
         // Verify regional USD price is preserved
-        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2.5));
+        expect(updatedComponent.price?.getPriceForCurrency('USD'), equals(2500));
         expect(updatedComponent.price?.hasRegionalPrice('USD'), isTrue);
       });
 
@@ -462,7 +462,7 @@ void main() {
           .thenAnswer((_) => Future.value(true));
 
       // Update component
-      compostState.updateComponentPrice('Test Component 1', 0.3);
+      compostState.updateComponentPrice('Test Component 1', 300);
 
       // Verify notifyListeners was called
       expect(notifierCalled, isTrue);

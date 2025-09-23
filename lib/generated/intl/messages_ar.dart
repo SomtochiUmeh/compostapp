@@ -226,7 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. مرحلة التبريد (الأيام 25-35)",
     ),
-    "costPerKg": MessageLookupByLibrary.simpleMessage("التكلفة/كيلو"),
+    "costPerKg": MessageLookupByLibrary.simpleMessage("التكلفة/طن"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("التكلفة/طن"),
     "costTotal": MessageLookupByLibrary.simpleMessage("التكلفة الإجمالية"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
@@ -425,7 +425,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "price": m8,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("أسعار المكونات"),
     "pricePerKgCFA": MessageLookupByLibrary.simpleMessage(
-      "السعر لكل كيلو (فرنك أفريقي)",
+      "السعر لكل طن (فرنك أفريقي)",
     ),
     "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
       "السعر لكل طن (فرنك أفريقي)",
@@ -531,7 +531,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "التكلفة الإجمالية (فرنك إفريقي)",
     ),
     "totalWeightKg": MessageLookupByLibrary.simpleMessage(
-      "الوزن الإجمالي (كجم)",
+      "الوزن الإجمالي (طن)",
     ),
     "troubleshootingCompostProblems": MessageLookupByLibrary.simpleMessage(
       "استكشاف مشاكل السماد العضوي وإصلاحها",
@@ -557,7 +557,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "visualTip": MessageLookupByLibrary.simpleMessage("نصيحة بصرية"),
     "water": MessageLookupByLibrary.simpleMessage("الماء"),
-    "weight": MessageLookupByLibrary.simpleMessage("الوزن (كجم)"),
+    "weight": MessageLookupByLibrary.simpleMessage("الوزن (طن)"),
     "welcomeToCompostCalculator": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في حاسبة السماد العضوي",
     ),

@@ -46,7 +46,7 @@ void main() {
       magnesiumPercent: 0.01,
       carbonNitrogenRatio: 3.0,
     ),
-    price: Price(pricePerKg: 0.1),
+    price: Price(pricePerTon: 100),
   );
 
   final testRecipe = Recipe(
@@ -417,11 +417,11 @@ void main() {
             carbonNitrogenRatio: 3.0,
           ),
           price: Price(
-            pricePerKg: 1.0,
+            pricePerTon: 1000,
             regionalPrices: {
-              'USD': 1.5,
-              'EUR': 2.0,
-              'GBP': 2.5,
+              'USD': 1500,
+              'EUR': 2000,
+              'GBP': 2500,
             },
           ),
         );
@@ -437,11 +437,11 @@ void main() {
 
         final savedComponent = savedComponents[0];
         expect(savedComponent.price, isNotNull);
-        expect(savedComponent.price!.pricePerKg, 1.0);
+        expect(savedComponent.price!.pricePerTon, 1000);
         expect(savedComponent.price!.regionalPrices, isNotNull);
-        expect(savedComponent.price!.regionalPrices!['USD'], 1.5);
-        expect(savedComponent.price!.regionalPrices!['EUR'], 2.0);
-        expect(savedComponent.price!.regionalPrices!['GBP'], 2.5);
+        expect(savedComponent.price!.regionalPrices!['USD'], 1500);
+        expect(savedComponent.price!.regionalPrices!['EUR'], 2000);
+        expect(savedComponent.price!.regionalPrices!['GBP'], 2500);
       });
 
       test('components without regional prices are serialized correctly',
@@ -460,7 +460,7 @@ void main() {
             magnesiumPercent: 0.01,
             carbonNitrogenRatio: 3.0,
           ),
-          price: Price(pricePerKg: 0.5),
+          price: Price(pricePerTon: 500),
         );
 
         // Act
@@ -474,7 +474,7 @@ void main() {
 
         final savedComponent = savedComponents[0];
         expect(savedComponent.price, isNotNull);
-        expect(savedComponent.price!.pricePerKg, 0.5);
+        expect(savedComponent.price!.pricePerTon, 500);
         expect(savedComponent.price!.regionalPrices, isNull);
       });
 
@@ -494,10 +494,10 @@ void main() {
             carbonNitrogenRatio: 3.0,
           ),
           price: Price(
-            pricePerKg: 1.23456,
+            pricePerTon: 1234.56,
             regionalPrices: {
-              'USD': 1.234,
-              'EUR': 2.567,
+              'USD': 1234,
+              'EUR': 2567,
             },
           ),
         );
@@ -509,14 +509,14 @@ void main() {
 
         // Assert
         final savedComponent = savedComponents![0];
-        expect(savedComponent.price!.pricePerKg, 1.23456);
-        expect(savedComponent.price!.regionalPrices!['USD'], 1.234);
-        expect(savedComponent.price!.regionalPrices!['EUR'], 2.567);
+        expect(savedComponent.price!.pricePerTon, 1234.56);
+        expect(savedComponent.price!.regionalPrices!['USD'], 1234);
+        expect(savedComponent.price!.regionalPrices!['EUR'], 2567);
       });
 
       test('empty regional prices map is handled correctly', () async {
         // Arrange - Create price with empty regional prices
-        final price = Price(pricePerKg: 1.0, regionalPrices: {});
+        final price = Price(pricePerTon: 1000, regionalPrices: {});
         final component = TestCompostComponent(
           id: 'empty1',
           name: 'Empty Regional',

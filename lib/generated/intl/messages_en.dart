@@ -229,7 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Cooling Phase (Days 25-35)",
     ),
-    "costPerKg": MessageLookupByLibrary.simpleMessage("Cost/kg"),
+    "costPerKg": MessageLookupByLibrary.simpleMessage("Cost/ton"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Cost/Ton"),
     "costTotal": MessageLookupByLibrary.simpleMessage("Total Cost"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
@@ -429,7 +429,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "potassiumPercent": MessageLookupByLibrary.simpleMessage("Potassium %"),
     "price": m8,
     "pricePageTitle": MessageLookupByLibrary.simpleMessage("Ingredient Prices"),
-    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage("Price per kg (CFA)"),
+    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage(
+      "Price per ton (CFA)",
+    ),
     "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
       "Price per Ton (CFA)",
     ),
@@ -531,7 +533,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Too wet: Turn the pile to help it dry out",
     ),
     "totalCostFCFA": MessageLookupByLibrary.simpleMessage("Total Cost (FCFA)"),
-    "totalWeightKg": MessageLookupByLibrary.simpleMessage("Total Weight (kg)"),
+    "totalWeightKg": MessageLookupByLibrary.simpleMessage(
+      "Total Weight (tons)",
+    ),
     "troubleshootingCompostProblems": MessageLookupByLibrary.simpleMessage(
       "Troubleshooting Compost Problems",
     ),
@@ -556,7 +560,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "visualTip": MessageLookupByLibrary.simpleMessage("Visual Tip"),
     "water": MessageLookupByLibrary.simpleMessage("Water"),
-    "weight": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
+    "weight": MessageLookupByLibrary.simpleMessage("Weight (tons)"),
     "welcomeToCompostCalculator": MessageLookupByLibrary.simpleMessage(
       "Welcome to Compost Calculator",
     ),

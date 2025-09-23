@@ -244,7 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "coolingPhaseDays25to35": MessageLookupByLibrary.simpleMessage(
       "3. Phase de Refroidissement (Jours 25-35)",
     ),
-    "costPerKg": MessageLookupByLibrary.simpleMessage("Coût/kg"),
+    "costPerKg": MessageLookupByLibrary.simpleMessage("Coût/tonne"),
     "costPerTon": MessageLookupByLibrary.simpleMessage("Coût/tonne"),
     "costTotal": MessageLookupByLibrary.simpleMessage("Coût Total"),
     "coverFoodScrapsWithBrowns": MessageLookupByLibrary.simpleMessage(
@@ -456,7 +456,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pricePageTitle": MessageLookupByLibrary.simpleMessage(
       "Prix des Ingrédients",
     ),
-    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage("Prix par kg (FCFA)"),
+    "pricePerKgCFA": MessageLookupByLibrary.simpleMessage(
+      "Prix par tonne (FCFA)",
+    ),
     "pricePerTonCFA": MessageLookupByLibrary.simpleMessage(
       "Prix par Tonne (FCFA)",
     ),
@@ -560,7 +562,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Trop humide: Retourner le tas pour aider à le sécher",
     ),
     "totalCostFCFA": MessageLookupByLibrary.simpleMessage("Coût Total (FCFA)"),
-    "totalWeightKg": MessageLookupByLibrary.simpleMessage("Poids Total (kg)"),
+    "totalWeightKg": MessageLookupByLibrary.simpleMessage(
+      "Poids Total (tonnes)",
+    ),
     "troubleshootingCompostProblems": MessageLookupByLibrary.simpleMessage(
       "Résolution des Problèmes de Compost",
     ),
@@ -585,7 +589,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "visualTip": MessageLookupByLibrary.simpleMessage("Conseil Visuel"),
     "water": MessageLookupByLibrary.simpleMessage("Eau"),
-    "weight": MessageLookupByLibrary.simpleMessage("Poids (kg)"),
+    "weight": MessageLookupByLibrary.simpleMessage("Poids (tonnes)"),
     "welcomeToCompostCalculator": MessageLookupByLibrary.simpleMessage(
       "Bienvenue au Calculateur de Compost",
     ),

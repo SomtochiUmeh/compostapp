@@ -162,7 +162,7 @@ class PersistenceManager {
       },
       'price': component.price != null
           ? {
-              'pricePerKg': component.price!.pricePerKg,
+              'pricePerTon': component.price!.pricePerTon,
               'regionalPrices': component.price!.regionalPrices,
             }
           : null,
@@ -187,17 +187,7 @@ class PersistenceManager {
         carbonNitrogenRatio: json['nutrients']['carbonNitrogenRatio'],
       ),
       price: json['price'] != null
-          ? Price(
-              pricePerKg: json['price']['pricePerKg']?.toDouble() ?? 
-                  (json['price']['pricePerTon']?.toDouble() ?? 0.0) / 1000, // Migration support
-              regionalPrices: json['price']['regionalPrices'] != null
-                  ? Map<String, double>.from(
-                      json['price']['regionalPrices'].map(
-                        (key, value) => MapEntry(key, value.toDouble()),
-                      ),
-                    )
-                  : null,
-            )
+          ? Price.fromJson(json['price'])
           : null,
       sources: List<String>.from(json['sources']),
       isCustom: json['isCustom'] ?? false,
