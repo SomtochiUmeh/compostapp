@@ -61,7 +61,8 @@ class AppHomePage extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 S.of(context).helpEmailSubjectInstruction,
-                style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+                style:
+                    const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
               ),
             ],
           ),
@@ -85,9 +86,23 @@ class AppHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         elevation: 0,
-        title: Text(
-          S.of(context).compostCalculator,
-          style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
+        title: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: 20,
+              width: 60,
+              child: Image.asset(
+                'assets/images/sense_logo.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              S.of(context).compostCalculator,
+              style: const TextStyle(color: AppColors.onPrimary, fontSize: 18),
+            ),
+          ],
         ),
         centerTitle: true,
         actions: [
@@ -98,10 +113,12 @@ class AppHomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.help_outline, color: AppColors.onPrimary, size: 20),
+                  const Icon(Icons.help_outline,
+                      color: AppColors.onPrimary, size: 20),
                   Text(
                     S.of(context).getHelp,
-                    style: const TextStyle(color: AppColors.onPrimary, fontSize: 10),
+                    style: const TextStyle(
+                        color: AppColors.onPrimary, fontSize: 10),
                   ),
                 ],
               ),
@@ -191,6 +208,32 @@ class AppHomePage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: AppColors.primary,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 4,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Container(
+            height: 20,
+            width: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Image.asset(
+              'assets/images/sense_logo.png',
+              fit: BoxFit.contain,
+            ),
           ),
         ),
       ),

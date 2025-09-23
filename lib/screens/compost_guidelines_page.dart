@@ -9,48 +9,89 @@ class CompostGuidelinesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.primary,
-          elevation: 0,
-          title: Text(
-            S.of(context).compostGuidelines,
-            style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
-          ),
-          centerTitle: true,
-        ),
-        body: ListView(
-          padding: const EdgeInsets.all(16.0),
+      appBar: AppBar(
+        backgroundColor: AppColors.primary,
+        elevation: 0,
+        title: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            _buildGuidelineItem(
-              context,
-              S.of(context).aerobicCompostingProcess,
-              Icons.recycling,
-              () => _navigateToGuidelineDetail(
-                  context, S.of(context).aerobicCompostingProcess),
+            SizedBox(
+              height: 20,
+              width: 60,
+              child: Image.asset(
+                'assets/images/sense_logo.png',
+                fit: BoxFit.contain,
+              ),
             ),
-            _buildGuidelineItem(
-              context,
-              S.of(context).howToMakeCompost,
-              Icons.format_list_numbered,
-              () => _navigateToGuidelineDetail(
-                  context, S.of(context).howToMakeCompost),
-            ),
-            _buildGuidelineItem(
-              context,
-              S.of(context).cnRatioOptimumCompostConditions,
-              Icons.balance,
-              () => _navigateToGuidelineDetail(
-                  context, S.of(context).cnRatioOptimumCompostConditions),
-            ),
-            _buildGuidelineItem(
-              context,
-              S.of(context).troubleshootingCompostProblems,
-              Icons.build,
-              () => _navigateToGuidelineDetail(
-                  context, S.of(context).troubleshootingCompostProblems),
+            const SizedBox(height: 2),
+            Text(
+              S.of(context).compostGuidelines,
+              style: const TextStyle(color: AppColors.onPrimary, fontSize: 16),
             ),
           ],
-        ));
+        ),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          _buildGuidelineItem(
+            context,
+            S.of(context).aerobicCompostingProcess,
+            Icons.recycling,
+            () => _navigateToGuidelineDetail(
+                context, S.of(context).aerobicCompostingProcess),
+          ),
+          _buildGuidelineItem(
+            context,
+            S.of(context).howToMakeCompost,
+            Icons.format_list_numbered,
+            () => _navigateToGuidelineDetail(
+                context, S.of(context).howToMakeCompost),
+          ),
+          _buildGuidelineItem(
+            context,
+            S.of(context).cnRatioOptimumCompostConditions,
+            Icons.balance,
+            () => _navigateToGuidelineDetail(
+                context, S.of(context).cnRatioOptimumCompostConditions),
+          ),
+          _buildGuidelineItem(
+            context,
+            S.of(context).troubleshootingCompostProblems,
+            Icons.build,
+            () => _navigateToGuidelineDetail(
+                context, S.of(context).troubleshootingCompostProblems),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: AppColors.primary,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 4,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Container(
+            height: 20,
+            width: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Image.asset(
+              'assets/images/sense_logo.png',
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _buildGuidelineItem(
@@ -62,8 +103,8 @@ class CompostGuidelinesPage extends StatelessWidget {
   }) {
     return Column(children: [
       if (showDivider)
-        Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
+        const Padding(
+          padding: EdgeInsets.only(bottom: 16.0),
           child: Divider(thickness: 2, color: AppColors.primaryLight),
         ),
       Card(

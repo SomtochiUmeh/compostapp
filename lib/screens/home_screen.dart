@@ -74,7 +74,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               const SizedBox(height: 16),
               Text(
                 S.of(context).helpEmailSubjectInstruction,
-                style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+                style:
+                    const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
               ),
             ],
           ),
@@ -156,9 +157,24 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         appBar: AppBar(
           backgroundColor: AppColors.primary,
           elevation: 0,
-          title: Text(
-            _destinations[_selectedIndex].label,
-            style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
+          title: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 18,
+                width: 60,
+                child: Image.asset(
+                  'assets/images/sense_logo.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                _destinations[_selectedIndex].label,
+                style:
+                    const TextStyle(color: AppColors.onPrimary, fontSize: 16),
+              ),
+            ],
           ),
           centerTitle: true,
           leading: IconButton(
@@ -175,10 +191,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Icon(Icons.help_outline, color: AppColors.onPrimary, size: 20),
+                    const Icon(Icons.help_outline,
+                        color: AppColors.onPrimary, size: 20),
                     Text(
                       S.of(context).getHelp,
-                      style: const TextStyle(color: AppColors.onPrimary, fontSize: 10),
+                      style: const TextStyle(
+                          color: AppColors.onPrimary, fontSize: 10),
                     ),
                   ],
                 ),
@@ -193,37 +211,51 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 (index) => _buildOffstageNavigator(index)),
           ),
         ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(gradient: AppColors.navBarGradient),
-          child: NavigationBar(
-            selectedIndex: _selectedIndex,
-            backgroundColor:
-                Colors.transparent, // Make nav bar transparent to show gradient
-            indicatorColor:
-                AppColors.primary, // Orange background for selected item
-            surfaceTintColor: AppColors.primary,
-            onDestinationSelected: (index) {
-              setState(() {
-                _selectedIndex = index;
-                for (int i = 0; i < _faders.length; i++) {
-                  if (i == index) {
-                    _faders[i].forward();
-                  } else {
-                    _faders[i].reverse();
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 6.0),
+              child: SizedBox(
+                height: 20,
+                width: 60,
+                child: Image.asset(
+                  'assets/images/sense_logo.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            NavigationBar(
+              height: 60,
+              selectedIndex: _selectedIndex,
+              backgroundColor: Colors
+                  .transparent, // Make nav bar transparent to show gradient
+              indicatorColor:
+                  AppColors.primary, // Orange background for selected item
+              surfaceTintColor: AppColors.primary,
+              onDestinationSelected: (index) {
+                setState(() {
+                  _selectedIndex = index;
+                  for (int i = 0; i < _faders.length; i++) {
+                    if (i == index) {
+                      _faders[i].forward();
+                    } else {
+                      _faders[i].reverse();
+                    }
                   }
-                }
-              });
-            },
-            destinations: _destinations
-                .map((d) => NavigationDestination(
-                      icon: Icon(d.icon),
-                      selectedIcon: Icon(d.icon,
-                          color:
-                              AppColors.onPrimary), // White icon when selected
-                      label: d.label,
-                    ))
-                .toList(),
-          ),
+                });
+              },
+              destinations: _destinations
+                  .map((d) => NavigationDestination(
+                        icon: Icon(d.icon),
+                        selectedIcon: Icon(d.icon,
+                            color: AppColors
+                                .onPrimary), // White icon when selected
+                        label: d.label,
+                      ))
+                  .toList(),
+            ),
+          ],
         ),
       ),
     );
