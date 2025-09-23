@@ -11,9 +11,23 @@ class SampleRecipesPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         elevation: 0,
-        title: Text(
-          S.of(context).sampleCompostRecipes,
-          style: const TextStyle(color: AppColors.onPrimary, fontSize: 20),
+        title: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: 20,
+              width: 60,
+              child: Image.asset(
+                'assets/images/sense_logo.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              S.of(context).sampleCompostRecipes,
+              style: const TextStyle(color: AppColors.onPrimary, fontSize: 16),
+            ),
+          ],
         ),
         centerTitle: true,
       ),
@@ -43,6 +57,25 @@ class SampleRecipesPage extends StatelessWidget {
             S.of(context).mixThoroughlyEnsureAdequateMoistureAndTurnEvery3Days,
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 60,
+        decoration: const BoxDecoration(
+          color: AppColors.primary,
+        ),
+        child: Center(
+          child: Container(
+            height: 20,
+            width: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Image.asset(
+              'assets/images/sense_logo.png',
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
       ),
     );
   }
