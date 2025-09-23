@@ -67,15 +67,8 @@ class CompostGuidelinesPage extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
         height: 60,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: AppColors.primary,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
-              blurRadius: 4,
-              offset: const Offset(0, -2),
-            ),
-          ],
         ),
         child: Center(
           child: Container(
